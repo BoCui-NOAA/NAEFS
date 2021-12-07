@@ -1,7 +1,7 @@
 #!/bin/ksh
 ###################################################################
 echo "----------------------------------------------------"
-echo "exnawips_gefs_bias.sh.sms - convert NCEP GRIB files into GEMPAK Grids for GEFS Bias"
+echo "exnawips_gefs_bias.sh - convert NCEP GRIB files into GEMPAK Grids for GEFS Bias"
 echo "----------------------------------------------------"
 echo "History: Jan 2012 - First implementation of this new script."
 #####################################################################

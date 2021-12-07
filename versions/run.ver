@@ -1,6 +1,6 @@
-export model=naefs
-export naefs_ver=v6.1.0
-export ver=v6.1
+#export model=naefs
+#export naefs_ver=v6.1.0
+#export ver=v6.1
 
 export gefs_ver=v12.2 
 export cfs_ver=v2.3  
@@ -22,7 +22,33 @@ export libjpeg_ver=9c
 export grib_util_ver=1.2.3
 export wgrib2_ver=2.0.8
 
-export gempak_ver=7.14.0
+export gempak_ver=7.14.1
 export iobuf_ver=2.0.10
 
-export PATH=.:$PATH
+#export PATH=.:$PATH
+##############################
+## canned data test only 
+##############################
+#export PDY=${PDY:-20210826}
+export PDY=${PDY:-20210824}
+#export HOMErtma=$HOMEnaefs
+#export HOMEgefs=$HOMEnaefs
+#export HOMEndgd=$HOMEnaefs
+#export HOMEfnmoc=$HOMEnaefs
+#export HOMEcmce=$HOMEnaefs
+#export COM_NCEP=/lfs/h1/ops/para/com/naefs/v6.1
+#export COM_IN=/lfs/h1/ops/para/com/naefs/v6.1
+#export COM_DV=/lfs/h1/ops/para/com/naefs/v6.1
+#export COM_CMC=/lfs/h1/ops/para/com/naefs/v6.1
+#export COM_CMCANL=/lfs/h1/ops/para/com/naefs/v6.1
+#export COM_FENS=/lfs/h1/ops/para/com/naefs/v6.1
+#export COMINbias=/lfs/h1/ops/para/com/naefs/v6.1
+#export COM_OUT=/lfs/h1/ops/para/com/naefs/v6.1
+#export DCOM_BASE=/lfs/h1/ops/canned/dcom
+#export DCOM_CMC=/lfs/h1/ops/canned/dcom
+export COMPATH=/lfs/h1/ops/canned/com/gefs:/lfs/h1/ops/canned/com/cfs:/lfs/h1/ops/canned/com/rtma:/lfs/h1/ops/canned/com/ccpa
+export DCOMROOT=/lfs/h1/ops/canned/dcom
+#COMPATH=/lfs/h2/emc/vpppg/noscrub/Bo.Cui/canned/com/naefs:/lfs/h2/emc/vpppg/noscrub/Bo.Cui/canned/com/gefs:/lfs/h2/emc/vpppg/noscrub/Bo.Cui/canned/com/cfs:/lfs/h1/ops/canned/com/rtma:/lfs/h1/ops/canned/com/ccpa
+COMPATH=/lfs/h2/emc/vpppg/noscrub/Bo.Cui/canned/com/gefs:/lfs/h1/ops/canned/com/cfs:/lfs/h1/ops/canned/com/rtma:/lfs/h1/ops/canned/com/ccpa
+#export DCOMROOT=/lfs/h2/emc/vpppg/noscrub/Bo.Cui/canned/dcom
+export KEEPDATA=YES
