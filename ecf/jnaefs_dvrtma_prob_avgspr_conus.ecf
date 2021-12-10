@@ -25,11 +25,14 @@ module load iobuf/${iobuf_ver}
 module load craype-hugepages2M
 module list
 
+export OMP_NUM_THREADS=1 
+
 # EXPORT list here
 export APRUN="mpiexec -n 96 -ppn 96 --cpu-bind core cfp "
 export APRUN_post="mpiexec -n 576 -ppn 116 --cpu-bind core cfp "
 export IOBUF_PARAMS='*:sync,%%stdout:sync'
 export cyc=%CYC%
+export runlabel=late
 
 # CALL executable job script here
 ${HOMEnaefs}/jobs/JNAEFS_DVRTMA_PROB_AVGSPR_CONUS

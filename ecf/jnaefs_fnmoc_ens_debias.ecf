@@ -24,6 +24,8 @@ module load wgrib2/${wgrib2_ver}
 module load iobuf/${iobuf_ver}
 module load craype-hugepages2M
 module list
+ 
+export export OMP_NUM_THREADS=1
 
 # EXPORT list here
 export APRUN="mpiexec -np 65 --cpu-bind core cfp "         

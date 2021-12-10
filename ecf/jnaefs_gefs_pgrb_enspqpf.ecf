@@ -25,6 +25,8 @@ module load iobuf/${iobuf_ver}
 module load craype-hugepages2M
 module list
 
+export OMP_NUM_THREADS=1 
+
 # EXPORT list here
 export IOBUF_PARAMS='*:sync,%%stdout:sync'
 export cyc=%CYC%

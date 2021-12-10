@@ -30,6 +30,7 @@ export iobuf_ver=2.0.10
 ## canned data test only 
 ##############################
 #export PDY=${PDY:-20210826}
+#export PDY=${PDY:-20211202}
 export PDY=${PDY:-20210824}
 #export HOMErtma=$HOMEnaefs
 #export HOMEgefs=$HOMEnaefs
@@ -49,6 +50,7 @@ export PDY=${PDY:-20210824}
 export COMPATH=/lfs/h1/ops/canned/com/gefs:/lfs/h1/ops/canned/com/cfs:/lfs/h1/ops/canned/com/rtma:/lfs/h1/ops/canned/com/ccpa
 export DCOMROOT=/lfs/h1/ops/canned/dcom
 #COMPATH=/lfs/h2/emc/vpppg/noscrub/Bo.Cui/canned/com/naefs:/lfs/h2/emc/vpppg/noscrub/Bo.Cui/canned/com/gefs:/lfs/h2/emc/vpppg/noscrub/Bo.Cui/canned/com/cfs:/lfs/h1/ops/canned/com/rtma:/lfs/h1/ops/canned/com/ccpa
-COMPATH=/lfs/h2/emc/vpppg/noscrub/Bo.Cui/canned/com/gefs:/lfs/h1/ops/canned/com/cfs:/lfs/h1/ops/canned/com/rtma:/lfs/h1/ops/canned/com/ccpa
-#export DCOMROOT=/lfs/h2/emc/vpppg/noscrub/Bo.Cui/canned/dcom
+#COMPATH=/lfs/h2/emc/vpppg/noscrub/Bo.Cui/canned/com/gefs:/lfs/h1/ops/canned/com/cfs:/lfs/h1/ops/canned/com/rtma:/lfs/h1/ops/canned/com/ccpa
+#COMPATH=/lfs/h2/emc/vpppg/noscrub/Yan.Luo/canned/com/gefs:/lfs/h1/ops/canned/com/cfs:/lfs/h1/ops/canned/com/rtma:/lfs/h1/ops/canned/com/ccpa
+#COMPATH=/lfs/h1/ops/canned/com/rtma:/lfs/h1/ops/canned/com/ccpa:/lfs/h2/emc/vpppg/noscrub/Bo.Cui/canned/com/naefs:/lfs/h2/emc/vpppg/noscrub/Bo.Cui/canned/com/cfs:/lfs/h2/emc/vpppg/noscrub/Bo.Cui/canned/com/gefs
 export KEEPDATA=YES
