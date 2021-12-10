@@ -20,6 +20,8 @@ module load grib_util/${grib_util_ver}
 module load wgrib2/${wgrib2_ver}
 module list
 
+export OMP_NUM_THREADS=1
+
 # EXPORT list here
 export IOBUF_PARAMS='*:sync,%%stdout:sync'
 export cyc=%CYC%
