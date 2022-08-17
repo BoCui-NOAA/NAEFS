@@ -1,0 +1,10 @@
+ GDFILE    Grid file                         /lfs/h1/ops/canned/com/nawips/v0.0/fens.20210824/cmc_gep01_2021082400f384
+ LSTALL    Full list flag                    y
+ OUTPUT    Output device/filename            t
+ GDATTIM   Grid date/time                    all
+ GLEVEL    Grid level                        all
+ GVCORD    Grid vertical coordinate          all
+ GFUNC     Scalar grid                       all
+ Parameters requested: GDFILE,LSTALL,OUTPUT,GDATTIM,GLEVEL,GVCORD,GFUNC.
+ GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> Parameters requested: GDFILE,LSTALL,OUTPUT,GDATTIM,GLEVEL,GVCORD,GFUNC.
+ GEMPAK-GDINFO> GEMPAK-GDINFO>

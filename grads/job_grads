@@ -1,0 +1,78 @@
+export homedir=`pwd`
+export dir_main=/home/people/emc/www/htdocs/gmb/wx20cb/naefs.v7.0.0 
+
+export CDATE=2022072300
+
+if_gefs_conus=no 
+if_naefs_conus=no 
+if_gefs_ak=no 
+if_naefs_ak=yes
+
+###
+# 1.fnmoc bias corrected plots
+###
+
+export COM1=/lfs/h1/ops/prod/com/naefs/v6.1  
+#$homedir/grads_bc/job_fnmoc_bc_1d.sh
+
+export COM1=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0
+#$homedir/grads_bc/job_fnmoc_bc.sh
+
+###
+# 2.fnmoc glbanl plots
+###
+
+#$homedir/grads_me/job_fnmoc_glbanl.sh
+
+export COM1=/lfs/h1/ops/prod/com/naefs/v6.1  
+export CDATE=2022070600
+#$homedir/grads_me/job_fnmoc_glbanl_1d.sh
+
+###
+# 3.fnmoc bias corrected plots
+###
+#$homedir/grads_bc/job_gefs_bc.sh
+
+###
+# 4.gefs anomaly forecast plots
+###
+export CDATE=2022072300
+export COM1=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0
+#$homedir/grads_an/job_gefs_an.sh
+
+
+###
+# 5.gefs conus                           
+###
+export CDATE=2022080800
+export COM1=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0
+if [ $if_gefs_conus = "yes" ] ; then
+ $homedir/ndgd_conus/job_gefs_ndgd_conus_wcoss2.sh
+fi
+
+###
+# 6. naefs conus                           
+###
+export CDATE=2022080800
+export COM1=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0
+if [ $if_naefs_conus = "yes" ] ; then
+ $homedir/ndgd_conus/job_naefs_ndgd_conus_wcoss2.sh
+fi
+
+###
+# 7. gefs  alaska
+###
+export CDATE=2022080800
+export COM1=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0
+if [ $if_gefs_ak = "yes" ] ; then
+ $homedir/ndgd_ak/job_gefs_ndgd_ak_wcoss2.sh
+fi
+
+###
+# 8. naefs alaska
+###
+export CDATE=2022080800
+export COM1=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0
+if [ $if_naefs_ak = "yes" ] ; then
+ $homedir/ndgd_ak/job_naefs_ndgd_ak_wcoss2.sh
+fi

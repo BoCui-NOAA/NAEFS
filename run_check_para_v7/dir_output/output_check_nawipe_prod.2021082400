@@ -1,0 +1,27 @@
+ day  2021082400
+ 
+ dir CMCE prod 2860 (22*130) para 4268(194*22)   
+   4268    4268  106700
+ 
+ dir GEFS para anv me mecom gfsme, 96/60 for one cycle
+ dir GEFS para 384 384 384 240    
+    384     384   28032
+    384     384   27648
+    384     384   28800
+    240     240   17280
+ 
+ dir GEFS/an para 9160 (2290 for one cycle) 
+   9160    9160  210680
+ 
+ dir GEFS/bc para 10696 (2674/cycle) 
+  10696   10696  247544
+ 
+ dir naefs para ge* 3456 (864/cycle) 
+   3456    3456  248832
+ 
+ dir naefs para ndgd* 4608 (1152/cycle) 
+   4608    4608  364800
+ 
+ dir FNMOC para 2600 
+   2600    2600   70200
+ 

@@ -49,22 +49,20 @@ NCEP/GEFS Jobs
 1. jobs/JGEFS_DEBIAS
   1) scripts/exgefs_debias.sh
   2) ush/gefs_climate_anomaly.sh 
-   - modified to add ensemble member from 21 to 30
+   - modified to add ensemble member from 21 to 31
 
 2. jobs/JNAEFS_GEFS_PROB_AVGSPR
   1) ush/naefs_climate_efi.sh
   2) ush/naefs_climate_anv.sh
   3) ush/naefs_climate_anomaly.sh
-   - modified to add ensemble member from 21 to 30
+   - modified to add ensemble member from 21 to 31
 
 3. jobs/JNAEFS_GEFS_DEBIAS_GEMPAK
-   - modified to add ensemble member from 21 to 30
+   - modified to add ensemble member from 21 to 31
 
 4.  ecf/jnaefs_gefs_debias.ecf            
    - modified ncpus and mpiprocs setting from 22 to 32
 
-
-exit
 NAEFS Jobs
 
 1. jobs/JNAEFS_PROB_AVGSPR
@@ -73,55 +71,19 @@ NAEFS Jobs
   2) ush/naefs_climate_efi.sh
   3) ush/naefs_climate_anv.sh
   4) ush/naefs_climate_anomaly.sh
-   - modified to add ensemble member from 21 to 30
+   - modified to add ensemble member from 21 to 31
 
-  2) ush/naefs_bc_probability.sh
-   - modified input for 0.5d ensemble data and 3 hourly from 0-8day                                 
+2. jobs/JNAEFS_DVRTMA_PROB_AVGSPR_CONUS
+  1) scripts/exnaefs_dvrtma_prob_avgspr_conus.sh
+   - modified to add GEFS ensemble member from 21 to 31
 
-  3) ush/naefs_climate_anv.sh
-   - modified input for 0.5d ensemble data and 3 hourly from 0-8day                                 
-
-  4) ush/naefs_climate_anomaly.sh
-   - new, added to generate the anomaly forecast(percentage) for ensemble mean                                 
-  5) ush/naefs_climate_efi.sh
-   - new, added to generate EFI
-
-  6) sorc/naefs_climate_anomaly.fd
-   - new, added to generate the anomaly forecast(percentage) for ensemble mean
-
-  7) sorc/gefs_climate_anomefi.fd
-   - new, added to generate EFI
-
-2. jobs/JNAEFS_DVRTMA_BIAS_ALASKA
-
-  1) scripts/exnaefs_dvrtma_bias_ak.sh.ecf      
-   - modified for 0.5d ensemble data input with 3 hourly from 0-8day                                 
-
-3. jobs/JNAEFS_DVRTMA_BIAS_CONUS
-
-  1) scripts/exnaefs_dvrtma_bias_conus.sh.ecf
-   - modified for 0.5d ensemble data input with 3 hourly from 0-8day                                 
-
-4. jobs/JNAEFS_DVRTMA_PROB_AVGSPR_AK
+3. jobs/JNAEFS_DVRTMA_PROB_AVGSPR_AK
 
   1) scripts/exnaefs_dvrtma_prob_avgspr_ak.sh.ecf
-   - modified for 0.5d ensemble data input with 3 hourly from 0-8day                                 
-   - modified for 0.5d ensemble data output with 3 hourly from 0-8day                                 
+   - modified to add GEFS ensemble member from 21 to 31
 
-  2) ush/dvrtma_debias_alaska.sh
-   - modified for 0.5d ensemble data input 
+exit
 
-  3) ush/dvrtma_debias_alaska_tmaxmin.sh
-   - modified for 0.5d ensemble data input 
-
-  4) ush/cmce_adjust_tmaxmin_alaska.sh
-   - modified for 0.5d ensemble data input 
-
-  5) ush/dvrtma_debias_alaska_wind10m.sh
-   - modified for 0.5d ensemble data input 
-
-  6) ush/cmce_adjust_wind10m_alaska.sh
-   - modified for 0.5d ensemble data input 
 
 5. jobs/JNAEFS_DVRTMA_PROB_AVGSPR_CONUS
 

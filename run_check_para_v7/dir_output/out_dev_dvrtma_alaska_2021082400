@@ -1,0 +1,40 @@
+ GDFILE    Grid file                         /lfs/h1/ops/canned/com/nawips/v0.0/naefs.20210824/dvrtma_alaska_2021082400
+ LSTALL    Full list flag                    y
+ OUTPUT    Output device/filename            t
+ GDATTIM   Grid date/time                    all
+ GLEVEL    Grid level                        all
+ GVCORD    Grid vertical coordinate          all
+ GFUNC     Scalar grid                       all
+ Parameters requested: GDFILE,LSTALL,OUTPUT,GDATTIM,GLEVEL,GVCORD,GFUNC.
+ GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO>
+ GRID FILE: /lfs/h2/emc/ptmp/Bo.Cui/com/nawips/prod/naefs.20210824/dvrtma_alaska_2021082400                     
+
+ GRID NAVIGATION: 
+     PROJECTION:          STR                 
+     ANGLES:                90.0  -150.0     0.0
+     GRID SIZE:             1649    1105
+     LL CORNER:            40.5301 -178.5710
+     UR CORNER:            63.9758  -93.6891
+
+ GRID ANALYSIS BLOCK: 
+     ANALYSIS TYPE:        BARNES
+     DELTAN:               4.000
+     DELTAX:           -9999.000
+     DELTAY:           -9999.000
+     GRID AREA:            40.00 -180.00   76.00  180.00
+     EXTEND AREA:          40.00 -180.00   76.00  180.00
+     DATA AREA:            40.00 -180.00   76.00  180.00
+
+ Number of grids in file:     6
+
+ Maximum number of grids in file:   4999
+
+  NUM       TIME1              TIME2           LEVL1 LEVL2  VCORD PARM
+    1     210824/0000F000                         10         HGHT URELAE      
+    2     210824/0000F000                         10         HGHT VRELAE      
+    3     210824/0000F000                          2         HGHT TMPKAE      
+    4     210824/0000F000                          2         HGHT RELHAE      
+    5     210824/0000F000                          2         HGHT DWPKAE      
+    6     210824/0000F000                          0         NONE PRESAE      
+ Parameters requested: GDFILE,LSTALL,OUTPUT,GDATTIM,GLEVEL,GVCORD,GFUNC.
+ GEMPAK-GDINFO> GEMPAK-GDINFO>

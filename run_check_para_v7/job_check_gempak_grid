@@ -1,0 +1,22 @@
+#!/bin/bash
+
+module load gempak
+
+export NAWIPS=/lfs/h1/ops/canned/packages/hps/gempak.v7.3.3/nawips
+. $NAWIPS/environ/gemenv.sh
+
+gdfile=/lfs/h2/emc/vpppg/noscrub/Bo.Cui/com/nawips/v0.0/fens.20210824/fnmoc_gep01_2021082400f006    
+#gdfile=$1
+
+gdinfo << end_input
+GDFILE   =  $gdfile
+ LSTALL   = y
+ OUTPUT   = t
+ GDATTIM  = all
+ GLEVEL   = all
+ GVCORD   = all
+ GFUNC    = all
+ run
+
+ exit
+end_input

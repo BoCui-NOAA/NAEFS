@@ -1,0 +1,20 @@
+
+COM=/lfs/h2/emc/vpppg/noscrub/bo.cui
+
+subdirlist="ecf          scripts run_check_para_v7      jobs docs ush versions grads "
+subdirlist="ecf ecf_prod scripts run_check_para_v7 sorc jobs docs ush versions grads "
+subdirlist="docs ecf ecf_prod gempak grads jobs modulefiles run_check_grads_old run_check_para_v7 save_docs scripts sorc tools ush versions"
+
+dir=naefs.v7.0.0
+
+DATA=/lfs/h2/emc/ptmp/bo.cui
+cd $DATA
+mkdir $dir
+cd $dir
+
+# sync dogwood from cactus
+
+for subdir in $subdirlist; do
+  cp -rp $COM/$dir/$subdir .
+done
+

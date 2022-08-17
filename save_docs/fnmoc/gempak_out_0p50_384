@@ -1,0 +1,161 @@
+ PROJ     =  
+ GRDAREA  =  
+ KXKY     =  
+ MAXGRD   = 4999
+ CPYFIL   = gds
+ GAREA    = dset
+ OUTPUT   = T
+ GBTBLS   =  
+ GBDIAG   =  
+ PDSEXT   = no
+ OVERWR   = NO
+ GEMPAK-NAGRIB> [NA -1]  The table fnocgrib2.tbl cannot be opened.
+ [NAGRIB 3]  No valid parameter found for 157.
+ [NAGRIB 3]  No valid parameter found for 156.
+ [NA -1]  The table fnocgrib130.tbl cannot be opened.
+ [NAGRIB 3]  No valid parameter found for 193.
+ [NAGRIB 3]  No valid parameter found for 194.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table fnocgrib2.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table fnocgrib2.tbl cannot be opened.
+ [NA -1]  The table fnocgrib130.tbl cannot be opened.
+ [NAGRIB 3]  No valid parameter found for 195.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table fnocgrib2.tbl cannot be opened.
+ Parameters requested: GBFILE,INDXFL,GDOUTF,PROJ,GRDAREA,KXKY,MAXGRD,CPYFIL,
+ GAREA,OUTPUT,GBTBLS,GBDIAG,PDSEXT,OVERWR.
+ GEMPAK-NAGRIB>Changing center table to cntrgrib1.tbl
+Changing vertical coord table to vcrdgrib1.tbl
+Changing WMO parameter table to wmogrib2.tbl
+Changing center parameter table to fnocgrib2.tbl
+Changing WMO parameter table to wmogrib130.tbl
+Changing center parameter table to fnocgrib130.tbl
+Changing WMO parameter table to wmogrib255.tbl
+Changing WMO parameter table to wmogrib255.tbl
+Changing WMO parameter table to wmogrib2.tbl
+Changing center parameter table to fnocgrib2.tbl
+Creating the GEMPAK grid file...
+GEMPAK grid file is ready...
+
+ MESG# NMCGRD# PRM#   VCD#    GEMPAK_TIME       LEVL1 LEVL2  VCRD PARM
+    7   255    121      1       220712/0000F384     0        NONE FXLH        
+    8   255     54      1       220712/0000F384     0        NONE PWTR        
+    9   255      1      1       220712/0000F384     0        NONE PRES        
+   10   255    122      1       220712/0000F384     0        NONE FXSH        
+Changing WMO parameter table to wmogrib255.tbl
+Changing WMO parameter table to wmogrib255.tbl
+Changing WMO parameter table to wmogrib2.tbl
+Changing center parameter table to fnocgrib2.tbl
+   13   255     61      1       220712/0000F384     0        NONE P06M        
+Changing WMO parameter table to wmogrib130.tbl
+Changing center parameter table to fnocgrib130.tbl
+Changing WMO parameter table to wmogrib255.tbl
+Changing WMO parameter table to wmogrib2.tbl
+Changing center parameter table to fnocgrib2.tbl
+   16   255     11    100       220712/0000F384    10        PRES TMPK        
+   17   255      7    100       220712/0000F384    10        PRES HGHT        
+   18   255     52    100       220712/0000F384    10        PRES RELH        
+   19   255     33    100       220712/0000F384    10        PRES UREL        
+   20   255     34    100       220712/0000F384    10        PRES VREL        
+   21   255     11    100       220712/0000F384    50        PRES TMPK        
+   22   255      7    100       220712/0000F384    50        PRES HGHT        
+   23   255     52    100       220712/0000F384    50        PRES RELH        
+   24   255     33    100       220712/0000F384    50        PRES UREL        
+   25   255     34    100       220712/0000F384    50        PRES VREL        
+   26   255     11    100       220712/0000F384   100        PRES TMPK        
+   27   255      7    100       220712/0000F384   100        PRES HGHT        
+   28   255     52    100       220712/0000F384   100        PRES RELH        
+   29   255     33    100       220712/0000F384   100        PRES UREL        
+   30   255     34    100       220712/0000F384   100        PRES VREL        
+   31   255     11    100       220712/0000F384   200        PRES TMPK        
+   32   255      7    100       220712/0000F384   200        PRES HGHT        
+   33   255     52    100       220712/0000F384   200        PRES RELH        
+   34   255     33    100       220712/0000F384   200        PRES UREL        
+   35   255     34    100       220712/0000F384   200        PRES VREL        
+   36   255     11    100       220712/0000F384   250        PRES TMPK        
+   37   255      7    100       220712/0000F384   250        PRES HGHT        
+   38   255     52    100       220712/0000F384   250        PRES RELH        
+   39   255     33    100       220712/0000F384   250        PRES UREL        
+   40   255     34    100       220712/0000F384   250        PRES VREL        
+   41   255      7    100       220712/0000F384   300        PRES HGHT        
+   42   255     33    100       220712/0000F384   300        PRES UREL        
+   43   255     34    100       220712/0000F384   300        PRES VREL        
+   44   255     33    100       220712/0000F384   400        PRES UREL        
+   45   255     34    100       220712/0000F384   400        PRES VREL        
+   46   255     11    100       220712/0000F384   500        PRES TMPK        
+   47   255      7    100       220712/0000F384   500        PRES HGHT        
+   48   255     52    100       220712/0000F384   500        PRES RELH        
+   49   255     33    100       220712/0000F384   500        PRES UREL        
+   50   255     34    100       220712/0000F384   500        PRES VREL        
+
+ MESG# NMCGRD# PRM#   VCD#    GEMPAK_TIME       LEVL1 LEVL2  VCRD PARM
+   51   255     11    100       220712/0000F384   700        PRES TMPK        
+   52   255      7    100       220712/0000F384   700        PRES HGHT        
+   53   255     52    100       220712/0000F384   700        PRES RELH        
+   54   255     33    100       220712/0000F384   700        PRES UREL        
+   55   255     34    100       220712/0000F384   700        PRES VREL        
+   56   255     11    100       220712/0000F384   850        PRES TMPK        
+   57   255      7    100       220712/0000F384   850        PRES HGHT        
+   58   255     52    100       220712/0000F384   850        PRES RELH        
+   59   255     33    100       220712/0000F384   850        PRES UREL        
+   60   255     34    100       220712/0000F384   850        PRES VREL        
+   61   255     39    100       220712/0000F384   850        PRES OMEG        
+   62   255     11    100       220712/0000F384   925        PRES TMPK        
+   63   255      7    100       220712/0000F384   925        PRES HGHT        
+   64   255     52    100       220712/0000F384   925        PRES RELH        
+   65   255     33    100       220712/0000F384   925        PRES UREL        
+   66   255     34    100       220712/0000F384   925        PRES VREL        
+   67   255     11    100       220712/0000F384  1000        PRES TMPK        
+   68   255      7    100       220712/0000F384  1000        PRES HGHT        
+   69   255     52    100       220712/0000F384  1000        PRES RELH        
+   70   255     33    100       220712/0000F384  1000        PRES UREL        
+   71   255     34    100       220712/0000F384  1000        PRES VREL        
+   72   255      2    102       220712/0000F384     0        NONE PMSL        
+   73   255     11    105       220712/0000F384     2        HGHT TMPK        
+   74   255     15    105       220712/0000F384     2        HGHT TMXK06      
+   75   255     16    105       220712/0000F384     2        HGHT TMNK06      
+   76   255     52    105       220712/0000F384     2        HGHT RELH        
+   77   255     33    105       220712/0000F384    10        HGHT UREL        
+   78   255     34    105       220712/0000F384    10        HGHT VREL        
+   79   255     71    200       220712/0000F384     0        NONE TCLD        
+
+
+        79 GRIB messages were read or scanned from the GRIB file:
+     fnmoc_gep11.t00z.pgrbaf384                                              
+
+        69 grids were written to the GEMPAK file:
+     fnmoc_gep11_2022071200f384                                              
+
+
+ GRID FILE: fnmoc_gep11_2022071200f384
+
+ GRID NAVIGATION: 
+     PROJECTION:          CED 
+     ANGLES:                 0.0     0.0     0.0
+     GRID SIZE:          720 361
+     LL CORNER:             -90.00      0.00
+     UR CORNER:              90.00    359.50
+
+ GRID ANALYSIS BLOCK: 
+     ANALYSIS TYPE:        BARNES
+     DELTAN:               4.000
+     DELTAX:           -9999.000
+     DELTAY:           -9999.000
+     GRID AREA:           -90.00 -180.00   90.00  180.00
+     EXTEND AREA:         -90.00 -180.00   90.00  180.00
+     DATA AREA:           -90.00 -180.00   90.00  180.00
+
+ Number of grids in file:    69
+
+ Maximum number of grids in file:   4999
+
+ First time in file: 220712/0000F384
+ Last  time in file: 220712/0000F384

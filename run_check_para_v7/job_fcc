@@ -1,0 +1,4 @@
+
+grep "TOTAL RECORDS =" *2022*
+grep "total records of" *202205*
+

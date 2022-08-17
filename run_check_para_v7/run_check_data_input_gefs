@@ -1,0 +1,53 @@
+export CDATE=2022051900
+
+export COM=/lfs/h1/ops/prod/com/gefs/v12.2
+
+##################################
+# no need to modifya the following
+##################################
+
+ndays=80
+iday=1
+
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  echo $PDY$cyc $iday
+
+output="$( bash <<EOF
+  ls $COM/gefs.$PDY/$cyc/atmos/pgrb2ap5/*geavg*  | wc -l
+EOF
+)"
+  if [ $output -ne 210 -a $output -ne 362 ]; then
+    echo $PDY$cyc
+    echo "GEFS has geavg 210 or 362 files"                
+    echo $output
+  fi
+ 
+output="$( bash <<EOF
+  ls $COM/gefs.$PDY/$cyc/atmos/pgrb2ap5/*gec00*  | wc -l
+EOF
+)"
+  if [ $output -ne 210  -a $output -ne 362 ]; then
+    echo $PDY$cyc
+    echo "GEFS has gec00 210 files"                
+    echo $output
+  fi
+
+output="$( bash <<EOF
+  ls $COM/gefs.$PDY/$cyc/atmos/pgrb2ap5/*gegfs*  | wc -l
+EOF
+)"
+  if [ $output -ne 186 ]; then
+    echo $PDY$cyc
+    echo "GEFS has gegfs 186 files"                
+    echo $output
+  fi
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE -06 $CDATE`
+
+done
+

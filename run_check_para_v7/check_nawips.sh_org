@@ -1,0 +1,64 @@
+#CDATE=$1
+ndays=1
+iday=1
+
+#COM=/lfs/h2/emc/ptmp/Bo.Cui/com/nawips/prod
+
+while [ $iday -le $ndays ]; do
+
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo " day " $PDY$cyc
+  echo " "
+
+  ymdh=`$NDATE -24 $CDATE`
+  PDYm1=`echo ${ymdh} | cut -c1-8`
+  ymdh=`$NDATE -48 $CDATE`
+  PDYm2=`echo ${ymdh} | cut -c1-8`
+
+  COMINm1=$COM/gefs.$PDYm1/$cyc
+  COMINm2=$COM/gefs.$PDYm2/$cyc
+
+  COMIN=$COM/cmce.$PDY
+  echo " dir CMCE prod 2860 (22*130) para 4268(194*22), 2134 for 00z "
+  ls $COMIN | grep -v "pnaefs" | wc
+  echo " "
+
+  COMIN=$COM/gefs.$PDY
+  echo " dir GEFS para anv me mecom gfsme, 96/60 for one cycle"
+  echo " dir GEFS para 384 384 384 240    "
+  ls $COMIN/geavganv*   | grep -v "pnaefs" | wc
+  ls $COMIN/geavgme_*   | grep -v "pnaefs" | wc
+  ls $COMIN/geavgmecom* | grep -v "pnaefs" | wc
+  ls $COMIN/gegfsme*    | grep -v "pnaefs" | wc
+  echo " "
+
+  echo " dir GEFS/an para 9160 (2290 for one cycle) "
+  ls $COMIN/an          | grep -v "pnaefs" | wc
+  echo " "
+
+  echo " dir GEFS/bc para 10696 (2674/cycle) "
+  ls $COMIN/bc          | grep -v "pnaefs" | wc
+  echo " "
+
+  COMIN=$COM/naefs.$PDY
+  echo " dir naefs para ge* 3456 (864/cycle) "
+  ls $COMIN/ge*         | grep -v "pnaefs" | wc
+  echo " "
+
+  echo " dir naefs para ndgd* 4608 (1152/cycle) "
+  ls $COMIN/ndgd*       | grep -v "pnaefs" | wc
+  echo " "
+
+  COMIN=$COM/fens.$PDY
+  echo " dir FNMOC para 2600, 1300 for 00z only "
+  ls $COMIN             | grep -v "pnaefs" | wc
+  echo " "
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +06 $CDATE`
+
+done
+
+

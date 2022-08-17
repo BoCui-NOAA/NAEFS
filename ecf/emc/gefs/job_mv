@@ -1,0 +1,3 @@
+
+mv na*.e* temp
+mv na*.o* temp

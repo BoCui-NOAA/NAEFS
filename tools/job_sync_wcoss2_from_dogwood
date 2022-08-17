@@ -1,0 +1,24 @@
+#!/bin/bash
+#PBS -N file_sync_wcoss2
+#PBS -j oe
+#PBS -S /bin/bash
+#PBS -q dev_transfer
+##PBS -q dev
+#PBS -A NAEFS-DEV
+#PBS -l walltime=00:15:00
+#PBS -l select=1:ncpus=1:mem=1GB
+##PBS -l debug=true
+
+COM_out=/lfs/h2/emc/vpppg/noscrub/bo.cui
+#COM_out=/lfs/h2/emc/ptmp/bo.cui
+COM_in=/lfs/h2/emc/ptmp/bo.cui
+
+subdirlist="ecf ecf_prod scripts run_check_para_v7 sorc jobs docs ush versions grads "
+subdirlist="ecf          scripts run_check_para_v7      jobs docs ush versions grads "
+dir=naefs.v7.0.0
+
+# sync dogwood  to cactus
+for subdir in $subdirlist; do
+# scp -rp bo.cui@ddxfer.wcoss2.ncep.noaa.gov:$COM_in/$dir/$subdir $COM_out/$dir/
+  rsync -avzh bo.cui@ddxfer.wcoss2.ncep.noaa.gov:$COM_in/$dir/$subdir $COM_out/$dir/
+done

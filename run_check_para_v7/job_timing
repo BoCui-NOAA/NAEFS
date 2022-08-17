@@ -1,0 +1,27 @@
+
+CDATE=2018032100
+
+ndays=4
+iday=1
+
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+# DCOM=/gpfs/gp1/dcomdev/us007003/${PDY}/wgrbbul/cmcensbc_gb2
+  DCOM=/gpfs/gp1/nco/ops/dcom/us007003/${PDY}/wgrbbul/cmcensbc_gb2
+  cd $DCOM
+
+# echo $CDATE
+# echo  " "
+# ls -ltrc ${CDATE}*latlon0p5x0p5* | head -1 
+# echo  " "
+  ls -ltrc ${CDATE}*latlon0p5x0p5* | tail -1 
+# echo  " "
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +12 $CDATE`
+
+done
+

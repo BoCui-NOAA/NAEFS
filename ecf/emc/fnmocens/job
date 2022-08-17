@@ -1,0 +1,2 @@
+
+/apps/ops/prod/libs/intel/19.1.3.304/grib_util/1.2.3/bin/copygb2 -g '0 6 0 0 0 0 0 0 720 361 0 0 90000000 0 48 -90000000 359500000 500000 500000 0' -x /lfs/h1/ops/prod/com/cfs/v2.3/cdas.20220709/cdas1.t12z.pgrbf00.grib2 cdas1.t12z.pgrbf00.0p50.grib2

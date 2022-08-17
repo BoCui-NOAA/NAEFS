@@ -1,0 +1,42 @@
+
+CDATE=$1
+ndays=$2
+iday=$3
+
+#CDATE=2018030612
+#ndays=16
+#iday=1
+
+while [ $iday -le $ndays ]; do
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+# DCOM=/gpfs/gp1/dcomdev/us007003/${PDY}/wgrbbul/cmcensbc_gb2
+  DCOM=/gpfs/gp1/nco/ops/dcom/us007003/${PDY}/wgrbbul/cmcens_gb2
+  cd $DCOM
+# echo $CDATE
+# echo  " "
+# ls -ltrc ${CDATE}*latlon0p5x0p5* | head -1 
+# echo  " "
+  ls -ltrc ${CDATE}*latlon1p0x1p0* | tail -2 
+# echo  " "
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+done
+
+echo  " "
+
+CDATE=$1
+ndays=$2
+iday=$3
+
+while [ $iday -le $ndays ]; do
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+  DCOM=/gpfs/gp1/nco/ops/dcom/us007003/${PDY}/wgrbbul/cmcensbc_gb2
+  cd $DCOM
+  ls -ltrc ${CDATE}*latlon1p0x1p0* | tail -1 
+# echo  " "
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+done
+

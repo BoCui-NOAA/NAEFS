@@ -1,0 +1,4 @@
+ grep "EDT 2021" *  
+ grep "EST 2021" *  
+ grep "error ac" *.o*  
+ grep -i "not found" *.o*  

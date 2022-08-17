@@ -1,0 +1,6 @@
+
+qsub jnaefs_dvrtma_bias_ak_gempak.ecf
+qsub jnaefs_dvrtma_prob_avgspr_ak_gempak.ecf  
+qsub jnaefs_prob_avgspr_gempak.ecf
+qsub jnaefs_dvrtma_bias_conus_gempak.ecf 
+qsub  jnaefs_dvrtma_prob_avgspr_conus_gempak.ecf

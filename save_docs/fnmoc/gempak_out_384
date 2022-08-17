@@ -1,0 +1,207 @@
+: 227.823 + [ -s /lfs/h1/ops/canned/dcom/20210824/wgrbbul/fnmocens_gb2/ENSEMBLE.MET.fcst_et001.384.2021082400 ]
+: 227.824 + /apps/ops/prod/libs/intel/19.1.3.304/grib_util/1.2.3/bin/cnvgrib -g21 /lfs/h1/ops/canned/dcom/20210824/wgrbbul/fnmocens_gb2/ENSEMBLE.MET.fcst_et001.384.2021082400 fnmoc_gep01.t00z.pgrbaf384
+ param_g2_to_g1:GRIB2 param  0 5 3  not found.
+ param_g2_to_g1:GRIB2 param  0 5 4  not found.
+ param_g2_to_g1:GRIB2 param  0 4 7  not found.
+ param_g2_to_g1:GRIB2 param  0 4 8  not found.
+ param_g2_to_g1:GRIB2 param  0 5 4  not found.
+: 229.448 + [ et '=' bc ]
+: 229.448 + GEMGRD=fnmoc_gep01_2021082400f384
+: 229.448 + /apps/ops/prod/nco/intel/19.1.3.304/gempak.v7.14.0/nawips/os/linux5.3.18_x86_64/bin/nagrib_nc
+: 229.448 + 0<< \EOF
+EOF
+   GBFILE   = fnmoc_gep01.t00z.pgrbaf384
+   INDXFL   = 
+   GDOUTF   = fnmoc_gep01_2021082400f384
+   PROJ     = 
+   GRDAREA  = 
+   KXKY     = 
+   MAXGRD   = 4999
+   CPYFIL   = gds
+   GAREA    = dset
+   OUTPUT   = T
+   GBTBLS   = 
+   GBDIAG   = 
+   PDSEXT   = no
+  l
+  r
+ GBFILE    GRIB data file name               fnmoc_gep01.t00z.pgrbaf378
+ INDXFL    GRIB index file name               
+ GDOUTF    Output grid file                  fnmoc_gep01_2021082400f378
+ PROJ      Map projection/angles/margins|dr   
+ GRDAREA   Area covered by grid               
+ KXKY      Number of grid points in x;y       
+ MAXGRD    Maximum number of grids           4999
+ CPYFIL    Grid file whose navigation is to  gds
+ GAREA     Graphics area                     dset
+ OUTPUT    Output device/filename            T
+ GBTBLS    Input GRIB decoding tables         
+ GBDIAG    GRIB diagnostic elements           
+ PDSEXT    Y or N, add PDS extension if fou  no
+ OVERWR    Overwr flag                       NO
+ Parameters requested: GBFILE,INDXFL,GDOUTF,PROJ,GRDAREA,KXKY,MAXGRD,CPYFIL,
+ GAREA,OUTPUT,GBTBLS,GBDIAG,PDSEXT,OVERWR.
+ GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GBFILE   = fnmoc_gep01.t00z.pgrbaf384
+ INDXFL   =  
+ GDOUTF   = fnmoc_gep01_2021082400f384
+ PROJ     =  
+ GRDAREA  =  
+ KXKY     =  
+ MAXGRD   = 4999
+ CPYFIL   = gds
+ GAREA    = dset
+ OUTPUT   = T
+ GBTBLS   =  
+ GBDIAG   =  
+ PDSEXT   = no
+ OVERWR   = NO
+ GEMPAK-NAGRIB> [NA -1]  The table fnocgrib2.tbl cannot be opened.
+ [NAGRIB 3]  No valid parameter found for 157.
+ [NAGRIB 3]  No valid parameter found for 156.
+ [NA -1]  The table fnocgrib130.tbl cannot be opened.
+ [NAGRIB 3]  No valid parameter found for 193.
+ [NAGRIB 3]  No valid parameter found for 194.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table fnocgrib2.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table fnocgrib2.tbl cannot be opened.
+ [NA -1]  The table fnocgrib130.tbl cannot be opened.
+ [NAGRIB 3]  No valid parameter found for 195.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table wmogrib255.tbl cannot be opened.
+ [NA -1]  The table fnocgrib2.tbl cannot be opened.
+ Parameters requested: GBFILE,INDXFL,GDOUTF,PROJ,GRDAREA,KXKY,MAXGRD,CPYFIL,
+ GAREA,OUTPUT,GBTBLS,GBDIAG,PDSEXT,OVERWR.
+ GEMPAK-NAGRIB>Changing center table to cntrgrib1.tbl
+Changing vertical coord table to vcrdgrib1.tbl
+Changing WMO parameter table to wmogrib2.tbl
+Changing center parameter table to fnocgrib2.tbl
+Changing WMO parameter table to wmogrib130.tbl
+Changing center parameter table to fnocgrib130.tbl
+Changing WMO parameter table to wmogrib255.tbl
+Changing WMO parameter table to wmogrib255.tbl
+Changing WMO parameter table to wmogrib2.tbl
+Changing center parameter table to fnocgrib2.tbl
+Creating the GEMPAK grid file...
+GEMPAK grid file is ready...
+
+ MESG# NMCGRD# PRM#   VCD#    GEMPAK_TIME       LEVL1 LEVL2  VCRD PARM
+    7   255    121      1       210824/0000F384     0        NONE FXLH        
+    8   255     54      1       210824/0000F384     0        NONE PWTR        
+    9   255      1      1       210824/0000F384     0        NONE PRES        
+   10   255    122      1       210824/0000F384     0        NONE FXSH        
+   11   255     66      1       210824/0000F384     0        NONE SNDM        
+Changing WMO parameter table to wmogrib255.tbl
+Changing WMO parameter table to wmogrib255.tbl
+Changing WMO parameter table to wmogrib2.tbl
+Changing center parameter table to fnocgrib2.tbl
+   14   255     61      1       210824/0000F384     0        NONE P06M        
+Changing WMO parameter table to wmogrib130.tbl
+Changing center parameter table to fnocgrib130.tbl
+Changing WMO parameter table to wmogrib255.tbl
+Changing WMO parameter table to wmogrib255.tbl
+Changing WMO parameter table to wmogrib2.tbl
+Changing center parameter table to fnocgrib2.tbl
+   18   255     11    100       210824/0000F384    10        PRES TMPK        
+   19   255      7    100       210824/0000F384    10        PRES HGHT        
+   20   255     52    100       210824/0000F384    10        PRES RELH        
+   21   255     33    100       210824/0000F384    10        PRES UREL        
+   22   255     34    100       210824/0000F384    10        PRES VREL        
+   23   255     11    100       210824/0000F384    50        PRES TMPK        
+   24   255      7    100       210824/0000F384    50        PRES HGHT        
+   25   255     52    100       210824/0000F384    50        PRES RELH        
+   26   255     33    100       210824/0000F384    50        PRES UREL        
+   27   255     34    100       210824/0000F384    50        PRES VREL        
+   28   255     11    100       210824/0000F384   100        PRES TMPK        
+   29   255      7    100       210824/0000F384   100        PRES HGHT        
+   30   255     52    100       210824/0000F384   100        PRES RELH        
+   31   255     33    100       210824/0000F384   100        PRES UREL        
+   32   255     34    100       210824/0000F384   100        PRES VREL        
+   33   255     11    100       210824/0000F384   200        PRES TMPK        
+   34   255      7    100       210824/0000F384   200        PRES HGHT        
+   35   255     52    100       210824/0000F384   200        PRES RELH        
+   36   255     33    100       210824/0000F384   200        PRES UREL        
+   37   255     34    100       210824/0000F384   200        PRES VREL        
+   38   255     11    100       210824/0000F384   250        PRES TMPK        
+   39   255      7    100       210824/0000F384   250        PRES HGHT        
+   40   255     52    100       210824/0000F384   250        PRES RELH        
+   41   255     33    100       210824/0000F384   250        PRES UREL        
+   42   255     34    100       210824/0000F384   250        PRES VREL        
+   43   255     11    100       210824/0000F384   500        PRES TMPK        
+   44   255      7    100       210824/0000F384   500        PRES HGHT        
+   45   255     52    100       210824/0000F384   500        PRES RELH        
+   46   255     33    100       210824/0000F384   500        PRES UREL        
+   47   255     34    100       210824/0000F384   500        PRES VREL        
+   48   255     11    100       210824/0000F384   700        PRES TMPK        
+   49   255      7    100       210824/0000F384   700        PRES HGHT        
+   50   255     52    100       210824/0000F384   700        PRES RELH        
+
+ MESG# NMCGRD# PRM#   VCD#    GEMPAK_TIME       LEVL1 LEVL2  VCRD PARM
+   51   255     33    100       210824/0000F384   700        PRES UREL        
+   52   255     34    100       210824/0000F384   700        PRES VREL        
+   53   255     11    100       210824/0000F384   850        PRES TMPK        
+   54   255      7    100       210824/0000F384   850        PRES HGHT        
+   55   255     52    100       210824/0000F384   850        PRES RELH        
+   56   255     33    100       210824/0000F384   850        PRES UREL        
+   57   255     34    100       210824/0000F384   850        PRES VREL        
+   58   255     39    100       210824/0000F384   850        PRES OMEG        
+   59   255     11    100       210824/0000F384   925        PRES TMPK        
+   60   255      7    100       210824/0000F384   925        PRES HGHT        
+   61   255     52    100       210824/0000F384   925        PRES RELH        
+   62   255     33    100       210824/0000F384   925        PRES UREL        
+   63   255     34    100       210824/0000F384   925        PRES VREL        
+   64   255     11    100       210824/0000F384  1000        PRES TMPK        
+   65   255      7    100       210824/0000F384  1000        PRES HGHT        
+   66   255     52    100       210824/0000F384  1000        PRES RELH        
+   67   255     33    100       210824/0000F384  1000        PRES UREL        
+   68   255     34    100       210824/0000F384  1000        PRES VREL        
+   69   255      2    102       210824/0000F384     0        NONE PMSL        
+   70   255     11    105       210824/0000F384     2        HGHT TMPK        
+   71   255     15    105       210824/0000F384     2        HGHT TMXK06      
+   72   255     16    105       210824/0000F384     2        HGHT TMNK06      
+   73   255     52    105       210824/0000F384     2        HGHT RELH        
+   74   255     33    105       210824/0000F384    10        HGHT UREL        
+   75   255     34    105       210824/0000F384    10        HGHT VREL        
+   76   255     71    200       210824/0000F384     0        NONE TCLD        
+
+
+        76 GRIB messages were read or scanned from the GRIB file:
+     fnmoc_gep01.t00z.pgrbaf384                                              
+
+        65 grids were written to the GEMPAK file:
+     fnmoc_gep01_2021082400f384                                              
+
+
+ GRID FILE: fnmoc_gep01_2021082400f384
+
+ GRID NAVIGATION: 
+     PROJECTION:          CED 
+     ANGLES:                 0.0     0.0     0.0
+     GRID SIZE:          360 181
+     LL CORNER:             -90.00      0.00
+     UR CORNER:              90.00    359.00
+
+ GRID ANALYSIS BLOCK: 
+     ANALYSIS TYPE:        BARNES
+     DELTAN:               4.000
+     DELTAX:           -9999.000
+     DELTAY:           -9999.000
+     GRID AREA:           -90.00 -180.00   90.00  180.00
+     EXTEND AREA:         -90.00 -180.00   90.00  180.00
+     DATA AREA:           -90.00 -180.00   90.00  180.00
+
+ Number of grids in file:    65
+
+ Maximum number of grids in file:   4999
+
+ First time in file: 210824/0000F384
+ Last  time in file: 210824/0000F384
+

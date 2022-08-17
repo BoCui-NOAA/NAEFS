@@ -1,0 +1,12 @@
+
+PDY=2022050518
+filelist="
+output_check_cmc_dev    output_check_gefs_dev   output_check_nawipe_dev
+output_check_fnmoc_dev  output_check_naefs_dev"
+
+for file in $filelist; do
+  echo $file.$PDY
+  diff $file.$PDY dir_output/$file.2021082400
+  echo
+done
+

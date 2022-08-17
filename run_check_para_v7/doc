@@ -1,0 +1,7 @@
+
+/u/Richard.Wobus/bin/ckntz
+/u/Richard.Wobus/bin/ckntz
+
+ls -trlc 2018021200*
+
+The times I gave you are correct.  We use a software package that preserves the time stamp of the files from the server we pull them from -- in this case CMC's server.  So when you do a plain "ls -l", you're seeing the time the data was put on Lewis' server.  To find the time that the data was written to the CCS, do an ls -lc.  On the CCS, this gives you the local time.  So you'll see that file you list below was written to the CCS at 2:09 local time.  So the last file was here well in time for your 740Z cutoff.

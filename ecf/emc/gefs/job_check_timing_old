@@ -1,0 +1,8 @@
+ grep "EDT 2021" *  
+ grep "EST 2021" *  
+ grep "EDT 2022" *  
+ grep "EST 2022" *  
+ grep "Exit status "
+grep "Mem: total:" *
+#grep "error ac" *.o*  
+#grep -i "not found" *.o*  

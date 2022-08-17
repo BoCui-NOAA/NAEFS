@@ -1,0 +1,50 @@
+
+CDATE=$1
+ndays=$2
+iday=$3
+
+#CDATE=2018030612
+#ndays=16
+#iday=1
+
+# DCOM=/gpfs/gp1/dcomdev/us007003/${PDY}/wgrbbul/cmcensbc_gb2
+DATA=/gpfs/hps3/emc/ensemble/save/emc.enspara1/bc/naefs.v6.0.0/run_check_para
+
+echo  " CMC 0.5d Raw "
+
+while [ $iday -le $ndays ]; do
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+  DCOM=/gpfs/gp1/nco/ops/dcom/us007003/${PDY}/wgrbbul/cmcens_gb2
+  cd $DCOM
+# echo $CDATE
+# echo  " "
+# ls -ltrc ${CDATE}*latlon0p5x0p5* | head -1 
+# echo  " "
+  ls -ltrc ${CDATE}*latlon0p5x0p5* | tail -2  > $DATA/temp_raw
+  cd $DATA
+  cat temp_raw >> timing_cmcraw_0p5_tail_${cyc}z
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+done
+
+echo  " "
+
+CDATE=$1
+ndays=$2
+iday=$3
+
+echo  " CMC 0.5d Bias Corrected "
+
+while [ $iday -le $ndays ]; do
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+  DCOM=/gpfs/gp1/nco/ops/dcom/us007003/${PDY}/wgrbbul/cmcensbc_gb2
+  cd $DCOM
+  ls -ltrc ${CDATE}*latlon0p5x0p5* | tail -1 > $DATA/temp_raw
+  cd $DATA
+  cat temp_raw >> timing_cmcbc_0p5_tail_${cyc}z
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+done
+

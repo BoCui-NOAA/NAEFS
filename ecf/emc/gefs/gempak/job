@@ -1,0 +1,5 @@
+
+qsub jnaefs_gefs_bias_gempak.ecf
+qsub jnaefs_gefs_debias_gempak.ecf
+qsub jnaefs_gefs_prob_avgspr_gempak.ecf
+

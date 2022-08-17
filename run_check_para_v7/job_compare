@@ -1,0 +1,18 @@
+
+COM1=/gpfs/hps3/emc/ensemble/save/emc.enspara1/bc/naefs.v6.0.0
+COM2=/gpfs/hps/nco/ops/nwpara/naefs.v6.0.2
+
+filelist="exnaefs_dvrtma_prob_avgspr_ak.sh.ecf exnaefs_dvrtma_prob_avgspr_conus.sh.ecf"
+
+for file in $filelist; do
+   diff $COM1/scripts/$file $COM2/scripts/$file
+done
+exit
+
+
+filelist="JNAEFS_DVRTMA_PROB_AVGSPR_CONUS JNAEFS_GEFS_DVRTMA_PROB_AVGSPR_AK
+          JNAEFS_DVRTMA_PROB_AVGSPR_AK    JNAEFS_GEFS_DVRTMA_PROB_AVGSPR_CONUS"
+
+for file in $filelist; do
+   diff $COM1/jobs/$file $COM2/jobs/$file
+done

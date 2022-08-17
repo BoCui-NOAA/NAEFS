@@ -1,0 +1,44 @@
+ day  2021082400
+ dir GEFS pgrb2ap5_bc 5348, without prob fcst 4194 (21*194+122)  
+   5348    5348  171904
+ 
+ GEFS pgrb2ap5_an data 2098 (21*97+61), avg(+192) efi(+96) total 2386 
+   2386    2386   71676
+ 
+ GEFS pgrb2ap5_wt data 2037 
+   2037    2037   61110
+ 
+ 1 degree 
+ dir GEFS pgrb2a_bc 2098, with prob fcst 2674 ( add 96*6)  
+   2674    2674   67234
+ 
+ GEFS pgrb2a_an data 2098, 2290 with avg 
+   2290    2290   57346
+ 
+ GEFS ndgd_gb2 prod 1152, 1154 with dv 
+   1154    1154   46333
+ 
+ GEFS pgrb2ap5 me 157, mecom 96, bar 320, r2 96 
+    157     157   13816
+     96      96    8736
+    320     320   29184
+     96      96    8736
+ 
+ GEFS pgrb2ap5 total 671  
+    671     670   60561
+ 
+ GEFS glbanl 1 
+      1       1      89
+ 
+ NCEP CMC glbanl 1 
+      1       1      97
+ 
+ NCEP FNMOC glbanl 1 
+      1       1      91
+ 
+ NCEP dv at 03 09 15 21 
+      2       2      61
+      2       2      61
+      2       2      61
+      2       2      61
+ 

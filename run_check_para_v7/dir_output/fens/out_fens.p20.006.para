@@ -1,0 +1,99 @@
+ GDFILE    Grid file                         /lfs/h2/emc/vpppg/noscrub/Bo.Cui/com/nawips/v0.0/fens.20210824/fnmoc_gep01_2021082400f006
+ LSTALL    Full list flag                    y
+ OUTPUT    Output device/filename            t
+ GDATTIM   Grid date/time                    all
+ GLEVEL    Grid level                        all
+ GVCORD    Grid vertical coordinate          all
+ GFUNC     Scalar grid                       all
+ Parameters requested: GDFILE,LSTALL,OUTPUT,GDATTIM,GLEVEL,GVCORD,GFUNC.
+ GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO> GEMPAK-GDINFO>
+ GRID FILE: /lfs/h2/emc/vpppg/noscrub/Bo.Cui/com/nawips/v0.0/fens.20210824/fnmoc_gep20_2021082400f006           
+
+ GRID NAVIGATION: 
+     PROJECTION:          CED                 
+     ANGLES:                 0.0     0.0     0.0
+     GRID SIZE:              360     181
+     LL CORNER:           -90.0000    0.0000
+     UR CORNER:            90.0000  359.0000
+
+ GRID ANALYSIS BLOCK: 
+     ANALYSIS TYPE:        BARNES
+     DELTAN:               4.000
+     DELTAX:           -9999.000
+     DELTAY:           -9999.000
+     GRID AREA:           -90.00 -180.00   90.00  180.00
+     EXTEND AREA:         -90.00 -180.00   90.00  180.00
+     DATA AREA:           -90.00 -180.00   90.00  180.00
+
+ Number of grids in file:    65
+
+ Maximum number of grids in file:   4999
+
+  NUM       TIME1              TIME2           LEVL1 LEVL2  VCORD PARM
+    1     210824/0000F006                         10         HGHT UREL        
+    2     210824/0000F006                         10         HGHT VREL        
+    3     210824/0000F006                          2         HGHT TMPK        
+    4     210824/0000F006                          2         HGHT TMXK06      
+    5     210824/0000F006                          2         HGHT TMNK06      
+    6     210824/0000F006                          2         HGHT RELH        
+    7     210824/0000F006                       1000         PRES TMPK        
+    8     210824/0000F006                       1000         PRES HGHT        
+    9     210824/0000F006                       1000         PRES RELH        
+   10     210824/0000F006                       1000         PRES UREL        
+   11     210824/0000F006                       1000         PRES VREL        
+   12     210824/0000F006                        925         PRES TMPK        
+   13     210824/0000F006                        925         PRES HGHT        
+   14     210824/0000F006                        925         PRES RELH        
+   15     210824/0000F006                        925         PRES UREL        
+   16     210824/0000F006                        925         PRES VREL        
+   17     210824/0000F006                        850         PRES TMPK        
+   18     210824/0000F006                        850         PRES HGHT        
+   19     210824/0000F006                        850         PRES RELH        
+   20     210824/0000F006                        850         PRES UREL        
+   21     210824/0000F006                        850         PRES VREL        
+   22     210824/0000F006                        850         PRES OMEG        
+   23     210824/0000F006                        700         PRES TMPK        
+   24     210824/0000F006                        700         PRES HGHT        
+   25     210824/0000F006                        700         PRES RELH        
+   26     210824/0000F006                        700         PRES UREL        
+   27     210824/0000F006                        700         PRES VREL        
+   28     210824/0000F006                        500         PRES TMPK        
+   29     210824/0000F006                        500         PRES HGHT        
+   30     210824/0000F006                        500         PRES RELH        
+   31     210824/0000F006                        500         PRES UREL        
+   32     210824/0000F006                        500         PRES VREL        
+   33     210824/0000F006                        250         PRES TMPK        
+   34     210824/0000F006                        250         PRES HGHT        
+   35     210824/0000F006                        250         PRES RELH        
+Enter <CR> to page or type EXIT:   36     210824/0000F006                        250         PRES UREL        
+   37     210824/0000F006                        250         PRES VREL        
+   38     210824/0000F006                        200         PRES TMPK        
+   39     210824/0000F006                        200         PRES HGHT        
+   40     210824/0000F006                        200         PRES RELH        
+   41     210824/0000F006                        200         PRES UREL        
+   42     210824/0000F006                        200         PRES VREL        
+   43     210824/0000F006                        100         PRES TMPK        
+   44     210824/0000F006                        100         PRES HGHT        
+   45     210824/0000F006                        100         PRES RELH        
+   46     210824/0000F006                        100         PRES UREL        
+   47     210824/0000F006                        100         PRES VREL        
+   48     210824/0000F006                         50         PRES TMPK        
+   49     210824/0000F006                         50         PRES HGHT        
+   50     210824/0000F006                         50         PRES RELH        
+   51     210824/0000F006                         50         PRES UREL        
+   52     210824/0000F006                         50         PRES VREL        
+   53     210824/0000F006                         10         PRES TMPK        
+   54     210824/0000F006                         10         PRES HGHT        
+   55     210824/0000F006                         10         PRES RELH        
+   56     210824/0000F006                         10         PRES UREL        
+   57     210824/0000F006                         10         PRES VREL        
+   58     210824/0000F006                          0         NONE FXLH        
+   59     210824/0000F006                          0         NONE PWTR        
+   60     210824/0000F006                          0         NONE PRES        
+   61     210824/0000F006                          0         NONE FXSH        
+   62     210824/0000F006                          0         NONE SNDM        
+   63     210824/0000F006                          0         NONE P06M        
+   64     210824/0000F006                          0         NONE PMSL        
+   65     210824/0000F006                          0         NONE TCLD        
+ Parameters requested: GDFILE,LSTALL,OUTPUT,GDATTIM,GLEVEL,GVCORD,GFUNC.
+ GEMPAK-GDINFO>

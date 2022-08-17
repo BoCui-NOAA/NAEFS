@@ -1,0 +1,33 @@
+ day  2022080800
+ 
+ dir CMCE prod 2860 (22*130) para 4268(194*22), 2134 for 00z 
+      0       0       0
+ 
+ dir GEFS para anv me mecom gfsme, 96/60 for one cycle
+ dir GEFS para 384 384 384 240    
+    384     384   32256
+      0       0       0
+      0       0       0
+      0       0       0
+ 
+ dir GEFS/an para 13040 (3260 for one cycle) 
+  13040   13040  299920
+ 
+ dir GEFS/bc para 14576 (3644/cycle) 
+  14576   14576  336784
+ 
+ dir naefs para ge* 3456 (864/cycle) 
+   1728    1728  143424
+ 
+2022080800
+Warning !!! NAEFS has gempak files 3456 or 864
+0
+ dir naefs para ndgd* 4608 (1152/cycle) 
+   2304    2304  207744
+ 
+ dir FNMOC para 3880, 1940 for 00z only 
+      0       0       0
+ 
+2022080800
+Warning !!! FNMOC has gempak files 3880 or 1940
+0

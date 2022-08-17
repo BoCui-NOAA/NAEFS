@@ -1,0 +1,204 @@
+0a1,35
+> EOF
+>    GBFILE   = fnmoc_gep01.t00z.pgrbaf384
+>    INDXFL   = 
+>    GDOUTF   = fnmoc_gep01_2022071200f384
+>    PROJ     = 
+>    GRDAREA  = 
+>    KXKY     = 
+>    MAXGRD   = 4999
+>    CPYFIL   = gds
+>    GAREA    = dset
+>    OUTPUT   = T
+>    GBTBLS   = 
+>    GBDIAG   = 
+>    PDSEXT   = no
+>   l
+>   r
+>  GBFILE    GRIB data file name               fnmoc_gep01.t00z.pgrbaf378
+>  INDXFL    GRIB index file name               
+>  GDOUTF    Output grid file                  fnmoc_gep01_2022071200f378
+>  PROJ      Map projection/angles/margins|dr   
+>  GRDAREA   Area covered by grid               
+>  KXKY      Number of grid points in x;y       
+>  MAXGRD    Maximum number of grids           4999
+>  CPYFIL    Grid file whose navigation is to  gds
+>  GAREA     Graphics area                     dset
+>  OUTPUT    Output device/filename            T
+>  GBTBLS    Input GRIB decoding tables         
+>  GBDIAG    GRIB diagnostic elements           
+>  PDSEXT    Y or N, add PDS extension if fou  no
+>  OVERWR    Overwr flag                       NO
+>  Parameters requested: GBFILE,INDXFL,GDOUTF,PROJ,GRDAREA,KXKY,MAXGRD,CPYFIL,
+>  GAREA,OUTPUT,GBTBLS,GBDIAG,PDSEXT,OVERWR.
+>  GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GEMPAK-NAGRIB> GBFILE   = fnmoc_gep01.t00z.pgrbaf384
+>  INDXFL   =  
+>  GDOUTF   = fnmoc_gep01_2022071200f384
+31a67,68
+>  [NA -1]  The table wmogrib255.tbl cannot be opened.
+>  [NA -1]  The table wmogrib255.tbl cannot be opened.
+52a90
+>    11   255     66      1       220712/0000F384     0        NONE SNDM        
+57c95
+<    13   255     61      1       220712/0000F384     0        NONE P06M        
+---
+>    14   255     61      1       220712/0000F384     0        NONE P06M        
+60a99
+> Changing WMO parameter table to wmogrib255.tbl
+63,97c102,134
+<    16   255     11    100       220712/0000F384    10        PRES TMPK        
+<    17   255      7    100       220712/0000F384    10        PRES HGHT        
+<    18   255     52    100       220712/0000F384    10        PRES RELH        
+<    19   255     33    100       220712/0000F384    10        PRES UREL        
+<    20   255     34    100       220712/0000F384    10        PRES VREL        
+<    21   255     11    100       220712/0000F384    50        PRES TMPK        
+<    22   255      7    100       220712/0000F384    50        PRES HGHT        
+<    23   255     52    100       220712/0000F384    50        PRES RELH        
+<    24   255     33    100       220712/0000F384    50        PRES UREL        
+<    25   255     34    100       220712/0000F384    50        PRES VREL        
+<    26   255     11    100       220712/0000F384   100        PRES TMPK        
+<    27   255      7    100       220712/0000F384   100        PRES HGHT        
+<    28   255     52    100       220712/0000F384   100        PRES RELH        
+<    29   255     33    100       220712/0000F384   100        PRES UREL        
+<    30   255     34    100       220712/0000F384   100        PRES VREL        
+<    31   255     11    100       220712/0000F384   200        PRES TMPK        
+<    32   255      7    100       220712/0000F384   200        PRES HGHT        
+<    33   255     52    100       220712/0000F384   200        PRES RELH        
+<    34   255     33    100       220712/0000F384   200        PRES UREL        
+<    35   255     34    100       220712/0000F384   200        PRES VREL        
+<    36   255     11    100       220712/0000F384   250        PRES TMPK        
+<    37   255      7    100       220712/0000F384   250        PRES HGHT        
+<    38   255     52    100       220712/0000F384   250        PRES RELH        
+<    39   255     33    100       220712/0000F384   250        PRES UREL        
+<    40   255     34    100       220712/0000F384   250        PRES VREL        
+<    41   255      7    100       220712/0000F384   300        PRES HGHT        
+<    42   255     33    100       220712/0000F384   300        PRES UREL        
+<    43   255     34    100       220712/0000F384   300        PRES VREL        
+<    44   255     33    100       220712/0000F384   400        PRES UREL        
+<    45   255     34    100       220712/0000F384   400        PRES VREL        
+<    46   255     11    100       220712/0000F384   500        PRES TMPK        
+<    47   255      7    100       220712/0000F384   500        PRES HGHT        
+<    48   255     52    100       220712/0000F384   500        PRES RELH        
+<    49   255     33    100       220712/0000F384   500        PRES UREL        
+<    50   255     34    100       220712/0000F384   500        PRES VREL        
+---
+>    18   255     11    100       220712/0000F384    10        PRES TMPK        
+>    19   255      7    100       220712/0000F384    10        PRES HGHT        
+>    20   255     52    100       220712/0000F384    10        PRES RELH        
+>    21   255     33    100       220712/0000F384    10        PRES UREL        
+>    22   255     34    100       220712/0000F384    10        PRES VREL        
+>    23   255     11    100       220712/0000F384    50        PRES TMPK        
+>    24   255      7    100       220712/0000F384    50        PRES HGHT        
+>    25   255     52    100       220712/0000F384    50        PRES RELH        
+>    26   255     33    100       220712/0000F384    50        PRES UREL        
+>    27   255     34    100       220712/0000F384    50        PRES VREL        
+>    28   255     11    100       220712/0000F384   100        PRES TMPK        
+>    29   255      7    100       220712/0000F384   100        PRES HGHT        
+>    30   255     52    100       220712/0000F384   100        PRES RELH        
+>    31   255     33    100       220712/0000F384   100        PRES UREL        
+>    32   255     34    100       220712/0000F384   100        PRES VREL        
+>    33   255     11    100       220712/0000F384   200        PRES TMPK        
+>    34   255      7    100       220712/0000F384   200        PRES HGHT        
+>    35   255     52    100       220712/0000F384   200        PRES RELH        
+>    36   255     33    100       220712/0000F384   200        PRES UREL        
+>    37   255     34    100       220712/0000F384   200        PRES VREL        
+>    38   255     11    100       220712/0000F384   250        PRES TMPK        
+>    39   255      7    100       220712/0000F384   250        PRES HGHT        
+>    40   255     52    100       220712/0000F384   250        PRES RELH        
+>    41   255     33    100       220712/0000F384   250        PRES UREL        
+>    42   255     34    100       220712/0000F384   250        PRES VREL        
+>    43   255     11    100       220712/0000F384   500        PRES TMPK        
+>    44   255      7    100       220712/0000F384   500        PRES HGHT        
+>    45   255     52    100       220712/0000F384   500        PRES RELH        
+>    46   255     33    100       220712/0000F384   500        PRES UREL        
+>    47   255     34    100       220712/0000F384   500        PRES VREL        
+>    48   255     11    100       220712/0000F384   700        PRES TMPK        
+>    49   255      7    100       220712/0000F384   700        PRES HGHT        
+>    50   255     52    100       220712/0000F384   700        PRES RELH        
+100,128c137,162
+<    51   255     11    100       220712/0000F384   700        PRES TMPK        
+<    52   255      7    100       220712/0000F384   700        PRES HGHT        
+<    53   255     52    100       220712/0000F384   700        PRES RELH        
+<    54   255     33    100       220712/0000F384   700        PRES UREL        
+<    55   255     34    100       220712/0000F384   700        PRES VREL        
+<    56   255     11    100       220712/0000F384   850        PRES TMPK        
+<    57   255      7    100       220712/0000F384   850        PRES HGHT        
+<    58   255     52    100       220712/0000F384   850        PRES RELH        
+<    59   255     33    100       220712/0000F384   850        PRES UREL        
+<    60   255     34    100       220712/0000F384   850        PRES VREL        
+<    61   255     39    100       220712/0000F384   850        PRES OMEG        
+<    62   255     11    100       220712/0000F384   925        PRES TMPK        
+<    63   255      7    100       220712/0000F384   925        PRES HGHT        
+<    64   255     52    100       220712/0000F384   925        PRES RELH        
+<    65   255     33    100       220712/0000F384   925        PRES UREL        
+<    66   255     34    100       220712/0000F384   925        PRES VREL        
+<    67   255     11    100       220712/0000F384  1000        PRES TMPK        
+<    68   255      7    100       220712/0000F384  1000        PRES HGHT        
+<    69   255     52    100       220712/0000F384  1000        PRES RELH        
+<    70   255     33    100       220712/0000F384  1000        PRES UREL        
+<    71   255     34    100       220712/0000F384  1000        PRES VREL        
+<    72   255      2    102       220712/0000F384     0        NONE PMSL        
+<    73   255     11    105       220712/0000F384     2        HGHT TMPK        
+<    74   255     15    105       220712/0000F384     2        HGHT TMXK06      
+<    75   255     16    105       220712/0000F384     2        HGHT TMNK06      
+<    76   255     52    105       220712/0000F384     2        HGHT RELH        
+<    77   255     33    105       220712/0000F384    10        HGHT UREL        
+<    78   255     34    105       220712/0000F384    10        HGHT VREL        
+<    79   255     71    200       220712/0000F384     0        NONE TCLD        
+---
+>    51   255     33    100       220712/0000F384   700        PRES UREL        
+>    52   255     34    100       220712/0000F384   700        PRES VREL        
+>    53   255     11    100       220712/0000F384   850        PRES TMPK        
+>    54   255      7    100       220712/0000F384   850        PRES HGHT        
+>    55   255     52    100       220712/0000F384   850        PRES RELH        
+>    56   255     33    100       220712/0000F384   850        PRES UREL        
+>    57   255     34    100       220712/0000F384   850        PRES VREL        
+>    58   255     39    100       220712/0000F384   850        PRES OMEG        
+>    59   255     11    100       220712/0000F384   925        PRES TMPK        
+>    60   255      7    100       220712/0000F384   925        PRES HGHT        
+>    61   255     52    100       220712/0000F384   925        PRES RELH        
+>    62   255     33    100       220712/0000F384   925        PRES UREL        
+>    63   255     34    100       220712/0000F384   925        PRES VREL        
+>    64   255     11    100       220712/0000F384  1000        PRES TMPK        
+>    65   255      7    100       220712/0000F384  1000        PRES HGHT        
+>    66   255     52    100       220712/0000F384  1000        PRES RELH        
+>    67   255     33    100       220712/0000F384  1000        PRES UREL        
+>    68   255     34    100       220712/0000F384  1000        PRES VREL        
+>    69   255      2    102       220712/0000F384     0        NONE PMSL        
+>    70   255     11    105       220712/0000F384     2        HGHT TMPK        
+>    71   255     15    105       220712/0000F384     2        HGHT TMXK06      
+>    72   255     16    105       220712/0000F384     2        HGHT TMNK06      
+>    73   255     52    105       220712/0000F384     2        HGHT RELH        
+>    74   255     33    105       220712/0000F384    10        HGHT UREL        
+>    75   255     34    105       220712/0000F384    10        HGHT VREL        
+>    76   255     71    200       220712/0000F384     0        NONE TCLD        
+131,132c165,166
+<         79 GRIB messages were read or scanned from the GRIB file:
+<      fnmoc_gep11.t00z.pgrbaf384                                              
+---
+>         76 GRIB messages were read or scanned from the GRIB file:
+>      fnmoc_gep01.t00z.pgrbaf384                                              
+134,135c168,169
+<         69 grids were written to the GEMPAK file:
+<      fnmoc_gep11_2022071200f384                                              
+---
+>         65 grids were written to the GEMPAK file:
+>      fnmoc_gep01_2022071200f384                                              
+138c172
+<  GRID FILE: fnmoc_gep11_2022071200f384
+---
+>  GRID FILE: fnmoc_gep01_2022071200f384
+143c177
+<      GRID SIZE:          720 361
+---
+>      GRID SIZE:          360 181
+145c179
+<      UR CORNER:              90.00    359.50
+---
+>      UR CORNER:              90.00    359.00
+156c190
+<  Number of grids in file:    69
+---
+>  Number of grids in file:    65
+161a196
+> 

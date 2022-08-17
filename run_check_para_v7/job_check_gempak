@@ -1,0 +1,67 @@
+
+
+hourlist="000 006 012 018 024 030 036 042 048 054 060 066 072 078 084 090 096
+          102 108 114 120 126 132 138 144 150 156 162 168 174 180 186 192 198 \
+          204 210 216 222 228 234 240 246 252 258 264 270 276 282 288 294 300 \
+          306 312 318 324 330 336 342 348 354 360 366 372 378 384"
+
+memberlist="c00 p01 p02 p03 p04 p05 p06 p07 p08 p09 p10 p11 p12 p13 p14 p15 p16 p17 p18 p19 p20"
+
+hourlist="006 046 384 "
+memberlist="p01 p20"
+export PDY=20210824
+export cyc=00              
+
+export COM=/lfs/h2/emc/vpppg/noscrub/Bo.Cui/com/nawips/v0.0
+
+###
+# check cmc   
+###
+export COMIN=$COM/fens.$PDY                                           
+for nfhr in $hourlist; do
+for mem  in $memberlist; do
+  export file=cmc_ge${mem}_${PDY}${cyc}f${nfhr}
+  check_gempak_grid > out_fens.${mem}.$nfhr.para.cmc
+done
+done
+
+export COM=/lfs/h1/ops/canned/com/nawips/v0.0
+export COMIN=$COM/fens.$PDY                                           
+for nfhr in $hourlist; do
+for mem  in $memberlist; do
+  export file=cmc_ge${mem}_${PDY}${cyc}f${nfhr}
+  check_gempak_grid > out_fens.${mem}.$nfhr.prod.cmc
+done
+done
+
+for nfhr in $hourlist; do
+for mem  in $memberlist; do
+  diff out_fens.${mem}.$nfhr.para.cmc out_fens.${mem}.$nfhr.prod.cmc
+done
+done
+exit
+###
+# check fnmoc
+###
+export COMIN=$COM/fens.$PDY                                           
+for nfhr in $hourlist; do
+for mem  in $memberlist; do
+  export file=fnmoc_ge${mem}_${PDY}${cyc}f${nfhr}
+  check_gempak_grid > out_fens.${mem}.$nfhr.para
+done
+done
+
+export COM=/lfs/h1/ops/canned/com/nawips/v0.0
+export COMIN=$COM/fens.$PDY                                           
+for nfhr in $hourlist; do
+for mem  in $memberlist; do
+  export file=fnmoc_ge${mem}_${PDY}${cyc}f${nfhr}
+  check_gempak_grid > out_fens.${mem}.$nfhr.prod 
+done
+done
+
+for nfhr in $hourlist; do
+for mem  in $memberlist; do
+  diff out_fens.${mem}.$nfhr.para out_fens.${mem}.$nfhr.prod
+done
+done

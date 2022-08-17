@@ -1,0 +1,7 @@
+
+MON=202206
+cd /lfs/h1/ops/prod/com/naefs/v6.1
+
+ls gefs.${MON}*/*/pgrb2ap5/*ncepcmc*
+#ls gefs.${MON}*/*/pgrb2ap5/*glb*
+ls cmce.${MON}*/*/pgrb2ap5/*glb*

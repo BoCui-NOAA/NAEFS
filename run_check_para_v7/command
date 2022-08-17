@@ -1,0 +1,31 @@
+
+CDATE=2018052400
+export PDY=`echo $CDATE | cut -c1-8`
+export cyc=`echo $CDATE | cut -c9-10`
+
+DCOM=/gpfs/gp1/nco/ops/dcom/us007003/${PDY}/wgrbbul/cmcens_gb2
+cd $DCOM
+
+echo $DCOM
+
+#ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P0* | tail -1
+#ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P1* | tail -1
+#ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P2* | tail -1
+#ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P3* | tail -1
+#ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P4* | tail -1
+
+ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P0* | tail -1
+ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P1* | tail -1
+ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P2* | tail -1
+ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P3* | tail -1
+ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P30* | tail -1
+ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P31* | tail -1
+ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P32* | tail -1
+ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P33* | tail -1
+ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P34* | tail -1
+ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P35* | tail -1
+ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P36* | tail -1
+ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P37* | tail -1
+ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P38* | tail -1
+ls -ltrc ${CDATE}_CMC_naefs_hr_latlon0p5x0p5_P4* | tail -1
+

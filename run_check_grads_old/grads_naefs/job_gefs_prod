@@ -1,0 +1,77 @@
+
+export PDY=20140130
+export cyc=00
+
+export dir_main=/home/people/emc/www/htdocs/gmb/wx20cb/conus_upgrade                    
+export dir_new=gefs_$PDY${cyc}_prod
+
+grib2ctl=/u/Bo.Cui/xbin/grib2ctl
+GXGIF=/u/Bo.Cui/xbin/gxgif        
+
+DATA=/ptmp/Bo.Cui/plot_bias/NAEFS/plot_gefs_$PDY${cyc}_prod
+
+COM=/com/gens/prod
+COMGRADS=/gpfs/td1/emc/ensemble/save/Bo.Cui/parallel_test/grads_naefs
+
+mkdir -p $DATA
+cd $DATA
+
+cp $COMGRADS/pt_u10m.10_90_mode.gs .
+cp $COMGRADS/pt_tmax.10_90_mode.gs .
+cp $COMGRADS/pt_tmin.10_90_mode.gs .
+cp $COMGRADS/pt_t2m.10_90_mode.gs .
+cp /ensemble/noscrub/Bo.Cui/ccs_u/grads/cbarn.gs .
+
+rm *.gif
+
+for cyc in 00 ; do
+
+# mkdir -p $COMIN
+
+for nfhr in 06 120 240 ; do
+#for nfhr in 06; do
+
+  cp $COM/gefs.${PDY}/$cyc/pgrba_bc/*pgrba_bcf$nfhr .
+
+  rm *ctl *gr
+  $grib2ctl -verf ge10pt.t${cyc}z.pgrba_bcf$nfhr > 10pt.ctl
+  gribmap -i 10pt.ctl
+
+  $grib2ctl -verf ge90pt.t${cyc}z.pgrba_bcf$nfhr > 90pt.ctl
+  gribmap -i 90pt.ctl
+
+  $grib2ctl -verf ge50pt.t${cyc}z.pgrba_bcf$nfhr > 50pt.ctl
+  gribmap -i 50pt.ctl
+
+# $grib2ctl -verf gemode.t${cyc}z.pgrba_bcf$nfhr > mode.ctl
+# gribmap -i mode.ctl
+
+  $grib2ctl -verf geavg.t${cyc}z.pgrba_bcf$nfhr > avg.ctl
+  gribmap -i avg.ctl
+
+  $grib2ctl -verf gespr.t${cyc}z.pgrba_bcf$nfhr > spread.ctl
+  gribmap -i spread.ctl
+
+  grads -bcl "pt_u10m.10_90_mode.gs"
+  $GXGIF -r -x 1100 -y 850 -i u10m.gr -o gefs_t${cyc}z_u10m_pt_10_90_mode_$nfhr.gif
+  $GXGIF -r -x 1100 -y 850 -i v10m.gr -o gefs_t${cyc}z_v10m_pt_10_90_mode_$nfhr.gif
+
+  grads -bcl "pt_t2m.10_90_mode.gs"
+  $GXGIF -r -x 1100 -y 850 -i t2m.gr -o gefs_t${cyc}z_t2m_pt_10_90_mode_$nfhr.gif
+
+  grads -bcl "pt_tmax.10_90_mode.gs"
+  $GXGIF -r -x 1100 -y 850 -i tmax.gr -o gefs_t${cyc}z_tmax_pt_10_90_mode_$nfhr.gif
+
+  grads -bcl "pt_tmin.10_90_mode.gs"
+  $GXGIF -r -x 1100 -y 850 -i tmin.gr -o gefs_t${cyc}z_tmin_pt_10_90_mode_$nfhr.gif
+
+# grads -bcl "pt_10_90_mode.gs"
+# $GXGIF -r -x 1100 -y 850 -i z500.gr -o gefs_t${cyc}z_z500_pt_10_90_mode_$nfhr.gif
+
+done
+done
+
+ssh -l bocui emcrzdm "mkdir ${dir_main}/${dir_new}"
+scp *.gif      bocui@emcrzdm:${dir_main}/$dir_new
+
+

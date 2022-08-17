@@ -1,0 +1,274 @@
+----------------------------------------------------
+exnawips - convert NCEP GRIB files into GEMPAK Grids
+----------------------------------------------------
+History: Mar 2000 - First implementation of this new script.
+S Lilly: May 2008 - add logic to make sure that all of the 
+                    data produced from the restricted ECMWF
+                    data on the CCS is properly protected.
+C. Magee: 10/2013 - swap X and Y for rtgssthr Atl and Pac.
+0.010 + DATA=/gpfs/hps3/stmp/Bo.Cui/bc/o/com/output/dev/naefs_cmc_ens_gempak_2018040400.10199/dir_024
+0.010 + export DATA
+0.010 + fstart=024
+0.010 + export fstart
+0.010 + fend=024
+0.010 + export fend
+0.010 + RUN=cmc_gep01
+0.010 + export RUN
+0.010 + member=p01
+0.010 + export member
+0.010 + cd /gpfs/hps3/stmp/Bo.Cui/bc/o/com/output/dev/naefs_cmc_ens_gempak_2018040400.10199/dir_024
+0.010 + msg='Begin job for naefs_cmc_ens_gempak_2018040400'
+0.010 + postmsg /dev/null 'Begin job for naefs_cmc_ens_gempak_2018040400'
+0.112 + cp /gpfs/hps3/emc/ensemble/save/emc.enspara1/bc/naefs.v6.0.0/gempak/fix/g2varswmo2.tbl g2varswmo4.tbl
+0.169 + cp /gpfs/hps3/emc/ensemble/save/emc.enspara1/bc/naefs.v6.0.0/gempak/fix/g2vcrdwmo2.tbl g2vcrdwmo4.tbl
+0.218 + cp /gpfs/hps3/emc/ensemble/save/emc.enspara1/bc/naefs.v6.0.0/gempak/fix/g2varswmo2.tbl g2varscms1.tbl
+0.268 + cp /gpfs/hps3/emc/ensemble/save/emc.enspara1/bc/naefs.v6.0.0/gempak/fix/g2varswmo2.tbl g2varscms0.tbl
+0.341 + cp /gpfs/hps3/emc/ensemble/save/emc.enspara1/bc/naefs.v6.0.0/gempak/fix/g2vcrdncep1.tbl g2vcrdcms0.tbl
+0.400 + NAGRIB_TABLE=/gpfs/hps3/emc/ensemble/save/emc.enspara1/bc/naefs.v6.0.0/gempak/fix/nagrib.tbl
+0.400 + NAGRIB=nagrib2
+0.400 + awk 'index($1,"#") != 1 {print $0}'
+0.400 + grep '^cmc_gep01 ' /gpfs/hps3/emc/ensemble/save/emc.enspara1/bc/naefs.v6.0.0/gempak/fix/nagrib.tbl
+0.436 + entry=''
+0.436 + [ '' '!=' '' ]
+0.436 + cpyfil=gds
+0.436 + garea=dset
+0.436 + gbtbls=''
+0.436 + maxgrd=3500
+0.436 + kxky=''
+0.436 + grdarea=''
+0.436 + proj=''
+0.436 + output=T
+0.436 + pdsext=no
+0.436 + maxtries=180
+0.436 + fhcnt=024
+0.437 + [ 024 -le 024 ]
+0.437 + [ 024 -ge 100 ]
+0.437 + typeset -Z2 fhr
+0.437 + fhr=024
+0.437 + expr 24 % 3
+0.460 + fhcnt3=0
+0.460 + fhr3=024
+0.460 + typeset -Z3 fhr3
+0.460 + GRIBIN=/gpfs/hps/nco/ops/com/naefs/para/cmce.20180404/00/pgrb2ap5/cmc_gep01.t00z.pgrb2a.0p50.f024
+0.460 + [ -s /gpfs/hps/nco/ops/com/naefs/para/cmce.20180404/00/pgrb2ap5/cmc_gep01.t00z.pgrb2a.0p50.f024 ]
+0.472 + GEMGRD=cmc_gep01_2018040400f024
+0.472 + GRIBIN_chk=/gpfs/hps/nco/ops/com/naefs/para/cmce.20180404/00/pgrb2ap5/cmc_gep01.t00z.pgrb2a.0p50.f024
+0.472 + cp /gpfs/hps/nco/ops/com/naefs/para/cmce.20180404/00/pgrb2ap5/cmc_gep01.t00z.pgrb2a.0p50.f024 grib24
+0.760 + pgm='nagrib2 F24'
+0.760 + export pgm
+0.760 + startmsg
+0.865 + /gpfs/hps/nco/ops/nwprod/gempak.v7.3.0/nawips/os/linux3.0.101_x86_64/bin/nagrib2
+0.865 + 0<< \EOF
+EOF
+   GBFILE   = grib24
+   INDXFL   = 
+   GDOUTF   = cmc_gep01_2018040400f024
+   PROJ     = 
+   GRDAREA  = 
+   KXKY     = 
+   MAXGRD   = 3500
+   CPYFIL   = gds
+   GAREA    = dset
+   OUTPUT   = T
+   GBTBLS   = 
+   GBDIAG   = 
+   PDSEXT   = no
+  l
+  r
+ Opening WMO Originating Center Table wmocenter.tbl...
+ Opening WMO GRIB2 Parameter Table g2varswmo4.tbl...
+ Opening WMO GRIB2 Vertical Coordinate Table g2vcrdwmo4.tbl...
+Creating the GEMPAK grid file...
+GEMPAK grid file is ready...
+
+ MESG# GDT# DIS# CAT# ID#  PDT# VCD#    GEMPAK_TIME    LEVL1 LEVL2  VCRD PARM
+    1    0    0    1    8   11    1   180404/0000F024          0        NONE P06M        
+ Opening Local GRIB2 Parameter Table g2varscms1.tbl...
+    5    0    0    1  192   11    1   180404/0000F024          0        NONE WX06        
+    6    0    0    0   10   11    1   180404/0000F024          0        NONE FXLH06      
+    7    0    0    0   11   11    1   180404/0000F024          0        NONE FXSH06      
+   13    0    0    3    5    1  100   180404/0000F024         10        PRES HGHT        
+   14    0    0    3    5    1  100   180404/0000F024         50        PRES HGHT        
+   15    0    0    3    5    1  100   180404/0000F024        100        PRES HGHT        
+   16    0    0    3    5    1  100   180404/0000F024        200        PRES HGHT        
+   17    0    0    3    5    1  100   180404/0000F024        250        PRES HGHT        
+   18    0    0    3    5    1  100   180404/0000F024        300        PRES HGHT        
+   19    0    0    3    5    1  100   180404/0000F024        500        PRES HGHT        
+   20    0    0    3    5    1  100   180404/0000F024        700        PRES HGHT        
+   21    0    0    3    5    1  100   180404/0000F024        850        PRES HGHT        
+   22    0    0    3    5    1  100   180404/0000F024        925        PRES HGHT        
+   23    0    0    3    5    1  100   180404/0000F024       1000        PRES HGHT        
+   24    0    0    2    2    1  100   180404/0000F024         10        PRES UREL        
+   25    0    0    2    3    1  100   180404/0000F024         10        PRES VREL        
+   26    0    0    2    2    1  100   180404/0000F024         50        PRES UREL        
+   27    0    0    2    3    1  100   180404/0000F024         50        PRES VREL        
+   28    0    0    2    2    1  100   180404/0000F024        100        PRES UREL        
+   29    0    0    2    3    1  100   180404/0000F024        100        PRES VREL        
+   30    0    0    2    2    1  100   180404/0000F024        200        PRES UREL        
+   31    0    0    2    3    1  100   180404/0000F024        200        PRES VREL        
+   32    0    0    2    2    1  100   180404/0000F024        250        PRES UREL        
+   33    0    0    2    3    1  100   180404/0000F024        250        PRES VREL        
+   34    0    0    2    2    1  100   180404/0000F024        300        PRES UREL        
+   35    0    0    2    3    1  100   180404/0000F024        300        PRES VREL        
+   36    0    0    2    2    1  100   180404/0000F024        400        PRES UREL        
+   37    0    0    2    3    1  100   180404/0000F024        400        PRES VREL        
+   38    0    0    2    2    1  100   180404/0000F024        500        PRES UREL        
+   39    0    0    2    3    1  100   180404/0000F024        500        PRES VREL        
+   40    0    0    2    2    1  100   180404/0000F024        700        PRES UREL        
+   41    0    0    2    3    1  100   180404/0000F024        700        PRES VREL        
+   42    0    0    2    2    1  100   180404/0000F024        850        PRES UREL        
+   43    0    0    2    3    1  100   180404/0000F024        850        PRES VREL        
+   44    0    0    2    2    1  100   180404/0000F024        925        PRES UREL        
+   45    0    0    2    3    1  100   180404/0000F024        925        PRES VREL        
+   46    0    0    2    2    1  100   180404/0000F024       1000        PRES UREL        
+   47    0    0    2    3    1  100   180404/0000F024       1000        PRES VREL        
+   48    0    0    0    0    1  100   180404/0000F024         10        PRES TMPK        
+   49    0    0    0    0    1  100   180404/0000F024         50        PRES TMPK        
+   50    0    0    0    0    1  100   180404/0000F024        100        PRES TMPK        
+
+ MESG# GDT# DIS# CAT# ID#  PDT# VCD#    GEMPAK_TIME    LEVL1 LEVL2  VCRD PARM
+   51    0    0    0    0    1  100   180404/0000F024        200        PRES TMPK        
+   52    0    0    0    0    1  100   180404/0000F024        250        PRES TMPK        
+   53    0    0    0    0    1  100   180404/0000F024        500        PRES TMPK        
+   54    0    0    0    0    1  100   180404/0000F024        700        PRES TMPK        
+   55    0    0    0    0    1  100   180404/0000F024        850        PRES TMPK        
+   56    0    0    0    0    1  100   180404/0000F024        925        PRES TMPK        
+   57    0    0    0    0    1  100   180404/0000F024       1000        PRES TMPK        
+   58    0    0    1    1    1  100   180404/0000F024         10        PRES RELH        
+   59    0    0    1    1    1  100   180404/0000F024         50        PRES RELH        
+   60    0    0    1    1    1  100   180404/0000F024        100        PRES RELH        
+   61    0    0    1    1    1  100   180404/0000F024        200        PRES RELH        
+   62    0    0    1    1    1  100   180404/0000F024        250        PRES RELH        
+   63    0    0    1    1    1  100   180404/0000F024        500        PRES RELH        
+   64    0    0    1    1    1  100   180404/0000F024        700        PRES RELH        
+   65    0    0    1    1    1  100   180404/0000F024        850        PRES RELH        
+   66    0    0    1    1    1  100   180404/0000F024        925        PRES RELH        
+   67    0    0    1    1    1  100   180404/0000F024       1000        PRES RELH        
+   68    0    0    2    8    1  100   180404/0000F024        850        PRES OMEG        
+   69    0    0    2    2    1  103   180404/0000F024         10        HGHT UREL        
+   70    0    0    2    3    1  103   180404/0000F024         10        HGHT VREL        
+   71    0    0    0    0    1  103   180404/0000F024          2        HGHT TMPK        
+   72    0    0    1    1    1  103   180404/0000F024          2        HGHT RELH        
+ Opening Local GRIB2 Vertical Coordinate Table g2vcrdcms0.tbl...
+   73    0    0    1    3    1  200   180404/0000F024          0        NONE PWTR        
+   74    0    0    3    1    1  101   180404/0000F024          0        NONE PMSL        
+   75    0    0    3    0    1    1   180404/0000F024          0        NONE PRES        
+   76    0    0    6    1    1  200   180404/0000F024          0        NONE TCLD        
+   77    0    0    1   13    1    1   180404/0000F024          0        NONE SWEM        
+   80    0    0    0    5   11  103   180404/0000F024          2        HGHT TMNK06      
+   81    0    0    0    4   11  103   180404/0000F024          2        HGHT TMXK06      
+ Opening Local GRIB2 Parameter Table g2varscms0.tbl...
+   83    0    0    1   11    1    1   180404/0000F024          0        NONE SNDM        
+   84    0    0    0    0    1  106   180404/0000F024          0 10     DPTH TMPK        
+
+ GRID FILE: cmc_gep01_2018040400f024
+
+ GRID NAVIGATION: 
+     PROJECTION:          CED 
+     ANGLES:                 0.0     0.0     0.0
+     GRID SIZE:          720 361
+     LL CORNER:             -90.00      0.00
+     UR CORNER:              90.00     -0.50
+
+ GRID ANALYSIS BLOCK: 
+     ANALYSIS TYPE:        BARNES
+     DELTAN:               4.000
+     DELTAX:           -9999.000
+     DELTAY:           -9999.000
+     GRID AREA:           -90.00 -180.00   90.00  180.00
+     EXTEND AREA:         -90.00 -180.00   90.00  180.00
+     DATA AREA:           -90.00 -180.00   90.00  180.00
+
+ Number of grids in file:    73
+
+ Maximum number of grids in file:   3500
+
+ First time in file: 180404/0000F024
+ Last  time in file: 180404/0000F024
+
+
+
+        85 GRIB messages were read or scanned from the GRIB file:
+                                                                       grib24
+
+        73 grids were written to the GEMPAK file:
+                                                     cmc_gep01_2018040400f024
+
+ GBFILE    GRIB data file name               grib24
+ GDOUTF    Output grid file                  cmc_gec00_2018040400f024
+ PROJ      Map projection/angles/margins|dr   
+ GRDAREA   Area covered by grid               
+ KXKY      Number of grid points in x;y       
+ MAXGRD    Maximum number of grids           3500
+ CPYFIL    Grid file whose navigation is to  gds
+ GAREA     Graphics area                     dset
+ OUTPUT    Output device/filename            T
+ G2TBLS    Input GRIB2 decoding tables        
+ G2DIAG    GRIB2 diagnostic elements          
+ OVERWR    Overwr flag                       NO
+ PDSEXT    Y or N, add PDS extension if fou  no
+ Parameters requested: GBFILE,GDOUTF,PROJ,GRDAREA,KXKY,MAXGRD,CPYFIL,GAREA,
+ OUTPUT,G2TBLS,G2DIAG,OVERWR,PDSEXT.
+ GEMPAK-NAGRIB2> GEMPAK-NAGRIB2> GEMPAK-NAGRIB2> GEMPAK-NAGRIB2> GEMPAK-NAGRIB2> GEMPAK-NAGRIB2> GEMPAK-NAGRIB2> GEMPAK-NAGRIB2> GEMPAK-NAGRIB2> GEMPAK-NAGRIB2> GEMPAK-NAGRIB2> GEMPAK-NAGRIB2> GEMPAK-NAGRIB2> GEMPAK-NAGRIB2> GBFILE   = grib24
+ GDOUTF   = cmc_gep01_2018040400f024
+ PROJ     =  
+ GRDAREA  =  
+ KXKY     =  
+ MAXGRD   = 3500
+ CPYFIL   = gds
+ GAREA    = dset
+ OUTPUT   = T
+ G2TBLS   =  
+ G2DIAG   =  
+ OVERWR   = NO
+ PDSEXT   = no
+ GEMPAK-NAGRIB2> [GB 1]  No GEMPAK parameter name defined for this grid.
+ [GB -34]  Could not convert GRIB2 message to GEMPAK grid.
+ [GB 1]  No GEMPAK parameter name defined for this grid.
+ [GB -34]  Could not convert GRIB2 message to GEMPAK grid.
+ [GB 1]  No GEMPAK parameter name defined for this grid.
+ [GB -34]  Could not convert GRIB2 message to GEMPAK grid.
+ [GB 1]  No GEMPAK parameter name defined for this grid.
+ [GB -34]  Could not convert GRIB2 message to GEMPAK grid.
+ [GB 1]  No GEMPAK parameter name defined for this grid.
+ [GB -34]  Could not convert GRIB2 message to GEMPAK grid.
+ [GB 1]  No GEMPAK parameter name defined for this grid.
+ [GB -34]  Could not convert GRIB2 message to GEMPAK grid.
+ [GB 1]  No GEMPAK parameter name defined for this grid.
+ [GB -34]  Could not convert GRIB2 message to GEMPAK grid.
+ [GB 1]  No GEMPAK parameter name defined for this grid.
+ [GB -34]  Could not convert GRIB2 message to GEMPAK grid.
+ [GB -1]  No GRIB record was found.
+ [GB -34]  Could not convert GRIB2 message to GEMPAK grid.
+ [GB -1]  No GRIB record was found.
+ [GB -34]  Could not convert GRIB2 message to GEMPAK grid.
+ [GB 1]  No GEMPAK parameter name defined for this grid.
+ [GB -34]  Could not convert GRIB2 message to GEMPAK grid.
+ [GB 1]  No GEMPAK parameter name defined for this grid.
+ [GB -34]  Could not convert GRIB2 message to GEMPAK grid.
+ Parameters requested: GBFILE,GDOUTF,PROJ,GRDAREA,KXKY,MAXGRD,CPYFIL,GAREA,
+ OUTPUT,G2TBLS,G2DIAG,OVERWR,PDSEXT.
+ GEMPAK-NAGRIB2>25.849 + err=0
+25.849 + export err
+25.849 + err_chk
+nagrib2 F24 completed cleanly
+25.919 + [ nagrib2 '=' nagrib2 ]
+25.919 + gpend
+26.967 + [ YES '=' YES ]
+26.967 + cp cmc_gep01_2018040400f024 /gpfs/hps3/ptmp/emc.enspara1/bc/o/com/nawips/para/cmce.20180404/.cmc_gep01_2018040400f024
+27.261 + mv /gpfs/hps3/ptmp/emc.enspara1/bc/o/com/nawips/para/cmce.20180404/.cmc_gep01_2018040400f024 /gpfs/hps3/ptmp/emc.enspara1/bc/o/com/nawips/para/cmce.20180404/cmc_gep01_2018040400f024
+27.324 + [ NO '=' YES ]
+27.324 + echo '##### DBN_ALERT_TYPE is: NAEFS_CMCENS_GEMPAK #####'
+##### DBN_ALERT_TYPE is: NAEFS_CMCENS_GEMPAK #####
+27.325 + [ 024 -lt 192 ]
+27.325 + finc=03
+27.325 + let fhcnt=fhcnt+finc
+27.325 + [ 27 -le 024 ]
+**************JOB cmc_gep01 NAWIPS COMPLETED NORMALLY ON THE IBM
+**************JOB cmc_gep01 NAWIPS COMPLETED NORMALLY ON THE IBM
+**************JOB cmc_gep01 NAWIPS COMPLETED NORMALLY ON THE IBM
+27.325 + msg='Job completed normally.'
+27.325 + echo Job completed normally.
+Job completed normally.
+27.325 + postmsg /dev/null 'Job completed normally.'
+27.390 + exit 0

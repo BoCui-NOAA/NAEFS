@@ -1,0 +1,10 @@
+
+
+export COM1=/lfs/h1/ops/canned/com/naefs/v6.1
+export CDATE=2021082400
+
+export homedir='pwd'
+
+echo $homedir
+exit
+$homedir/grads_bc/

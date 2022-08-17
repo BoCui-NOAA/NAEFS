@@ -1,0 +1,17 @@
+
+envir=prod
+RUN=naefs
+PDY=20210824
+
+COMROOT=/lfs/h2/emc/ptmp/Bo.Cui/com
+COMOUT=$COMROOT/nawips/${envir}/${RUN}.${PDY}
+file=dvrtma_alaska_2021082400
+job_check_gempak_grid  $COMOUT/$file  > out_dev_$file
+
+COMROOT=/lfs/h1/ops/canned/com              
+COMOUT=$COMROOT/nawips/v0.0/${RUN}.${PDY}
+file=dvrtma_alaska_2021082400
+job_check_gempak_grid  $COMOUT/$file  > out_prod_$file
+
+diff out_dev_$file out_prod_$file
+

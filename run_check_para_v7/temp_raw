@@ -1,0 +1,7 @@
+2018090400  Head 
+-rw-r--r-- 1 dbnet prod 5572827 Sep  4 04:02 2018090400_CMC_naefsbc_hr_latlon0p5x0p5_P024_000.grib2
+-rw-r--r-- 1 dbnet prod 6280825 Sep  4 04:02 2018090400_CMC_naefsbc_hr_latlon0p5x0p5_P024_011.grib2
+2018090400  Tail 
+-rw-r--r-- 1 dbnet prod 6374412 Sep  4 05:06 2018090400_CMC_naefsbc_hr_latlon0p5x0p5_P324_011.grib2
+-rw-r--r-- 1 dbnet prod 6383961 Sep  4 05:06 2018090400_CMC_naefsbc_hr_latlon0p5x0p5_P318_011.grib2
+ 

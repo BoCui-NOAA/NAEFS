@@ -1,0 +1,45 @@
+
+
+COM=/lfs/h1/ops/prod/output/20220506
+
+grep "UTC 2022" $COM/naefs*_00.o*
+exit
+
+#ls $COM/naefs*_00.o* | wc
+grep " Exit status is 0" $COM/naefs*_00.o*    | wc
+
+#ls $COM/naefs*_06.o*
+grep " Exit status is " $COM/naefs*_00.o*
+#grep -i " not found" $COM/naefs*  
+
+exit
+naefs_cmc_ensbc_prep_00.o1645461
+naefs_cmc_ens_bias_00.o1633762
+naefs_cmc_ens_gempak_00.o1646204
+naefs_cmc_ens_post_00.o1646095
+naefs_cmc_ens_post_extend_00.o1647797
+naefs_dvrtma_bias_ak_00.o1647121
+naefs_dvrtma_bias_ak_gempak_00.o1647166
+naefs_dvrtma_bias_conus_00.o1647122
+naefs_dvrtma_bias_conus_gempak_00.o1647175
+naefs_dvrtma_prob_avgspr_ak_00.o1647224
+naefs_dvrtma_prob_avgspr_ak_gempak_00.o1647584
+naefs_dvrtma_prob_avgspr_conus_00.o1647225
+naefs_dvrtma_prob_avgspr_conus_gempak_00.o1647892
+naefs_fnmoc_ens_bias_00.o1641401
+naefs_fnmoc_ens_debias_00.o1652600
+naefs_fnmoc_ens_gempak_00.o1648932
+naefs_gefs_anfefi_acpr_00.o1647249
+naefs_gefs_anfefi_acpr_18.o1634006
+naefs_gefs_bias_00.o1637584
+naefs_gefs_bias_gempak_00.o1639196
+naefs_gefs_debias_00.o1641942
+naefs_gefs_debias_gempak_00.o1647133
+naefs_gefs_dvrtma_prob_avgspr_ak_00.o1647176
+naefs_gefs_dvrtma_prob_avgspr_conus_00.o1647177
+naefs_gefs_pgrb_enspqpf_00.o1647123
+naefs_gefs_prob_avgspr_00.o1647132
+naefs_gefs_prob_avgspr_gempak_00.o1647173
+naefs_prob_avgspr_00.o1647131
+naefs_prob_avgspr_gempak_00.o1647226
+
