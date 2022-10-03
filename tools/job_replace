@@ -1,0 +1,63 @@
+
+
+filelist="
+JNAEFS_GEFS_24HR_CQPF.ecf  JNAEFS_GEFS_6HR_CQPF.ecf  JNAEFS_GEFS_CLIM_ANFEFI.ecf  JNAEFS_GEFS_CQPF_GEMPAK.ecf  JNAEFS_GEFS_PGRB_ENSPQPF.ecf 
+JNAEFS_NDGD_CQPF.ecf  JNAEFS_NDGD_CQPF_GEMPAK.ecf"
+
+
+COM=/lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/ecf/emc/gefs   
+
+export REPLACE=/u/$LOGNAME/xbin/replace.pl
+
+#filelist=" JNAEFS_GEFS_24HR_CQPF.ecf"
+
+cd $COM
+
+mkdir dir.org
+
+for file in $filelist; do
+  echo $file
+  cp $file $file.org
+done
+
+for file in $filelist; do
+  echo $file
+# $REPLACE $file.org $file.v1 Yan.Luo                                 \$\LOGNAME    
+# $REPLACE $file.v1  $file.v2 v6.1                                    v7.0                    
+# $REPLACE $file.org $file.v1 envir=canned                            envir=prod    
+# $REPLACE $file.v1  $file.v2 RUN_ENVIR=dev                           RUN_ENVIR=nco           
+  $REPLACE $file.org $file.v1 PDY=20220910                            PDY=20220918            
+
+  cp $file.v1 $file
+  rm $file.v*
+  chmod +x $file
+  diff $file $file.org > diff_$file
+  mv $file.org dir.org 
+done
+
+exit
+
+  $REPLACE $file.org $file.v1 {COMROOT}\/\logs\/\jlogfiles\/\jlogfile  {DATA}\/\jlogfile
+  $REPLACE $file.v1  $file.v2 COMROOT\/\logs\/\jlogfiles\/\jlogfile    {DATA}\/\jlogfile
+  $REPLACE $file.v2  $file.v3  {NET}\/\\\$\\{envir}                    {NET}\/\$\{ver}
+  $REPLACE $file.v3  $file.v4  {DCOMROOT}\/\prod                       {DCOMROOT}
+  $REPLACE $file.v4  $file.v5  {DCOMROOT:?}\/\prod                     {DCOMROOT}
+  $REPLACE $file.v5  $file.v6  gefs\/\prod                             gefs\/\$\{gefs_output_ver}
+  $REPLACE $file.v6  $file.v7  cfs\/\prod                              cfs\/\$\{cfs_output_ver}
+  $REPLACE $file.v7  $file.v8  rtma\/\prod                             rtma\/\$\{rtma_output_ver}
+  $REPLACE $file.v8  $file.v9  nawips\/\\\$\\{envir}                   nawips\/\$\{nawips_output_ver}       
+  $REPLACE $file.v9  $file.v10  gpfs\/\hps2\/\nco\/\ops\/\tmpnwprd     lfs\/\f1\/\ops\/\$\envir\/\tmp
+  $REPLACE $file.v10 $file.v11  gefs_output_ver                        gefs_ver                    
+  $REPLACE $file.v11 $file.v12  cfs_output_ver                         cfs_ver                    
+  $REPLACE $file.v12 $file.v13  rtma_output_ver                        rtma_ver                    
+  $REPLACE $file.v13 $file.v14  nawips                                 nawips_ver                    
+
+
+1,$s/gribmap/$SHOME\/\xbin\/\gribmap/g
+1,$s/grib2ctl/$SHOME\/\xbin\/\grib2ctl/g
+1,$s/ftp/$SHOME\/\xbin\/\ftp/g
+1,$s/ftp/$SHOME\/\$LOGNAME\/\xbin\/\ftp/g
+1,$s/yluo/wx20cb/g
+
+
+

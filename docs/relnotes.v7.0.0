@@ -46,21 +46,34 @@ FNMOC Jobs
 
 NCEP/GEFS Jobs
 
-1. jobs/JGEFS_DEBIAS
-  1) scripts/exgefs_debias.sh
+1. jobs/JGEFS_BIAS
+  1) scripts/exnaefs_gefs_bias.sh
+   - modified to add ensemble member from 21 to 31
+
+2. jobs/JGEFS_DEBIAS
+  1) scripts/exnaefs_gefs_debias.sh
   2) ush/gefs_climate_anomaly.sh 
    - modified to add ensemble member from 21 to 31
 
-2. jobs/JNAEFS_GEFS_PROB_AVGSPR
+3. jobs/JNAEFS_GEFS_PROB_AVGSPR
   1) ush/naefs_climate_efi.sh
   2) ush/naefs_climate_anv.sh
   3) ush/naefs_climate_anomaly.sh
    - modified to add ensemble member from 21 to 31
 
-3. jobs/JNAEFS_GEFS_DEBIAS_GEMPAK
+4. jobs/JNAEFS_GEFS_DEBIAS_GEMPAK
    - modified to add ensemble member from 21 to 31
 
-4.  ecf/jnaefs_gefs_debias.ecf            
+5. jobs/JNAEFS_GEFS_6HR_CQPF 
+  1) ush/gefs_enswgrp.sh              
+  2) sorc/efs_enscqpf_6hr.fd/CQPF_6HR.f90
+   - modified to add ensemble member from 22 to 32
+
+6. jobs/JNAEFS_GEFS_NDGD_CQPF
+  1) sorc/conus_ndgd_enscqpf.fd/DSCQPF.f90
+   - modified to add ensemble member from 21 to 31
+
+7.  ecf/jnaefs_gefs_debias.ecf            
    - modified ncpus and mpiprocs setting from 22 to 32
 
 NAEFS Jobs

@@ -1,3 +1,6 @@
 
+mv *qpf*.o* temp
+mv *acpr.o* temp
+exit
 mv na*.e* temp
 mv na*.o* temp

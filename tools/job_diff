@@ -1,0 +1,49 @@
+
+com=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/data_save
+com_v6=$com/v6.1/gefs.20220918/00
+com_v7=$com/v7.0/gefs.20220918/00
+
+# PQPF 
+
+dir=prcp_gb2
+filelist="
+gepqpf.t00z.pgrb2a.0p50.24hf168"
+
+for file in $filelist; do
+  echo $file
+  diff $com_v6/$file $com_v7/$file > dirr_$file
+done
+
+dir=prcp_bc_gb2
+
+# PQPF 
+# APCP accumulation
+# APCP extreme forecast index
+# APCP percentile from climate distribution
+
+filelist="
+gepqpf.t00z.pgrb2a.0p50.bc_06hf180
+gepqpf.t00z.pgrb2a.0p50.bc_24hf180
+geprcp.t00z.pgrb2a.0p50.bc_06hf180
+geprcp.t00z.pgrb2a.0p50.bc_24hf180
+geprcp.t00z.pgrb2a.0p50.efif180
+geprcp.t00z.pgrb2a.0p50.anvf180"
+
+for file in $filelist; do
+  echo $file
+  diff $com_v6/$file $com_v7/$file > dirr_$file
+done
+
+# PQPF and APCP for 06h and 24h
+dir=ndgd_prcp_gb2
+
+filelist="
+gepqpf.t00z.ndgd2p5_conus.06hf180.gb2 
+geprcp.t00z.ndgd2p5_conus.06hf180.gb2
+Gepqpf.t00z.ndgd2p5_conus.24hf180.gb2
+Geprcp.t00z.ndgd2p5_conus.24hf180.gb2"
+
+for file in $filelist; do
+  echo $file
+  diff $com_v6/$file $com_v7/$file > dirr_$file
+done

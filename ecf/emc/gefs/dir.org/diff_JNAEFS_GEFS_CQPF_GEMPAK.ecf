@@ -1,0 +1,10 @@
+46,47c46,47
+< export envir=prod
+< export RUN_ENVIR=nco
+---
+> export envir=canned
+> export RUN_ENVIR=dev
+49c49
+< export PDY=20220910
+---
+> export PDY=20210824

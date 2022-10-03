@@ -1,16 +1,24 @@
 
+DATA=/lfs/h2/emc/ptmp/bo.cui/git
+dir=naefs.v7.0.0
+
+cd $DATA
+rm -rf $DATA/$dir
+git clone git@github.com:BoCui-NOAA/NAEFS.git $dir              
+cd $dir            
+git checkout naefs.v7.0.0_test
+
 COM=/lfs/h2/emc/vpppg/noscrub/bo.cui
 
 subdirlist="ecf          scripts run_check_para_v7      jobs docs ush versions grads "
 subdirlist="ecf ecf_prod scripts run_check_para_v7 sorc jobs docs ush versions grads "
 subdirlist="docs ecf ecf_prod gempak grads jobs modulefiles run_check_grads_old run_check_para_v7 save_docs scripts sorc tools ush versions"
+#subdirlist="ecf"
 
-dir=naefs.v7.0.0
 
-DATA=/lfs/h2/emc/ptmp/bo.cui
-cd $DATA
-mkdir $dir
-cd $dir
+#DATA=/lfs/h2/emc/ptmp/bo.cui
+#cd $DATA
+#cd $dir
 
 # sync dogwood from cactus
 

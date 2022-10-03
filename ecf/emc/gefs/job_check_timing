@@ -6,6 +6,7 @@
  grep -i "missing" *.o*  
  grep -i "stop " *.o*  
  grep -i "exit status"  *.o*  
+exit
 #grep -i -n "No such file" *.o*
 #grep -i "not found" *.o*
 #grep -i "No such file" *.o* | grep -v "bias" | grep -v "input"
