@@ -1,0 +1,25 @@
+export CDATE=2016080100
+ndays=31
+iday=1
+ 
+nhours=/nwprod/util/exec/ndate
+
+export IF_ECMWFANL=NO 
+export IF_NCEPANL=YES
+export IFECMWF=NO
+export IFNCEP=YES
+
+export runini=YES
+export ENSIM=gefs_bcp5_mecom
+
+export COM=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.2/com/naefs/prod
+
+while [ $iday -le $ndays ]; do
+
+  run_anl_gefs > /gpfs/hps/ptmp/Bo.Cui/trash 2>&1
+# bsub < run_anl_gefs
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+done
+

@@ -1,0 +1,26 @@
+export CDATE=2017060100
+ndays=10
+iday=1
+ 
+nhours=/nwprod/util/exec/ndate
+
+export IF_ECMWFANL=NO 
+export IF_NCEPANL=YES
+export IFECMWF=NO
+export IFNCEP=YES
+
+export runini=YES
+export ENSIM=naefs_bcp5
+
+export COM=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod
+
+while [ $iday -le $ndays ]; do
+
+# run_anl_naefs
+  run_anl_naefs > /gpfs/hps/ptmp/Bo.Cui/trash 2>&1&
+# bsub < run_anl_naefs
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+done
+

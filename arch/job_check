@@ -1,0 +1,30 @@
+COM=/gpfs/dell3/nco/storage/fv3gefs/HOME/Bo.Cui/GEFS_V11.3.0/com/gens/prod
+
+monlist="01 02 03 04 05 06 07 08 09 10 11 12"
+monlist="02 03 04 05 06 07 "
+monlist="08 09 10 11 12"
+daylist="01 15"
+
+cyc=00
+for mon in $monlist; do
+for day in $daylist; do
+  echo CDATE=$mon$day 
+  COMOUT=$COM/gefs.2018$mon$day/$cyc/pgrb2a 
+# ls $COMOUT/*mef* | wc
+# ls $COMOUT/*avg*pgrb2af* | wc
+# ls $COMOUT/*gfs* | wc
+# echo " "
+# COMOUT=$COM/gefs.2018$mon$day/$cyc/pgrb2a_bc 
+# ls $COMOUT/*avg* | wc
+
+  COMOUT=$COM/gefs.2018$mon$day/$cyc/pgrb2ap5 
+  ls $COMOUT/*mef* | wc
+  ls $COMOUT/*mecomf* | wc
+  ls $COMOUT/*avg*pgrb2a.0p50.f* | wc
+# ls $COMOUT/*gfs* | wc
+  echo " "
+  COMOUT=$COM/gefs.2018$mon$day/$cyc/pgrb2ap5_bc 
+  ls $COMOUT/*avg* | wc
+done
+done
+

@@ -1,0 +1,66 @@
+
+1.  0.5d gefs analysis and raw (surge)
+
+/gpfs/hps/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev
+
+2. 0.5 bias corrected data (surge $NGLOBAL)
+
+/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod
+
+3. ndgd gefs_p5bcds naefs_p5bcds (surge $NGLOBAL)
+
+/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod
+
+4. 1d gefs analysis, raw, bias corrected (gyre $NGLOBAL2)
+
+/gpfs/gd3/emc/ensemble/noscrub/Bo.Cui/com2/gens/prod
+
+5. ndgd gefs_bcds (gyre $NGLOBAL2)
+
+/ensemble2/noscrub/Bo.Cui/com2/gens/prod
+/gpfs/gd3/emc/ensemble/noscrub/Bo.Cui/com2/gens/prod
+
+6. rtma analysis (gyre $NGLOBAL)
+
+/gpfs/gd1/emc/ensemble/noscrub/Bo.Cui/com/rtma/prod
+
+7. verification
+
+/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/crps_gefs 
+
+
+##################################
+
+1. get 0.5d data and ndgd data (gyre)
+
+/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod/arch_p5/job_total
+
+/gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/tools_p5/job_gefs_raw_avg_g21.sh
+
+2. get 1d data
+
+/ensemble2/noscrub/Bo.Cui/com2/gens/prod/arch/ 
+
+3. get rtma data
+
+/gpfs/gd1/emc/ensemble/noscrub/Bo.Cui/com/rtma/prod/arch/job_total
+
+4. get 0.5d analysis
+
+/gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/tools_p5/job_scp_gegfs_p5_g21
+
+
+#################
+
+/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod/grads_t2m
+
+check p5 data
+
+/gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/tools_p5/job_check_total
+
+
+##############
+
+output 
+
+/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/crps_gefs

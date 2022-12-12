@@ -1,0 +1,28 @@
+export CDATE=2017063000
+ndays=32
+iday=1
+ 
+nhours=/nwprod/util/exec/ndate
+
+export IF_ECMWFANL=NO 
+export IF_NCEPANL=YES
+export IFECMWF=NO
+export IFNCEP=YES
+
+export runini=YES
+export ENSIM=gefs_raw
+export ID=gefs
+
+#export COM=/ensemble2/noscrub/Bo.Cui/com2/gens/prod                           
+export COM=/gpfs/gd3/emc/ensemble/noscrub/Bo.Cui/com2/gens/prod               
+
+while [ $iday -le $ndays ]; do
+
+# run_anl_gefs_1d 
+  run_anl_gefs_1d > /gpfs/hps3/ptmp/Bo.Cui/trash 2>&1&
+# bsub < run_anl_gefs_1d  
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+done
+

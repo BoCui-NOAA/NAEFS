@@ -1,0 +1,29 @@
+export CDATE=2018050100
+ndays=15
+iday=1
+ 
+nhours=/nwprod/util/exec/ndate
+
+export IF_ECMWFANL=NO 
+export IF_NCEPANL=YES
+export IFECMWF=NO
+export IFNCEP=YES
+
+export runini=NO 
+export ENSIM=gefs_rawp5
+
+#export COM=/gpfs/hps3/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev
+export COM=$NGLOBAL/Bo.Cui/com/naefs/para                                            
+
+while [ $iday -le $ndays ]; do
+
+# run_anl_gefs
+  run_anl_gefs      > /gpfs/hps3/ptmp/Bo.Cui/trash 2>&1& 
+# run_anl_gefs_temp > /gpfs/hps3/ptmp/Bo.Cui/trash 2>&1& 
+# run_anl_gefs > /gpfs/hps3/ptmp/Bo.Cui/trash 2>&1
+# bsub < run_anl_gefs_temp  
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+done
+

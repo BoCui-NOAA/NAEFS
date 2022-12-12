@@ -1,0 +1,24 @@
+
+#grid='20 6 0 0 0 0 0 0 720 361 0 0 90000000 0 48 -90000000 359500000 500000 500000'
+grid='0 6 0 0 0 0 0 0 360 181 0 0 90000000 0 48 -90000000 359000000 1000000 1000000 0' 
+
+COM1=/gpfs/dell3/nco/storage/fv3gefs/HOME/Bo.Cui/GEFS_V11.3.0/com/gens/prod
+CDATE=2019042200
+
+PDY=`echo $CDATE | cut -c1-8`
+cyc=`echo $CDATE | cut -c9-10`
+echo " day " $PDY$cyc
+
+infile0=gec00.t${cyc}z.pgrb2a.0p50.f000
+outfile=gec00.t${cyc}z.pgrb2af00
+outfile2=gec00.t${cyc}z.pgrbaf00
+rm $infile0
+cp $COM1/gefs.$PDY/$cyc/pgrb2ap5/$infile0 .
+/gpfs/dell1/nco/ops/nwprod/grib_util.v1.1.0/exec/copygb2 -g "$grid" -i1 -x $infile0 $outfile
+
+$CNVGRIB -g21 $outfile    $outfile2.$PDY$cyc
+
+exit
+#$COPYGB2 -g "$grid" -i1,1 -x $COM/$file $outfile
+ls $COM/$file
+/gpfs/dell1/nco/ops/nwprod/grib_util.v1.1.0/exec/copygb2 -g "$grid" -i1,1 -x $COM/$file $outfile

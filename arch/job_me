@@ -1,0 +1,15 @@
+
+nohup get_gefs.sh 2018110100 &
+nohup get_gefs.sh 2018111500 &
+exit
+
+nohup get_gefs.sh 2018120100 &
+nohup get_gefs.sh 2018121500 &
+nohup get_gefs.sh 2019110100 &
+nohup get_gefs.sh 2019111500 &
+nohup get_gefs.sh 2018100100 &
+nohup get_gefs.sh 2018101500 &
+nohup get_gefs.sh 2018090100 &
+nohup get_gefs.sh 2018091500 &
+nohup get_gefs.sh 2018080100 &
+nohup get_gefs.sh 2018081500 &

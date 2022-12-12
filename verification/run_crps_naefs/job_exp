@@ -1,0 +1,22 @@
+export CDATE=2015042700
+ndays=1
+iday=1
+ 
+nhours=/nwprod/util/exec/ndate
+
+export IF_ECMWFANL=NO 
+export IF_NCEPANL=YES
+export IFECMWF=NO
+export IFNCEP=YES
+
+export runini=NO 
+export ENSIM=gefs
+
+while [ $iday -le $ndays ]; do
+
+  run_anl_gefs     $CDATE   
+
+  iday=`expr $iday + 1`
+  export CDATE=`$nhours +24 $CDATE`
+done
+

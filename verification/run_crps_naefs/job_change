@@ -1,0 +1,31 @@
+filelist="exnaefs_crps_centers.sh.sms job_gefs_rawp5   run_anl_gefs.org
+exnaefs_crps_centers.sh.sms_nodebias  job_combine_fcst     job_naefs_bc     run_anl_gefs_temp
+exnaefs_crps.sh.sms                   job_exp              job_naefs_bcp5   run_anl_naefs
+exnaefs_crps.sh.sms_1d                job_gefs_bc                           run_anl_naefs.org
+exnaefs_crps.sh.sms_c00               job_gefs_bcp5        readme
+exnaefs_crps.sh.sms_org               job_gefs_bcp5_mecom  run_anl_gefs
+exnaefs_crps.sh.sms_wind              job_gefs_raw         run_anl_gefs_1d"
+
+#filelist="run_anl_naefs"
+
+export REPLACE=/u/Bo.Cui/xbin/replace.pl
+
+mkdir dir.org
+
+for file in $filelist; do
+  echo $file
+  cp $file $file.org
+done
+
+for file in $filelist; do
+  echo $file
+  $REPLACE $file.org $file.v1 hps\/emc    hps3\/emc             
+  $REPLACE $file.v1  $file.v2 hps\/ptmp   hps3\/ptmp            
+  $REPLACE $file.v2  $file.v3 hps\/stmp   hps3\/stmp            
+
+  cp $file.v3 $file
+  rm $file.v*
+  chmod +x $file
+  diff $file $file.org > diff_$file
+  mv $file.org dir.org 
+done

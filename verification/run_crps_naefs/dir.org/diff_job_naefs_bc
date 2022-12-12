@@ -1,0 +1,4 @@
+22c22
+<   run_anl_gefs_1d > /gpfs/hps3/ptmp/Bo.Cui/trash 2>&1&
+---
+>   run_anl_gefs_1d > /gpfs/hps/ptmp/Bo.Cui/trash 2>&1&

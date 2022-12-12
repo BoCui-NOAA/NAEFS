@@ -1,0 +1,30 @@
+
+1. /NCEPPROD/1year/hpssprod/runhistory/rh2019/201904/20190422
+
+com2_gens_prod_gefs.20190422_00.ensstat.tar
+com2_gens_prod_gefs.20190422_00.sfcsig.tar
+com2_gens_prod_gefs.20190422_00.sflux.tar
+com2_gens_prod_gefs.20190422_00.track.tar
+gpfs_hps_nco_ops_com_naefs_prod_gefs.20190422_00.pgrb2ap5_an.tar
+gpfs_hps_nco_ops_com_naefs_prod_gefs.20190422_00.pgrb2ap5_wt.tar
+gpfs_hps_nco_ops_com_naefs_prod_gefs.20190422_00.prcp_gb2.tar
+
+2. /NCEPPROD/2year/hpssprod/runhistory/rh2019/201904/20190422
+
+gpfs_hps_nco_ops_com_naefs_prod_cmce.20190422_00.pgrb2ap5_bc.tar
+gpfs_hps_nco_ops_com_naefs_prod_fens.20190422_00.pgrb2a_bc.tar
+gpfs_hps_nco_ops_com_naefs_prod_gefs.20190422_00.ndgd_gb2.tar
+gpfs_hps_nco_ops_com_naefs_prod_gefs.20190422_00.pgrb2ap5.tar
+gpfs_hps_nco_ops_com_naefs_prod_gefs.20190422_00.pgrb2ap5_bc.tar
+gpfs_hps_nco_ops_com_naefs_prod_naefs.20190422_00.ndgd_gb2.tar
+gpfs_hps_nco_ops_com_naefs_prod_naefs.20190422_00.pgrb2ap5_bc.tar
+
+3.  /NCEPPROD/hpssprod/runhistory/rh2019/201904/20190422
+
+gpfs_hps_nco_ops_com_naefs_prod_cmce.20190422_00.pgrb2ap5.tar
+gpfs_hps_nco_ops_com_naefs_prod_fens.20190422_00.pgrb2a.tar
+
+4. /NCEPPROD/hpssprod/runhistory/rh2018/201804/20180422
+
+com2_gens_prod_gefs.20180422_00.init.tar     com2_gens_prod_gefs.20180422_00.pgrb2a.tar
+com2_gens_prod_gefs.20180422_00.mos.tar

@@ -1,0 +1,20 @@
+CDATE=2019042000
+ndays=2
+iday=1
+
+COMIN=/gpfs/gp2/nco/ops/com/gens/prod                                                                
+COM=/gpfs/dell3/nco/storage/fv3gefs/HOME/Bo.Cui/GEFS_V11.3.0/com/gens/prod
+
+while [ $iday -le $ndays ]; do
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+  echo $CDATE
+  COMOUT=$COM/gefs.$PDY/$cyc/ensstat
+  mkdir -p $COMOUT
+  echo " "
+  cd $COMOUT
+  cp $COMIN/gefs.$PDY/$cyc/ensstat/* .
+  ls $COMOUT | wc
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+done

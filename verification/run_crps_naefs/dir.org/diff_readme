@@ -1,0 +1,40 @@
+4c4
+< /gpfs/hps3/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev
+---
+> /gpfs/hps/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev
+8c8
+< /gpfs/hps3/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod
+---
+> /gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod
+12c12
+< /gpfs/hps3/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod
+---
+> /gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod
+29c29
+< /gpfs/hps3/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/crps_gefs 
+---
+> /gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/crps_gefs 
+36c36
+< /gpfs/hps3/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod/arch_p5/job_total
+---
+> /gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod/arch_p5/job_total
+38c38
+< /gpfs/hps3/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/tools_p5/job_gefs_raw_avg_g21.sh
+---
+> /gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/tools_p5/job_gefs_raw_avg_g21.sh
+50c50
+< /gpfs/hps3/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/tools_p5/job_scp_gegfs_p5_g21
+---
+> /gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/tools_p5/job_scp_gegfs_p5_g21
+55c55
+< /gpfs/hps3/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod/grads_t2m
+---
+> /gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod/grads_t2m
+59c59
+< /gpfs/hps3/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/tools_p5/job_check_total
+---
+> /gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/tools_p5/job_check_total
+66c66
+< /gpfs/hps3/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/crps_gefs
+---
+> /gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/crps_gefs

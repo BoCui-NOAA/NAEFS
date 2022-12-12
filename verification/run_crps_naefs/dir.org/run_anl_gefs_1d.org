@@ -1,0 +1,92 @@
+#!/bin/bash
+#BSUB -J jvrfy_rtma
+#BSUB -o /gpfs/hps/ptmp/Bo.Cui/output/jvrfy_rtma.%J
+#BSUB -e /gpfs/hps/ptmp/Bo.Cui/output/jvrfy_rtma.%J
+#BSUB -cwd /gpfs/hps/ptmp/Bo.Cui
+#BSUB -P GEN-T2O
+#BSUB -q dev
+##BSUB -q debug
+#BSUB -W 1:30
+#BSUB -M 2000
+
+# EXPORT list here
+
+export IOBUF_PARAMS='*:sync,%stdout:sync'
+
+set -xue
+
+########################
+# add the following part
+########################
+
+module load PrgEnv-intel/5.2.56
+module use /gpfs/hps/nco/ops/nwprod/modulefiles
+module load prod_util
+module load grib_util/1.0.3
+module load ecflow
+
+###
+### define the directory and utility
+###
+
+nhoursx=/nwprod/util/exec/ndate
+
+export COMIN=/gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1
+export HOMESH=/gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1      
+
+COMOUTJOB=/ptmpp1/Bo.Cui/output
+
+###
+### Define the time for each cycle and different days
+###
+
+PDY=`echo $CDATE | cut -c1-8`
+cyc=`echo $CDATE | cut -c9-10`
+
+#PDYm1=`echo ${ymdh} | cut -c1-8`
+
+CUE=transfer
+
+###############################
+### 01 Submit job for NCEP NCEP   
+###############################
+
+job=$COMIN/run_crps_naefs/exnaefs_crps.sh.sms_1d
+
+for cyc in 00; do
+for id in $ID; do
+
+  echo "++++++ Submite the ecmwf raw job for 00z ++++++"
+
+  export CDATE=$PDY$cyc    
+
+# export runini=NO 
+
+  export ENSIM
+  export id
+  export runini
+
+  export COMCLIM=$HOMESH/fix_1d
+
+  if [ "$IFECMWF" = "YES" ]; then
+    export COMOUT=$NGLOBAL/$LOGNAME/com/gens/crps_ecmwf/wrt_ecmwf_gfs 
+  elif [ "$IFNCEP" = "YES" ]; then
+    export COMOUT=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/crps_gefs
+  fi
+
+  export DATA=$PTMP/$LOGNAME/ecmwf_vrfy/scores_${id}_${CDATE}_ini${runini}_$ENSIM.$IFECMWF
+
+  out=$COMOUTJOB/vrfy_out_${id}_${CDATE}_ini${runini}
+
+  $job
+
+done
+done
+
+if [ $? -ne 0 ]; then
+  ecflow_client --abort
+  exit
+fi
+
+#%include <tail.h>
+#%manual

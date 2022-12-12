@@ -1,0 +1,18 @@
+3,5c3,5
+< #BSUB -o /gpfs/hps3/ptmp/Bo.Cui/output/jvrfy_rtma.%J
+< #BSUB -e /gpfs/hps3/ptmp/Bo.Cui/output/jvrfy_rtma.%J
+< #BSUB -cwd /gpfs/hps3/ptmp/Bo.Cui
+---
+> #BSUB -o /gpfs/hps/ptmp/Bo.Cui/output/jvrfy_rtma.%J
+> #BSUB -e /gpfs/hps/ptmp/Bo.Cui/output/jvrfy_rtma.%J
+> #BSUB -cwd /gpfs/hps/ptmp/Bo.Cui
+34,35c34,35
+< export COMIN=/gpfs/hps3/emc/ensemble/save/Bo.Cui/naefs.v6.0.1
+< export HOMESH=/gpfs/hps3/emc/ensemble/save/Bo.Cui/naefs.v6.0.1      
+---
+> export COMIN=/gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1
+> export HOMESH=/gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1      
+74c74
+<     export COMOUT=/gpfs/hps3/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/crps_gefs
+---
+>     export COMOUT=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/crps_gefs

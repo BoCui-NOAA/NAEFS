@@ -1,0 +1,16 @@
+22c22
+< export EXECVERF=/gpfs/hps3/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/exec
+---
+> export EXECVERF=/gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/exec
+223c223
+<       COMANL=/gpfs/hps3/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev/gefs.${aymd}/${acyc}/pgrbap5
+---
+>       COMANL=/gpfs/hps/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev/gefs.${aymd}/${acyc}/pgrbap5
+232c232
+<       COMANL=/gpfs/hps3/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev/gefs.${aymd}/${acyc}/pgrbap5
+---
+>       COMANL=/gpfs/hps/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev/gefs.${aymd}/${acyc}/pgrbap5
+320c320
+<   COMFCSTT=/gpfs/hps3/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod/${id}.${fymd}/${fcyc}/pgrbap5_bc
+---
+>   COMFCSTT=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod/${id}.${fymd}/${fcyc}/pgrbap5_bc

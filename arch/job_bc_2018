@@ -1,0 +1,13 @@
+
+nohup get_gefs_bc.sh_2018 2018020100 &
+nohup get_gefs_bc.sh_2018 2018021500 &
+nohup get_gefs_bc.sh_2018 2018030100 &
+nohup get_gefs_bc.sh_2018 2018031500 &
+nohup get_gefs_bc.sh_2018 2018040100 &
+nohup get_gefs_bc.sh_2018 2018041500 &
+nohup get_gefs_bc.sh_2018 2018050100 &
+nohup get_gefs_bc.sh_2018 2018051500 &
+nohup get_gefs_bc.sh_2018 2018060100 &
+nohup get_gefs_bc.sh_2018 2018061500 &
+nohup get_gefs_bc.sh_2018 2018070100 &
+nohup get_gefs_bc.sh_2018 2018071500 &

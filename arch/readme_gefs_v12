@@ -1,0 +1,4 @@
+
+HPSS_DIR: /NCEPDEV/emc-ensemble/2year/emc.enspara/fv3gefs/RETRO
+
+KEEP_DIR: /gpfs/hps2/nco/storage/fv3gefs/RETRO

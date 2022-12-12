@@ -1,0 +1,11 @@
+
+nohup get_gefs.sh 2019010100 &
+nohup get_gefs.sh 2019011500 &
+nohup get_gefs.sh 2019020100 &
+nohup get_gefs.sh 2019021500 &
+nohup get_gefs.sh 2019030100 &
+nohup get_gefs.sh 2019031500 &
+nohup get_gefs.sh 2019040100 &
+nohup get_gefs.sh 2019041500 &
+nohup get_gefs.sh 2019050100 &
+nohup get_gefs.sh 2019051500 &
