@@ -1,0 +1,27 @@
+set -x
+PDY=$1                 
+
+filelist=" fnmoc_glbanl"
+
+COM_IN=/com2/gens/prod
+
+for cyc in 00 06 12 18; do
+
+COMIN=$COM_IN/fens.$PDY/$cyc/pgrb2a
+COMOUT=$COM_OUT/fens.$PDY/$cyc/pgrb2a
+
+mkdir -p $COMOUT
+
+for file in $filelist; do
+
+   ifile_in2=${file}.t${cyc}z.pgrb2a_mdf00
+
+   if [ -s $COMIN/$ifile_in2 ]; then
+#    if [ ! -s $COMOUT/$ifile_in2 ]; then
+       cp $COMIN/$ifile_in2 $COMOUT/$ifile_in2
+#    fi
+   fi
+
+done
+done
+

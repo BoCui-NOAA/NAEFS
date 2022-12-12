@@ -1,0 +1,76 @@
+++ date +%y%m%d%H
++ Date=22112114
++ CDATE=2022112000
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate -48 2022112000
++ CDATE=2022111800
+++ echo 2022111800
+++ cut -c1-8
++ PDYm2=20221118
+++ echo 2022111800
+++ cut -c9-10
++ cyc=00
++ COMROOT=/lfs/h1/ops/prod/com/naefs/v6.1
++ COM_OUT=/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1
++ dirlist=pgrb2ap5
++ for cyc in 00 06 12 18
++ for dir in $dirlist
++ COMOUT=/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221118/00/pgrb2ap5
++ mkdir -p /lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221118/00/pgrb2ap5
++ cp /lfs/h1/ops/prod/com/naefs/v6.1/gefs.20221118/00/pgrb2ap5/ncepcmc_glbanl.t00z.pgrb2a.0p50_mdf000 /lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221118/00/pgrb2ap5
++ for cyc in 00 06 12 18
++ for dir in $dirlist
++ COMOUT=/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221118/06/pgrb2ap5
++ mkdir -p /lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221118/06/pgrb2ap5
++ cp /lfs/h1/ops/prod/com/naefs/v6.1/gefs.20221118/06/pgrb2ap5/ncepcmc_glbanl.t06z.pgrb2a.0p50_mdf000 /lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221118/06/pgrb2ap5
++ for cyc in 00 06 12 18
++ for dir in $dirlist
++ COMOUT=/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221118/12/pgrb2ap5
++ mkdir -p /lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221118/12/pgrb2ap5
++ cp /lfs/h1/ops/prod/com/naefs/v6.1/gefs.20221118/12/pgrb2ap5/ncepcmc_glbanl.t12z.pgrb2a.0p50_mdf000 /lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221118/12/pgrb2ap5
++ for cyc in 00 06 12 18
++ for dir in $dirlist
++ COMOUT=/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221118/18/pgrb2ap5
++ mkdir -p /lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221118/18/pgrb2ap5
++ cp /lfs/h1/ops/prod/com/naefs/v6.1/gefs.20221118/18/pgrb2ap5/ncepcmc_glbanl.t18z.pgrb2a.0p50_mdf000 /lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221118/18/pgrb2ap5
+++ bash
++ output=4
++ echo output= 4
+output= 4
++ '[' 4 -ne 4 ']'
++ cyc=00
++ dirlist='pgrb2ap5_bc ndgd_gb2'
++ modlelist='gefs naefs'
++ for mod in $modlelist
++ for dir in $dirlist
++ COMOUT=/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221120/00/pgrb2ap5_bc
++ mkdir -p /lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221120/00/pgrb2ap5_bc
+++ bash
++ output=384
++ echo output= 384
+output= 384
++ '[' 384 -ne 384 -a 384 -ne 192 ']'
++ for dir in $dirlist
++ COMOUT=/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221120/00/ndgd_gb2
++ mkdir -p /lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/gefs.20221120/00/ndgd_gb2
+++ bash
++ output=384
++ echo output= 384
+output= 384
++ '[' 384 -ne 384 -a 384 -ne 192 ']'
++ for mod in $modlelist
++ for dir in $dirlist
++ COMOUT=/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/naefs.20221120/00/pgrb2ap5_bc
++ mkdir -p /lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/naefs.20221120/00/pgrb2ap5_bc
+++ bash
++ output=192
++ echo output= 192
+output= 192
++ '[' 192 -ne 384 -a 192 -ne 192 ']'
++ for dir in $dirlist
++ COMOUT=/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/naefs.20221120/00/ndgd_gb2
++ mkdir -p /lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1/naefs.20221120/00/ndgd_gb2
+++ bash
++ output=384
++ echo output= 384
+output= 384
++ '[' 384 -ne 384 -a 384 -ne 192 ']'

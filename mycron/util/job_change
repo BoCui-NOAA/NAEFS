@@ -1,0 +1,20 @@
+filelist="devens_scp.sh       gefsens_save.sh_temp       naefs_hpss.sh       naefs_hpss.sh_temp1
+devens_scp.sh_temp  gefsens_scp.ecf       naefs_hpss.sh_org
+gefsens_save.sh     gefsens_scp.sh        naefs_hpss.ecf  naefs_hpss.sh_temp"
+
+export REPLACE=/u/emc.enspara1/xbin/replace.pl
+
+for file in $filelist; do
+  echo $file
+  cp $file $file.org
+done
+
+for file in $filelist; do
+  echo $file
+  $REPLACE $file.org $file.v1 hps\/    hps3\/             
+
+  cp $file.v1 $file
+  rm $file.v*
+  chmod +x $file
+  diff $file $file.org > diff_$file
+done

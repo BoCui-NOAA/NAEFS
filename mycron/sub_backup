@@ -1,0 +1,123 @@
+set -x
+
+#Date=`date +%y%m%d%H`
+#CDATE=20$Date
+
+CDATE=2022120600
+
+dir=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/mycron
+
+
+ndays=1
+iday=1
+
+while [ $iday -le $ndays ]; do
+
+export YYMMDD=`echo $CDATE | cut -c1-8`
+export CYC=00                               
+echo " day " $YYMMDD$cyc
+
+# 1
+
+job=sub_jnaefs_gefs_debias.ecf
+
+rm $dir/backup/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/backup/$job.temp
+
+cd $dir/backup 
+#qsub $dir/backup/$job.temp
+
+sleep 7200
+
+# 2
+
+job=sub_jnaefs_gefs_prob_avgspr.ecf
+
+rm $dir/backup/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/backup/$job.temp
+
+cd $dir/backup 
+qsub $dir/backup/$job.temp
+
+
+# 3
+
+job=sub_jnaefs_prob_avgspr.ecf
+
+rm $dir/backup/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/backup/$job.temp
+
+cd $dir/backup 
+qsub $dir/backup/$job.temp
+
+sleep 3600
+
+# 4
+
+job=sub_jnaefs_gefs_dvrtma_prob_avgspr_conus.ecf 
+
+rm $dir/backup/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/backup/$job.temp
+
+cd $dir/backup 
+qsub $dir/backup/$job.temp
+
+# 5
+
+job=sub_jnaefs_gefs_dvrtma_prob_avgspr_ak.ecf 
+
+rm $dir/backup/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/backup/$job.temp
+
+cd $dir/backup 
+qsub $dir/backup/$job.temp
+
+# 6
+
+job=sub_jnaefs_dvrtma_prob_avgspr_conus.ecf   
+
+rm $dir/backup/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/backup/$job.temp
+
+cd $dir/backup 
+qsub $dir/backup/$job.temp
+
+# 7
+
+job=sub_jnaefs_dvrtma_prob_avgspr_ak.ecf   
+
+rm $dir/backup/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/backup/$job.temp
+
+cd $dir/backup 
+qsub $dir/backup/$job.temp
+
+
+sleep 7200
+
+iday=`expr $iday + 1`
+export CDATE=`$NDATE +24 $CDATE`
+
+done
+

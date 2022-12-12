@@ -12,7 +12,7 @@ COM=/lfs/h2/emc/vpppg/noscrub/bo.cui
 
 subdirlist="ecf          scripts run_check_para_v7      jobs docs ush versions grads "
 subdirlist="ecf ecf_prod scripts run_check_para_v7 sorc jobs docs ush versions grads "
-subdirlist="docs ecf ecf_prod gempak grads jobs modulefiles run_check_grads_old run_check_para_v7 save_docs scripts sorc tools ush versions"
+subdirlist="mycron docs ecf ecf_prod gempak grads jobs modulefiles run_check_grads_old run_check_para_v7 save_docs scripts sorc tools ush versions"
 #subdirlist="ecf"
 
 

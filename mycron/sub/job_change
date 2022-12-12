@@ -1,0 +1,35 @@
+filelist="cron.data      sub_cmcensbc_prep_temp  sub_gefs_avgspr_00z   sub_gefs_debias_12z
+crontab.master_luna      sub_dvrtma              sub_gefs_avgspr_06z   sub_gefs_debias_18z
+crontab.master_luna_org  sub_dvrtma_avgspr       sub_gefs_avgspr_12z   sub_gefs_debias_temp
+crontab.master_surge     sub_dvrtma_avgspr_temp  sub_gefs_avgspr_18z   sub_gefs_dvrtma_avgspr
+                         sub_dvrtma_temp         sub_gefs_avgspr_temp  sub_naefs_avgspr
+                         sub_fnmoc_bias          sub_gefs_bias         sub_naefs_avgspr_temp
+sub_cmce_bias            sub_fnmoc_bias_temp     sub_gefs_bias_temp    sub_naefs_dvrtma_avgspr
+sub_cmcens_post          sub_fnmoc_debias        sub_gefs_debias       sub_naefs_hpss
+sub_cmcens_post_temp     sub_fnmoc_debias_temp   sub_gefs_debias_00z
+sub_cmcensbc_prep        sub_gefs_avgspr         sub_gefs_debias_06z"
+
+#filelist="sub_cmce_bias"  
+
+export REPLACE=/u/$LOGNAME/xbin/replace.pl
+
+mkdir dir.org
+
+for file in $filelist; do
+  echo $file
+  cp $file $file.org
+done
+
+for file in $filelist; do
+  echo $file
+# $REPLACE $file.org $file.v1 hps\/emc    hps3\/emc             
+# $REPLACE $file.v1  $file.v2 hps\/ptmp   hps3\/ptmp            
+# $REPLACE $file.v2  $file.v3 hps\/stmp   hps3\/stmp            
+
+  $REPLACE $file.org $file.v1 gpfs\/hps3\/emc\/ensemble\/save\/emc.enspara1\/bc\/naefs.v6.0.0\/ecf lfs\/h2\/emc\/vpppg\/noscrub\/$LOGNAME\/naefs.v7.0.0\/mycron\/ecf
+  cp $file.v1 $file
+  rm $file.v*
+  chmod +x $file
+  diff $file $file.org > diff_$file
+  mv $file.org dir.org 
+done

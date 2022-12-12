@@ -1,0 +1,107 @@
+#!/bin/bash --login
+#
+# run argstring if on production machloc
+# by link run argstring if not on production machine
+#
+emsg=no
+msg=
+
+#PTMP=/ptmpd2
+PTMP=/gpfs/hps3/ptmp
+
+logit=no
+runit=no
+if (( $# < 2 )); then
+  emsg=yes
+  msg="at least 2 arguments required: [prod/dev/both] script (args)"
+  logit=yes
+else
+  cls=$1
+  mach=`uname -n`
+  machl=`echo $mach | cut -c1`
+  case $machl in
+    (g)
+      cluster=gyre
+    ;;
+    (t)
+      cluster=tide
+    ;;
+    (s)
+      cluster=surge
+    ;;
+    (l)
+      cluster=luna  
+    ;;
+    (*)
+      cluster=null
+      emsg=yes
+      msg="INVALID cluster=$cluster"
+      logit=yes
+    ;;
+  esac
+  clp=`cat /etc/prod`
+  cld=`cat /etc/dev`
+  case $cls in 
+    (prod)
+      if [[ "$cluster" = "$clp" ]]; then
+        runit=yes
+      fi
+      logit=yes
+    ;;
+    (dev)
+      if [[ "$cluster" = "$cld" ]]; then
+        runit=yes
+      fi
+      logit=yes
+    ;;
+    (gyre)
+      if [[ "$cluster" = "gyre" ]]; then
+        runit=yes
+      fi
+      logit=yes
+    ;;
+    (tide)
+      if [[ "$cluster" = "tide" ]]; then
+        runit=yes
+      fi
+      logit=yes
+    ;;
+    (both)
+      runit=yes
+      logit=yes
+    ;;
+    (null)
+      logit=yes
+    ;;
+    (*)
+      emsg=yes
+      msg="INVALID cls=$cls"
+      logit=yes
+    ;;
+  esac
+fi
+if [[ $logit = yes ]]; then
+  logdir=$PTMP/$LOGNAME/cron/cronif
+  mkdir -p $logdir
+  dtg=`date +%Y%m%d%H%M%S`
+  pid=$$
+  (
+    echo `date` emsg=$emsg msg="$msg" mach=$mach cluster=$cluster cls=$cls clp=$clp cld=$cld runit=$runit log begin
+    echo `date` $0 $* begin
+    if [[ $emsg = yes ]]; then
+      echo "$msg"
+    fi
+    if [[ $runit = yes ]]; then
+      shift 1
+      echo `date` eval "$*" before
+      eval $*
+      echo `date` eval "$*" after
+    else
+      echo `date` do not run on this machine
+    fi
+    echo `date` $0 $* end
+    echo `date` emsg=$emsg msg="$msg" mach=$mach cluster=$cluster cls=$cls clp=$clp cld=$cld runit=$runit log end
+  ) >>$logdir/$dtg.$cluster.$mach.$pid 2>&1
+fi
+#) | tee -a $logdir/$dtg.$name.$pid 2>&1
+

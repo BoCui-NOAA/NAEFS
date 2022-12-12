@@ -48,8 +48,8 @@ export RUN_ENVIR=nco
 
 #export PDY=20220706
 #export cyc=18
-export PDY=20220808
-export cyc=18
+export PDY=20221124
+export cyc=00
 export job=gefs_debias_$PDY$cyc
 
 export HOMEnaefs=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp
@@ -61,7 +61,7 @@ export DATAROOT=/lfs/h2/emc/ptmp/$LOGNAME/tmpnwprd
 export APRUN="mpiexec -np 32 --cpu-bind core cfp  "         
 export IOBUF_PARAMS='*:sync,%%stdout:sync'
 
-#export cyc=%18%
+#export cyc=%00%
 
 export PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME
 #export COMPATH=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/canned/com/naefs:/lfs/h1/ops/canned/com/gefs:/lfs/h1/ops/canned/com/cfs:/lfs/h2/emc/vpppg/noscrub/$LOGNAME/canned/com/gefs

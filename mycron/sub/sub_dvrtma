@@ -1,0 +1,16 @@
+#!/bin/bash -l
+
+set -x
+
+module load prod_util
+
+Date=`date +%y%m%d%H`
+CDATE=20$Date
+CDATE=`$NDATE -5 $CDATE`
+
+export PDY=`echo $CDATE | cut -c1-8`
+export cyc=`echo $CDATE | cut -c9-10`
+#export cyc=00                               
+
+bsub < /lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/mycron/ecf/JNAEFS_DVRTMA_BIAS_CONUS.ecf
+bsub < /lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/mycron/ecf/JNAEFS_DVRTMA_BIAS_ALASKA.ecf

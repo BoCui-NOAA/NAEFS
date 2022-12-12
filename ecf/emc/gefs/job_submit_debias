@@ -1,6 +1,6 @@
-CDATE=2022080800
+CDATE=2022112400
 
-ntimes=4
+ntimes=1
 iday=1
 
 job=sub_jnaefs_gefs_debias.ecf             

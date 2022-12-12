@@ -1,0 +1,11 @@
+*/5 * * * * /apps/ops/test/nco/core/rocoto.v1.3.4/bin/rocotorun -d /lfs/h2/emc/ens/noscrub/xianwu.xue/GEFS_v12_3/gefs_v12.3_sbn/rocoto/gefs.db -w /lfs/h2/emc/ens/noscrub/xianwu.xue/GEFS_v12_3/gefs_v12.3_sbn/rocoto/gefs.xml
+
+vim test.sh
+add the line to this test.sh
+
+crontab test.sh
+crontab -l
+crontab -r
+crontab -e
+
+/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v6.1

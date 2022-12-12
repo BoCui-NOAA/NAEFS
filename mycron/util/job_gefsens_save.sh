@@ -1,9 +1,9 @@
-CDATE=2022112400
+CDATE=2022111600
 
 ntimes=4
 iday=1
 
-job=sub_jnaefs_gefs_prob_avgspr.ecf
+job=sub_jnaefs_gefs_debias.ecf
 
 while [ $iday -le $ntimes ]; do
   export PDY=`echo $CDATE | cut -c1-8`
@@ -11,10 +11,9 @@ while [ $iday -le $ntimes ]; do
   export YYMMDD=`echo $CDATE | cut -c1-8`
   export CYC=`echo $CDATE | cut -c9-10`
   echo " day " $PDY$cyc
-  sed -e "s/YYMMDD/$YYMMDD/" \
-      -e "s/CYC/$CYC/" \
-      $job > $job.temp
-  qsub $job.temp
+  rm trash/out_save.$PDY
+  sub_gefsens_save.sh > trash/out_save.$PDY 2>&1&
   iday=`expr $iday + 1`
-  CDATE=`$NDATE +06 $CDATE`
+  CDATE=`$NDATE +24 $CDATE`
 done
+

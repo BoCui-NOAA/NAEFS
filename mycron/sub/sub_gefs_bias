@@ -1,0 +1,20 @@
+set -x
+
+Date=`date +%y%m%d%H`
+CDATE=20$Date
+#CDATE=`$NDATE -3 $CDATE`
+
+dir=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/mycron/ecf 
+
+job=sub_jnaefs_gefs_debias.ecf
+
+export YYMMDD=`echo $CDATE | cut -c1-8`
+export CYC=00                               
+echo " day " $YYMMDD$cyc
+
+rm $dir/$job.temp
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/$job > $dir/$job.temp
+
+qsub $dir/$job.temp

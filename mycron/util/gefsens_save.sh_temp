@@ -1,0 +1,43 @@
+#!/bin/bash -l
+
+set -x
+
+Date=`date +%y%m%d%H`
+CDATE=20$Date
+CDATE=`$NDATE -24 $CDATE`
+
+CDATE=$1
+
+PDY=`echo $CDATE | cut -c1-8`
+
+eval dev=` cat /etc/dev `
+eval prod=` cat /etc/prod `
+echo "dev is" $dev "and prod is" $prod
+
+if [  $prod == surge ]; then
+  # Data on Surge
+  export COMROOT=/gpfs/gp2/nco/ops/com
+else
+# Data on Luna
+  export COMROOT=/gpfs/tp2/nco/ops/com
+fi
+
+COM_OUT=/gpfs/hps3/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev
+
+for cyc in 00; do
+  COMOUT=$COM_OUT/gefs.$PDY/$cyc/pgrb2ap5
+  mkdir -p $COMOUT
+# cp $COMROOT/gens/para/gefs.$PDY/$cyc/pgrb2ap5/*geavg* $COMOUT
+  cp $COMROOT/gens/para/gefs.$PDY/$cyc/pgrb2ap5/*gespr* $COMOUT
+#  cp $COMROOT/gens/para/gefs.$PDY/$cyc/pgrb2ap5/*gec00* $COMOUT
+# cp $COMROOT/gens/para/gefs.$PDY/$cyc/pgrb2ap5/*gegfs* $COMOUT
+  rm $COMOUT/*idx
+done
+
+CDATE=${PDY}00
+CDATE=`$NDATE -720 $CDATE`
+PDY=`echo $CDATE | cut -c1-8`
+#rm -rf $COM_OUT/gefs.$PDY
+
+exit
+

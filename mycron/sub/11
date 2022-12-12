@@ -1,0 +1,91 @@
+#!/bin/bash
+#PBS -N hpss_naefs_v6.1    
+#PBS -j oe
+#PBS -q dev
+#PBS -l walltime=01:30:00
+#PBS -A NAEFS-DEV
+#PBS -l select=1:ncpus=1:mem=1GB                    
+#PBS -l debug=true
+
+# versions file for naefs sets $naefs_ver and $code_ver
+model=naefs
+#%include <model_ver.h>
+
+## HOMEnaefs will de defined by the eclfow apps
+export HOMEnaefs=${HOMEnaefs:-/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0}
+
+source ${HOMEnaefs}/versions/run.ver
+
+cd $PBS_O_WORKDIR
+
+set -x
+
+module purge
+module load envvar/${envvar_ver}
+module load PrgEnv-intel/${PrgEnv_intel_ver}
+module load craype/${craype_ver}
+module load intel/${intel_ver}
+module load cray-mpich/${cray_mpich_ver}
+module load cray-pals/${cray_pals_ver}
+module load cfp/${cfp_ver}
+module load prod_envir/${prod_envir_ver}
+module load prod_util/${prod_util_ver}
+module load libjpeg/${libjpeg_ver}
+module load grib_util/${grib_util_ver}
+module load wgrib2/${wgrib2_ver}
+module load iobuf/${iobuf_ver}
+module load craype-hugepages2M
+module list
+
+hpsstar=/u/$LOGNAME/xbin/hpsstar
+
+Date=`date +%y%m%d%H`
+CDATE=20$Date
+CDATE=`$NDATE -48 $CDATE`
+
+CDATE=2022112900
+
+PDY=`echo $CDATE | cut -c1-8`
+
+HPSSOUT=/NCEPDEV/emc-ensemble/5year/Bo.Cui/naefs.v7.0/v6.1
+
+output=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/mycron/output
+
+YER=`echo $CDATE | cut -c1-4`
+MON=`echo $CDATE | cut -c1-6`
+PDY=`echo $CDATE | cut -c1-8`
+#cyc=`echo $CDATE | cut -c9-10`
+cyc=00
+
+$hpsstar mkd $HPSSOUT
+$hpsstar mkd $HPSSOUT/rh${YER}
+$hpsstar mkd $HPSSOUT/rh${YER}/${MON}
+$hpsstar mkd $HPSSOUT/rh${YER}/${MON}/${PDY}
+
+###
+
+COM=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/com/naefs/v6.1
+
+COMIN=$COM/naefs.$PDY/$cyc
+cd $COMIN
+
+file=$HPSSOUT/rh${YER}/${MON}/${PDY}/avgspr_naefs.${PDY}_${cyc}.pgrb2ap5_bc.tar
+$hpsstar put $file pgrb2ap5_bc > $output/output_hpss_naefs_v6.1_pgrb2ap5_bc_avgspr
+
+exit
+file=$HPSSOUT/rh${YER}/${MON}/${PDY}/avgspr_naefs.${PDY}_${cyc}.ndgd_gb2.tar
+$hpsstar put $file ndgd_gb2    > $output/output_hpss_naefs_v6.1_ndgd_gb2_avgspr          
+
+###
+
+cyc=00
+COMIN=$COM/gefs.$PDY/$cyc
+cd $COMIN
+
+file=$HPSSOUT/rh${YER}/${MON}/${PDY}/com_naefs_dev_gefs.${PDY}_${cyc}.pgrb2ap5_bc.tar
+$hpsstar put $file pgrb2ap5_bc > $output/output_hpss_pgrb2ap5_bc
+
+file=$HPSSOUT/rh${YER}/${MON}/${PDY}/com_naefs_dev_gefs.${PDY}_${cyc}.ndgd_gb2.tar
+$hpsstar put $file ndgd_gb2     > $output/output_hpss_ndgd_gb2          
+
+

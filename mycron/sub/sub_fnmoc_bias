@@ -1,0 +1,17 @@
+#!/bin/bash -l
+
+set -x
+
+module load prod_util
+
+Date=`date +%y%m%d%H`
+CDATE=20$Date
+CDATE=`$NDATE -3 $CDATE`
+
+export PDY=`echo $CDATE | cut -c1-8`
+export cyc=`echo $CDATE | cut -c9-10`
+
+#export PDY=20170402                         
+#export cyc=00                               
+
+bsub < /lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/mycron/ecf/JNAEFS_FNMOC_BIAS.ecf

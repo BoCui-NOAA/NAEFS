@@ -1,0 +1,58 @@
+set -x
+
+filelist=" glbanl ncepcmc_glbanl ncepfnmoc_glbanl "
+
+PDY=$1                   
+
+for cyc in 00 06 12 18; do
+  COMIN=$COM_IN/gefs.$PDY/$cyc/pgrb2ap5
+  COMOUT=$COM_OUT/gefs.$PDY/$cyc/pgrb2ap5
+  mkdir -p $COMOUT
+  for file in $filelist; do
+    ifile_in2=${file}.t${cyc}z.pgrb2a.0p50_mdf000
+    if [ -s $COMIN/$ifile_in2 ]; then
+      cp $COMIN/$ifile_in2 $COMOUT/$ifile_in2
+    fi
+  done
+done
+
+export hourlist="    003 006 009 012 015 018 021 024 027 030 033 036 039 042 045 048 \
+                 051 054 057 060 063 066 069 072 075 078 081 084 087 090 093 096 099 \
+                 102 105 108 111 114 117 120 123 126 129 132 135 138 141 144 147 150 \
+                 153 156 159 162 165 168 171 174 177 180 183 186 189 192 198 204 \
+                 210 216 222 228 234 240 246 252 258 264 270 276 282 288 294 300 \
+                 306 312 318 324 330 336 342 348 354 360 366 372 378 384"
+
+export hrlist_gfs=" 003 006 009 012 015 018 021 024 027 030 033 036 039 042 045 048 \
+                 051 054 057 060 063 066 069 072 075 078 081 084 087 090 093 096 099 \
+                 102 105 108 111 114 117 120 123 126 129 132 135 138 141 144 147 150 \
+                 153 156 159 162 165 168 171 174 177 180"
+
+for cyc in 00 06 12 18; do
+  COMIN=$COM_IN/gefs.$PDY/$cyc/pgrb2ap5
+  COMOUT=$COM_OUT/gefs.$PDY/$cyc/pgrb2ap5
+  mkdir -p $COMOUT
+  export memberlist="avg"
+  for nens in $memberlist; do 
+    for nfhrs in $hourlist; do
+      for var in me mecom abar coeff fbar saabar sfabar sffbar; do
+        ifile_in2=ge${nens}.t${cyc}z.pgrb2a.0p50_${var}f${nfhrs}
+        if [ -s $COMIN/$ifile_in2 ]; then
+         cp $COMIN/$ifile_in2 $COMOUT/$ifile_in2
+        fi
+      done
+    done
+  done
+done
+
+for cyc in 00 06 12 18; do
+  COMIN=$COM_IN/gefs.$PDY/$cyc/pgrb2ap5
+  COMOUT=$COM_OUT/gefs.$PDY/$cyc/pgrb2ap5
+  for nfhrs in $hrlist_gfs; do   
+     ifile_in2=gegfs.t${cyc}z.pgrb2a.0p50_mef${nfhrs}
+     if [ -s $COMIN/$ifile_in2 ]; then
+       cp $COMIN/$ifile_in2 $COMOUT/$ifile_in2
+     fi
+  done
+done
+

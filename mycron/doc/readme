@@ -1,0 +1,53 @@
+
+#m h D M d
+#* * * * * bash -l -c /u/Carolyn.Pasti/test/cron/test.sh > /u/Carolyn.Pasti/test/cron/test.out.sh 2>&1
+#* * * * * /u/Carolyn.Pasti/test/cron/test2.sh > /u/Carolyn.Pasti/test/cron/test2.sh.out 2>&1
+
+* * * * * bash -l -c /gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/cron/test.sh > /gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/cron/test.out.sh 2>&1
+* * * * * /gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/cron/test2.sh > /gpfs/hps/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/cron/test2.sh.out 2>&1
+
+# Syntax of entry is
+# m - min (0-59)
+# h - hour (0-23)
+# D - Day of Month (1-31)
+# M - Month (1-12)
+# d - Day of week (0-6 for Sun-Sat)
+
+
+
+Using Cron
+
+    Cron is available on login nodes
+    Edit your crontab using crontab e (vi)
+    Your single crontab, which will be shared across all login nodes, will only run on one host.
+    DO NOT rely on cron jobs running on specific hosts. Your crontab will be visible from all login nodes, and the job may be launched from any available login nodes.
+    The cron environment is not complete. It has to be initialized before running a script. This can be done by either of the three methods:
+
+1) Including bash -l (for login) followed by your command in the crontab
+
+Example crontab entry
+
+  * * * * * /bin/bash -l -c /u/Carolyn.Pasti/test/cron/test.sh
+
+2) Or by including #!/bin/bash -l at the top of your script
+
+Example crontab entry and script
+
+  * * * * *   /path/to/script #where first line in script is #!/bin/bash -l
+
+2) Or by setting the crontab shell on the first line of the crontab itself
+
+Example crontab entry on first line
+
+      
+   SHELL=/bin/bash -l
+
+ 
+
+The asterisks represent the following fields:
+
+Field1 - minute (0-59)
+Field2 - hour (0-23)
+Field3 - day of month (1-31)
+Field4 - month (1-12)
+Field5 - day of week (0-7, both 0 and 7 are Sunday)

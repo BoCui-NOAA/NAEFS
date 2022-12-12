@@ -1,0 +1,48 @@
+#!/bin/bash -l
+set -x
+
+Date=`date +%y%m%d%H`
+CDATE=20$Date
+CDATE=`$NDATE -9 $CDATE`
+
+CDATE=2017080800
+
+PDY=`echo $CDATE | cut -c1-8`
+cyc=`echo $CDATE | cut -c9-10`
+
+eval dev=` cat /etc/dev `
+eval prod=` cat /etc/prod `
+
+echo "dev is" $dev "and prod is" $prod
+
+COM_IN=/gpfs/hps3/ptmp/emc.enspara1/bc/o/com/naefs/dev
+COM_OUT=/gpfs/hps3/ptmp/emc.enspara1/bc/o/com/naefs/dev                         
+
+if [ $cyc -eq 00 -o $cyc -eq 12 ]; then
+  COMIN=$COM_IN/cmce.$PDY/$cyc
+  COMOUT=$COM_OUT/cmce.$PDY/$cyc
+  mkdir -p $COMOUT
+  scp -rp $prod:$COMIN/pgrb2ap5 $COMOUT/
+  COMIN=$COM_IN/cmce.$PDY/$cyc
+  COMOUT=$COM_OUT/cmce.$PDY/$cyc
+  mkdir -p $COMOUT
+# scp -rp $prod:$COMIN/pgrb2ap5_bc $COMOUT/
+fi
+exit
+
+if [  $prod == luna ]; then
+ COMROOT=/gpfs/tp2/nco/ops/com
+else
+ COMROOT=/gpfs/gp2/nco/ops/com
+fi
+COMIN=$COMROOT/gens/para/gefs.$PDY/$cyc
+COMOUT=$COM_OUT/gefs.$PDY/$cyc
+mkdir -p $COMOUT
+scp -rp $prod:$COMIN/pgrb2ap5 $COMOUT/
+
+COMIN=$COM_IN/gefs.$PDY/$cyc
+COMOUT=$COM_OUT/gefs.$PDY/$cyc
+mkdir -p $COMOUT
+scp -rp $prod:$COMIN/pgrb2ap5_bc $COMOUT/
+
+

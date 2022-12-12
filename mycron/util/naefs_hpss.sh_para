@@ -1,0 +1,48 @@
+#!/bin/bash -l
+
+set -x
+
+module load prod_util
+
+hpsstar=/u/emc.enspara1/bin/hpsstar.Bo.Cui
+
+Date=`date +%y%m%d%H`
+CDATE=20$Date
+CDATE=`$NDATE -36 $CDATE`
+
+CDATE=2018041000
+
+PDY=`echo $CDATE | cut -c1-8`
+
+HPSSOUT=/NCEPDEV/emc-ensemble/2year/emc.enspara1/bc/para          
+output=/gpfs/hps3/ptmp/emc.enspara1/bc/o/com/output/dev
+
+YER=`echo $CDATE | cut -c1-4`
+MON=`echo $CDATE | cut -c1-6`
+PDY=`echo $CDATE | cut -c1-8`
+cyc=`echo $CDATE | cut -c9-10`
+
+#$hpsstar mkd $HPSSOUT
+$hpsstar mkd $HPSSOUT/rh${YER}
+$hpsstar mkd $HPSSOUT/rh${YER}/${MON}
+$hpsstar mkd $HPSSOUT/rh${YER}/${MON}/${PDY}
+
+###
+COM=/gpfs/hps/nco/ops/com/naefs/para
+
+COMIN=$COM/naefs.$PDY/$cyc
+cd $COMIN
+file=$HPSSOUT/rh${YER}/${MON}/${PDY}/com_naefs_dev_naefs.${PDY}_${cyc}.pgrb2ap5_bc.tar
+$hpsstar put $file pgrb2ap5_bc/*avg* pgrb2ap5_bc/*spr* > $output/output_hpss_para_naefs_pgrb2ap5_bc
+file=$HPSSOUT/rh${YER}/${MON}/${PDY}/com_naefs_dev_naefs.${PDY}_${cyc}.ndgd_gb2.tar
+$hpsstar put $file ndgd_gb2/*avg* ndgd_gb2/*spr*     > $output/output_hpss_para_naefs_ndgd_gb2          
+
+###
+
+COMIN=$COM/gefs.$PDY/$cyc
+cd $COMIN
+file=$HPSSOUT/rh${YER}/${MON}/${PDY}/com_naefs_dev_gefs.${PDY}_${cyc}.pgrb2ap5_bc.tar
+$hpsstar put $file pgrb2ap5_bc/*avg* pgrb2ap5_bc/*spr* > $output/output_hpss_para_pgrb2ap5_bc
+file=$HPSSOUT/rh${YER}/${MON}/${PDY}/com_naefs_dev_gefs.${PDY}_${cyc}.ndgd_gb2.tar
+$hpsstar put $file ndgd_gb2/*avg* ndgd_gb2/*spr*    > $output/output_hpss_para_ndgd_gb2          
+

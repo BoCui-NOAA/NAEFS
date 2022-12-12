@@ -1,0 +1,4 @@
+crontab -r
+crontab -l
+exit
+crontab test.sh
