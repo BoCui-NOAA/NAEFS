@@ -3,12 +3,11 @@ set -x
 #Date=`date +%y%m%d%H`
 #CDATE=20$Date
 
-CDATE=2022120600
+CDATE=2022120100
 
 dir=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/mycron
 
-
-ndays=1
+ndays=9
 iday=1
 
 while [ $iday -le $ndays ]; do
@@ -21,14 +20,14 @@ echo " day " $YYMMDD$cyc
 
 job=sub_jnaefs_gefs_debias.ecf
 
-rm $dir/backup/$job.temp
+rm $dir/backup/$job.temp.$CDATE
 
 sed -e "s/YYMMDD/$YYMMDD/" \
     -e "s/CYC/$CYC/" \
-    $dir/ecf/$job > $dir/backup/$job.temp
+    $dir/ecf/$job > $dir/backup/$job.temp.$CDATE
 
 cd $dir/backup 
-#qsub $dir/backup/$job.temp
+qsub $dir/backup/$job.temp.$CDATE
 
 sleep 7200
 
@@ -36,28 +35,28 @@ sleep 7200
 
 job=sub_jnaefs_gefs_prob_avgspr.ecf
 
-rm $dir/backup/$job.temp
+rm $dir/backup/$job.temp.$CDATE
 
 sed -e "s/YYMMDD/$YYMMDD/" \
     -e "s/CYC/$CYC/" \
-    $dir/ecf/$job > $dir/backup/$job.temp
+    $dir/ecf/$job > $dir/backup/$job.temp.$CDATE
 
 cd $dir/backup 
-qsub $dir/backup/$job.temp
+qsub $dir/backup/$job.temp.$CDATE
 
 
 # 3
 
 job=sub_jnaefs_prob_avgspr.ecf
 
-rm $dir/backup/$job.temp
+rm $dir/backup/$job.temp.$CDATE
 
 sed -e "s/YYMMDD/$YYMMDD/" \
     -e "s/CYC/$CYC/" \
-    $dir/ecf/$job > $dir/backup/$job.temp
+    $dir/ecf/$job > $dir/backup/$job.temp.$CDATE
 
 cd $dir/backup 
-qsub $dir/backup/$job.temp
+qsub $dir/backup/$job.temp.$CDATE
 
 sleep 3600
 
@@ -65,56 +64,80 @@ sleep 3600
 
 job=sub_jnaefs_gefs_dvrtma_prob_avgspr_conus.ecf 
 
-rm $dir/backup/$job.temp
+rm $dir/backup/$job.temp.$CDATE
 
 sed -e "s/YYMMDD/$YYMMDD/" \
     -e "s/CYC/$CYC/" \
-    $dir/ecf/$job > $dir/backup/$job.temp
+    $dir/ecf/$job > $dir/backup/$job.temp.$CDATE
 
 cd $dir/backup 
-qsub $dir/backup/$job.temp
+qsub $dir/backup/$job.temp.$CDATE
 
 # 5
 
 job=sub_jnaefs_gefs_dvrtma_prob_avgspr_ak.ecf 
 
-rm $dir/backup/$job.temp
+rm $dir/backup/$job.temp.$CDATE
 
 sed -e "s/YYMMDD/$YYMMDD/" \
     -e "s/CYC/$CYC/" \
-    $dir/ecf/$job > $dir/backup/$job.temp
+    $dir/ecf/$job > $dir/backup/$job.temp.$CDATE
 
 cd $dir/backup 
-qsub $dir/backup/$job.temp
+qsub $dir/backup/$job.temp.$CDATE
 
 # 6
 
 job=sub_jnaefs_dvrtma_prob_avgspr_conus.ecf   
 
-rm $dir/backup/$job.temp
+rm $dir/backup/$job.temp.$CDATE
 
 sed -e "s/YYMMDD/$YYMMDD/" \
     -e "s/CYC/$CYC/" \
-    $dir/ecf/$job > $dir/backup/$job.temp
+    $dir/ecf/$job > $dir/backup/$job.temp.$CDATE
 
 cd $dir/backup 
-qsub $dir/backup/$job.temp
+qsub $dir/backup/$job.temp.$CDATE
 
 # 7
 
 job=sub_jnaefs_dvrtma_prob_avgspr_ak.ecf   
 
-rm $dir/backup/$job.temp
+rm $dir/backup/$job.temp.$CDATE
 
 sed -e "s/YYMMDD/$YYMMDD/" \
     -e "s/CYC/$CYC/" \
-    $dir/ecf/$job > $dir/backup/$job.temp
+    $dir/ecf/$job > $dir/backup/$job.temp.$CDATE
 
 cd $dir/backup 
-qsub $dir/backup/$job.temp
+qsub $dir/backup/$job.temp.$CDATE
 
 
-sleep 7200
+# 8
+
+job=save_naefs_v6.1.sh
+
+rm $dir/backup/$job.temp.$CDATE
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ush/$job > $dir/backup/$job.temp.$CDATE
+
+cd $dir/backup
+chmod +x $dir/backup/$job.temp.$CDATE
+$dir/backup/$job.temp.$CDATE
+
+job=save_naefs_v7.0.sh
+
+rm $dir/backup/$job.temp.$CDATE
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ush/$job > $dir/backup/$job.temp.$CDATE
+
+cd $dir/backup
+chmod +x $dir/backup/$job.temp.$CDATE
+$job.temp.$CDATE
 
 iday=`expr $iday + 1`
 export CDATE=`$NDATE +24 $CDATE`

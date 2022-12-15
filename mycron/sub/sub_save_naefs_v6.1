@@ -1,0 +1,24 @@
+set -x
+
+Date=`date +%y%m%d%H`
+CDATE=20$Date
+
+dir=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/mycron
+
+export YYMMDD=`echo $CDATE | cut -c1-8`
+export CYC=00                               
+echo " day " $YYMMDD$cyc
+
+job=save_naefs_v6.1.sh                               
+
+rm $dir/output/$job.temp.$CDATE
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ush/$job > $dir/output/$job.temp.$CDATE
+
+cd $dir/output 
+chmod +x $dir/output/$job.temp.$CDATE
+$dir/output/$job.temp.$CDATE
+
+
