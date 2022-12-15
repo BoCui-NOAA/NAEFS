@@ -46,11 +46,8 @@ export direxp=naefs.v7.0.0
 #export envir=prod
 export RUN_ENVIR=nco 
 
-#export PDY=20220808
-#export cyc=00               
-export PDY=YYMMDD
-export cyc=CYC
-
+export PDY=YYMMDD   
+export cyc=CYC              
 export job=naefs_dvrtma_prob_avgspr_ak_$PDY$cyc
 
 export HOMEnaefs=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp
@@ -64,8 +61,9 @@ export DATAROOT=/lfs/h2/emc/ptmp/$LOGNAME/tmpnwprd
 
 export APRUN="mpiexec -n 96 -ppn 96 --cpu-bind depth cfp "
 export APRUN_post="mpiexec -l -np 128 --cpu-bind verbose,depth cfp "
-
 export IOBUF_PARAMS='*:sync,%%stdout:sync'
+
+export runlabel=late
 
 #export cyc=%CYC%
 
@@ -73,6 +71,7 @@ export PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME
 #export COMPATH=/lfs/h1/ops/canned/com/gefs:/lfs/h1/ops/canned/com/rtma:/lfs/h1/ops/canned/com/naefs
 export COMPATH=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs
 export COMROOT=/lfs/h2/emc/ptmp/$LOGNAME/com
+export COM_DV=/lfs/h1/ops/prod/com/naefs/v6.1
 
 export KEEPDATA=YES
 export SENDDBN=NO

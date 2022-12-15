@@ -46,9 +46,8 @@ export direxp=naefs.v7.0.0
 #export envir=prod
 export RUN_ENVIR=nco 
 
-export PDY=YYMMDD
-export cyc=CYC
-
+export PDY=YYMMDD   
+export cyc=CYC              
 export job=naefs_dvrtma_prob_avgspr_ak_$PDY$cyc
 
 export HOMEnaefs=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp
@@ -62,8 +61,9 @@ export DATAROOT=/lfs/h2/emc/ptmp/$LOGNAME/tmpnwprd
 
 export APRUN="mpiexec -n 96 -ppn 96 --cpu-bind depth cfp "
 export APRUN_post="mpiexec -l -np 128 --cpu-bind verbose,depth cfp "
-
 export IOBUF_PARAMS='*:sync,%%stdout:sync'
+
+export runlabel=late
 
 #export cyc=%CYC%
 

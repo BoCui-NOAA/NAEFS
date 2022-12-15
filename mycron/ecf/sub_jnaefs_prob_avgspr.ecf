@@ -50,7 +50,7 @@ export RUN_ENVIR=nco
 #export cyc=00               
 export PDY=YYMMDD
 export cyc=CYC
-export job=naefs_prob_avgspr_YYMMDDCYC
+export job=naefs_prob_avgspr_$PDY$cyc
 
 export HOMEnaefs=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp
 export HOMEgefs=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp
