@@ -1,0 +1,366 @@
+Page 1           Source Listing                  AVERAGE
+2022-12-19 09:41                                 naefs_crps_avg.f90
+
+      1 program average    
+      2 
+      3 implicit none
+      4 
+      5 integer      ii,n,ilen,istymd,iedymd,nfcst,istep,ifh,nd,maxstep,step,interl
+      6 integer      numreg,numsc,ireg,isc,nrec
+      7 parameter    (istep=64,maxstep=istep+1,interl=6,numreg=6,numsc=9)
+      8 
+      9 real         tprobsc(istep,numsc,numreg),probsc(numsc,numreg),prob(numsc,numreg)
+     10 integer      fdays(numreg)                                                     
+     11 
+     12 integer      index(numreg),ifile(370)
+     13 integer      nfhrs                          
+     14 
+     15 character*120 cfile(370),ofile,gfile
+     16 character*10  variable
+     17 character*80  title(numreg)         
+     18 
+     19 namelist/filec/ cfile,ofile,gfile
+     20 namelist/filei/ ifile
+     21 namelist/namin/ ilen,istymd,iedymd
+     22 
+     23 read  (5,filec,end=2000)
+     24 !write (6,filec)
+     25 
+     26 read  (5,filei,end=2000)
+     27 write (6,filei)
+     28 
+     29 read  (5,namin,end=2000)
+     30 write (6,namin)
+     31 
+     32 open(unit=51,file=ofile,form='FORMATTED',status='NEW')
+     33 open(unit=52,file=gfile,form='UNFORMATTED',status='NEW')
+     34 
+     35 do nfcst = 1, istep     ! forecast lead time
+     36 
+     37   ifh = interl*nfcst
+     38   nrec=5*numreg*nfcst
+     39 
+     40   probsc=0.0
+     41 
+     42   fdays=0
+     43 
+     44   print *, ' forecast lead time step = ',nfcst,' nrec=',nrec
+     45  
+     46   do nd = 1, ilen         ! sample size: how many day of stats
+     47 
+     48     if(ifile(nd).eq.1) then
+     49 
+     50       open(unit=11,file=cfile(nd),form='FORMATTED',status='UNKNOWN')
+     51 
+     52       print *,'        '
+     53       print *,' day  = ', nd
+     54 
+     55       ! the repeat of maxstep and istep is to find the right time step
+     56 
+     57       if(nrec.gt.0) then
+
+Page 2           Source Listing                  AVERAGE
+2022-12-19 09:41                                 naefs_crps_avg.f90
+
+     58         do ii = 1, nrec
+     59            read(11,*)
+     60         enddo
+     61       endif
+     62 
+     63       do ireg=1,numreg  
+     64 
+     65         read(11,800,end=1000) title(ireg)              
+     66         read(11,801,end=1000) variable,nfhrs
+     67         read(11,802,end=1000)
+     68         read(11,803,end=1000) index(ireg),(prob(isc,ireg),isc=1,numsc)
+     69         read(11,802,end=1000)
+     70 
+     71         if(ifh.eq.nfhrs) then     
+     72           write(6,*) " "
+     73           write(6,800) title(ireg)              
+     74           write(6,801) variable,nfhrs
+     75           write(6,802)
+     76           write(6,803) index(ireg),(prob(isc,ireg),isc=1,numsc)
+     77           write(6,802)
+     78         endif
+     79 
+     80       enddo     ! end of ireg region
+     81 
+     82       close(11)
+     83 
+     84       do ireg=1,numreg  
+     85         if(index(ireg).eq.0) then                   
+     86           do isc=1,numsc  
+     87             probsc(isc,ireg)=probsc(isc,ireg)+prob(isc,ireg)
+     88           enddo
+     89           fdays(ireg)=fdays(ireg)+1
+     90         endif
+     91       enddo
+     92 
+     93     endif
+     94 
+     95   1000 continue
+     96 
+     97   enddo   ! endo ilen, how many day of stats
+     98 
+     99   write(6,*) "before "
+    100   write(6,*) " fdays,fcrpsf,fcrpsc,frmsa,frmsm,fsprd,fmerr,fabse,fctp90,fctp10"
+    101   do ireg=1,numreg  
+    102     write(6,'(i4,9f10.4)') fdays(ireg),(probsc(isc,ireg),isc=1,numsc)
+    103   enddo
+    104   write(6,*) " "
+    105 
+    106   do ireg=1,numreg  
+    107 
+    108     if(fdays(ireg).ne.0) then
+    109       do isc=1,numsc  
+    110         tprobsc(nfcst,isc,ireg)=probsc(isc,ireg)/fdays(ireg)
+    111       enddo
+    112     else
+    113       do isc=1,numsc  
+    114         tprobsc(nfcst,isc,ireg)=-999.99                        
+
+Page 3           Source Listing                  AVERAGE
+2022-12-19 09:41                                 naefs_crps_avg.f90
+
+    115       enddo
+    116     endif
+    117 
+    118   enddo
+    119 
+    120   write(6,*) "after "
+    121   write(6,*) " fdays,fcrpsf,fcrpsc,frmsa,frmsm,fsprd,fmerr,fabse,fctp90,fctp10"
+    122   do ireg=1,numreg  
+    123     write(6,'(i4,9f10.4)') fdays(ireg),(tprobsc(nfcst,isc,ireg),isc=1,numsc)
+    124   enddo
+    125   write(6,*) " "
+    126 
+    127 enddo    ! enddo lead-time
+    128 
+    129 do isc=1,numsc  
+    130   write(52) ((tprobsc(nfcst,isc,ireg),nfcst=1,istep),ireg=1,numreg)
+    131 enddo
+    132 
+    133 do nfcst = 1, istep     ! forecast lead time
+    134 
+    135   ifh = interl*nfcst
+    136 
+    137   do ireg=1,numreg  
+    138     write(51,800) title(ireg)                           
+    139     write(51,901) variable,istymd,iedymd,ifh        
+    140     write(51,902)
+    141     write(51,903) (tprobsc(nfcst,isc,ireg),isc=1,numsc)
+    142     write(51,*)
+    143   enddo
+    144 
+    145 enddo
+    146 
+    147 800 format(a70)
+    148 801 format(a15,40x,i4)
+    149 802 format(72x)
+    150 803 format(i4,9f10.4)
+    151 
+    152 901 format(' Var: ',a9,' Averaged Verification Scores From ',i10,' to ',i10,' at',i4,'hrs')
+    153 902 format('     CRPSF     CRPSC     RMSA      RMSM      SPRD      MERR      ABSE    COUNTP90  COUNTP10')
+    154 903 format(9f10.4)
+    155 
+    156 2000 continue
+    157 stop
+    158 end
+
+Page 4           Source Listing                  AVERAGE
+2022-12-19 09:41 Entry Points                    naefs_crps_avg.f90
+
+
+
+ENTRY POINTS
+
+  Name              
+                    
+ MAIN__             
+
+
+SYMBOL CROSS REFERENCE
+
+ Name                       Object Declared Type            Bytes Dimen Elements Attributes       References                        
+                                                                                                                                    
+ 1000                       Label  95                                                             65,66,67,68,69                    
+ 2000                       Label  156                                                            23,26,29                          
+ 800                        Label  147                                                            65,73,138                         
+ 801                        Label  148                                                            66,74                             
+ 802                        Label  149                                                            67,69,75,77                       
+ 803                        Label  150                                                            68,76                             
+ 901                        Label  152                                                            139                               
+ 902                        Label  153                                                            140                               
+ 903                        Label  154                                                            141                               
+ AVERAGE                    Prog   1                                                                                                
+ CFILE                      Local  15       CHAR            120   1     370                       19,50                             
+ FDAYS                      Local  10       I(4)            4     1     6                         42,89,102,108,110,123             
+ FILEC                      Local  19                                   scalar                    23                                
+ FILEI                      Local  20                                   scalar                    26,27                             
+ GFILE                      Local  15       CHAR            120         scalar                    19,33                             
+ IEDYMD                     Local  5        I(4)            4           scalar                    21,139                            
+ IFH                        Local  5        I(4)            4           scalar                    37,71,135,139                     
+ IFILE                      Local  12       I(4)            4     1     370                       20,48                             
+ II                         Local  5        I(4)            4           scalar                    58                                
+ ILEN                       Local  5        I(4)            4           scalar                    21,46                             
+ INDEX                      Local  12       I(4)            4     1     6                         68,76,85                          
+ INTERL                     Param  5        I(4)            4           scalar                    37,135                            
+ IREG                       Local  6        I(4)            4           scalar                    63,65,68,73,76,84,85,87,89,101,102
+                                                                                                  ,106,108,110,114,122,123,130,137,1
+                                                                                                  38,141                            
+ ISC                        Local  6        I(4)            4           scalar                    68,76,86,87,102,109,110,113,114,12
+                                                                                                  3,129,130,141                     
+ ISTEP                      Param  5        I(4)            4           scalar                    7,9,35,130,133                    
+ ISTYMD                     Local  5        I(4)            4           scalar                    21,139                            
+ MAXSTEP                    Param  5        I(4)            4           scalar                                                      
+ N                          Local  5        I(4)            4           scalar                                                      
+ NAMIN                      Local  21                                   scalar                    29,30                             
+ ND                         Local  5        I(4)            4           scalar                    46,48,50,53                       
+ NFCST                      Local  5        I(4)            4           scalar                    35,37,38,44,110,114,123,130,133,13
+                                                                                                  5,141                             
+ NFHRS                      Local  13       I(4)            4           scalar                    66,71,74                          
+ NREC                       Local  6        I(4)            4           scalar                    38,44,57,58                       
+ NUMREG                     Param  6        I(4)            4           scalar                    9,10,12,17,38,63,84,101,106,122,13
+                                                                                                  0,137                             
+ NUMSC                      Param  6        I(4)            4           scalar                    9,68,76,86,102,109,113,123,129,141
+ OFILE                      Local  15       CHAR            120         scalar                    19,32                             
+ PROB                       Local  9        R(4)            4     2     54                        68,76,87                          
+ PROBSC                     Local  9        R(4)            4     2     54                        40,87,102,110                     
+ STEP                       Local  5        I(4)            4           scalar                                                      
+
+Page 5           Source Listing                  AVERAGE
+2022-12-19 09:41 Symbol Table                    naefs_crps_avg.f90
+
+ Name                       Object Declared Type            Bytes Dimen Elements Attributes       References                        
+                                                                                                                                    
+ TITLE                      Local  17       CHAR            80    1     6                         65,73,138                         
+ TPROBSC                    Local  9        R(4)            4     3     3456                      110,114,123,130,141               
+ VARIABLE                   Local  16       CHAR            10          scalar                    66,74,139                         
+
+Page 6           Source Listing                  AVERAGE
+2022-12-19 09:41                                 naefs_crps_avg.f90
+
+    159 
+
+Page 7           Source Listing                  AVERAGE
+2022-12-19 09:41 Subprograms/Common Blocks       naefs_crps_avg.f90
+
+
+
+SUBPROGRAMS/COMMON BLOCKS
+
+ Name                       Object Declared Type            Bytes Dimen Elements Attributes       References                        
+                                                                                                                                    
+ AVERAGE                    Prog   1                                                                                                
+
+COMPILER OPTIONS BEING USED
+
+       -align noall                          -align nonone
+       -align nocommons                      -align nodcommons
+       -align noqcommons                     -align nozcommons
+       -align records                        -align nosequence
+       -align norec1byte                     -align norec2byte
+       -align norec4byte                     -align norec8byte
+       -align norec16byte                    -align norec32byte
+       -align norec64byte                    -align noarray8byte
+       -align noarray16byte                  -align noarray32byte
+       -align noarray64byte                  -align noarray128byte
+       -align noarray256byte                 -altparam
+       -assume accuracy_sensitive            -assume nobscc
+       -assume nobuffered_io                 -assume nobuffered_stdout
+       -assume nobyterecl                    -assume nocontiguous_assumed_shape
+       -assume nocontiguous_pointer          -assume nocc_omp
+       -assume nocstring                     -assume nodummy_aliases
+       -assume nofpe_summary                 -assume noieee_fpe_flags
+       -assume nominus0                      -assume noold_boz
+       -assume old_complex_align             -assume old_unit_star
+       -assume old_inquire_recl              -assume old_ldout_format
+       -assume old_ldout_zero                -assume noold_logical_assign
+       -assume noold_logical_ldio            -assume old_maxminloc
+       -assume old_xor                       -assume noprotect_allocates
+       -assume protect_constants             -assume noprotect_parens
+       -assume split_common                  -assume source_include
+       -assume nostd_intent_in               -assume std_minus0_rounding
+       -assume nostd_mod_proc_name           -assume std_value
+       -assume realloc_lhs                   -assume underscore
+       -assume no2underscores                -assume norecursion
+  no   -auto                                 -auto_scalar
+  no   -bintext                              -ccdefault default
+       -check noarg_temp_created             -check noassume
+       -check nobounds                       -check nocontiguous
+       -check noformat                       -check nooutput_conversion
+       -check nooverflow                     -check nopointers
+       -check noshape                        -check nostack
+       -check nouninitialized                -check noudio_iostat
+       -coarray-num-procs 0             no   -coarray-config-file
+       -convert native                       -cross_reference
+       -D __INTEL_COMPILER=1910              -D __INTEL_COMPILER_UPDATE=3
+       -D __unix__                           -D __unix
+       -D __linux__                          -D __linux
+       -D __gnu_linux__                      -D unix
+       -D linux                              -D __ELF__
+       -D __x86_64                           -D __x86_64__
+       -D __amd64                            -D __amd64__
+       -D __INTEL_COMPILER_BUILD_DATE=20200925       -D __INTEL_OFFLOAD
+
+Page 8           Source Listing                  AVERAGE
+2022-12-19 09:41                                 naefs_crps_avg.f90
+
+       -D __MMX__                            -D __SSE__
+       -D __SSE_MATH__                       -D __SSE2__
+       -D __SSE2_MATH__                      -D __pentium4
+       -D __pentium4__                       -D __tune_pentium4__
+       -double_size 64                  no   -d_lines
+  no   -Qdyncom                              -error_limit 30
+  no   -f66                             no   -f77rtl
+  no   -fast                                 -fpscomp nofilesfromcmd
+       -fpscomp nogeneral                    -fpscomp noioformat
+       -fpscomp noldio_spacing               -fpscomp nologicals
+  no   -fpconstant                           -fpe3
+       -fprm nearest                    no   -ftz
+       -fp_model noprecise                   -fp_model fast
+       -fp_model nostrict                    -fp_model nosource
+       -fp_model nodouble                    -fp_model noextended
+       -fp_model novery_fast                 -fp_model noexcept
+       -fp_model nono_except                 -heap_arrays 0
+  no   -threadprivate_compat                 -free
+       -g0                                   -iface nomixed_str_len_arg
+       -iface nono_mixed_str_len_arg         -init noarrays
+       -init nohuge                          -init noinfinity
+       -init nominus_huge                    -init nominus_infinity
+       -init nominus_tiny                    -init nonan
+       -init nosnan                          -init notiny
+       -init nozero                     no   -intconstant
+       -integer_size 32                 no   -mixed_str_len_arg
+  no   -module                               -names lowercase
+  no   -noinclude                       no   -o
+       -offload-build=host                   -openmp-simd
+       -O2                              no   -pad_source
+       -real_size 32                    no   -recursive
+       -reentrancy threaded                  -vec=simd
+       -show nofullpath                      -show noinclude
+       -show map                             -show options
+  no   -syntax_only                     no   -threadcom
+  no   -U                               no   -vms
+       -w noall                              -w nonone
+       -w alignments                         -w nodeclarations
+       -w noexternals                        -w general
+       -w noignore_bounds                    -w noignore_loc
+       -w nointerfaces                       -w noshape
+       -w notruncated_source                 -w uncalled
+       -w uninitialized                      -w nounused
+       -w usage                         no   -wrap-margins
+
+       -includepath : /pe/intel/compilers_and_libraries_2020.4.304/linux/mkl/include/,/pe/intel/compilers_and_libraries_2020.4.304/linux/compiler/include/icc/,
+           /usr/include/,./,/apps/prod/hpc-stack/intel-19.1.3.304/netcdf/4.7.4/include/,/apps/prod/hpc-stack/intel-19.1.3.304/hdf5/1.10.6/include/,
+           /pe/intel/compilers_and_libraries_2020.4.304/linux/ipp/include/,/pe/intel/compilers_and_libraries_2020.4.304/linux/mkl/include/,
+           /pe/intel/compilers_and_libraries_2020.4.304/linux/pstl/include/,/pe/intel/compilers_and_libraries_2020.4.304/linux/pstl/stdlib/,
+           /pe/intel/compilers_and_libraries_2020.4.304/linux/tbb/include/,/pe/intel/compilers_and_libraries_2020.4.304/linux/compiler/include/intel64/,
+           /pe/intel/compilers_and_libraries_2020.4.304/linux/compiler/include/icc/,/pe/intel/compilers_and_libraries_2020.4.304/linux/compiler/include/,
+           /usr/lib64/gcc/x86_64-suse-linux/7/include/,/usr/lib64/gcc/x86_64-suse-linux/7/include-fixed/,/usr/include/,
+           /usr/include/,/usr/include/
+       -list filename : naefs_crps_avg.lst
+  no   -o
+
+COMPILER: Intel(R) Fortran 19.1-1655

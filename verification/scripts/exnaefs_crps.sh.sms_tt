@@ -1,0 +1,387 @@
+########################### BIASUPDATE ####################################
+echo "This is ensemble verification program for NAEFS 1 degree products"
+echo "------------------------------------------------------------------"
+echo "AUTHOR: Bo Cui  (wx20cb)"
+########################### BIASUPDATE ####################################
+
+#if [ "$CDATE" -eq " " ]; then
+#  echo "No data for CDATE, please check"
+#  exit 8
+#fi
+
+###    
+################################################################
+# define exec variable, and entry grib utility 
+################################################################
+###    
+
+#HOMESH=/sss/emc/ensemble/shared/Bo.Cui
+#export EXECcrps=$HOMESH/NUOPC_2012/exec
+#export EXECcrps=/ensemble/save/Bo.Cui/ECMWF/exec
+#export EXECcrps=/ensemble/save/Bo.Cui/naefs.v5.0.0/exec
+#export EXECcrps=/gpfs/hps3/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/exec
+
+#export EXECUTIL=/nwprod/util/exec
+#export NDATE=/nwprod/util/exec/ndate
+#export COPYGB=$EXECUTIL/copygb
+
+#export IF_ECMWFANL=NO
+#export IF_NCEPANL=YES
+#export IFECMWF=NO
+#export IFNCEP=YES
+#
+#export runini=NO
+#export ENSIM=gefs_bcp5
+#
+export NGLOBAL=/lfs/h2/emc/vpppg/noscrub
+export COM=$NGLOBAL/$LOGNAME/com/naefs/v7.0
+
+if [ "$id" = "naefs" ]; then
+   px=naefs_
+elif [ "$id" = "ecmwf" ]; then
+   px=ecmwf_
+elif [ "$id" = "cmce" ]; then
+   px=cmc_
+else
+   px=
+fi
+
+if [ "$ENSIM" = "20s" -o "$ENSIM" = "20x" ]; then
+   ex=
+elif [ "$ENSIM" = "gefs_rawp5" ]; then
+   ex=. 
+elif [ "$ENSIM" = "ecmwf" ]; then
+   ex=
+elif [ "$ENSIM" = "ecmwf_bc" ]; then
+   ex=_bc
+else
+   ex=_bc
+fi
+
+mkdir -m 775 -p ${COMOUT}
+
+mkdir -m 775 -p $DATA
+rm $DATA/*
+cd $DATA
+
+export pgm=naefs_crps_from_avgspr_p5 
+export pgmout=output          
+#. prep_step
+
+###################################
+### set up hourlist & variable list
+###################################
+
+hourlist="    003 006 009 012 015 018 021 024 027 030 033 036 039 042 045 048 \
+          051 054 057 060 063 066 069 072 075 078 081 084 087 090 093 096 099 \
+          102 105 108 111 114 117 120 123 126 129 132 135 138 141 144 147 150 \
+          153 156 159 162 165 168 171 174 177 180 183 186 189 192 195 198 201 \
+          204 207 210 213 216 219 222 225 228 231 234 237 240 243 246 249 252 \
+          255 258 261 264 267 270 273 276 279 282 285 288 291 294 297 300 303 \
+          306 309 312 315 318 321 324 327 330 333 336 339 342 345 348 351 354 \
+          357 360 363 366 369 372 375 378 381 384"
+
+#########################
+### set up  variable list
+#########################
+
+fieldlist=" 1000HGT 925HGT 850HGT 700HGT 500HGT 250HGT 200HGT 100HGT 50HGT 10HGT \
+            1000TMP 925TMP 850TMP 700TMP 500TMP 250TMP 200TMP 100TMP 50TMP 10TMP \
+            1000UGRD 925UGRD 850UGRD 700UGRD 500UGRD 250UGRD 200UGRD 100UGRD 50UGRD 10UGRD \
+            1000VGRD 925VGRD 850VGRD 700VGRD 500VGRD 250VGRD 200VGRD 100VGRD 50VGRD 10VGRD \
+            PRES PRMSL 2MTMP 10MUGRD 10MVGRD TMAX TMIN 850VVEL DPT2M TCDC "
+
+
+#fieldlist=" 2MTMP 10MUGRD 10MVGRD 1000HGT 500HGT 850TMP PRES PRMSL DPT2M "
+fieldlist=" 2MTMP  10MUGRD 10MVGRD 1000HGT 500HGT 850TMP PRES PRMSL DPT2M "
+
+
+#fieldlist="2MTMP"                                            
+#hourlist="    024"
+
+################################
+### Set up the region parameters
+################################
+
+cat <<paraEOF >input.domlist
+&domlist
+ ictl=1,la1=21,la2=140,lo1=1,lo2=720,
+/
+&domlist
+ ictl=1,la1=220,la2=340,lo1=1,lo2=720,
+/
+&domlist
+ ictl=1,la1=140,la2=220,lo1=1,lo2=720,
+/
+&domlist
+ ictl=1,la1=60,la2=140,lo1=440,lo2=630,
+/
+&domlist
+ ictl=1,la1=22,la2=120,lo1=1,lo2=90,
+/
+&domlist
+ ictl=1,la1=22,la2=160,lo1=90,lo2=280,
+/
+paraEOF
+
+########################################################
+# input basic information, member and forecast lead time
+########################################################
+
+for cfield in $fieldlist; do
+
+  ffd=dummy
+
+  case $cfield in
+
+  1000HGT) ffd=z1000;ifd=7;isp=100;ilv=1000;;
+   925HGT) ffd=z925;ifd=7;isp=100;ilv=925;;
+   850HGT) ffd=z850;ifd=7;isp=100;ilv=850;;
+   700HGT) ffd=z700;ifd=7;isp=100;ilv=700;;
+   500HGT) ffd=z500;ifd=7;isp=100;ilv=500;;
+   250HGT) ffd=z250;ifd=7;isp=100;ilv=250;;
+   200HGT) ffd=z200;ifd=7;isp=100;ilv=200;;
+   100HGT) ffd=z100;ifd=7;isp=100;ilv=100;;
+    50HGT) ffd=z50; ifd=7;isp=100;ilv=50;;
+    10HGT) ffd=z10; ifd=7;isp=100;ilv=10;;
+
+  1000TMP) ffd=t1000;ifd=11;isp=100;ilv=1000;;
+   925TMP) ffd=t925;ifd=11;isp=100;ilv=925;;
+   850TMP) ffd=t850;ifd=11;isp=100;ilv=850;;
+   700TMP) ffd=t700;ifd=11;isp=100;ilv=700;;
+   500TMP) ffd=t500;ifd=11;isp=100;ilv=500;;
+   250TMP) ffd=t250;ifd=11;isp=100;ilv=250;;
+   200TMP) ffd=t200;ifd=11;isp=100;ilv=200;;
+   100TMP) ffd=t100;ifd=11;isp=100;ilv=100;;
+    50TMP) ffd=t50; ifd=11;isp=100;ilv=50;; 
+    10TMP) ffd=t10; ifd=11;isp=100;ilv=10;;
+
+  1000UGRD) ffd=u1000;ifd=33;isp=100;ilv=1000;;
+   925UGRD) ffd=u925;ifd=33;isp=100;ilv=925;;
+   850UGRD) ffd=u850;ifd=33;isp=100;ilv=850;;
+   700UGRD) ffd=u700;ifd=33;isp=100;ilv=700;;
+   500UGRD) ffd=u500;ifd=33;isp=100;ilv=500;;
+   250UGRD) ffd=u250;ifd=33;isp=100;ilv=250;;
+   200UGRD) ffd=u200;ifd=33;isp=100;ilv=200;;
+   100UGRD) ffd=u100;ifd=33;isp=100;ilv=100;;
+    50UGRD) ffd=u50; ifd=33;isp=100;ilv=50;; 
+    10UGRD) ffd=u10; ifd=33;isp=100;ilv=10;;
+
+  1000VGRD) ffd=v1000;ifd=34;isp=100;ilv=1000;;
+   925VGRD) ffd=v925;ifd=34;isp=100;ilv=925;;
+   850VGRD) ffd=v850;ifd=34;isp=100;ilv=850;;
+   700VGRD) ffd=v700;ifd=34;isp=100;ilv=700;;
+   500VGRD) ffd=v500;ifd=34;isp=100;ilv=500;;
+   250VGRD) ffd=v250;ifd=34;isp=100;ilv=250;;
+   200VGRD) ffd=v200;ifd=34;isp=100;ilv=200;;
+   100VGRD) ffd=v100;ifd=34;isp=100;ilv=100;;
+    50VGRD) ffd=v50; ifd=34;isp=100;ilv=50;; 
+    10VGRD) ffd=v10; ifd=34;isp=100;ilv=10;;
+
+    PRMSL) ffd=prmsl;ifd=2;isp=102;ilv=0;;
+     PRES) ffd=pres;ifd=1;isp=1;  ilv=0;;
+    2MTMP) ffd=t2m;ifd=11;isp=105;ilv=2;;
+     TMAX) ffd=t2max;ifd=15;isp=105;ilv=2;;
+     TMIN) ffd=t2min;ifd=16;isp=105;ilv=2;;
+  10MUGRD) ffd=u10m;ifd=33;isp=105;ilv=10;;
+  10MVGRD) ffd=v10m;ifd=34;isp=105;ilv=10;;
+  850VVEL) ffd=vvel;ifd=39;isp=100;ilv=850;;
+  ULWRFtop) ffd=ulwrftop;ifd=212;isp=8;ilv=0;;
+  ULWRFsfc) ffd=ulwrfsfc;ifd=212;isp=1;ilv=0;;
+  DPT2M)   ffd=dpt2m;ifd=17;isp=105;ilv=2;;
+  RH2M)    ffd=rh2m;ifd=52;isp=105;ilv=2;;
+  TCDC)    ffd=tcdc;ifd=71;isp=200;ilv=0;;
+  10MWIND) ffd=wspd10m;ifd=32;isp=105;ilv=10;;
+
+  esac
+
+  if [ "$ffd" == "dummy" ]; then
+    echo " #### attention: variable $cfield is not in the list"
+  else
+    echo " &varlist" >>namin.varlist.$cfield
+    echo "pds5=$ifd,pds6=$isp,pds7=$ilv," >>namin.varlist.$cfield
+  fi
+
+  echo " /" >>namin.varlist.$cfield
+
+####################
+# start verification
+####################
+
+for nfhrs in $hourlist; do
+
+###
+# ncep gefs analysis files entry
+###
+
+  if [ "$runini" = "YES" ]; then
+
+    fymdh=$CDATE
+    fymd=`echo $fymdh | cut -c1-8`
+    fcyc=`echo $fymdh | cut -c9-10`
+
+    aymdh=`$NDATE +$nfhrs $CDATE `
+    aymd=`echo $aymdh | cut -c1-8`
+    amd=`echo $aymdh | cut -c5-8`
+    acyc=`echo $aymdh | cut -c9-10`
+
+    rem=`echo "${nfhrs}%6" | bc`
+
+    if [ $rem -eq 0 ]; then
+      echo "$nfhrs is even number"
+#     COMANL=$NGLOBAL/Bo.Cui/com/naefs/para/gefs.${aymd}/${acyc}/pgrbap5
+      COMANL=$COM_gefsanl/gefs.${aymd}/${acyc}/atmos/pgrbap5
+      afile1=gegfs.t${acyc}z.pgrba.0p50.f000                            
+#     afile1=gegfs.t${acyc}z.pgrba.0p50.f000_wind                            
+    else
+      echo "$nfhrs is odd number"
+      aymdh_m03=`$NDATE -3 $aymdh `
+      aymd=`echo $aymdh_m03 | cut -c1-8`
+      acyc=`echo $aymdh_m03 | cut -c9-10`
+#     COMANL=$NGLOBAL/Bo.Cui/com/naefs/para/gefs.${aymd}/${acyc}/atmos/pgrbap5
+      COMANL=$COM_gefsanl/gefs.${aymd}/${acyc}/atmos/pgrbap5
+      afile1=gegfs.t${acyc}z.pgrba.0p50.f003                            
+#     afile1=gegfs.t${acyc}z.pgrba.0p50.f003_wind                            
+    fi
+
+  else
+ 
+    aymdh=$CDATE                            
+    aymd=`echo $aymdh | cut -c1-8`
+    amd=`echo $aymdh | cut -c5-8`
+    acyc=`echo $aymdh | cut -c9-10`
+
+    fymdh=`$NDATE -$nfhrs $CDATE `
+    fymd=`echo $fymdh | cut -c1-8`
+    fcyc=`echo $fymdh | cut -c9-10`
+
+#   COMANL=$NGLOBAL/Bo.Cui/com/naefs/para/gefs.${aymd}/${acyc}/pgrbap5
+    COMANL=$COM_gefsanl/gefs.${aymd}/${acyc}/atmos/pgrbap5
+    afile1=gegfs.t${acyc}z.pgrba.0p50.f000                            
+
+  fi
+
+# if [ "$IF_ECMWFANL" = "YES" ]; then
+#   COMANL=$NGLOBAL/Bo.Cui/com/gens/para/ecmwf.${aymd}/${acyc}/pgrba
+#   afile1=ecmwf_gephi.t${acyc}z.pgrbaf00                            
+# elif [ "$IF_NCEPANL" = "YES" ]; then
+#   COMANL=$COM/gefs.${aymd}/${acyc}/pgrbap5
+#   afile1=gec00.t${acyc}z.pgrbaf00                            
+#   afile1=gegfs.t${acyc}z.pgrbaf00                            
+#   afile1=gegfs.t${acyc}z.pgrba.0p50.f000                            
+# fi
+
+# COMA=$NGLOBAL2/Bo.Cui/com2/gens/prod
+  case $cfield in
+    TMAX) COMANL=$COM_gefaanl/gefs.${aymd_m06}/${acyc_m06}/atmos/pgrbap5;;
+    TMIN) COMANL=$COM_gefaanl/gefs.${aymd_m06}/${acyc_m06}/atmos/pgrbap5;;
+    TCDC) COMANL=$COM_gefaanl/gefs.${aymd_m06}/${acyc_m06}/atmos/pgrbap5;;
+  esac
+
+  COMFCST=$COM_fcst/${id}.${fymd}/${fcyc}/pgrbap5$ex
+  if [ "$ENSIM" = "gefs_rawp5" ]; then
+    COMFCST=$COM_gefsanl/${id}.${fymd}/${fcyc}/pgrbap5
+  fi
+
+  case $cfield in
+#   TMAX) afile1=gec00.t${acyc_m06}z.pgrbaf006;;
+#   TMIN) afile1=gec00.t${acyc_m06}z.pgrbaf006;;
+#   TCDC) afile1=gec00.t${acyc_m06}z.pgrbaf000;;
+    TCDC) afile1=gegfs.t${acyc_m06}z.pgrbaf006;;
+    TMAX) afile1=gegfs.t${acyc_m06}z.pgrbaf006;;
+    TMIN) afile1=gegfs.t${acyc_m06}z.pgrbaf006;;
+  esac
+
+  if [ -s $afile1 ]; then rm $afile1; fi
+
+  echo ${nfhrs} $COMANL/$afile1 
+  echo $COM/${id}.${fymd}/${fcyc}/pgrbap5$ex
+
+  ln -sf $COMANL/$afile1 .
+
+  if [ -s $afile1 ]; then
+    echo " "
+  else
+    echo " There is no NCEP analysis data, Stop! for " $aymdh
+  fi
+
+###
+# climate mean file entry
+###
+
+# afile2=cmean_1d.1979$amd.g1
+  afile2=cmean_p5d.1979$amd.g1
+# cp $COMCLIM/$afile2 .
+  ln -fs $FIXcrps/$afile2 .
+
+  if [ -s $afile2 ]; then
+    echo " "
+  else
+    echo " There is no climate mean data, Stop! for " $aymdh
+  fi
+
+###
+# forecast files entry, ensembel average
+###
+
+  cfile1=$COMFCST/${px}geavg.t${fcyc}z.pgrba.0p50${ex}f${nfhrs}
+# cfile1=$COMFCST/${px}geavg.t${fcyc}z.pgrbap5.0p50${ex}f${nfhrs}
+
+###
+# forecast files entry, ensembel spread 
+###
+
+  cfile2=$COMFCST/${px}gespr.t${fcyc}z.pgrba.0p50${ex}f${nfhrs}
+# cfile2=$COMFCST/${px}gespr.t${fcyc}z.pgrbap5.0p50${ex}f${nfhrs}
+
+###
+#  output verified results                    
+###
+
+  ofile=crps.t${fcyc}z.pgrbaf${nfhrs}_$cfield
+ 
+  echo "&message"  >input.$nfhrs.$cfield
+  echo " nfhrs=$nfhrs," >>input.$nfhrs.$cfield
+  echo " odate=$aymdh," >>input.$nfhrs.$cfield
+
+  if [ "$runini" = "YES" ]; then
+    echo " idate=$CDATE," >>input.$nfhrs.$cfield
+  else
+    echo " idate=$fymdh," >>input.$nfhrs.$cfield
+  fi
+
+  echo " variable='$cfield'," >>input.$nfhrs.$cfield
+  echo "/" >>input.$nfhrs.$cfield
+  
+  cat namin.varlist.$cfield >>input.$nfhrs.$cfield
+
+  cat input.domlist >>input.$nfhrs.$cfield
+
+  ln -sf $afile1 fort.11
+  ln -sf $afile2 fort.12
+  ln -sf $cfile1 fort.13
+  ln -sf $cfile2 fort.14
+  ln -sf $ofile  fort.51
+
+# startmsg
+  $EXECcrps/$pgm  <input.$nfhrs.$cfield > $pgmout.${nfhrs}_$cfield
+# export err=$?;err_chk
+
+  if [ -s $ofile ]; then cat $ofile >> SCORES.OUT.${cfield}; fi
+
+done # for fhrs
+
+if [ "$runini" = "YES" ]; then
+ cp SCORES.OUT.${cfield} $COMOUT/P${cfield}${ENSIM}f.$CDATE
+fi
+
+if [ "$runini" = "NO" ]; then
+ cp SCORES.OUT.${cfield} $COMOUT/P${cfield}${ENSIM}a.$CDATE
+fi
+
+done  # for cfield
+
+msg="HAS COMPLETED NORMALLY!"
+#postmsg "$jlogfile" "$msg"
+
+###

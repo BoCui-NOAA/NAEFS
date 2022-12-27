@@ -1,0 +1,37 @@
+set -x
+
+#Date=`date +%y%m%d%H`
+#CDATE=20$Date
+
+CDATE=2022120100   
+
+COM=/lfs/h2/emc/vpppg/noscrub/bo.cui/com                            
+
+ndays=19
+iday=1
+
+> out
+
+while [ $iday -le $ndays ]; do
+
+export PDY=`echo $CDATE | cut -c1-8`
+export cyc=`echo $CDATE | cut -c9-10`
+echo " day " $YYMMDD$cyc
+
+
+echo $CDATE >>out
+ls $COM/naefs/v7.0/gefs.$PDY/$cyc/pgrbap5_bc    | wc  >>out
+ls $COM/naefs/v7.0/naefs.$PDY/$cyc/pgrbap5_bc   | wc  >>out
+
+ls $COM/naefs/v6.1/gefs.$PDY/$cyc/pgrbap5_bc    | wc  >>out
+ls $COM/naefs/v6.1/naefs.$PDY/$cyc/pgrbap5_bc   | wc  >>out
+
+ls $COM/gefs/v12.3/gefs.$PDY/$cyc/atmos/pgrbap5 | wc  >>out
+
+echo " "    >>out
+
+iday=`expr $iday + 1`
+export CDATE=`$NDATE +24 $CDATE`
+
+done
+

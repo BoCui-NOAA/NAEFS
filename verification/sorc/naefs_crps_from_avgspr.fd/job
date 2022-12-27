@@ -1,0 +1,12 @@
+
+filelist="  GETRMSSPD.f90  naefs_crps_from_avgspr.f90  SORTMM.f90  WRITEP.f90
+CRPS.f90       makefile       QUANOR.f                    test.f90
+GETPROBSC.f90  QUASTN.f                    WGT2D.f"
+
+for file in $filelist; do
+
+echo $file
+diff $file $PTMP/Bo.Cui/temp/$file
+
+done
+

@@ -1,0 +1,117 @@
+#!/bin/bash
+#PBS -N cnvgrib_gefs_bc                 
+#PBS -j oe                  
+#PBS -q dev
+#PBS -l walltime=00:30:00
+#PBS -A NAEFS-DEV                
+#PBS -l select=1:ncpus=97:mpiprocs=97:mem=150GB
+#PBS -l debug=true
+
+#%include <head.h>
+#%include <envir-xc40.h>
+
+# versions file for naefs sets $naefs_ver and $code_ver
+model=naefs
+#%include <model_ver.h>
+
+## HOMEnaefs will de defined by the eclfow apps
+export HOMEnaefs=${HOMEnaefs:-/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0}
+
+source ${HOMEnaefs}/versions/run.ver
+
+cd $PBS_O_WORKDIR
+
+set -x
+
+module load PrgEnv-intel/${PrgEnv_intel_ver}
+module load craype/${craype_ver}
+module load intel/${intel_ver}
+module load cray-mpich/${cray_mpich_ver}
+module load cray-pals/${cray_pals_ver}
+module load cfp/${cfp_ver}
+module load libjpeg/${libjpeg_ver}
+module load grib_util/${grib_util_ver}
+module load wgrib2/${wgrib2_ver}
+module load iobuf/${iobuf_ver}
+module load craype-hugepages2M
+module list
+
+##
+
+export direxp=naefs.v7.0.0
+export RUN_ENVIR=nco
+
+export PDY=YYMMDD  
+export cyc=CYC              
+
+export PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME 
+export HOMEcrps=$PACKAGEROOT/$direxp/verification
+export FIXcrps=$PACKAGEROOT/$direxp/fix
+export EXECcrps=$HOMEcrps/exec                                     
+
+export COMROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/com
+export DATAROOT=/lfs/h2/emc/ptmp/$LOGNAME/tmpnwprd
+
+export APRUN="mpiexec -np 97 --cpu-bind verbose,core cfp "
+export IOBUF_PARAMS='*:sync,%%stdout:sync'
+
+export KEEPDATA=NO 
+
+# 1. naefs v7.0 gefs bcp5
+
+export model=naefs
+export model_ver=v7.0
+export package=gefs  
+export px=_bc
+export outlist="geavg gespr"
+
+$HOMEcrps/scripts/excnvgrib_gefs_bcp5.sh
+
+# 2. naefs v7.0 naefs bcp5
+
+export model=naefs
+export model_ver=v7.0
+export package=naefs 
+export px=_bc
+export outlist="naefs_geavg naefs_gespr"
+
+$HOMEcrps/scripts/excnvgrib_gefs_bcp5.sh
+
+# 3. naefs v6.1 gefs bcp5
+
+export model=naefs
+export model_ver=v6.1
+export package=gefs  
+export px=_bc
+export outlist="geavg gespr"
+
+$HOMEcrps/scripts/excnvgrib_gefs_bcp5.sh
+
+# 4. naefs v6.1 naefs bcp5
+
+export model=naefs
+export model_ver=v6.1
+export package=naefs 
+export px=_bc
+export outlist="naefs_geavg naefs_gespr"
+
+$HOMEcrps/scripts/excnvgrib_gefs_bcp5.sh
+
+# 5. naefs v6.1 naefs bcp5
+
+export model=gefs  
+export model_ver=v12.3
+export package=gefs  
+export px=
+export outlist="gegfs gec00 geavg gespr"
+
+$HOMEcrps/scripts/excnvgrib_gefs_bcp5.sh
+
+
+if [ $? -ne 0 ]; then
+  ecflow_client --abort
+  exit
+fi
+
+
+
