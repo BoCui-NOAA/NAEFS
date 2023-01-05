@@ -1,21 +1,20 @@
-Release Note: NAEFS.v6.0.0
+Release Note: NAEFS.v7.0.0
 
-v4.0.0 released Jan 28. 2014  
-v4.0.1 released May 20. 2014  
-v4.0.2 released May 20. 2014  
-v4.0.3 released May/Jun 2015  
-v5.0.0 released Mar 29  2016  
+v4.0.0  released Jan 28. 2014
+v4.0.1  released May 20. 2014
+v4.0.2  released May 20. 2014
+v4.0.3  released May/Jun 2015
+v5.0.0  released Mar 29  2016
+v6.0.3  released Aug 18  2018
+v6.0.4  released Sep 18  2018
+v6.0.5  released Sep 20  2018
+v6.0.10 released May 22  2020
+v6.1.0  released Dec 06  2021
 
 NAEFS upgrade
 
-- Upgrade bias corrected GEFS/NAEFS (0.5d) products (every 3hr for 0-8 days)
-- Upgrade anomaly products. For surface elements, both anomaly forecast and EFI
-- Upgrade downscaled GEFS/NAEFS products(CONUS and Alaska, every 3hr for 0-8 days)
-- Upgrade bias correction methodology (hybrid of decaying average and reforecast)
-- Add wind speed at 10m above ground in the GEFS/NAEFS bias-corrected forecast
-- Upgrade GEFS bias-corrected QPF and PQPF from daily 2.5d to 6-hourly 0.5d
-- Add downscaled PQF/PQPF forecasts for CONUS domain using climatology downscaling methodology 
-
+- Added GEFS ensemble members from 21 to 31 to all NAEFS products
+- Upgrade FNMOC ensembl data from using 1 degree data to 0.5 degree.
 
 DESCRIPTION OF CHANGE:  
 
@@ -41,7 +40,7 @@ FNMOC Jobs
    1) scripts/exnawips_fnmoc.sh
    - modified for 0.5d data input
 
-3.  ecf/jnaefs_fnmoc_ens_debias.ecf
+4.  ecf/jnaefs_fnmoc_ens_debias.ecf
    - modified ncpus and mpiprocs setting from 65 to 97
 
 NCEP/GEFS Jobs
@@ -73,13 +72,20 @@ NCEP/GEFS Jobs
   1) sorc/conus_ndgd_enscqpf.fd/DSCQPF.f90
    - modified to add ensemble member from 21 to 31
 
-7.  ecf/jnaefs_gefs_debias.ecf            
+7. jobs/JNAEFS_GEFS_DVRTMA_PROB_AVGSPR_CONUS
+  1) scripts/exnaefs_dvrtma_prob_avgspr_conus.sh
+   - modified to add GEFS ensemble member from 21 to 31
+
+8. jobs/JNAEFS_GEFS_DVRTMA_PROB_AVGSPR_AK
+  1) scripts/exnaefs_dvrtma_prob_avgspr_ak.sh.ecf
+   - modified to add GEFS ensemble member from 21 to 31
+
+9. ecf/jnaefs_gefs_debias.ecf            
    - modified ncpus and mpiprocs setting from 22 to 32
 
 NAEFS Jobs
 
 1. jobs/JNAEFS_PROB_AVGSPR
-
   1) scripts/exnaefs_prob_avgspr.sh
   2) ush/naefs_climate_efi.sh
   3) ush/naefs_climate_anv.sh
@@ -91,42 +97,18 @@ NAEFS Jobs
    - modified to add GEFS ensemble member from 21 to 31
 
 3. jobs/JNAEFS_DVRTMA_PROB_AVGSPR_AK
-
   1) scripts/exnaefs_dvrtma_prob_avgspr_ak.sh.ecf
    - modified to add GEFS ensemble member from 21 to 31
 
-exit
-
-
-5. jobs/JNAEFS_DVRTMA_PROB_AVGSPR_CONUS
-
-  1) scripts/exnaefs_dvrtma_prob_avgspr_conus.sh.ecf
-   - modified for 0.5d ensemble data input with 3 hourly from 0-8day                                 
-   - modified for 0.5d ensemble data output with 3 hourly from 0-8day                                 
-
-  2) ush/dvrtma_debias_conus.sh
-   - modified for 0.5d ensemble data input 
-
-  3) ush/dvrtma_debias_conus_tmaxmin.sh
-   - modified for 0.5d ensemble data input 
-
-  4) ush/cmce_adjust_tmaxmin_conus.sh
-   - modified for 0.5d ensemble data input 
-
-  5) ush/dvrtma_debias_conus_wind10m.sh
-   - modified for 0.5d ensemble data input 
-
-  6) ush/cmce_adjust_wind10m_conus.sh
-   - modified for 0.5d ensemble data input 
- 
 
 BENEFIT OF CHANGE: 
 
-NAEFS can be run across multiple phases
+NAEFS v7.0 performance will increase over NAEFS v6.1 with the addition of 10 more GEFS members.  
 
 USER IMPACT STATEMENT:
 
-No format is changed. Files names of GEFS/NAEFS for 0.5d are changed.
+FNMOC ensembl data will be upgraded from using 1 degree data to 0.5 degree.
+GEFS includes 10 new calibrated membes from 21 to 30, from 21 to 30. No NCEP GEFS/NAEFS file format are changed.
 
 TECHNICAL IMPACT STATEMENT:
 
