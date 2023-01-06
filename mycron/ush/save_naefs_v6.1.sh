@@ -118,3 +118,23 @@ fi
 
 done  
 done  
+
+
+### save rtma data 
+
+COMROOT=/lfs/h1/ops/prod/com/rtma/v2.9 
+COM_OUT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/com/rtma/v2.9                  
+
+cyclist="00 03 06 09 12 15 18 21"
+
+COMOUT=$COM_OUT/akrtma.$PDYm3
+mkdir -p $COMOUT
+for cyc in $cyclist; do
+  cp -p $COMROOT/akrtma.$PDYm3/akrtma.t${cyc}z.2dvaranl_ndfd_3p0.grb2 $COMOUT
+done
+
+COMOUT=$COM_OUT/rtma2p5.$PDYm3
+mkdir -p $COMOUT
+for cyc in $cyclist; do
+  cp -p $COMROOT/rtma2p5.$PDYm3/rtma2p5.t${cyc}z.2dvaranl_ndfd.grb2_ext  $COMOUT
+done

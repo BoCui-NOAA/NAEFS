@@ -8,7 +8,6 @@ set -x
 #PDY=`echo $CDATE | cut -c1-8`
 #cyc=`echo $CDATE | cut -c9-10`
 
-PDY=YYMMDD
 PDY=20221206
 cyc=00
 
