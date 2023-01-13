@@ -3,11 +3,11 @@ set -x
 #Date=`date +%y%m%d%H`
 #CDATE=20$Date
 
-CDATE=2022120100   
+CDATE=2023010100   
 
 COM=/lfs/h2/emc/vpppg/noscrub/bo.cui/com                            
 
-ndays=19
+ndays=9
 iday=1
 
 > out

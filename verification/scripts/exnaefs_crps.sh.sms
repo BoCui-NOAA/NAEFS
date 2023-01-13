@@ -1,8 +1,10 @@
+#!/bin/sh
 ########################### BIASUPDATE ####################################
-echo "This is ensemble verification program for NAEFS 1 degree products"
+echo "This is ensemble verification program for NAEFS 0.5 degree products"
 echo "------------------------------------------------------------------"
 echo "AUTHOR: Bo Cui  (wx20cb)"
 ########################### BIASUPDATE ####################################
+set -x
 
 #if [ "$CDATE" -eq " " ]; then
 #  echo "No data for CDATE, please check"
@@ -25,9 +27,7 @@ else
    px=
 fi
 
-if [ "$ENSIM" = "20s" -o "$ENSIM" = "20x" ]; then
-   ex=
-elif [ "$ENSIM" = "gefs_rawp5" ]; then
+if [ "$ENSIM" = "gefs_rawp5" ]; then
    ex=. 
 elif [ "$ENSIM" = "ecmwf" ]; then
    ex=
@@ -38,14 +38,13 @@ else
 fi
 
 mkdir -m 775 -p ${COMOUT}
-
 mkdir -m 775 -p $DATA
 rm $DATA/*
 cd $DATA
 
 export pgm=naefs_crps_from_avgspr_p5 
 export pgmout=output          
-#. prep_step
+. prep_step
 
 ###################################
 ### set up hourlist & variable list
@@ -250,7 +249,7 @@ for nfhrs in $hourlist; do
   COMFCST=$COM_fcst/${id}.${fymd}/${fcyc}/pgrbap5$ex
 
   if [ "$ENSIM" = "gefs_rawp5" ]; then
-    COMFCST=$COM_gefsanl/${id}.${fymd}/${fcyc}/pgrbap5
+    COMFCST=$COM_fcst/${id}.${fymd}/${fcyc}/atmos/pgrbap5
   fi
 
   case $cfield in
@@ -337,16 +336,25 @@ for nfhrs in $hourlist; do
 done # for fhrs
 
 if [ "$runini" = "YES" ]; then
- cp SCORES.OUT.${cfield} $COMOUT/P${cfield}${ENSIM}f.$CDATE
+ cp SCORES.OUT.${cfield} $COMOUT/P${cfield}.${ENSIM}f.$CDATE
 fi
 
 if [ "$runini" = "NO" ]; then
- cp SCORES.OUT.${cfield} $COMOUT/P${cfield}${ENSIM}a.$CDATE
+ cp SCORES.OUT.${cfield} $COMOUT/P${cfield}.${ENSIM}a.$CDATE
 fi
 
 done  # for cfield
 
 msg="HAS COMPLETED NORMALLY!"
-#postmsg "$jlogfile" "$msg"
+postmsg "$jlogfile" "$msg"
 
 ###
+
+if [ $KEEPDATA != YES ]; then
+  cd $DATAROOT
+  rm -rf $DATA
+fi
+
+date
+
+exit 0

@@ -1,0 +1,95 @@
+#set -xS
+if [ $# -lt 0 ]; then
+    echo " Usage: $0 need "
+    echo " For example: PLOT.sh"
+    exit 8
+fi
+
+echo
+echo " ######################################################## "
+echo " ###   Start to average the probability scores        ### "
+echo " ###   Please wait! wait! wait!!!!!!!                 ### "
+echo " ######################################################## "
+echo
+
+export HOME=/sss/emc/ensemble/shared/Bo.Cui/Verification
+
+export DATA=$PTMP/Bo.Cui/plot_bias/prob_pub_ecmwf_temp
+mkdir -p  $DATA                   
+cd    $DATA                   
+rm    $DATA/*gr $DATA/*gif
+
+stymd=2018040100
+edymd=2018051500
+yyyymm=Spr2018
+
+export runini=NO 
+
+#export IFECMWF=NO 
+#export IFNCEP=YES
+
+COM=/gpfs/hps3/emc/ensemble/save/Bo.Cui/naefs.v6.0.1
+
+export SCOREMEAN=$COM/grads_crps_naefs/exnaefs_score_avg.sh  
+export COMOUT=$NGLOBAL/Bo.Cui/naefs.v5.0.0/com/gens/crps_naefs 
+
+################################
+
+varlist="P2MTMP P1000HGT P500HGT P850TMP P10MUGRD P10MVGRD PPRES PTMAX PTMIN PRH2M PTCDC PDPT2M"
+varlist="P2MTMP P1000HGT P500HGT P850TMP P10MUGRD P10MVGRD"
+
+for VFIELD in $varlist; do
+
+export VFIELD
+
+#######################################
+# NCEP ECMWF raw (ecmwf) and bc
+#######################################
+
+export DATAVRFY=/gpfs/hps3/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens
+
+export CENTER=crps_gefs 
+
+$SCOREMEAN $stymd $edymd naefs_bcp5           
+#$SCOREMEAN $stymd $edymd gefs_rawp5    
+$SCOREMEAN $stymd $edymd gefs_bcp5
+
+#$SCOREMEAN $stymd $edymd gefs_raw    
+$SCOREMEAN $stymd $edymd gefs_bc
+$SCOREMEAN $stymd $edymd naefs_bc   
+
+############
+# plot score
+############
+
+#export COMIN=/ensemble/save/Bo.Cui/naefs.v5.0.0/grads_crps_naefs
+export COMIN=/gpfs/hps3/emc/ensemble/save/Bo.Cui/naefs.v6.0.1/grads_crps_naefs
+
+export INTERHR=24h
+
+#$COMIN/explot_naefs_scoreavg.sh $stymd $edymd $yyyymm gefs_rawp5 gefs_bcp5 naefs_bcp5 
+$COMIN/explot_naefs_scoreavg.sh $stymd $edymd $yyyymm gefs_bc naefs_bc gefs_bcp5 naefs_bcp5 
+
+done
+
+################################
+# Send Plots to emcrzdm Computer
+################################
+
+naefs_ver=v7.0
+
+dir_main=/home/people/emc/www/htdocs/gmb/wx20cb/naefs.${naefs_ver}
+dir_new=crps_4line_gefs_para_$stymd.${edymd}_${INTERHR}
+
+#cp  $HOME/grads_crps_naefs/SAMPLE_NAEFS.HTML  ECMWF_${yyyymm}.html
+
+ssh -l bocui emcrzdm "mkdir ${dir_main}/${dir_new}"
+ssh -l bocui emcrzdm "cp ${dir_main}/al* ${dir_main}/${dir_new}"
+ssh -l bocui emcrzdm "cp ${dir_main}/in* ${dir_main}/${dir_new}"
+ssh -l bocui emcrzdm "echo $dir_new > ${dir_main}/dir_new.txt"
+ssh -l bocui emcrzdm "cat ${dir_main}/dir_new.txt >> ${dir_main}/allow.cfg"
+scp *.png      bocui@emcrzdm:${dir_main}/$dir_new
+
+#scp *.html   bocui@emcrzdm:${dir_main}/$dir_new
+#scp *.gif     bocui@emcrzdm:${dir_main}/$dir_new
+

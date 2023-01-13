@@ -95,10 +95,22 @@ NAEFS Jobs
 2. jobs/JNAEFS_DVRTMA_PROB_AVGSPR_CONUS
   1) scripts/exnaefs_dvrtma_prob_avgspr_conus.sh
    - modified to add GEFS ensemble member from 21 to 31
+  2) sorc/dvrtma_debias_conus.fd/dvrtma_debias_conus.f90
+   - remove 2 variables not calculated 
+  3) sorc/dvrtma_debias_conus_tmaxmin.fd/dvrtma_debias_conus_tmaxmin.f90
+   - update GRIB2 message to add 10 NCEP/GEFS ensemble members
+  4) sorc/dvrtma_debias_conus_wind10m.fd/dvrtma_debias_conus_wind10m.f90
+   - update GRIB2 message to add 10 NCEP/GEFS ensemble members
+  5) sorc/cmce_adjust_tmaxmin.fd/cmce_adjust_tmaxmin.f90
+   - update CMC GRIB2 message with 10 more NCEP/GEFS members added to the combination
+  6) sorc/cmce_adjust_wind10m.fd/cmce_adjust_wind10m.f90
+   - update CMC GRIB2 message with 10 more NCEP/GEFS members added to the combination
 
 3. jobs/JNAEFS_DVRTMA_PROB_AVGSPR_AK
   1) scripts/exnaefs_dvrtma_prob_avgspr_ak.sh.ecf
    - modified to add GEFS ensemble member from 21 to 31
+  2) sorc/dvrtma_debias_alaska.fd/dvrtma_debias_alaska.f90
+   - remove 2 variables not calculated 
 
 
 BENEFIT OF CHANGE: 

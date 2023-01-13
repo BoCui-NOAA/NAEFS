@@ -1,0 +1,39 @@
+CDATE=2017043000
+ndays=24
+
+COM=/gpfs/gp2/nco/ops/com/gens/para                
+DATA=/gpfs/hps/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev
+
+mkdir -p $DATA
+cd $DATA
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  if [ $cyc -eq 00 ]; then
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/gespr*      $DATA/gefs.${PDY}/${cyc}/pgrb2ap5 
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/gegfs*f000  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5 
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/gegfs*f003  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5 
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/gegfs*f006  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5 
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/gec00*f000  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5 
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/gec00*f003  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5 
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/gec00*f006  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5 
+  else
+#   echo " no data"
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/gegfs*f000  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5 
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/gegfs*f003  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5 
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/gegfs*f006  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5 
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/gec00*f000  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5 
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/gec00*f003  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5 
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/gec00*f006  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5 
+  fi
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +06 $CDATE`
+
+  echo $CDATE
+done
+

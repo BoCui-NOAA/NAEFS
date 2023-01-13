@@ -1,14 +1,14 @@
 SHELL=  /bin/bash
-CMD=	/sss/emc/ensemble/shared/Bo.Cui/Verification/exec/naefs_crps_avg                  
-FC=     ifort
-FFLAGS= -list -traceback
+CMD=	naefs_crps_avg_3hr                  
+#FC=     ifort
+#FFLAGS= -list -traceback
 LDFLAGS=
 INCS=
-SRCSf90= naefs_crps_avg.f90
+SRCSf90= naefs_crps_avg_3hr.f90
 SRCSf=
 SRCS= $(SRCSf90) $(SRCSf)
 OBJS=   $(SRCSf:.f=.o) $(SRCSf90:.f90=.o)
-LIBS= -L/nwprod/lib -lbacio_4 -lw3nco_4
+#LIBS= -L/nwprod/lib -lbacio_4 -lw3nco_4
 
 # Lines from here on down should not need to be changed.  They are the
 # actual rules which make uses to build a.out.

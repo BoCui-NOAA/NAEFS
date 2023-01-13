@@ -1,0 +1,231 @@
+Running prologue on parent mom node: cdxfer01...
+Job 10751901.cbqs01 nodelist: cdxfer01
+WARNING WARNING WARNING
+
+This is a U.S. Department of Commerce computer system. Commerce computer systems are provided
+for the processing of official U.S. Government information only. All data contained on Commerce
+computer systems is owned by the Department of Commerce and use may be monitored, intercepted,
+recorded, read, copied, or captured in any manner and disclosed in any manner, by authorized
+personnel. THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM. System personnel may give to law
+enforcement officials any potential evidence of crime found on Commerce computer systems.
+
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED, CONSTITUTES CONSENT TO THIS MONITORING,
+INTERCEPTION, RECORDING, READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+
+receiving incremental file list
+ecf/emc/gefs/
+ecf/emc/gefs/job_submit_debias
+ecf/emc/gefs/naefs_gefs_debias.o12207848
+ecf/emc/gefs/naefs_gefs_debias.o12207849
+ecf/emc/gefs/naefs_gefs_debias.o12207850
+ecf/emc/gefs/naefs_gefs_debias.o12207852
+ecf/emc/gefs/naefs_gefs_dvrtma_prob_avgspr_conus.o12260094
+ecf/emc/gefs/naefs_gefs_prob_avgspr.o12258961
+ecf/emc/gefs/naefs_gefs_prob_avgspr.o12258962
+ecf/emc/gefs/naefs_gefs_prob_avgspr.o12258963
+ecf/emc/gefs/naefs_gefs_prob_avgspr.o12258964
+ecf/emc/gefs/sub_jnaefs_gefs_debias.ecf.temp
+ecf/emc/gefs/gempak/
+ecf/emc/gefs/gempak/jnaefs_gefs_bias_gempak.ecf
+ecf/emc/gefs/gempak/jnaefs_gefs_bias_gempak.ecf_Canned
+ecf/emc/gefs/gempak/jnaefs_gefs_debias_gempak.ecf
+ecf/emc/gefs/gempak/jnaefs_gefs_debias_gempak.ecf_canned
+ecf/emc/gefs/gempak/jnaefs_gefs_debias_gempak.ecf_org
+ecf/emc/gefs/gempak/jnaefs_gefs_prob_avgspr_gempak.ecf
+ecf/emc/gefs/gempak/jnaefs_gefs_prob_avgspr_gempak.ecf_canned
+ecf/emc/gefs/gempak/jnaefs_gefs_prob_avgspr_gempak.ecf_org
+ecf/emc/gefs/gempak/naefs_gefs_bias_gempak.o2806327
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.e4610049
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.e8703784
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.e8728780
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.e8728781
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.e8728782
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.e8728783
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.e9080490
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.e9080491
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.e9080492
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.e9080493
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.e9145263
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.e9145264
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.e9145265
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.e9145266
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o2806328
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o4598187
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o4610049
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o8703784
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o8728780
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o8728781
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o8728782
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o8728783
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o9080490
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o9080491
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o9080492
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o9080493
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o9145263
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o9145264
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o9145265
+ecf/emc/gefs/gempak/naefs_gefs_debias_gempak.o9145266
+ecf/emc/gefs/gempak/naefs_gefs_prob_avgspr_gempak.o2806329
+ecf/emc/gefs/gempak/naefs_gefs_prob_avgspr_gempak.o4610774
+ecf/emc/gefs/gempak/sub_jnaefs_gefs_debias_gempak.ecf
+ecf/emc/gefs/gempak/sub_jnaefs_gefs_debias_gempak.ecf.temp
+ecf/emc/gefs/temp/
+
+sent 1.11K bytes  received 11.97M bytes  1.04M bytes/sec
+total size is 1.05G  speedup is 87.59
+WARNING WARNING WARNING
+
+This is a U.S. Department of Commerce computer system. Commerce computer systems are provided
+for the processing of official U.S. Government information only. All data contained on Commerce
+computer systems is owned by the Department of Commerce and use may be monitored, intercepted,
+recorded, read, copied, or captured in any manner and disclosed in any manner, by authorized
+personnel. THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM. System personnel may give to law
+enforcement officials any potential evidence of crime found on Commerce computer systems.
+
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED, CONSTITUTES CONSENT TO THIS MONITORING,
+INTERCEPTION, RECORDING, READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+
+receiving incremental file list
+
+sent 25 bytes  received 897 bytes  97.05 bytes/sec
+total size is 220.00K  speedup is 238.61
+WARNING WARNING WARNING
+
+This is a U.S. Department of Commerce computer system. Commerce computer systems are provided
+for the processing of official U.S. Government information only. All data contained on Commerce
+computer systems is owned by the Department of Commerce and use may be monitored, intercepted,
+recorded, read, copied, or captured in any manner and disclosed in any manner, by authorized
+personnel. THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM. System personnel may give to law
+enforcement officials any potential evidence of crime found on Commerce computer systems.
+
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED, CONSTITUTES CONSENT TO THIS MONITORING,
+INTERCEPTION, RECORDING, READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+
+receiving incremental file list
+
+sent 29 bytes  received 3.04K bytes  360.82 bytes/sec
+total size is 34.45M  speedup is 11,232.13
+WARNING WARNING WARNING
+
+This is a U.S. Department of Commerce computer system. Commerce computer systems are provided
+for the processing of official U.S. Government information only. All data contained on Commerce
+computer systems is owned by the Department of Commerce and use may be monitored, intercepted,
+recorded, read, copied, or captured in any manner and disclosed in any manner, by authorized
+personnel. THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM. System personnel may give to law
+enforcement officials any potential evidence of crime found on Commerce computer systems.
+
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED, CONSTITUTES CONSENT TO THIS MONITORING,
+INTERCEPTION, RECORDING, READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+
+receiving incremental file list
+
+sent 25 bytes  received 1.16K bytes  138.94 bytes/sec
+total size is 172.64K  speedup is 146.18
+WARNING WARNING WARNING
+
+This is a U.S. Department of Commerce computer system. Commerce computer systems are provided
+for the processing of official U.S. Government information only. All data contained on Commerce
+computer systems is owned by the Department of Commerce and use may be monitored, intercepted,
+recorded, read, copied, or captured in any manner and disclosed in any manner, by authorized
+personnel. THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM. System personnel may give to law
+enforcement officials any potential evidence of crime found on Commerce computer systems.
+
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED, CONSTITUTES CONSENT TO THIS MONITORING,
+INTERCEPTION, RECORDING, READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+
+receiving incremental file list
+
+sent 25 bytes  received 162 bytes  22.00 bytes/sec
+total size is 23.50K  speedup is 125.69
+WARNING WARNING WARNING
+
+This is a U.S. Department of Commerce computer system. Commerce computer systems are provided
+for the processing of official U.S. Government information only. All data contained on Commerce
+computer systems is owned by the Department of Commerce and use may be monitored, intercepted,
+recorded, read, copied, or captured in any manner and disclosed in any manner, by authorized
+personnel. THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM. System personnel may give to law
+enforcement officials any potential evidence of crime found on Commerce computer systems.
+
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED, CONSTITUTES CONSENT TO THIS MONITORING,
+INTERCEPTION, RECORDING, READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+
+receiving incremental file list
+
+sent 25 bytes  received 1.65K bytes  197.29 bytes/sec
+total size is 303.18K  speedup is 180.79
+WARNING WARNING WARNING
+
+This is a U.S. Department of Commerce computer system. Commerce computer systems are provided
+for the processing of official U.S. Government information only. All data contained on Commerce
+computer systems is owned by the Department of Commerce and use may be monitored, intercepted,
+recorded, read, copied, or captured in any manner and disclosed in any manner, by authorized
+personnel. THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM. System personnel may give to law
+enforcement officials any potential evidence of crime found on Commerce computer systems.
+
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED, CONSTITUTES CONSENT TO THIS MONITORING,
+INTERCEPTION, RECORDING, READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+
+receiving incremental file list
+
+sent 25 bytes  received 127 bytes  17.88 bytes/sec
+total size is 3.49K  speedup is 22.97
+WARNING WARNING WARNING
+
+This is a U.S. Department of Commerce computer system. Commerce computer systems are provided
+for the processing of official U.S. Government information only. All data contained on Commerce
+computer systems is owned by the Department of Commerce and use may be monitored, intercepted,
+recorded, read, copied, or captured in any manner and disclosed in any manner, by authorized
+personnel. THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM. System personnel may give to law
+enforcement officials any potential evidence of crime found on Commerce computer systems.
+
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED, CONSTITUTES CONSENT TO THIS MONITORING,
+INTERCEPTION, RECORDING, READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+
+receiving incremental file list
+
+sent 46 bytes  received 17.26K bytes  2.04K bytes/sec
+total size is 1.36G  speedup is 78,851.84
+##### Job 10751901.cbqs01 - PBS Job Script:
+
+#!/bin/bash
+#PBS -N file_sync_wcoss2
+#PBS -N file_sync_wcoss2
+#PBS -j oe
+#PBS -j oe
+#PBS -S /bin/bash
+#PBS -S /bin/bash
+#PBS -q dev_transfer
+#PBS -q dev_transfer
+##PBS -q dev
+#PBS -A NAEFS-DEV
+#PBS -A NAEFS-DEV
+#PBS -l walltime=00:15:00
+#PBS -l walltime=00:15:00
+#PBS -l select=1:ncpus=1:mem=1GB
+#PBS -l select=1:ncpus=1:mem=1GB
+##PBS -l debug=true
+
+COM_out=/lfs/h2/emc/vpppg/noscrub/bo.cui
+#COM_out=/lfs/h2/emc/ptmp/bo.cui
+COM_in=/lfs/h2/emc/ptmp/bo.cui
+
+subdirlist="ecf ecf_prod scripts run_check_para_v7 sorc jobs docs ush versions grads "
+subdirlist="ecf          scripts run_check_para_v7      jobs docs ush versions grads "
+dir=naefs.v7.0.0
+
+# sync dogwood  to cactus
+for subdir in $subdirlist; do
+# scp -rp bo.cui@ddxfer.wcoss2.ncep.noaa.gov:$COM_in/$dir/$subdir $COM_out/$dir/
+  rsync -avzh bo.cui@ddxfer.wcoss2.ncep.noaa.gov:$COM_in/$dir/$subdir $COM_out/$dir/
+done
+
+##### End of job script
+------------------------------------------------------------------

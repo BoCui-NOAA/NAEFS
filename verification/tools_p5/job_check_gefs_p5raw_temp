@@ -1,0 +1,29 @@
+CDATE=2017040600
+ndays=55
+iday=1
+
+COM=/gpfs/hps/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev
+
+while [ $iday -le $ndays ]; do
+
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo " day " $PDY$cyc
+
+  COMINNCEP=$COM/gefs.$PDY/$cyc
+# ls $COMINNCEP/pgrb2ap5/*gegfs*0p50.f000 | wc
+# ls $COMINNCEP/pgrb2ap5/*gegfs*0p50.f003 | wc
+# ls $COMINNCEP/pgrbap5/*gegfs*0p50.f*_wind | wc
+  ls $COMINNCEP/pgrbap5/*geavg*0p50.f*_wind | wc
+
+# rm $COMINNCEP/pgrb2ap5/*idx
+# ls $COMINNCEP/pgrb2ap5/*geavg*0p50.f* | wc
+# ls $COMINNCEP/pgrb2ap5/*gespr*0p50.f* | wc
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+done
+
+

@@ -19,9 +19,9 @@ export FFLAGS="-O3 -g -convert big_endian -I ${G2_INC4}"
 
 export LIBS="${G2_LIB4} ${W3NCO_LIB4} ${BACIO_LIB4} ${JASPER_LIB} ${PNG_LIB} ${Z_LIB}"
 
-for dir in  naefs_crps_from_avgspr.fd;  do
+for dir in naefs_crps_avg.fd;  do
  cd $dir
  make clean
  make -f makefile
- mv naefs_crps_from_avgspr ../../exec/
+ mv naefs_crps_avg_3hr ../../exec/
 done

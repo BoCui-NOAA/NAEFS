@@ -1,0 +1,40 @@
+#####################################
+# input the following 3 parametera"
+# envir:
+# CDATE: 
+# COM_IN
+#####################################
+
+export CDATE=YYMMDDCYC  
+export CDATE=2022112300 
+export envir=dev  
+export COM=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0                                           
+##################################
+# no need to modifya the following 
+##################################
+
+ndays=1
+iday=1
+
+dir=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/run_check_para_v7
+
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+# $dir/check_cmc.sh     > output_check_cmc_$envir.$CDATE 
+  $dir/check_gefs.sh    > output_check_gefs_$envir.$CDATE
+# $dir/check_fnmoc.sh   > output_check_fnmoc_$envir.$CDATE
+  $dir/check_naefs.sh   > output_check_naefs_$envir.$CDATE
+# $dir/check_ecme.sh    > output_check_ecme_$envir.$CDATE
+
+# if [ $cyc = 00 ]; then
+#   check_nawips.sh  > output_check_nawipe_$envir.$CDATE
+# fi
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+
+done
+

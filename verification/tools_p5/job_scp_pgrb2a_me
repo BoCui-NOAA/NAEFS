@@ -1,0 +1,29 @@
+CDATE=2016012800
+ndays=34
+
+#COM=/gpfs/gp1/ptmp/Bo.Cui/test            
+COM=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.1/com/gens/prod
+DATA=$NGLOBAL/Bo.Cui/naefs.v6.0.3/com/gens/prod
+
+mkdir -p $DATA
+cd $DATA
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  mkdir -p $DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+  if [ $cyc -eq 00 ]; then
+    scp Bo.Cui@surge:$COM/gefs.${PDY}/${cyc}/pgrb2ap5/*avg*  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+  else
+    echo " no data"
+  fi
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+  echo $CDATE
+done
+

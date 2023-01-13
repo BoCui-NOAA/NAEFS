@@ -1,0 +1,29 @@
+filelist="crps_from_more_avgspr            naefs_scoreavg_2line_6h.gs       plot_2line.sh
+exnaefs_score_avg.sh             naefs_scoreavg_3line_24h.gs      plot_4line_combine.sh
+explot_naefs_scoreavg.sh         naefs_scoreavg_3line_3h.gs       plot_4line.sh
+                                 naefs_scoreavg_3line_6h.gs       PLOT_NAEFS_SCORE.sh
+naefs_scoreavg_2line_24h.gs      naefs_scoreavg_4line_24h.gs      rtma_scoreavg_4line_24h.gs_o
+naefs_scoreavg_2line_24h.gs_org  naefs_scoreavg_4line_24h.gs_10d  SAMPLE_NAEFS.HTML
+naefs_scoreavg_2line_3h.gs       naefs_scoreavg.ctl"
+
+export REPLACE=/u/Bo.Cui/xbin/replace.pl
+
+mkdir dir.org
+
+for file in $filelist; do
+  echo $file
+  cp $file $file.org
+done
+
+for file in $filelist; do
+  echo $file
+  $REPLACE $file.org $file.v1 hps\/emc    hps3\/emc             
+  $REPLACE $file.v1  $file.v2 hps\/ptmp   hps3\/ptmp            
+  $REPLACE $file.v2  $file.v3 hps\/stmp   hps3\/stmp            
+
+  cp $file.v3 $file
+  rm $file.v*
+  chmod +x $file
+  diff $file $file.org > diff_$file
+  mv $file.org dir.org 
+done

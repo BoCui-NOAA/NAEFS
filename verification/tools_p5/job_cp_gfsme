@@ -1,0 +1,29 @@
+CDATE=2016080100
+ndays=1
+
+#COM=/gpfs/gp1/ptmp/Bo.Cui/test            
+COM=$NGLOBAL/Bo.Cui/naefs.v6.0.2/com/gens/prod
+DATA=$NGLOBAL/Bo.Cui/naefs.v6.0.2/com/naefs/prod
+
+mkdir -p $DATA
+cd $DATA
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+# mkdir -p $DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+  if [ $cyc -eq 00 ]; then
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*gfs*me*  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+  else
+    echo " no data"
+  fi
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+  echo $CDATE
+done
+

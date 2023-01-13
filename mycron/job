@@ -1,0 +1,3 @@
+crontab -r
+crontab -l
+crontab test.sh

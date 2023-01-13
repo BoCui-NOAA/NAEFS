@@ -1,3 +1,22 @@
-cp -rp /lfs/h2/emc/vpppg/save/bo.cui/Save_Phase/save_surge/naefs.v6.0.1/run_crps_naefs .
-cp -rp /lfs/h2/emc/vpppg/save/bo.cui/Save_Phase/save_surge/naefs.v6.0.1/sorc/*crps* .
+
+# 1. cnvgrb fix files from greib2 to grib1
+
+ecf/jcnvgrib_fix.ecf
+
+# 2. cnvgrb gefs pgrb2ap5_bc files from greib2 to grib1
+
+ecf/jcnvgrib_gefs_naefs_p5.ecf for one cycle
+sub/sub_cnvgrib_bc: for multi days/cycles
+
+ there are 5 type data: v7.0 gefs bcp5, naefs_bcp5
+              v6.1 gefs bcp5, naefs_bcp5
+              gefs v12.3 gefs_raw
+
+# 3. check the converted data from grib2 to grib1
+
+sub/job_check_data_cnvgrib_gefs_naefs_p5
+
+# 4. calcuratecrps for v6.1 v7.0 and gefs v12.3
+
+sub/sub_crps_p5
 

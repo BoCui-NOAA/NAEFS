@@ -1,0 +1,34 @@
+CDATE=2016080700
+ndays=100
+
+COM=/gpfs/td3/emc/ensemble/noscrub/Richard.Wobus/o/com/gens/prod
+
+DATA=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/com/gens/prod
+
+mkdir -p $DATA
+cd $DATA
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  if [ $cyc -eq 00 ]; then
+    scp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*c00*f000*  Bo.Cui@SURGE:$DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+    scp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*c00*f003*  Bo.Cui@SURGE:$DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+    scp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*c00*f006*  Bo.Cui@SURGE:$DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+    scp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*avg*  Bo.Cui@SURGE:$DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+    scp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*spr*  Bo.Cui@SURGE:$DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+  else
+    scp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*c00*f000*  Bo.Cui@SURGE:$DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+    scp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*c00*f003*  Bo.Cui@SURGE:$DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+    scp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*c00*f006*  Bo.Cui@SURGE:$DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+  fi
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +06 $CDATE`
+
+  echo $CDATE
+done
+

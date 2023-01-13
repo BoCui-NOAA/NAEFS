@@ -1,0 +1,21 @@
+# Send Plots to emcrzdm Computer
+################################
+
+naefs_ver=v7.0.0
+
+dir_main=/home/people/emc/www/htdocs/gmb/wx20cb/naefs.${naefs_ver}
+dir_new=crps_4line_naefs_$stymd.${edymd}_${INTERHR}
+
+#cp  $HOMEcrps/grads_crps_naefs/SAMPLE_NAEFS.HTML  ECMWF_${yyyymm}.html
+
+ssh -l bocui emcrzdm "mkdir ${dir_main}/${dir_new}"
+ssh -l bocui emcrzdm "cp ${dir_main}/al* ${dir_main}/${dir_new}"
+ssh -l bocui emcrzdm "cp ${dir_main}/in* ${dir_main}/${dir_new}"
+ssh -l bocui emcrzdm "echo $dir_new > ${dir_main}/dir_new.txt"
+ssh -l bocui emcrzdm "cat ${dir_main}/dir_new.txt >> ${dir_main}/allow.cfg"
+scp *.png      bocui@emcrzdm:${dir_main}/$dir_new
+scp *.gif      bocui@emcrzdm:${dir_main}/$dir_new
+
+#scp *.html   bocui@emcrzdm:${dir_main}/$dir_new
+#scp *.gif     bocui@emcrzdm:${dir_main}/$dir_new
+

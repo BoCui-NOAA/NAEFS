@@ -1,0 +1,21 @@
+CDATE=2016081400
+ndays=7
+
+COM=/gpfs/hps/ptmp/Bo.Cui/com/naefs/prod   
+DATA=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.2/com/gens/prod
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+# scp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/* Bo.Cui@SURGE:$DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+  scp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*coeff* Bo.Cui@SURGE:$DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+  echo $CDATE
+done
+
