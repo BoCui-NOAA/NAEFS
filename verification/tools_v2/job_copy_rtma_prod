@@ -1,0 +1,26 @@
+CDATE=2016082100
+ndays=4
+
+COM=/gpfs/gp2/nco/ops/com/rtma/prod
+DATA=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/com/rtma/prod
+
+mkdir -p $DATA
+cd $DATA
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  mkdir -p $DATA/akrtma.${PDY}
+  mkdir -p $DATA/rtma2p5.${PDY}
+  cp $COM/rtma2p5.${PDY}/*2dvaranl* $DATA/rtma2p5.${PDY}/
+  cp $COM/akrtma.${PDY}/*2dvaranl* $DATA/akrtma.${PDY}/
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+  echo $CDATE
+done
+

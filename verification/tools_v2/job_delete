@@ -1,0 +1,30 @@
+CDATE=2013122000
+ndays=12
+iday=1
+
+COM=$NGLOBAL/Bo.Cui/com/gens/prod          
+nhours=/nwprod/util/exec/ndate
+
+while [ $iday -le $ndays ]; do
+
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo " day " $PDY$cyc
+
+  rm $COM/gefs.$PDY/$cyc/pgrba/geavg*
+  rm $COM/gefs.$PDY/$cyc/pgrba/gespr*
+  rm $COM/gefs.$PDY/$cyc/pgrba_bc/geavg*
+  rm $COM/gefs.$PDY/$cyc/pgrba_bc/gespr*
+  rm $COM/gefs.$PDY/$cyc/ndgd/geavg*
+  rm $COM/gefs.$PDY/$cyc/ndgd/gespr*
+
+  rm $COM/naefs.$PDY/$cyc/pgrba_bc/naefs_geavg*
+  rm $COM/naefs.$PDY/$cyc/pgrba_bc/naefs_gespr*
+
+  iday=`expr $iday + 1`
+  CDATE=`$nhours +24 $CDATE`
+
+done
+
+

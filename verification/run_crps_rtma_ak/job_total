@@ -1,0 +1,7 @@
+export CDATE=2018042100
+export ndays=10
+
+nohup job_exp_gefs_bcds &
+nohup job_exp_naefs_bcds &
+nohup job_exp_gefs_p5bcds &
+nohup job_exp_naefs_p5bcds &

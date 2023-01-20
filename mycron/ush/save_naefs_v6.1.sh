@@ -129,12 +129,14 @@ cyclist="00 03 06 09 12 15 18 21"
 
 COMOUT=$COM_OUT/akrtma.$PDYm3
 mkdir -p $COMOUT
-for cyc in $cyclist; do
-  cp -p $COMROOT/akrtma.$PDYm3/akrtma.t${cyc}z.2dvaranl_ndfd_3p0.grb2 $COMOUT
-done
+#for cyc in $cyclist; do
+#  cp -p $COMROOT/akrtma.$PDYm3/akrtma.t${cyc}z.2dvaranl_ndfd_3p0.grb* $COMOUT
+#done
+cp -p $COMROOT/akrtma.$PDYm3/akrtma.t*z.2dvaranl_ndfd_3p0.grb* $COMOUT
 
 COMOUT=$COM_OUT/rtma2p5.$PDYm3
 mkdir -p $COMOUT
-for cyc in $cyclist; do
-  cp -p $COMROOT/rtma2p5.$PDYm3/rtma2p5.t${cyc}z.2dvaranl_ndfd.grb2_ext  $COMOUT
-done
+#for cyc in $cyclist; do
+#  cp -p $COMROOT/rtma2p5.$PDYm3/rtma2p5.t${cyc}z.2dvaranl_ndfd.grb*_ext  $COMOUT
+#done
+cp -p $COMROOT/rtma2p5.$PDYm3/rtma2p5.t*z.2dvaranl_ndfd.grb*_ext  $COMOUT

@@ -44,7 +44,7 @@ export direxp=naefs.v7.0.0
 export envir=prod
 export RUN_ENVIR=nco
 
-export PDY=20220918
+export PDY=20230118
 export cyc=00
 export job=naefs_gefs_pgrb_enspqpf_$PDY$cyc
 
@@ -54,6 +54,8 @@ export NWROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME
 export DATAROOT=/lfs/h2/emc/ptmp/$LOGNAME/tmpnwprd
 
 export COMROOT=/lfs/h2/emc/ptmp/$LOGNAME/com
+export COM_IN=/lfs/h1/ops/prod/com/naefs/v6.1
+
 export KEEPDATA=YES
 export SENDDBN=NO
 

@@ -1,22 +1,53 @@
 
 # 1. cnvgrb fix files from greib2 to grib1
 
-ecf/jcnvgrib_fix.ecf
+  ecf/jcnvgrib_fix.ecf
 
-# 2. cnvgrb gefs pgrb2ap5_bc files from greib2 to grib1
+# 2. cnvgrb gefs pgrb2ap5_bc files from grib2 to grib1
 
-ecf/jcnvgrib_gefs_naefs_p5.ecf for one cycle
-sub/sub_cnvgrib_bc: for multi days/cycles
+ (a)
+  sub/sub_cnvgrib_bc: for multi days/cycles
+  ecf/jcnvgrib_gefs_naefs_p5.ecf:  one cycle
+  ecf/sub_jcnvgrib_gefs_naefs_p5.ecf: multi days/cycles
+  scripts/excnvgrib_gefs_bcp5.sh
 
- there are 5 type data: v7.0 gefs bcp5, naefs_bcp5
+  there are 5 type data: v7.0 gefs bcp5, naefs_bcp5
               v6.1 gefs bcp5, naefs_bcp5
               gefs v12.3 gefs_raw
 
-# 3. check the converted data from grib2 to grib1
+# (b) check the converted data from grib2 to grib1
 
-sub/job_check_data_cnvgrib_gefs_naefs_p5
+  sub/job_check_data_cnvgrib_gefs_naefs_p5
 
-# 4. calcuratecrps for v6.1 v7.0 and gefs v12.3
+# (c) calcuratecrps for v6.1 v7.0 and gefs v12.3
 
-sub/sub_crps_p5
+  sub/sub_crps_p5
+  ecf/sub_jcrps_naefs.v6.1.ecf
+  ecf/sub_jcrps_naefs.v7.0.ecf
 
+# 3. cnvgrb ndgd_gb2 files from grib2 to grib1
+
+  sub/sub_cnvgrib_ndgd: for multi days/cycles
+  ecf/jcnvgrib_gefs_naefs_ndgd.ecf: one cycle
+  ecf/sub_jcnvgrib_gefs_naefs_ndgd.ecf: multi days/cycles
+  scripts/excnvgrib_gefs_naefs_ndgd.sh
+
+  sub/job_check_ndgd_grib1                             
+
+  sub/sub_crps_ndgd
+  ecf/sub_jcrps_naefs.v6.1_ndgd.ecf
+  ecf/sub_jcrps_naefs.v7.0_ndgd.ecf
+
+# 4. cnvgrb rtma analysis from grib2 to grib1
+
+  scripts/excnvgrib_rtma.sh
+ 
+  called by: 
+  sub/sub_cnvgrib_ndgd: for multi days/cycles
+  ecf/sub_jcnvgrib_gefs_naefs_ndgd.ecf: multi days/cycles
+
+# 5. generate climate for conus and alaska
+
+  ecf/jcopygb_fix_alaska_3p0.ecf
+  ecf/jcopygb_fix_conus_ext_2p5.ecf
+ 

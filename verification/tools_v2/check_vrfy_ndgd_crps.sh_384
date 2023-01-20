@@ -1,0 +1,41 @@
+SDATE=2007090100
+ndays=30
+iday=1
+
+COM=$NGLOBAL/wx20cb/4_paper              
+
+rm print_crps
+>print_crps
+
+CDATE=$SDATE          
+iday=1
+
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  echo $CDATE >> print_crps
+
+  file=CRPS.T${cyc}Z.OUT_gefs_raw_100%
+  cat $COM/gefs.${PDY}/${cyc}/score_raw/$file  | sed -n "321,321p" >> print_crps
+  cat $COM/gefs.${PDY}/${cyc}/score_raw/$file  | sed -n "325,325p" >> print_crps
+
+  file=CRPS.T${cyc}Z.OUT_gefs_drbcds_100%
+  cat $COM/gefs.${PDY}/${cyc}/score_drbcds/$file  | sed -n "321,321p" >> print_crps
+  cat $COM/gefs.${PDY}/${cyc}/score_drbcds/$file  | sed -n "325,325p" >> print_crps
+
+  file=CRPS.T${cyc}Z.OUT_cmc_bcds_100%
+  cat $COM/cmce.${PDY}/${cyc}/score_bcds/$file  | sed -n "321,321p" >> print_crps
+  cat $COM/cmce.${PDY}/${cyc}/score_bcds/$file  | sed -n "325,325p" >> print_crps
+
+  file=CRPS.T${cyc}Z.OUT_naefs_drbcds_100%
+  cat $COM/naefs.${PDY}/${cyc}/score_drbcds/$file  | sed -n "321,321p" >> print_crps
+  cat $COM/naefs.${PDY}/${cyc}/score_drbcds/$file  | sed -n "325,325p" >> print_crps
+
+  echo "    " >> print_crps
+
+  iday=`expr $iday + 1`
+  export CDATE=`$nhours +24 $CDATE`
+
+done

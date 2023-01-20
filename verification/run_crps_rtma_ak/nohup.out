@@ -1,0 +1,15 @@
+./job_exp_gefs_bcds: line 21: +24: command not found
+./job_exp_naefs_bcds: line 21: +24: command not found
+./job_exp_gefs_p5bcds: line 20: +24: command not found
+./job_exp_naefs_p5bcds: line 20: +24: command not found
+./job_exp_gefs_bcds: line 23: 31808 Terminated              run_anl_3centers.sh > $PTMP/Bo.Cui/trash 2>&1
+./job_exp_gefs_bcds: line 23:  3379 Terminated              run_anl_3centers.sh > $PTMP/Bo.Cui/trash 2>&1
+./job_exp_gefs_bcds: line 23: 27540 Terminated              run_anl_3centers.sh > $PTMP/Bo.Cui/trash 2>&1
+./job_exp_gefs_bcds: line 23:  8336 Terminated              run_anl_3centers.sh > $PTMP/Bo.Cui/trash 2>&1
+./job_exp_gefs_bcds: line 23:  8337 Terminated              run_anl_3centers.sh > $PTMP/Bo.Cui/trash 2>&1
+./job_exp_gefs_bcds: line 23: 10291 Terminated              run_anl_3centers.sh > $PTMP/Bo.Cui/trash 2>&1
+./job_exp_gefs_bcds: line 23: 10290 Terminated              run_anl_3centers.sh > $PTMP/Bo.Cui/trash 2>&1
+./job_exp_gefs_bcds: line 23: 11866 Terminated              run_anl_3centers.sh > $PTMP/Bo.Cui/trash 2>&1
+./job_exp_gefs_bcds: line 23: 11865 Terminated              run_anl_3centers.sh > $PTMP/Bo.Cui/trash 2>&1
+./job_exp_gefs_bcds: line 23: 17855 Terminated              run_anl_3centers.sh > $PTMP/Bo.Cui/trash 2>&1
+./job_exp_gefs_bcds: line 23: 17856 Terminated              run_anl_3centers.sh > $PTMP/Bo.Cui/trash 2>&1

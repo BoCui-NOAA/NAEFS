@@ -104,8 +104,7 @@ setpdy.sh
 ##############################################
 # Define COM directories
 ##############################################
-#export COM_IN=${COM_IN:-$(compath.py $envir/$NET/${naefs_ver})}
-export COM_IN=${COM_IN:-$(compath.py $envir/$NET/v6.1)}
+export COM_IN=${COM_IN:-$(compath.py $envir/$NET/${naefs_ver})}
 export COM_OUT=${COM_OUT:-$(compath.py -o $NET/${naefs_ver})}
 export COMINgefs=${COMINgefs:-$(compath.py ${envir}/com/gefs/${gefs_ver}/${RUN}.${PDY}/${cyc}/atmos/pgrb2ap5)}
 
@@ -123,7 +122,8 @@ env
 ####################
 $HOMEgefs/scripts/exnaefs_gefs_pgrb_enspqpf.sh
 
-cat $pgmout.*
+cat $DATA/output      
+
 msg="JOB COMPLETED NORMALLY"
 postmsg "$jlogfile" "$msg"
 

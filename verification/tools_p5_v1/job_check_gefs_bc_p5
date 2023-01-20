@@ -1,0 +1,24 @@
+#CDATE=2017031600
+#ndays=48
+iday=1
+
+#COM=$NGLOBAL/Bo.Cui/naefs.v6.0.0/com/gens/prod          
+
+while [ $iday -le $ndays ]; do
+
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo " day " $PDY$cyc
+
+  COMINNCEP=$COM/gefs.$PDY/$cyc
+# ls $COMINNCEP/pgrb2ap5_bc/*geavg* | wc
+  ls $COMINNCEP/pgrbap5_bc/*geavg* | wc
+  ls $COMINNCEP/pgrbap5_bc/*gespr* | wc
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+done
+
+

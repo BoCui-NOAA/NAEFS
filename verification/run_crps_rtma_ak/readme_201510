@@ -1,0 +1,10 @@
+
+mv $COM/${VFIELD}ecmwfa.$CDATE.conus      $COM/${VFIELD}ecmwf_rawa.$CDATE.conus
+mv $COM/${VFIELD}ecmwfbca.$CDATE.conus    $COM/${VFIELD}ecmwf_bcdsa.$CDATE.conus
+mv $COM/${VFIELD}ecmwfbc_dEa.$CDATE.conus $COM/${VFIELD}ecmwf_bcdEdsa.$CDATE.conus
+
+mv $COM/${VFIELD}gefs_bca.$CDATE.conus $COM/${VFIELD}gefs_bcdsa.$CDATE.conus
+mv $COM/${VFIELD}naefs_bca.$CDATE.conus $COM/${VFIELD}NAEFS_bcdsa.$CDATE.conus
+
+
+

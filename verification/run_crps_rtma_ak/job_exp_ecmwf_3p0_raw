@@ -1,0 +1,23 @@
+export CDATE=2015010100
+ndays=30
+iday=1
+ 
+nhours=/nwprod/util/exec/ndate
+
+while [ $iday -le $ndays ]; do
+
+  export id=ecmwf
+  export ireg=alaska     
+  export IF_NDGD=YES
+
+  export DSIM=ecmwf_3p0_raw
+
+  export ENSIM=naefs_bc
+  run_anl_3centers_test_3p0 $CDATE > $PTMP/Bo.Cui/trash 2>&1&
+# run_anl_3centers_test_3p0 $CDATE
+
+  iday=`expr $iday + 1`
+  export CDATE=`$nhours +24 $CDATE`
+
+done
+

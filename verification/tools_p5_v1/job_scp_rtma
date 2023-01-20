@@ -1,0 +1,29 @@
+CDATE=2016012800
+ndays=51
+
+COM=/gpfs/gd1/emc/ensemble/noscrub/Bo.Cui/com/rtma/prod
+DATA=$NGLOBAL/Bo.Cui/com/rtma/prod
+
+cyclist1="00 03 06 09 12 15 18 21"
+
+mkdir -p $DATA
+cd $DATA
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  mkdir -p $DATA/rtma2p5.${PDY}
+  for cyc in $cyclist1; do
+    file=rtma2p5.t${cyc}z.2dvaranl_ndfd.grb1_ext
+    scp Bo.Cui@gyre:$COM/rtma2p5.${PDY}/$file  $DATA/rtma2p5.${PDY}                   
+  done
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+  echo $CDATE
+done
+

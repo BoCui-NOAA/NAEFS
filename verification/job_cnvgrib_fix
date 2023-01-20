@@ -1,0 +1,34 @@
+export CDATE=2004120100
+ndays=92
+iday=1
+
+SHOME=/lfs/h2/emc/vpppg/noscrub/bo.cui
+COMIN=/lfs/h1/ops/prod/packages/naefs.v6.1.0/fix
+COMOUT=$SHOME/naefs.v7.0.0/verification/fix              
+
+grid="0 6 0 0 0 0 0 0 720 361 0 0 90000000 0 48 -90000000 359500000 500000 500000 0"
+
+while [ $iday -le $ndays ]; do
+
+  MD=`echo $CDATE | cut -c5-8`
+
+# file1=cmean_1d.1979$MD
+# file2=cmean_1d.1979$MD.g1
+# $CNVGRIB -g21 $file1 $file2
+
+# file1=cstdv_1d.1979$MD
+# file2=cstdv_1d.1979$MD.g1
+# $CNVGRIB -g21 $file1 $file2
+
+  file1=$COMIN/cmean_p5d.1979$MD
+  file2=$COMOUT/cmean_p5d.1979$MD.g1
+  $CNVGRIB -g21 $file1 $file2
+
+  file1=$COMIN/cstdv_p5d.1979$MD
+  file2=$COMOUT/cstdv_p5d.1979$MD.g1
+  $CNVGRIB -g21 $file1 $file2
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+
+done

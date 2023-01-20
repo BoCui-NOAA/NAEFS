@@ -60,8 +60,7 @@ export jlogfile=${jlogfile:-${DATA}/jlogfile.${job}.${pid}}
 #####################################
 export outid="LL$job"
 export jobid="${outid}.o${pid}"
-export pgmout="OUTPUT.${pid}"
-#export pgmout="OUTPUT"
+export pgmout="OUTPUT"
 
 ##############################################
 # SENDECF  - Flag Events on ECF
@@ -101,8 +100,7 @@ setpdy.sh
 # Define COM directories
 ########################
 
-#export COMIN=${COMIN:-$(compath.py $envir/$NET/${naefs_ver})}
-export COMIN=${COMIN:-$(compath.py $envir/$NET/v6.1)}
+export COMIN=${COMIN:-$(compath.py $envir/$NET/${naefs_ver})}
 export COMOUT=${COMOUT:-$(compath.py -o $NET/${naefs_ver})}
 export COMINgefs=${COMINgefs:-$(compath.py ${envir}/com/gefs/${gefs_ver})}
 export COMINccpa=${COMINccpa:-$(compath.py ${envir}/com/ccpa/${ccpa_ver})}
@@ -121,7 +119,8 @@ $HOMEgefs/scripts/exnaefs_gefs_6hr_enscqpf.sh
 
 #############################################################
 
-cat $pgmout.*
+cat $DATA/$cyc/$pgmout
+
 msg="JOB COMPLETED NORMALLY"
 postmsg "$jlogfile" "$msg"
 

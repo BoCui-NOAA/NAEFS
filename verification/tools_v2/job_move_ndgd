@@ -1,0 +1,36 @@
+CDATE=2015041100
+ndays=37
+iday=1
+
+COM=$NGLOBAL2/Bo.Cui/com/gens/prod          
+nhours=/nwprod/util/exec/ndate
+COMO=/ptmpp2/Bo.Cui/com/gens/prod          
+
+
+while [ $iday -le $ndays ]; do
+
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo " day " $PDY$cyc
+
+# COMIN=$COM/gefs.$PDY/$cyc/ndgd
+# COMOUT=$COMO/gefs.$PDY/$cyc/ndgd
+# mkdir -p $COMOUT
+# mv $COMIN/*avg*ndgd3p0* $COMOUT
+# mv $COMIN/*spr*ndgd3p0* $COMOUT
+# mv $COMIN/*ndgd3p0* $COMOUT
+# mv $COMIN/*ndgd2p5* $COMOUT
+
+  COMIN=$COM/naefs.$PDY/$cyc/ndgd
+  COMOUT=$COMO/naefs.$PDY/$cyc/ndgd
+  mkdir -p $COMOUT
+  mv $COMIN/*ndgd3p0* $COMOUT
+  mv $COMIN/*ndgd2p5* $COMOUT
+
+  iday=`expr $iday + 1`
+  CDATE=`$nhours +24 $CDATE`
+
+done
+
+

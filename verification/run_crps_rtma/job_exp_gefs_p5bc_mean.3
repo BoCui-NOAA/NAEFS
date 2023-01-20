@@ -1,0 +1,23 @@
+export CDATE=2016080100
+ndays=31
+iday=1
+ 
+while [ $iday -le $ndays ]; do
+
+  export id=gefs
+  export ireg=conus      
+  export IF_NDGD=YES
+
+  export DSIM=gefs_p5bc_mean
+# export ENSIM=gefs_p5bc_mean
+
+  export exid=_bc2p5
+  export COM_NDGD=$NGLOBAL/Bo.Cui/naefs.v6.0.6/com/gens/prod
+
+  bsub < run_vefy.ecf                             
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+
+done
+

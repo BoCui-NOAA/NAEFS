@@ -1,0 +1,73 @@
+Release Note: NAEFS.v6.0.10
+
+v4.0.0  released Jan 28. 2014 
+v4.0.1  released May 20. 2014 
+v4.0.2  released May 20. 2014 
+v4.0.3  released May/Jun 2015 
+v5.0.0  released Mar 29  2016 
+v6.0.3  released Aug 18  2018 
+v6.0.4  released Sep 18  2018 
+v6.0.5  released Sep 20  2018 
+v6.0.10 released May 22  2020
+
+NAEFS minor implementation
+
+- The GEFS ensemble will upgrade to v12. New climate bias files based on GEFS v12
+  are generated and used in the NAEFS bias accumulation job. 
+- The GEFS wll stop output of 1 degree forecast. The FNMOC still needs 1 degree GEFS data (one file). One script is modified to add a line to interpolate 0.5d GEFS data to 1.0 degree.
+
+The modified scripts and fix files include:
+
+1. jobs/JNAEFS_GEFS_BIAS
+   - modified, changed to new GEFS v12 data path
+
+   1) ush/gefs_bias_reforecast.sh
+
+   - modified, changed to new reforecast bias file names
+
+   2) fix/rfbias_1d.2019MMDD
+
+   - old files, copy fix directory from /gpfs/hps/nco/ops/nwprod/naefs.v6.0.9/fix
+   - new files, copy rfbias_1d.2019MMDD files from /gpfs/hps3/emc/ensemble/save/Bo.Cui/Vlab/naefs.v6.0.10/fix
+     on surge/luna
+
+   3) gefs_bias_coeff.sh
+    - modified, changed to new GEFS v12 data path
+
+   4) gefs_bias_decay.sh
+    - modified, changed to new GEFS v12 data path
+
+2. jobs/JNAEFS_GEFS_DEBIAS
+   - modified, changed to new GEFS v12 data path
+
+3. jobs/JNAEFS_FNMOC_ENS_BIAS
+   - modified, changed to new GEFS v12 data path
+
+   1) scripts/exnaefs_fnmoc_ens_bias.sh.ecf
+   - modified, interpolate 0.5d GEFS data to 1.0 degree
+
+4. jobs/JNAEFS_DVRTMA_BIAS_ALASKA
+   - modified, changed to new GEFS v12 data path
+
+5. jobs/JNAEFS_DVRTMA_BIAS_CONUS
+   - modified, changed to new GEFS v12 data path
+
+6. jobs/NAEFS_GEFS_ANFEFI_ACPR
+   - modified, changed to new GEFS v12 data path
+
+7. jobs/JNAEFS_GEFS_PGRB_ENSPQPF
+    - modified, changed to new GEFS v12 data path
+
+8. jobs/JNAEFS_GEFS_6HR_CQPF
+   1)  jobs/JNAEFS_GEFS_6HR_CQPF
+   2)  ush/gefs_ensgetgrp.sh
+   3)  ush/gefs_enswgrp.sh
+    - modified, changed to new GEFS v12 data path
+
+9. jobs/JNAEFS_GEFS_24HR_CQPF
+    - modified, changed to new GEFS v12 data path
+
+Implementation instruction:
+
+Nine scripts are modified, and new fix files are added for this minor implementation. All the others are kept the same as the NAEFS package in /nwprod/naefs.v6.0.9.
+

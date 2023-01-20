@@ -1,0 +1,19 @@
+
+filelist="naefs_gefs_6hr_cqpf $file naefs_gefs_pgrb_enspqpf naefs_gefs_cqpf_gempak"
+
+for file in $filelist; do
+
+grep -i "resources_used.walltime"        $file.o*
+grep -i "exit status"                    $file.o*
+grep -i "no such file"                   $file.o*  | grep -v "remove" | grep -v "dbn_alert"
+#grep -i "no such file"                   $file.o* 
+grep "ESCAPE"                            $file.o*
+grep "Observation data is not available" $file.o*
+grep "There is empty file "              $file.o*
+grep "STAT_RM_BIAS_ctl_M"                $file.o*
+grep "Missing today's precipitation"     $file.o*
+grep "Program must be stoped"            $file.o*
+
+done
+
+

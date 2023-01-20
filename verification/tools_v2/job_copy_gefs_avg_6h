@@ -1,0 +1,35 @@
+CDATE=2015051400
+ndays=16
+
+COM=/com/gens/prod
+DATA=$NGLOBAL/Bo.Cui/com/gens/prod
+
+nhours=/nwprod/util/exec/ndate
+
+cd $DATA
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  mkdir -p gefs.${PDY}/${cyc}/pgrb2a
+
+# cp $COM/gefs.${PDY}/${cyc}/pgrb2a/*avg*pgrb2af*  gefs.${PDY}/${cyc}/pgrb2a
+# cp $COM/gefs.${PDY}/${cyc}/pgrb2a/*gfs*pgrb2a**  gefs.${PDY}/${cyc}/pgrb2a
+# cp $COM/gefs.${PDY}/${cyc}/pgrb2a/*c00*pgrb2a**  gefs.${PDY}/${cyc}/pgrb2a
+  cp $COM/gefs.${PDY}/${cyc}/pgrb2a/*gfs*pgrb2a*f00  gefs.${PDY}/${cyc}/pgrb2a
+  cp $COM/gefs.${PDY}/${cyc}/pgrb2a/*gfs*pgrb2a*f06  gefs.${PDY}/${cyc}/pgrb2a
+  cp $COM/gefs.${PDY}/${cyc}/pgrb2a/*gfs*pgrb2a*f12  gefs.${PDY}/${cyc}/pgrb2a
+  cp $COM/gefs.${PDY}/${cyc}/pgrb2a/*c00*pgrb2a*f00  gefs.${PDY}/${cyc}/pgrb2a
+  cp $COM/gefs.${PDY}/${cyc}/pgrb2a/*c00*pgrb2a*f06 gefs.${PDY}/${cyc}/pgrb2a
+  cp $COM/gefs.${PDY}/${cyc}/pgrb2a/*c00*pgrb2a*f12  gefs.${PDY}/${cyc}/pgrb2a
+  rm gefs.${PDY}/${cyc}/pgrb2a/*idx
+  rm gefs.${PDY}/${cyc}/pgrb2a/*mef*
+
+  iday=`expr $iday + 1`
+  CDATE=`$nhours +06 $CDATE`
+
+done
+

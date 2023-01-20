@@ -1,0 +1,38 @@
+SDATE=2014012400
+ndays=42
+iday=1
+
+nhours=/nwprod/util/exec/ndate
+
+COM_PROD=$NGLOBAL/Bo.Cui/com/gens/prod        
+COM_WCOSS=$NGLOBAL/Bo.Cui/com/gens/para        
+
+rm print_crps
+>print_crps
+
+CDATE=$SDATE          
+iday=1
+
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  echo $CDATE >> print_crps
+
+  file=CRPS.T${cyc}Z.OUT_naefs_alaska_100%
+  cat $COM_PROD/naefs.${PDY}/${cyc}/score_drbcds/$file  | sed -n "28,28p" >> print_crps
+
+  file=CRPS.T${cyc}Z.OUT_naefs_alaska_w_100%
+  cat $COM_WCOSS/naefs.${PDY}/${cyc}/score_naefs/$file  | sed -n "28,28p" >> print_crps
+
+# file=CRPS.T${cyc}Z.OUT_naefs_drbcds_100%
+# cat $COM/naefs.${PDY}/${cyc}/score_drbcds/$file  | sed -n "21,21p" >> print_crps
+# cat $COM/naefs.${PDY}/${cyc}/score_drbcds/$file  | sed -n "25,25p" >> print_crps
+
+  echo "    " >> print_crps
+
+  iday=`expr $iday + 1`
+  export CDATE=`$nhours +24 $CDATE`
+
+done

@@ -3,11 +3,11 @@ set -x
 #Date=`date +%y%m%d%H`
 #CDATE=20$Date
 
-CDATE=2023010600
+CDATE=2023011200
 
 dir=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/mycron
 
-ndays=4
+ndays=3
 iday=1
 
 while [ $iday -le $ndays ]; do

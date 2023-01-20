@@ -1,0 +1,34 @@
+CDATE=2016080100
+ndays=31
+iday=1
+
+#COM=$NCO/com/gens/prod          
+#COM=/gpfs/gp2/nco/ops/com/gens/prod          
+COM=$NGLOBAL/Bo.Cui/com/gens/prod          
+COM=$PTMP/Bo.Cui/com/gens/prod          
+
+echo " average 194 in prod"
+echo " c00     194 in prod"
+echo " gfs     170 in prod"
+echo "                    "
+
+while [ $iday -le $ndays ]; do
+
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo " day " $PDY$cyc
+
+  COMINNCEP=$COM/gefs.$PDY/$cyc
+
+# ls $COMINNCEP/pgrb2ap5/*avg*f*   | wc
+  ls $COMINNCEP/pgrb2ap5/*gep*f*   | wc
+  ls $COMINNCEP/pgrb2ap5/*c00*f*   | wc
+  ls $COMINNCEP/pgrb2ap5/*gfs*f*   | wc
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+done
+
+

@@ -1,0 +1,495 @@
+
+########################### BIASUPDATE ####################################
+echo "-------------------------------------------------------------------"
+echo "This is ensemble verification program for NAEFS downscaled products"
+echo "-------------------------------------------------------------------"
+echo "AUTHOR: Bo Cui  (wx20cb)"
+########################### BIASUPDATE ####################################
+
+### need pass the values of PDY, CYC, DATA, COMIN, and COMOUT
+
+###    
+################################################################
+# define exec variable, and entry grib utility 
+################################################################
+###    
+
+#export EXECVERF=/ensemble/save/Bo.Cui/ECMWF/exec
+#export EXECUTIL=/nwprod/util/exec
+#export NDATE=/nwprod/util/exec/ndate
+#export COPYGB=$EXECUTIL/copygb
+
+export EXECVERF=/gpfs/gd1/emc/ensemble/save/Bo.Cui/ECMWF/exec
+export EXECUTIL=/nwprod/util/exec
+export COPYGB=$EXECUTIL/copygb
+
+
+if [ "$id" = "naefs" ]; then
+   px=naefs_
+elif [ "$id" = "ecmwf" ]; then
+   px=ecmwf_
+elif [ "$id" = "gefs" ]; then
+   px=
+elif [ "$id" = "NCE" ]; then
+   px=${ENSIM}_
+else
+   px=
+fi
+
+if [ "$ENSIM" = "ecmwf" ]; then
+   ex=
+elif [ "$ENSIM" = "ecmwf_bc" ]; then
+   ex=_bc
+elif [ "$ENSIM" = "ecmwfbc" ]; then
+   ex=_bc
+elif [ "$ENSIM" = "ecmwfbc_dE" ]; then
+   ex=_bc
+elif [ "$ENSIM" = "NC40bc" ]; then
+   ex=_bc
+elif [ "$ENSIM" = "NCE60bc" ]; then
+   ex=_bc
+else
+   ex=
+fi
+
+mkdir -m 775 -p ${COMOUT}
+
+mkdir -m 775 -p $DATA
+rm $DATA/*
+cd $DATA
+
+export pgm=rtma_crps_from_avgspr 
+export pgmout=output          
+#. prep_step
+
+if [ "$IF_NDGD" = "NO" ];  then if_ndgd=0; fi
+if [ "$IF_NDGD" = "YES" ]; then if_ndgd=1; fi
+if [ "$IF_NDGD" = "NA" ]; then if_ndgd=1; fi
+
+if [ "$IFOUT_AVGSPR" = "YES" ]; then ifout_avgspr=1; fi
+if [ "$IFOUT_AVGSPR" = "BOTH" ]; then ifout_avgspr=2; fi
+if [ "$IFOUT_AVGSPR" = "NO" ]; then ifout_avgspr=0; fi
+
+case $ireg in
+  conus)  grid='255 3 1073 689 20192 238446 8 265000 5079 5079 0 64 25000 25000 0 0 0';;
+  alaska) grid='255 5 825 553 40530 181429 8 210000 5953 5953 0 64';;
+esac
+
+###################
+### set up hourlist & variable list
+###################
+
+hourlist="    003 006 009 012 015 018 021 024 027 030 033 036 039 042 045 048 \
+          051 054 057 060 063 066 069 072 075 078 081 084 087 090 093 096 099 \
+          102 105 108 111 114 117 120 123 126 129 132 135 138 141 144 147 150 \
+          153 156 159 162 165 168 171 174 177 180 183 186 189 192 195 198 201 \
+          204 207 210 213 216 219 222 225 228 231 234 237 240 243 246 249 252 \
+          258 261 264 267 270 273 276 279 282 285 288 291 294 297 300 303 306 \
+          309 312 315 318 321 324 327 330 333 336 339 342 345 348 351 354 357 \
+          360 363 366 369 372 375 378 381 384"
+
+#########################
+### set up  variable list
+#########################
+
+fieldlist=" 1000HGT 925HGT 850HGT 700HGT 500HGT 250HGT 200HGT 100HGT 50HGT 10HGT \
+            1000TMP 925TMP 850TMP 700TMP 500TMP 250TMP 200TMP 100TMP 50TMP 10TMP \
+            1000UGRD 925UGRD 850UGRD 700UGRD 500UGRD 250UGRD 200UGRD 100UGRD 50UGRD 10UGRD \
+            1000VGRD 925VGRD 850VGRD 700VGRD 500VGRD 250VGRD 200VGRD 100VGRD 50VGRD 10VGRD \
+            PRES PRMSL 2MTMP 10MUGRD 10MVGRD TMAX TMIN 850VVEL "
+
+
+fieldlist=" 2MTMP 10MUGRD 10MVGRD 2MDPT 10MWIND 10MWDIR 2MRH TMAX TMIN "
+#fieldlist=" 2MTMP 10MUGRD 10MVGRD PRES 10MWIND 10MWDIR "
+
+fieldlist="2MTMP 10MUGRD 10MVGRD"
+
+###
+# input basic information, member and forecast lead time
+###
+
+for cfield in $fieldlist; do
+
+  case $cfield in
+     TMAX) runini=YES;;
+     TMIN) runini=YES;;
+  esac
+
+  ffd=dummy
+
+  case $cfield in
+
+  1000HGT) ffd=z1000;ifd=7;isp=100;ilv=1000;;
+   925HGT) ffd=z925;ifd=7;isp=100;ilv=925;;
+   850HGT) ffd=z850;ifd=7;isp=100;ilv=850;;
+   700HGT) ffd=z700;ifd=7;isp=100;ilv=700;;
+   500HGT) ffd=z500;ifd=7;isp=100;ilv=500;;
+   250HGT) ffd=z250;ifd=7;isp=100;ilv=250;;
+   200HGT) ffd=z200;ifd=7;isp=100;ilv=200;;
+   100HGT) ffd=z100;ifd=7;isp=100;ilv=100;;
+    50HGT) ffd=z50; ifd=7;isp=100;ilv=50;;
+    10HGT) ffd=z10; ifd=7;isp=100;ilv=10;;
+
+  1000TMP) ffd=t1000;ifd=11;isp=100;ilv=1000;;
+   925TMP) ffd=t925;ifd=11;isp=100;ilv=925;;
+   850TMP) ffd=t850;ifd=11;isp=100;ilv=850;;
+   700TMP) ffd=t700;ifd=11;isp=100;ilv=700;;
+   500TMP) ffd=t500;ifd=11;isp=100;ilv=500;;
+   250TMP) ffd=t250;ifd=11;isp=100;ilv=250;;
+   200TMP) ffd=t200;ifd=11;isp=100;ilv=200;;
+   100TMP) ffd=t100;ifd=11;isp=100;ilv=100;;
+    50TMP) ffd=t50; ifd=11;isp=100;ilv=50;; 
+    10TMP) ffd=t10; ifd=11;isp=100;ilv=10;;
+
+  1000UGRD) ffd=u1000;ifd=33;isp=100;ilv=1000;;
+   925UGRD) ffd=u925;ifd=33;isp=100;ilv=925;;
+   850UGRD) ffd=u850;ifd=33;isp=100;ilv=850;;
+   700UGRD) ffd=u700;ifd=33;isp=100;ilv=700;;
+   500UGRD) ffd=u500;ifd=33;isp=100;ilv=500;;
+   250UGRD) ffd=u250;ifd=33;isp=100;ilv=250;;
+   200UGRD) ffd=u200;ifd=33;isp=100;ilv=200;;
+   100UGRD) ffd=u100;ifd=33;isp=100;ilv=100;;
+    50UGRD) ffd=u50; ifd=33;isp=100;ilv=50;; 
+    10UGRD) ffd=u10; ifd=33;isp=100;ilv=10;;
+
+  1000VGRD) ffd=v1000;ifd=34;isp=100;ilv=1000;;
+   925VGRD) ffd=v925;ifd=34;isp=100;ilv=925;;
+   850VGRD) ffd=v850;ifd=34;isp=100;ilv=850;;
+   700VGRD) ffd=v700;ifd=34;isp=100;ilv=700;;
+   500VGRD) ffd=v500;ifd=34;isp=100;ilv=500;;
+   250VGRD) ffd=v250;ifd=34;isp=100;ilv=250;;
+   200VGRD) ffd=v200;ifd=34;isp=100;ilv=200;;
+   100VGRD) ffd=v100;ifd=34;isp=100;ilv=100;;
+    50VGRD) ffd=v50; ifd=34;isp=100;ilv=50;; 
+    10VGRD) ffd=v10; ifd=34;isp=100;ilv=10;;
+
+    PRMSL) ffd=prmsl;ifd=2;isp=102;ilv=0;;
+     PRES) ffd=pres;ifd=1;isp=1;  ilv=0;;
+    2MTMP) ffd=t2m;ifd=11;isp=105;ilv=2;;
+     TMAX) ffd=tmax;ifd=15;isp=105;ilv=2;;
+     TMIN) ffd=tmin;ifd=16;isp=105;ilv=2;;
+  10MUGRD) ffd=u10m;ifd=33;isp=105;ilv=10;;
+  10MVGRD) ffd=v10m;ifd=34;isp=105;ilv=10;;
+  850VVEL) ffd=vvel;ifd=39;isp=100;ilv=850;;
+  ULWRFtop) ffd=ulwrftop;ifd=212;isp=8;ilv=0;;
+  ULWRFsfc) ffd=ulwrfsfc;ifd=212;isp=1;ilv=0;;
+  TCDC)    ffd=tcdc;ifd=71;isp=200;ilv=0;;
+
+  10MWIND) ffd=u10m;ifd=32;isp=105;ilv=10;;
+  10MWDIR) ffd=u10m;ifd=31;isp=105;ilv=10;;
+    2MDPT) ffd=dpt;ifd=17;isp=105;ilv=2;;
+     2MRH) ffd=rh2m;ifd=52;isp=105;ilv=2;;
+
+  esac
+
+  if [ "$ffd" == "dummy" ]; then
+    echo " #### attention: variable $cfield is not in the list"
+  else
+    echo " &varlist" >>namin.varlist.$cfield
+    echo "pds5=$ifd,pds6=$isp,pds7=$ilv," >>namin.varlist.$cfield
+  fi
+
+  echo " /" >>namin.varlist.$cfield
+
+####################
+# start verification
+####################
+
+for nfhrs in $hourlist; do
+
+###
+# rtma analysis files entry
+###
+
+  if [ "$runini" = "YES" ]; then
+
+    aymdh=`$NDATE +$nfhrs $CDATE `
+    aymd=`echo $aymdh | cut -c1-8`
+    amd=`echo $aymdh | cut -c5-8`
+    acyc=`echo $aymdh | cut -c9-10`
+
+    fymdh=$CDATE
+    fymd=`echo $fymdh | cut -c1-8`
+    fcyc=`echo $fymdh | cut -c9-10`
+
+  else
+ 
+    aymdh=$CDATE                            
+    aymd=`echo $aymdh | cut -c1-8`
+    amd=`echo $aymdh | cut -c5-8`
+    acyc=`echo $aymdh | cut -c9-10`
+
+    fymdh=`$NDATE -$nfhrs $CDATE `
+    fymd=`echo $fymdh | cut -c1-8`
+    fcyc=`echo $fymdh | cut -c9-10`
+
+  fi
+
+  if [ "$DSIM" = "para_gefs_3p0" ]; then
+    afile1=akrtma.t${acyc}z.2dvaranl_ndfd_3p0.grb1                  
+  elif [ "$DSIM" = "para_naefs_3p0" ]; then
+    afile1=akrtma.t${acyc}z.2dvaranl_ndfd_3p0.grb1                  
+  elif [ "$DSIM" = "prod_gefs_3p0" ]; then
+    afile1=akrtma.t${acyc}z.2dvaranl_ndfd_3p0.grb1                  
+  elif [ "$DSIM" = "prod_naefs_3p0" ]; then
+    afile1=akrtma.t${acyc}z.2dvaranl_ndfd_3p0.grb1                  
+  elif [ "$DSIM" = "ecmwf_3p0" ]; then
+    afile1=akrtma.t${acyc}z.2dvaranl_ndfd_3p0.grb1                  
+  elif [ "$DSIM" = "ecmwf_3p0_raw" ]; then
+    afile1=akrtma.t${acyc}z.2dvaranl_ndfd_3p0.grb1                  
+  elif [ "$DSIM" = "test2_gefs" ]; then
+    afile1=akrtma.t${acyc}z.2dvaranl_ndfd_6km.grb1                  
+  elif [ "$DSIM" = "prod2_gefs" ]; then
+    afile1=akrtma.t${acyc}z.2dvaranl_ndfd_6km.grb1                  
+  else
+#   afile1=akrtma.t${acyc}z.2dvaranl_ndfd.grb1                  
+    afile1=akrtma.t${acyc}z.2dvaranl_ndfd_3p0.grb1                  
+  fi   
+
+  case $cfield in
+    TCDC) afile1=rtma2p5avg.t${acyc}z.2dvaranl_ndfd.grb1;;
+  esac
+
+  if [ -s $afile1 ]; then rm $afile1; fi
+
+  case $cfield in
+    TMAX) aymd=`$NDATE -24 $aymdh | cut -c1-8`;;
+    TMIN) aymd=`$NDATE -24 $aymdh | cut -c1-8`;;
+  esac
+
+  case $ireg in
+    conus)  COMRTMA=${COM_RTMA}/rtma2p5.$aymd;;
+    alaska) COMRTMA=${COM_RTMA}/akrtma.$aymd;;
+  esac
+
+  if [ "$cfield" = "TMAX" -o "$cfield" = "TMIN" ]; then 
+    if [ "$DSIM" = "para_gefs_3p0" ]; then
+      rx=3p0    
+    elif [ "$DSIM" = "para_naefs_3p0" ]; then
+      rx=3p0    
+    elif [ "$DSIM" = "prod_gefs_3p0" ]; then
+      rx=3p0    
+    elif [ "$DSIM" = "prod_naefs_3p0" ]; then
+      rx=3p0    
+    elif [ "$DSIM" = "test2_gefs" ]; then
+      rx=
+    elif [ "$DSIM" = "prod2_gefs" ]; then
+      rx=
+    else
+      rx=3p0
+    fi   
+    case $cfield in
+      TMAX) afile1=rtma${rx}_${ireg}_${aymd}_tmax;;
+      TMIN) afile1=rtma${rx}_${ireg}_${aymd}_tmin;;
+    esac
+  fi
+
+  cp $COMRTMA/$afile1 .
+
+  if [ -s $afile1 ]; then
+    echo " "
+  else
+    echo " There is no RTMA data, Stop! for " $aymdh
+  fi
+
+###
+# climate mean file entry
+###
+
+  if [ "$DSIM" = "para_gefs_3p0" ]; then
+    afile2_clim=cmean_1d.1979${amd}_${ireg}_3p0
+    afile2=${afile2_clim}_${cfield}_$nfhrs                         
+  elif [ "$DSIM" = "para_naefs_3p0" ]; then
+    afile2_clim=cmean_1d.1979${amd}_${ireg}_3p0
+    afile2=${afile2_clim}_${cfield}_$nfhrs                         
+  elif [ "$DSIM" = "prod_gefs_3p0" ]; then
+    afile2_clim=cmean_1d.1979${amd}_${ireg}_3p0
+    afile2=${afile2_clim}_${cfield}_$nfhrs                         
+  elif [ "$DSIM" = "prod_naefs_3p0" ]; then
+    afile2_clim=cmean_1d.1979${amd}_${ireg}_3p0
+    afile2=${afile2_clim}_${cfield}_$nfhrs                         
+  elif [ "$DSIM" = "ecmwf_3p0" ]; then
+    afile2_clim=cmean_1d.1979${amd}_${ireg}_3p0
+    afile2=${afile2_clim}_${cfield}_$nfhrs                         
+  elif [ "$DSIM" = "ecmwf_3p0_raw" ]; then
+    afile2_clim=cmean_1d.1979${amd}_${ireg}_3p0
+    afile2=${afile2_clim}_${cfield}_$nfhrs                         
+  else
+#   afile2_clim=cmean_1d.1979${amd}_${ireg}
+#   afile2=${afile2_clim}_${cfield}_$nfhrs                         
+    afile2_clim=cmean_1d.1979${amd}_${ireg}_3p0
+    afile2=${afile2_clim}_${cfield}_$nfhrs                         
+  fi
+
+  if [ -s $afile2 ]; then rm $afile2; fi
+
+  cp $COMCLIM/${afile2_clim} $afile2
+
+###
+# forecast files entry, ensembel average & spread
+###
+
+  if [ "$IF_NDGD" = "YES" ]; then
+
+    COMNDGD=$COM_NDGD/${id}.${fymd}/${fcyc}/ndgd
+
+    if [ "$DSIM" = "para_gefs_3p0" ]; then
+      cfile1=$COMNDGD/${px}geavg.t${fcyc}z.ndgd3p0_${ireg}f${nfhrs}
+      cfile2=$COMNDGD/${px}gespr.t${fcyc}z.ndgd3p0_${ireg}f${nfhrs}
+    elif [ "$DSIM" = "para_naefs_3p0" ]; then
+      cfile1=$COMNDGD/${px}geavg.t${fcyc}z.ndgd3p0_${ireg}f${nfhrs}
+      cfile2=$COMNDGD/${px}gespr.t${fcyc}z.ndgd3p0_${ireg}f${nfhrs}
+    elif [ "$DSIM" = "prod_gefs_3p0" ]; then
+      cfile1=$COMNDGD/${px}geavg.t${fcyc}z.ndgd3p0_${ireg}f${nfhrs}
+      cfile2=$COMNDGD/${px}gespr.t${fcyc}z.ndgd3p0_${ireg}f${nfhrs}
+    elif [ "$DSIM" = "prod_naefs_3p0" ]; then
+      cfile1=$COMNDGD/${px}geavg.t${fcyc}z.ndgd3p0_${ireg}f${nfhrs}
+      cfile2=$COMNDGD/${px}gespr.t${fcyc}z.ndgd3p0_${ireg}f${nfhrs}
+    elif [ "$DSIM" = "ecmwf_3p0" ]; then
+      px=ecmwf_
+      cfile1=$COMNDGD/${px}geavg.t${fcyc}z.ndgd3p0_${ireg}f${nfhrs}
+      cfile2=$COMNDGD/${px}gespr.t${fcyc}z.ndgd3p0_${ireg}f${nfhrs}
+    elif [ "$DSIM" = "ecmwf_3p0_raw" ]; then
+      px=ecmwf_
+      COMNDGD=$COM_NDGD/${id}.${fymd}/${fcyc}/ndgd_raw
+      cfile1=$COMNDGD/${px}geavg.t${fcyc}z.ndgd3p0_${ireg}f${nfhrs}
+      cfile2=$COMNDGD/${px}gespr.t${fcyc}z.ndgd3p0_${ireg}f${nfhrs}
+    else
+#     cfile1=$COMNDGD/${px}geavg.t${fcyc}z.ndgd_${ireg}f${nfhrs}
+#     cfile2=$COMNDGD/${px}gespr.t${fcyc}z.ndgd_${ireg}f${nfhrs}
+      cfile1=$COMNDGD/${px}geavg.t${fcyc}z.ndgd3p0_${ireg}f${nfhrs}
+      cfile2=$COMNDGD/${px}gespr.t${fcyc}z.ndgd3p0_${ireg}f${nfhrs}
+    fi
+
+    if [ "$id" = "naefs" ]; then
+      if [ $fcyc -eq 06 -o $fcyc -eq 18 ]; then
+        cfile1=
+      fi
+    fi
+
+  else
+
+    COMFCST=$COM_FCST/${id}.${fymd}/${fcyc}/pgrba${ex}
+
+    dfile1=$COMFCST/${px}geavg.t${fcyc}z.pgrba${ex}f${nfhrs}
+    dfile2=$COMFCST/${px}gespr.t${fcyc}z.pgrba${ex}f${nfhrs}
+
+    echo $dfile1 $dfile2
+
+    cfile1=${px}geavg.t${fcyc}z.ndgd_conusf${nfhrs}.$cfield
+    cfile2=${px}gespr.t${fcyc}z.ndgd_conusf${nfhrs}.$cfield
+
+    $COPYGB -g"$grid" -i1,1 -x $dfile1 $cfile1
+    $COPYGB -g"$grid" -i1,1 -x $dfile2 $cfile2
+
+    ymdh=${fymd}${fcyc}
+    export PDY=`echo $ymdh | cut -c1-8`
+    export PDYm1=`$NDATE -24 $ymdh | cut -c1-8`
+    export PDYm2=`$NDATE -48 $ymdh | cut -c1-8`
+    export PDYm3=`$NDATE -72 $ymdh | cut -c1-8`
+    export PDYm4=`$NDATE -96 $ymdh | cut -c1-8`
+
+    cyc_verf=`$NDATE +$nfhrs $ymdh | cut -c9-10`
+
+    bfile=dvrtma.t${cyc_verf}z.ndgd_conus                  
+
+    if [ -s $bfile ]; then rm $bfile; fi
+
+    echo $COM_DV/gefs.$PDY/${cyc_verf}/ndgd/$bfile
+
+    if [ -s $COM_DV/gefs.$PDY/${cyc_verf}/ndgd/$bfile ]; then
+#     cp $COM_DV/gefs.$PDY/${cyc_verf}/ndgd/$bfile  .
+      cp $COM_DV/gefs.$PDYm1/${cyc_verf}/ndgd/$bfile  .
+    elif [ -s $COM_DV/gefs.$PDYm1/${cyc_verf}/ndgd/$bfile ]; then
+      cp $COM_DV/gefs.$PDYm1/${cyc_verf}/ndgd/$bfile  .
+    elif [ -s $COM_DV/gefs.$PDYm2/${cyc_verf}/ndgd/$bfile ]; then
+      cp $COM_DV/gefs.$PDYm2/${cyc_verf}/ndgd/$bfile  .
+    elif [ -s $COM_DV/gefs.$PDYm3/${cyc_verf}/ndgd/$bfile ]; then
+      cp $COM_DV/gefs.$PDYm3/${cyc_verf}/ndgd/$bfile  .
+    elif [ -s $COM_DV/gefs.$PDYm4/${cyc_verf}/ndgd/$bfile ]; then
+      cp $COM_DV/gefs.$PDYm4/${cyc_verf}/ndgd/$bfile  .
+    elif [ -s $COM_DV/gefs.$PDYm5/${cyc_verf}/ndgd/$bfile ]; then
+      cp $COM_DV/gefs.$PDYm5/${cyc_verf}/ndgd/$bfile  .
+    elif [ -s $COM_DV/gefs.$PDYm6/${cyc_verf}/ndgd/$bfile ]; then
+      cp $COM_DV/gefs.$PDYm6/${cyc_verf}/ndgd/$bfile  .
+    elif [ -s $COM_DV/gefs.$PDYm7/${cyc_verf}/ndgd/$bfile ]; then
+      cp $COM_DV/gefs.$PDYm7/${cyc_verf}/ndgd/$bfile  .
+    fi
+
+  fi
+
+###
+#  output verified results                    
+###
+
+  ofile=crps.t${fcyc}z.pgrbaf${nfhrs}_$cfield
+
+  rm fort.* 
+ 
+  echo "&message"  >input.$nfhrs.$cfield
+  echo " nfhrs=$nfhrs," >>input.$nfhrs.$cfield
+  echo " odate=$aymdh," >>input.$nfhrs.$cfield
+
+  if [ "$runini" = "YES" ]; then
+    echo " idate=$CDATE," >>input.$nfhrs.$cfield
+  else
+    echo " idate=$fymdh," >>input.$nfhrs.$cfield
+  fi
+
+  echo " variable='$cfield'," >>input.$nfhrs.$cfield
+  echo " if_ndgd=$if_ndgd," >>input.$nfhrs.$cfield
+  echo " ifout_avgspr=$ifout_avgspr," >>input.$nfhrs.$cfield
+  echo "/" >>input.$nfhrs.$cfield
+  
+  cat namin.varlist.$cfield >>input.$nfhrs.$cfield
+
+  ln -sf $afile1 fort.11
+  ln -sf $afile2 fort.12
+  ln -sf $cfile1 fort.13
+  ln -sf $cfile2 fort.14
+
+  if [ "$IF_NDGD" = "NO" ]; then
+    ln -sf $bfile fort.15
+  fi
+
+  ln -sf $ofile  fort.51
+
+  if [ "$IFOUT_AVGSPR" = "BOTH" -o "$IFOUT_AVGSPR" = "YES" ]; then
+    ofile2=${DSIM}_geavg.t${fcyc}z.ndgd_${ireg}f${nfhrs}
+    ln -sf $ofile2.$cfield   fort.52
+  fi
+
+# startmsg
+  $EXECVERF/$pgm  <input.$nfhrs.$cfield > $pgmout.${nfhrs}_$cfield
+# export err=$?;err_chk
+
+  if [ -s $ofile ]; then cat $ofile >> SCORES.OUT.${cfield}; fi
+
+  if [ "$IFOUT_AVGSPR" = "BOTH" -o "$IFOUT_AVGSPR" = "YES" ]; then
+    if [ -s $ofile2.$cfield ]; then
+      COMAVGSPR=$COM_OUT/NCE.${fymd}/${fcyc}/ndgd
+       echo $COMAVGSPR
+      mkdir -m 775 -p $COMAVGSPR
+      cat $ofile2.$cfield  >>  $COMAVGSPR/$ofile2
+    fi
+  fi
+
+done # for fhrs
+
+if [ "$runini" = "YES" ]; then
+# cp SCORES.OUT.${cfield} $COMOUT/P${cfield}${ENSIM}f.$CDATE.$ireg 
+  cp SCORES.OUT.${cfield} $COMOUT/P${cfield}${DSIM}f.$CDATE.$ireg 
+fi
+
+if [ "$runini" = "NO" ]; then
+# cp SCORES.OUT.${cfield} $COMOUT/P${cfield}${ENSIM}a.$CDATE.$ireg 
+  cp SCORES.OUT.${cfield} $COMOUT/P${cfield}${DSIM}a.$CDATE.$ireg 
+fi
+
+done  # for cfield
+
+msg="HAS COMPLETED NORMALLY!"
+#postmsg "$jlogfile" "$msg"
+
+###
+#

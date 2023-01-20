@@ -1,0 +1,8 @@
+
+export CDATE=2016020400
+export ndays=34
+
+job_exp_gefs_bcds_prod_3p0
+job_exp_naefs_bcds_prod_3p0
+job_exp_naefs_bcds_test_3p0
+job_exp_gefs_bcds_test_3p0

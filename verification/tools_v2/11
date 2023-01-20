@@ -1,0 +1,23 @@
+CDATE=2016072900
+ndays=3
+
+COM=$NGLOBAL/Bo.Cui/naefs.v6.0.2/com/gens/prod
+COMOUT=$NGLOBAL/Bo.Cui/naefs.v6.0.4/com/gens/prod
+
+mkdir -p $COMOUT
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  mkdir -p $COMOUT/gefs.${PDY}/${cyc}/pgrb2ap5
+  cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*geavg*mef*    $COMOUT/gefs.${PDY}/${cyc}/pgrb2ap5
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+  echo $CDATE
+done
+

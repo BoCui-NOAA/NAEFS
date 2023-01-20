@@ -1,0 +1,24 @@
+CDATE=2014020100
+ndays=190
+iday=1
+
+COM=$NGLOBAL/Bo.Cui/com/gens/prod          
+nhours=/nwprod/util/exec/ndate
+
+while [ $iday -le $ndays ]; do
+
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo " day " $PDY$cyc
+
+  COMINNCEP=$COM/gefs.$PDY/$cyc
+  ls $COMINNCEP/pgrb2a/geavg.t${cyc}z*mef* | wc
+  ls $COMINNCEP/pgrb2a/gegfs.t${cyc}z*mef* | wc
+
+  iday=`expr $iday + 1`
+  CDATE=`$nhours +24 $CDATE`
+
+done
+
+

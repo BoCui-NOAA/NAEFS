@@ -1,0 +1,7 @@
+GDFILE  /gpfs/gp2/nco/ops/com/nawips/prod/gefs.20190729/gep16_0p50_2019072906f150                                                       
+LSTALL  y                                                                                                                               
+OUTPUT  t                                                                                                                               
+GDATTIM all                                                                                                                             
+GLEVEL  all                                                                                                                             
+GVCORD  all                                                                                                                             
+GFUNC   all                                                                                                                             

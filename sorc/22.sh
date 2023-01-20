@@ -21,11 +21,15 @@ export LIBS="${G2_LIB4} ${W3NCO_LIB4} ${BACIO_LIB4} ${JASPER_LIB} ${PNG_LIB} ${Z
 
 #for dir in dvrtma_debias_alaska.fd dvrtma_debias_conus.fd;  do
 #for dir in dvrtma_debias_conus_tmaxmin.fd;  do
-for dir in dvrtma_debias_conus_wind10m.fd;  do
+#for dir in dvrtma_debias_conus_wind10m.fd;  do
+#for dir in gefs_pgrb_enspqpf.fd;  do
+for dir in gefs_enscqpf_24hr.fd;  do
  cd $dir
  make clean
  make -f makefile
 #mv dvrtma_debias_conus_tmaxmin ../../exec/
- mv dvrtma_debias_conus_wind10m ../../exec/
+#mv dvrtma_debias_conus_wind10m ../../exec/
+#mv gefs_pgrb_enspqpf           ../../exec/
+ mv gefs_enscqpf_24hr           ../../exec/
  cd ..
 done

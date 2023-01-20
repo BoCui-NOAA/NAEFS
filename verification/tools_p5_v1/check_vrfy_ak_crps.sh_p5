@@ -1,0 +1,36 @@
+CDATE=2017042000
+ndays=51
+iday=1
+
+nhours=/nwprod/util/exec/ndate
+
+COM=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/crps_ndgd3p0_ak    
+
+rm print_crps
+>print_crps
+
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  echo $CDATE >> print_crps
+
+  for exp in gefs_bcds naefs_bcds gefs_p5bcds naefs_p5bcds; do
+#   file=P2MTMP${exp}f.$CDATE.alaska 
+#   file=P10MUGRD${exp}f.$CDATE.alaska 
+#   file=P2MDPT${exp}f.$CDATE.alaska 
+    file=PTMIN${exp}f.$CDATE.alaska 
+    cat $COM/$file       | sed -n "319,319p" >> print_crps
+#   cat $COM/$file       | sed -n "31,31p" >> print_crps
+#   cat $COM/$file       | sed -n "7,7p" >> print_crps
+#   cat $COM/$file       | sed -n "507,507p" >> print_crps
+  done
+
+  echo "    " >> print_crps
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+
+done
+

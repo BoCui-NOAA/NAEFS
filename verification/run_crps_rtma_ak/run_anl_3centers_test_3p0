@@ -1,0 +1,81 @@
+#set -x
+
+###
+### define the directory and utility
+###
+
+nhoursx=/nwprod/util/exec/ndate
+
+COMIN=/ensemble/save/Bo.Cui/naefs.v5.0.0
+
+COMOUTJOB=$PTMP/Bo.Cui/output
+
+###
+### get real time from IBM-SP computer system
+###
+
+Date=`date +%y%m%d`
+CDATE=20$Date\00
+echo "CDATE=$CDATE"
+
+CDATE=$1
+
+###
+### Define the time for each cycle and different days
+###
+
+PDY=`echo $CDATE | cut -c1-8`
+cyc=`echo $CDATE | cut -c9-10`
+
+#ymdh=`$nhoursx -24 $CDATE`
+#PDYm1=`echo ${ymdh} | cut -c1-8`
+#ymdh=`$nhoursx -48 $CDATE`
+#PDYm2=`echo ${ymdh} | cut -c1-8`
+
+CUE=transfer
+
+#########################################
+### 01 Submit job for  10% NAEFS CONUS
+#########################################
+
+job=$COMIN/run_crps_rtma_ak/exrtma_crps.sh.sms
+#job=$COMIN/run_crps_rtma_ak/exrtma_crps.sh.sms_tmaxmin
+
+for cyc in 00 ; do
+
+  echo "++++++ Submite the naefs conus job for 00z ++++++"
+
+  export CDATE=$PDY$cyc    
+
+  export runini=NO
+
+  export ENSIM
+  export id
+  export ireg
+
+# export COMCLIM=/sss/emc/ensemble/shared/Bo.Cui/CONUS_Q1_2012/fix_${ireg}
+  export COMCLIM=/sss/emc/ensemble/shared/Bo.Cui/CONUS_Q1_2012/fix_${ireg}_3p0
+
+  export COM_RTMA=$NGLOBAL/Bo.Cui/com/rtma/prod
+  export COM_OUT=$PTMP/Bo.Cui/naefs.v5.0.0/com/gens/prod 
+
+  if [ "$IF_NDGD" = "NO" -o "$IF_NDGD" = "NA" ]; then
+    export COM_DV=$NGLOBAL2/Bo.Cui/com/gens/prod
+    export COM_FCST=$NGLOBAL2/Bo.Cui/com/gens/wcoss
+  else
+#   export COM_NDGD=$NGLOBAL2/Bo.Cui/naefs.v5.0.0/com/gens/prod  
+    export COM_NDGD=$NGLOBAL2/Bo.Cui/com2/gens/para  
+  fi
+
+# export COMOUT=$NGLOBAL2/$LOGNAME/naefs.v5.0.0/com/gens/crps_ndgd3p0
+# export COMOUT=$NGLOBAL/$LOGNAME/naefs.v5.0.0/com/gens/crps_ndgd3p0_ecmwf
+  export COMOUT=$NGLOBAL2/$LOGNAME/com2/gens/crps_ndgd3p0_alaska
+  export DATA=$PTMP/$LOGNAME/ecmwf_vrfy_ndgd/scores_${ireg}_${id}_${CDATE}_ini${runini}_$DSIM
+
+  out=$COMOUTJOB/out_ndgd_${ireg}_${id}_${CDATE}_ini${runini}_$DSIM 
+
+# /u/Bo.Cui/xbin/sub_wcoss -a GEN-MTN -q $CUE -p 1/1/S -r 512/1 -t 1:00 -j ens00 -o $out $job
+# $job > $out 2>&1 
+  $job
+
+done

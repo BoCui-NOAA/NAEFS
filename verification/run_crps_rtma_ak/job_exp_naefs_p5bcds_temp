@@ -1,0 +1,23 @@
+export CDATE=2017052100
+ndays=23
+iday=1
+ 
+while [ $iday -le $ndays ]; do
+
+  export id=naefs
+  export ireg=alaska     
+  export IF_NDGD=YES
+
+  export DSIM=naefs_p5bcds     
+  
+  export exid=
+  export COM_NDGD=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.0/com/gens/prod
+
+  run_anl_3centers.sh >$PTMP/Bo.Cui/trash 2>&1&             
+# bsub < run_anl_3centers.sh               
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+
+done
+

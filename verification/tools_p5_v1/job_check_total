@@ -1,0 +1,13 @@
+export CDATE=2018050100
+export ndays=15
+
+export COM=$NGLOBAL/Bo.Cui/com/naefs/para
+
+#job_check_gefs_bc_p5
+#job_check_naefs_bc_p5
+
+job_check_gefs_ndgd_p5
+job_check_naefs_ndgd_p5
+
+#job_check_gefs_p5raw
+

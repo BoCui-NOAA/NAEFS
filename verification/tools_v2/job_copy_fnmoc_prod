@@ -1,0 +1,27 @@
+CDATE=2016061000
+ndays=81
+
+COM=/gpfs/tp2/nco/ops/com/gens/prod
+DATA=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/com/gens/prod
+
+cd $DATA
+
+NDATE=/gpfs/hps/nco/ops/nwprod/prod_util.v1.0.4/exec/ndate
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  mkdir -p fens.${PDY}/${cyc}
+  cp -r $COM/fens.${PDY}/${cyc}/pgrb2a    fens.${PDY}/${cyc}
+  cp -r $COM/fens.${PDY}/${cyc}/pgrb2a_bc fens.${PDY}/${cyc}
+  cp -r $COM/fens.${PDY}/${cyc}/pgrb2a_an fens.${PDY}/${cyc}
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +06 $CDATE`
+
+  echo $CDATE
+done
+

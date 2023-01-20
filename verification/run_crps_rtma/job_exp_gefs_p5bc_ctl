@@ -1,0 +1,24 @@
+export CDATE=2016080100
+ndays=31
+iday=1
+ 
+while [ $iday -le $ndays ]; do
+
+  export id=gefs
+  export ireg=conus      
+  export IF_NDGD=YES
+
+  export DSIM=gefs_p5bc_ctl
+# export ENSIM=gefs_p5bc_ctl
+
+  export exid=_bc2p5
+  export COM_NDGD=$NGLOBAL/Bo.Cui/naefs.v6.0.1/com/gens/prod
+
+  run_anl_3centers_para_2p5 $CDATE > $PTMP/Bo.Cui/trash 2>&1&
+# run_anl_3centers_para_2p5 $CDATE
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+
+done
+

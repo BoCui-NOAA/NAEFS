@@ -1,0 +1,45 @@
+CDATE=2017062712
+ndays=8
+
+prod=luna
+COM_IN=/gpfs/hps/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev
+COM_OUT=/gpfs/hps/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  COMIN=$COM_IN/gefs.$PDY/$cyc/pgrb2ap5
+  COMOUT=$COM_OUT/gefs.$PDY/$cyc/pgrb2ap5
+  COMOUT_g1=$COM_OUT/gefs.$PDY/$cyc/pgrbap5
+  mkdir -p $COMOUT
+  mkdir -p ${COMOUT_g1}
+# scp -p $prod:$COMIN/gegfs*f000 $COMOUT/
+# scp -p $prod:$COMIN/gec00*f000 $COMOUT/
+# scp -p $prod:$COMIN/gegfs*f003 $COMOUT/
+# scp -p $prod:$COMIN/gec00*f003 $COMOUT/
+
+  file=gegfs.t${cyc}z.pgrb2a.0p50.f000
+  file_g1=gegfs.t${cyc}z.pgrba.0p50.f000
+  cnvgrib -g21 $COMOUT/$file $COMOUT_g1/$file_g1
+
+  file=gegfs.t${cyc}z.pgrb2a.0p50.f003
+  file_g1=gegfs.t${cyc}z.pgrba.0p50.f003
+  cnvgrib -g21 $COMOUT/$file $COMOUT_g1/$file_g1
+
+  file=gec00.t${cyc}z.pgrb2a.0p50.f000
+  file_g1=gec00.t${cyc}z.pgrba.0p50.f000
+  cnvgrib -g21 $COMOUT/$file $COMOUT_g1/$file_g1
+
+  file=gec00.t${cyc}z.pgrb2a.0p50.f003
+  file_g1=gec00.t${cyc}z.pgrba.0p50.f003
+  cnvgrib -g21 $COMOUT/$file $COMOUT_g1/$file_g1
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +06 $CDATE`
+
+  echo $CDATE
+done
+

@@ -1,0 +1,24 @@
+export CDATE=2017042000
+ndays=1
+iday=1
+ 
+while [ $iday -le $ndays ]; do
+
+  export id=gefs
+  export ireg=alaska     
+  export IF_NDGD=YES
+
+  export DSIM=gefs_bcds     
+# export ENSIM=gefs_bc
+  
+  export exid=
+  export COM_NDGD=/gpfs/gd3/emc/ensemble/noscrub/Bo.Cui/com2/gens/prod
+
+  run_anl_3centers.sh > $PTMP/Bo.Cui/trash 2>&1&
+# bsub < run_anl_3centers.sh               
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+
+done
+

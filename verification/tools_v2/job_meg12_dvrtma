@@ -1,0 +1,38 @@
+
+export CNVGRIB=${CNVGRIB:-/nwprod/util/exec/cnvgrib}
+
+filelist=" alaska conus"
+
+PDY=20130722
+
+for cyc in 00 06 12 18; do
+
+COMIN=/com/gens/prod/gefs.$PDY/$cyc/ndgd 
+COMOUT=$NGLOBAL/Bo.Cui/com/gens/wcoss/gefs.$PDY/$cyc/ndgd_gb2
+
+mkdir -p $COMOUT
+
+for file in $filelist; do
+
+   ifile_in1=dvrtma.t${cyc}z.ndgd_${file}
+   ifile_in2=dvrtma.t${cyc}z.ndgd_${file}.grib2
+   $CNVGRIB -g12 -p40 $COMIN/$ifile_in1 $COMOUT/$ifile_in2
+
+done
+done
+
+for cyc in 00 06 12 18; do
+
+COMIN=/com/gens/prod/naefs.$PDY/$cyc/ndgd 
+COMOUT=$NGLOBAL/Bo.Cui/com/gens/wcoss/naefs.$PDY/$cyc/ndgd_gb2
+
+mkdir -p $COMOUT
+
+for file in $filelist; do
+
+   ifile_in1=dvrtma.t${cyc}z.ndgd_${file}
+   ifile_in2=dvrtma.t${cyc}z.ndgd_${file}.grib2
+   $CNVGRIB -g12 -p40 $COMIN/$ifile_in1 $COMOUT/$ifile_in2
+
+done
+done

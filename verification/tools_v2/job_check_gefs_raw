@@ -1,0 +1,30 @@
+CDATE=2015071000
+ndays=64
+iday=1
+
+#COM=$NGLOBAL/Bo.Cui/com/gens/prod          
+COM=/com2/gens/para               
+nhours=/nwprod/util/exec/ndate
+
+while [ $iday -le $ndays ]; do
+
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo " day " $PDY$cyc
+
+  COMINNCEP=$COM/gefs.$PDY/$cyc
+
+  ls $COMINNCEP/pgrb2a/*avg*pgrb2af*   | wc
+# ls $COMINNCEP/pgrba/gec00.t${cyc}z* | wc
+# ls $COMINNCEP/pgrba/ncepcmc* | wc
+# ls $NGLOBAL/Bo.Cui/com/gens/wcoss/gefs.$PDY/$cyc/pgrba/ncepecmwf* | wc
+
+# ls $COMINNCEP/pgrba/gegfs.t${cyc}z* | wc
+
+  iday=`expr $iday + 1`
+  CDATE=`$nhours +06 $CDATE`
+
+done
+
+

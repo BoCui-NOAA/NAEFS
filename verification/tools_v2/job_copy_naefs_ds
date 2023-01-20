@@ -1,0 +1,27 @@
+CDATE=2015041500
+ndays=15
+
+COM=/com/gens/prod
+DATA=$NGLOBAL/Bo.Cui/com/gens/prod
+nhours=/nwprod/util/exec/ndate
+
+cd $DATA
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  mkdir -p naefs.${PDY}/${cyc}/ndgd
+
+  cp $COM/naefs.${PDY}/${cyc}/ndgd/*avg*conus*  naefs.${PDY}/${cyc}/ndgd
+  cp $COM/naefs.${PDY}/${cyc}/ndgd/*spr*conus*  naefs.${PDY}/${cyc}/ndgd
+  cp $COM/naefs.${PDY}/${cyc}/ndgd/*avg*alaska*  naefs.${PDY}/${cyc}/ndgd
+  cp $COM/naefs.${PDY}/${cyc}/ndgd/*spr*alaska*  naefs.${PDY}/${cyc}/ndgd
+
+  iday=`expr $iday + 1`
+  CDATE=`$nhours +24 $CDATE`
+
+done
+

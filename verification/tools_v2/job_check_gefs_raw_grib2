@@ -1,0 +1,39 @@
+CDATE=2016080400
+ndays=1
+iday=1
+
+COM=$NGLOBAL/Bo.Cui/com/gens/prod          
+
+while [ $iday -le $ndays ]; do
+
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo " day " $PDY$cyc
+  echo " gep* have 1940 files"
+  echo " ge* have 1940 files"
+  echo " gegfs* have 85 files"
+
+  COMINNCEP=$COM/gefs.$PDY/$cyc
+
+  ls $COM/gefs.$PDY/00/pgrb2ap5/gep*.t${cyc}z.pgrb2a.0p50.f* | wc
+  ls $COM/gefs.$PDY/00/pgrb2ap5/gec00.t${cyc}z.pgrb2a.0p50.f* | wc
+  ls $COM/gefs.$PDY/00/pgrb2ap5/gegfs.t${cyc}z.pgrb2a.0p50.f* | wc
+
+# ls $COMINNCEP/pgrba/ncepcmc* | wc
+
+# ls $COMINNCEP/pgrb2a/geavg.t${cyc}z.pgrb2af* | wc
+# ls $COMINNCEP/pgrb2a/gegfs.t${cyc}z.pgrb2af* | wc
+# ls $COMINNCEP/pgrb2a/gec00.t${cyc}z.pgrb2af* | wc
+
+# ls $COM/gefs.$PDY/00/pgrb2a/gec00.t${cyc}z.pgrb2af* | wc
+# ls $COM/gefs.$PDY/06/pgrb2a/gec00.t${cyc}z.pgrb2af* | wc
+# ls $COM/gefs.$PDY/12/pgrb2a/gec00.t${cyc}z.pgrb2af* | wc
+# ls $COM/gefs.$PDY/18/pgrb2a/gec00.t${cyc}z.pgrb2af* | wc
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+done
+
+

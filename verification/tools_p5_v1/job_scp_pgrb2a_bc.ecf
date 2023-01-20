@@ -1,0 +1,30 @@
+CDATE=2016020400
+ndays=27
+
+#COM=/gpfs/gp1/ptmp/Bo.Cui/test            
+COM=/gpfs/gp2/ptmp/Bo.Cui/temp            
+DATA=$NGLOBAL/Bo.Cui/com/gens/prod
+
+mkdir -p $DATA
+cd $DATA
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  mkdir -p $DATA/gefs.${PDY}/${cyc}/pgrb2a_bc
+  if [ $cyc -eq 00 ]; then
+    scp Bo.Cui@gyre:$COM/gefs.${PDY}/${cyc}/pgrb2a_bc/*avg*  $DATA/gefs.${PDY}/${cyc}/pgrb2a_bc
+    scp Bo.Cui@gyre:$COM/gefs.${PDY}/${cyc}/pgrb2a_bc/*spr*  $DATA/gefs.${PDY}/${cyc}/pgrb2a_bc
+  else
+    echo " no data"
+  fi
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+  echo $CDATE
+done
+

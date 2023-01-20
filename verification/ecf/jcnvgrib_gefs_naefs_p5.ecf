@@ -97,7 +97,7 @@ export outlist="naefs_geavg naefs_gespr"
 
 $HOMEcrps/scripts/excnvgrib_gefs_bcp5.sh
 
-# 5. naefs v6.1 naefs bcp5
+# 5. gefs v12.3 raw pgrb2ap5
 
 export model=gefs  
 export model_ver=v12.3

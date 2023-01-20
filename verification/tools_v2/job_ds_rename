@@ -1,0 +1,36 @@
+CDATE=2016080300
+ndays=8
+
+DATA=$NGLOBAL/Bo.Cui/naefs.v6.0.1/com/gens/prod
+
+cd $DATA
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  cd $DATA
+
+  infile=dvrtma.t${cyc}z.alaska.grib2
+  outfile=dvrtma.t${cyc}z.alaska_3p0.grib2
+  mv naefs.${PDY}/${cyc}/ndgd_gb2/$infile naefs.${PDY}/${cyc}/ndgd_gb2/$outfile
+
+  infile=dvrtma.t${cyc}z.conus.grib2              
+  outfile=dvrtma.t${cyc}z.conus_ext_2p5.grib2
+  mv naefs.${PDY}/${cyc}/ndgd_gb2/$infile naefs.${PDY}/${cyc}/ndgd_gb2/$outfile
+
+# infile=dvrtma.t${cyc}z.alaska.grib2
+# outfile=dvrtma.t${cyc}z.alaska_3p0.grib2
+# mv gefs.${PDY}/${cyc}/ndgd_gb2/$infile gefs.${PDY}/${cyc}/ndgd_gb2/$outfile
+
+# infile=dvrtma.t${cyc}z.conus.grib2              
+# outfile=dvrtma.t${cyc}z.conus_ext_2p5.grib2
+# mv gefs.${PDY}/${cyc}/ndgd_gb2/$infile gefs.${PDY}/${cyc}/ndgd_gb2/$outfile
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +06 $CDATE`
+
+done
+

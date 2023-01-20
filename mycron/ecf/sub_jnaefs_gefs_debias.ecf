@@ -67,7 +67,7 @@ export PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME
 #export COMPATH=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/canned/com/naefs:/lfs/h1/ops/canned/com/gefs:/lfs/h1/ops/canned/com/cfs:/lfs/h2/emc/vpppg/noscrub/$LOGNAME/canned/com/gefs
 export COMROOT=/lfs/h2/emc/ptmp/$LOGNAME/com
 
-export KEEPDATA=NO  
+export KEEPDATA=YES 
 export SENDDBN=NO
 
 # CALL executable job script here

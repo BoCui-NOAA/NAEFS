@@ -1,0 +1,36 @@
+export CDATE=2004010100
+ndays=1
+iday=1
+
+PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME
+naefs_ver=v7.0.0
+
+COMIN=$PACKAGEROOT/naefs.${naefs_ver}/verification/fix
+COMOUT=$PACKAGEROOT/naefs.${naefs_ver}/verification/fix_conus_ext_2p5 
+
+mkdir -p $COMOUT
+
+#grid='255 3 1073 689 20192 238446 8 265000 5079 5079 0 64 25000 25000 0 0 0'
+
+# for 2.5km with extended area
+#grid='255 3 2145 1597 20191 238445 8 265000 2539 2539 0 64 25000 25000 -8364400 0 0'
+
+# for 2.5km without extended area
+#grid='255 3 2145 1377 20191 238445 8 265000 2539 2539 0 64 25000 25000 -8364400 0 0'
+
+grid='255 3 2145 1597 20191 238445 8 265000 2539 2539 0 64 25000 25000 -8364400 0 0'
+
+while [ $iday -le $ndays ]; do
+
+  MD=`echo $CDATE | cut -c5-8`
+
+  file1=cmean_p5d.1979$MD.g1
+  file2=cmean_p5d.1979${MD}_conus_ext_2p5
+
+  $COPYGB -g"$grid" -i1,1 -x $COMIN/$file1 $COMOUT/$file2
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+
+done
+
