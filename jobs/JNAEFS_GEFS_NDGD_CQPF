@@ -101,8 +101,7 @@ setpdy.sh
 # Define COM directories
 ########################
 
-#export COMIN=${COMIN:-$(compath.py $envir/$NET/${naefs_ver})}
-export COMIN=${COMIN:-$(compath.py $envir/$NET/v6.1)}
+export COMIN=${COMIN:-$(compath.py $envir/$NET/${naefs_ver})}
 export COMOUT=${COMOUT:-$(compath.py -o $NET/${naefs_ver})}
 
 mkdir -m 775 -p $COMOUT
@@ -119,7 +118,9 @@ $HOMEndgd/scripts/exnaefs_gefs_conus_ndgd_enscqpf.sh
 
 #############################################################
 
-cat $pgmout.*
+cat $DATA/$CYC/06hr/$pgmout
+cat $DATA/$CYC/06hr/$pgmout
+
 msg="JOB COMPLETED NORMALLY"
 postmsg "$jlogfile" "$msg"
 

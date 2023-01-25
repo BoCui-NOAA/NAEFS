@@ -4,7 +4,7 @@
 COM_IN=/lfs/h1/ops/prod/com/naefs/v6.1
 COM_OUT=/lfs/h2/emc/ptmp/bo.cui/com/naefs/v7.0
 
-PDY=20230116
+PDY=20230118
 for cyc in 00 06 12 18; do
   mkdir -p $COM_OUT/gefs.$PDY/$cyc/prcp_bc_gb2
   cp $COM_IN/gefs.$PDY/$cyc/prcp_bc_gb2/*dat $COM_OUT/gefs.$PDY/$cyc/prcp_bc_gb2

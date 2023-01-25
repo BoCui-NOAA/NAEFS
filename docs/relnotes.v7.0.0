@@ -53,6 +53,8 @@ NCEP/GEFS Jobs
   1) scripts/exnaefs_gefs_debias.sh
   2) ush/gefs_climate_anomaly.sh 
    - modified to add GEFS ensemble member from 21 to 30
+  3) ecf/jnaefs_gefs_debias.ecf            
+   - modified ncpus and mpiprocs setting from 22 to 32
 
 3. jobs/JNAEFS_GEFS_PROB_AVGSPR
   1) ush/naefs_climate_efi.sh
@@ -63,35 +65,37 @@ NCEP/GEFS Jobs
 4. jobs/JNAEFS_GEFS_DEBIAS_GEMPAK
    - modified to add GEFS ensemble member from 21 to 30
 
-5. jobs/JNAEFS_GEFS_6HR_CQPF 
+5. jobs/JNAEFS_GEFS_DVRTMA_PROB_AVGSPR_CONUS
+  1) scripts/exnaefs_dvrtma_prob_avgspr_conus.sh
+   - modified to add GEFS ensemble member from 21 to 30
+
+6. jobs/JNAEFS_GEFS_DVRTMA_PROB_AVGSPR_AK
+   1) scripts/exnaefs_dvrtma_prob_avgspr_ak.sh.ecf
+    - modified to add GEFS ensemble member from 21 to 30
+
+7. jobs/JNAEFS_GEFS_6HR_CQPF 
   1) ush/gefs_enswgrp.sh              
   2) ush/gefs_enscqpf.sh              
   2) sorc/gefs_enscqpf_6hr.fd/CQPF_6HR.f90
-   - modified to add GEFS ensemble size from 22 to 32
+   - modified to change GEFS ensemble size from 22 to 32
 
-6. jobs/JNAEFS_GEFS_24HR_CQPF 
+8. jobs/JNAEFS_GEFS_24HR_CQPF 
   1) sorc/gefs_enscqpf_24hr.fd/CQPF_24HR.f90
-   - modified to add GEFS ensemble size from 22 to 32
+   - modified to change GEFS ensemble size from 22 to 32
 
-7. jobs/JNAEFS_GEFS_NDGD_CQPF
+9. jobs/JNAEFS_GEFS_ANFEFI_ACPR
+  1) sorc/gefs_climate_anfefi_acpr.fd/gefs_climate_anfefi_acpr.f90
+   - modified to change GEFS ensemble size from 20 to 30
+
+10. jobs/JNAEFS_GEFS_NDGD_CQPF
   1) sorc/conus_ndgd_enscqpf.fd/DSCQPF.f90
    - modified to add GEFS ensemble member from 21 to 30
 
-8. jobs/JNAEFS_GEFS_PGRB_ENSPQPF
+11. jobs/JNAEFS_GEFS_PGRB_ENSPQPF
   1) script/exnaefs_gefs_pgrb_enspqpf.sh    
   2) sorc/gefs_pgrb_enspqpf.fd/gefs_pgrb_enspqpf.f90
    - modified GEFS ensemble size from 21 to 31
 
-9. jobs/JNAEFS_GEFS_DVRTMA_PROB_AVGSPR_CONUS
-  1) scripts/exnaefs_dvrtma_prob_avgspr_conus.sh
-   - modified to add GEFS ensemble member from 21 to 30
-
-10. jobs/JNAEFS_GEFS_DVRTMA_PROB_AVGSPR_AK
-   1) scripts/exnaefs_dvrtma_prob_avgspr_ak.sh.ecf
-    - modified to add GEFS ensemble member from 21 to 30
-
-11. ecf/jnaefs_gefs_debias.ecf            
-   - modified ncpus and mpiprocs setting from 22 to 32
 
 NAEFS Jobs
 
