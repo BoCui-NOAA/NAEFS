@@ -1,0 +1,122 @@
+Date=`date +%y%m%d%H`
+CDATE=20$Date
+
+dir=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/mycron
+
+export YYMMDD=`echo $CDATE | cut -c1-8`
+export CYC=00
+echo " day " $YYMMDD$cyc
+
+#
+# 1
+#
+job=sub_JNAEFS_GEFS_PGRB_ENSPQPF.ecf                     
+
+rm $dir/output/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/output/$job.temp
+
+cd $dir/output
+
+qsub $dir/output/$job.temp
+
+#
+# 2
+#
+job=sub_JNAEFS_GEFS_6HR_CQPF.ecf
+
+rm $dir/output/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/output/$job.temp
+
+cd $dir/output
+
+qsub $dir/output/$job.temp
+
+sleep 900
+
+#
+# 3
+#
+job=sub_JNAEFS_GEFS_24HR_CQPF.ecf 
+
+rm $dir/output/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/output/$job.temp
+
+cd $dir/output
+
+qsub $dir/output/$job.temp
+
+sleep 900
+
+#
+# 4
+#
+job=sub_JNAEFS_GEFS_CLIM_ANFEFI.ecf
+
+rm $dir/output/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/output/$job.temp
+
+cd $dir/output
+
+qsub $dir/output/$job.temp
+
+sleep 900
+
+#
+# 5
+#
+job=sub_JNAEFS_NDGD_CQPF.ecf       
+
+rm $dir/output/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/output/$job.temp
+
+cd $dir/output
+
+qsub $dir/output/$job.temp
+
+sleep 3600
+
+exit
+#
+# 6
+#
+job=sub_JNAEFS_GEFS_CQPF_GEMPAK.ecf
+
+rm $dir/output/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/output/$job.temp
+
+cd $dir/output
+
+qsub $dir/output/$job.temp
+
+#
+# 7
+#
+job=sub_JNAEFS_NDGD_CQPF_GEMPAK.ecf
+
+rm $dir/output/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/output/$job.temp
+
+cd $dir/output
+
+qsub $dir/output/$job.temp

@@ -1,0 +1,11 @@
+
+DATA=/lfs/h2/emc/ptmp/bo.cui/tmpnwprd/naefs_gefs_6hr_cqpf_2023012918.160187/18
+DATA=/lfs/h2/emc/ptmp/bo.cui/tmpnwprd/naefs_gefs_6hr_cqpf_2023012918.55374/18
+COM=/lfs/h1/ops/prod
+
+diff $DATA/STAT_RM_BIAS_gfs.20230130 $COM/com/naefs/v6.1/gefs.20230129/18/prcp_bc_gb2/STAT_RM_BIAS_gfs.dat
+diff $DATA/STAT_RM_BIAS_ctl.20230130 $COM/com/naefs/v6.1/gefs.20230129/18/prcp_bc_gb2/STAT_RM_BIAS_ctl.dat
+diff $DATA/STAT_RM_BIAS_gfs.txt $COM/com/naefs/v6.1/gefs.20230129/18/prcp_bc_gb2/STAT_RM_BIAS_gfs.txt
+diff $DATA/STAT_RM_BIAS_ctl.txt $COM/com/naefs/v6.1/gefs.20230129/18/prcp_bc_gb2/STAT_RM_BIAS_ctl.txt
+diff $DATA/rain_gfs.20230129 $COM/com/naefs/v6.1/gefs.20230129/18/prcp_bc_gb2/rain_vrfy_gfs.dat
+diff $DATA/rain_ctl.20230129 $COM/com/naefs/v6.1/gefs.20230129/18/prcp_bc_gb2/rain_vrfy_ctl.dat:q

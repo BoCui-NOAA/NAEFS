@@ -1,17 +1,17 @@
 
-filelist="naefs_gefs_6hr_cqpf  naefs_gefs_pgrb_enspqpf naefs_gefs_cqpf_gempak"
-filelist="naefs_gefs_6hr_cqpf"          
-filelist="naefs_gefs_6hr_cqpf  naefs_gefs_pgrb_enspqpf"
+
+         
+filelist="naefs_gefs_ndgd_cqpf_gempak"
+
+filelist="naefs_gefs_24hr_cqpf naefs_gefs_anfefi_acpr naefs_gefs_6hr_cqpf  naefs_gefs_pgrb_enspqpf"
 filelist="naefs_gefs_24hr_cqpf naefs_gefs_anfefi_acpr naefs_gefs_6hr_cqpf  naefs_gefs_pgrb_enspqpf
           naefs_gefs_ndgd_cqpf naefs_gefs_cqpf_gempak "                                  
-         
-
 
 for file in $filelist; do
 
 grep -i "resources_used.walltime"        $file.o*
 grep -i "exit status"                    $file.o*
-grep -i "no such file"                   $file.o*  | grep -v "remove" | grep -v "dbn_alert"
+grep -i "no such file"                   $file.o*  | grep -v "remove" | grep -v "dbn_alert" | grep -v "ls"
 #grep -i "no such file"                   $file.o* 
 grep -i "ESCAPE"                            $file.o*
 grep -i "Observation data is not available" $file.o*
@@ -19,7 +19,10 @@ grep -i "There is empty file "              $file.o*
 grep -i "STAT_RM_BIAS_ctl_M"                $file.o*
 grep -i "Missing today's precipitation"     $file.o*
 grep -i "Program must be stoped"            $file.o*
-grep -i "Warning"                           $file.o* | grep -v "pgm"
+grep -i "Warning"                           $file.o* | grep -v "pgm" | grep -v "ROUTINE QUAGAM"
+grep -i "NO INPUT STAT FOR NEW STAT"        $file.o* 
+grep -i "PROBLEM!!!"                        $file.o* 
+grep -i "NO INPUT STAT FOR NEW STAT"        $file.o* 
 
 done
 

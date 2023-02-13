@@ -3,7 +3,7 @@ COM=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0
 
 nhoursx=/nwprod/util/exec/ndate
 
-CDATE=2022091800
+CDATE=2023020400
 #CDATE=$1
 ndays=1
 iday=1
@@ -77,7 +77,7 @@ EOF
 
   COMIN=$COM/gefs.$PDY
 
-  echo " GEFS cqpf gempak data 2732 "
+  echo " GEFS cqpf gempak data 2732 or 683 per cycle "
   ls $COMIN/gempak/prcp | wc
   echo " "
 

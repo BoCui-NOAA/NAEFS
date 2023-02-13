@@ -18,3 +18,6 @@
 30 10 * * * bash -l -c /lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/mycron/sub/sub_gefs_ndgd > /lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/mycron/output/out_gefs_ndgd 2>&1
 
 30 10 * * * bash -l -c /lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/mycron/sub/sub_naefs_ndgd > /lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/mycron/output/out_naefs_ndgd 2>&1
+
+
+45 06 * * * bash -l -c /lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/mycron/sub/sub_gefs_cqpf > /lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/mycron/output/out_gefs_cqpf 2>&1

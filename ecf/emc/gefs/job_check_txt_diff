@@ -1,0 +1,38 @@
+
+CDATE=2023020500
+ndays=1 
+
+filelist=" 
+rain_vrfy_ctl.dat
+rain_vrfy_gfs.dat
+STAT_RM_BIAS_ctl.dat
+STAT_RM_BIAS_ctl.txt
+STAT_RM_BIAS_gfs.dat
+STAT_RM_BIAS_gfs.txt"
+
+#filelist=" 
+#rain_vrfy_ctl.dat"
+
+# copy 6 files from v6.1 to v7.0
+
+COM_IN=/lfs/h1/ops/prod/com/naefs/v6.1
+COM_OUT=/lfs/h2/emc/ptmp/bo.cui/com/naefs/v7.0
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+    for file in $filelist; do
+      echo  $cyc $file
+      diff $COM_IN/gefs.$PDY/$cyc/prcp_bc_gb2/$file $COM_OUT/gefs.$PDY/$cyc/prcp_bc_gb2/$file
+      echo
+    done
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +06 $CDATE`
+
+done
+
+

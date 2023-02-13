@@ -1,0 +1,24 @@
+filelist="
+sub_jnaefs_dvrtma_prob_avgspr_ak.ecf       sub_jnaefs_gefs_dvrtma_prob_avgspr_conus.ecf
+sub_jnaefs_dvrtma_prob_avgspr_conus.ecf    sub_jnaefs_gefs_prob_avgspr.ecf
+sub_jnaefs_gefs_debias.ecf                 sub_jnaefs_prob_avgspr.ecf
+sub_jnaefs_gefs_dvrtma_prob_avgspr_ak.ecf"
+
+export REPLACE=/u/$LOGNAME/xbin/replace.pl
+
+mkdir dir.org
+
+for file in $filelist; do
+  echo $file
+  cp $file $file.org
+done
+
+for file in $filelist; do
+  echo $file
+  $REPLACE $file.org $file.v1 KEEPDATA=YES   KEEPDATA=NO        
+  cp $file.v1 $file
+  rm $file.v*
+  chmod +x $file
+  diff $file $file.org > diff_$file
+  mv $file.org dir.org 
+done

@@ -1,0 +1,10 @@
+
+filelist="
+job_diff_enspqpf.sh    job_diff_geprcp_anv.sh     job_diff_geprcp_bc.sh   job_diff_ndgd_pqpf.sh  job_enspqpf.sh
+job_diff_gepqpf_bc.sh  job_diff_geprcp_bc_mem.sh  job_diff_geprcp_efi.sh  job_diff_ndgd_prcp.sh"
+
+#filelist="job_diff_enspqpf.sh"
+
+for file in $filelist; do
+  $file 2023020500
+done
