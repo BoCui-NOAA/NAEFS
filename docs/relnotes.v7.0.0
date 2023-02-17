@@ -134,7 +134,7 @@ NAEFS v7.0 performance will increase over NAEFS v6.1 with the addition of 10 mor
 USER IMPACT STATEMENT:
 
 FNMOC ensembl data will be upgraded from using 1 degree data to 0.5 degree.
-GEFS includes 10 new calibrated membes from 21 to 30, from 21 to 30. No NCEP GEFS/NAEFS file format are changed.
+GEFS includes 10 new calibrated membes from 21 to 30. No NCEP GEFS/NAEFS file format are changed.
 
 TECHNICAL IMPACT STATEMENT:
 

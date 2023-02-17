@@ -26,18 +26,24 @@ NAEFS v7.0.0 Implementation Instructions:
 
       NCEP GEFS ensmeble:
 
-      Main change happen for directories pgrb2ap5_bc, pgrb2ap5_an, pgrb2ap5_wt with 10 more ensemble members 
-      - pgrb2ap5_bc: 22GB, 0.5d bias corrected forecasts (3 hourly for day 8)
-      - pgrb2ap5_an: 10GB, 0.5d anomaly forecast
-      - pgrb2ap5_wt: 500mb, 0.5d weight for each member
+      Main changes happen for directories with 10 more ensemble members,
+      disk space changes from 649GB to 848G per day 
+      - pgrb2ap5_bc:   40GB per cycle, 0.5d bias corrected forecasts (3 hourly for day 8)
+      - pgrb2ap5_an:   17GB per cycle, 0.5d anomaly forecast
+      - pgrb2ap5_wt:   13MB per cycle, 0.5d weight for each member
+      - prcp_bc_gb2:   611MB per cycle, 6-hour and 24-hour APCP 
+      - ndgd_prcp_gb2: 2.3GB per cycle, 6-hour and 24-hour APCP 
+      - gempak:        448GB for 30 members
 
       FNMOC ensmeble:
 
-      Main change happen for new directories pgrb2ap5_bc, pgrb2ap5_an, pgrb2ap5_w, disk space changes from 25GB to 
+      Main changes happen for new directories pgrb2ap5 pgrb2ap5_bc, pgrb2ap5_an, pgrb2ap5_w,
+      disk space changes from 25GB to 
       142G per day
-      - new pgrb2ap5_bc: 1.4, 0.5d bias corrected forecasts (3 hourly for day 8)
-      - new pgrb2ap5_an: 8.8GB, 0.5d anomaly forecast
-      - new pgrb2ap5_wt: 8.2mb, 0.5d weight for each member
+      - new pgrb2ap5   : 2.1GB per cycle, 0.5d ensemble forecasts (3 hourly for day 8)
+      - new pgrb2ap5_bc: 1.4GB per cycle, 0.5d bias corrected forecasts (3 hourly for day 8)
+      - new pgrb2ap5_an: 8.8GB per cycle, 0.5d anomaly forecast
+      - new pgrb2ap5_wt: 8.2MB per cycle, 0.5d weight for each member
       - gempak:          117GB, 0.5d bias corrected forecasts
 
    (3) fix files are available at: /lfs/h1/ops/canned/packages/hps/naefs.v6.0.11/fix
@@ -48,13 +54,23 @@ NAEFS v7.0.0 Implementation Instructions:
    GEFS 0.5d bias corrected forecasts, 0.5d anomaly forecasts for member 21 to 30
 
   (1) File names for GEFS bias corrected products  
-      GEFS filenames pgrb2ap5_bc/ge###.t##z.pgrb2a.0p50_bcf###                
+      GEFS filenames pgrb2ap5_bc/geMMM.tCCz.pgrb2a.0p50_bcfHHH                
 
   (2) File names for GEFS anomaly forecast  
-      GEFS filenames pgrb2ap5_an/ge###.t##z.pgrb2a.0p50_anf###                
+      GEFS filenames pgrb2ap5_an/geMMM.tCCz.pgrb2a.0p50_anfHHH                
 
   (3) File names for GEFS bias weight for each ensemble member 
-      GEFS filenames pgrb2ap5_wt/ge###.t##z.pgrb2a.0p50_wtf###                
+      GEFS filenames pgrb2ap5_wt/geMMM.tCCz.pgrb2a.0p50_wtfHHH                
+
+   GEFS precipitation forecasts, contents change with 10 addded members
+  
+  (1) Files in prcp_bc_gb2
+      prcp_bc_gb2/geprcp.tCCz.pgrb2a.0p50.bc_06hfHHH: 34 records (new)  
+      prcp_bc_gb2/geprcp.tCCz.pgrb2a.0p50.bc_24hfHHH: 33 recordes (new)
+
+  (2) Files in ndgd_prcp_gb2
+      prcp_bc_gb2/geprcp.tCCz.ndgd2p5_conus.06hfHHH: 31 recordes (new)
+      prcp_bc_gb2/geprcp.tCCz.ndgd2p5_conus.24hfHHH: 31 recordes (new)
 
    FNMOC changes in directory names, file names and contents 
 
@@ -82,4 +98,4 @@ NAEFS v7.0.0 Implementation Instructions:
       pgrb2ap5_wt/geavg.tCCz.pgrb2a.0p50_wtfHHH  
       pgrb2ap5_wt/gespr.tCCz.pgrb2a.0p50_wtfHHH
 
-      where HHH=003, 006, 009, ...... 192, 198, 204,...,384.
+      where MMM=21, 22, ..., 30 and HHH=003, 006, 009, ...... 192, 198, 204,...,384.
