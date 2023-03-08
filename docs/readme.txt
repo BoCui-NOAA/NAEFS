@@ -18,7 +18,7 @@ NAEFS v7.0.0 Implementation Instructions:
 4. Resources requirements
 
   (1) Compute resource information:
-      Computer: Current need around 25 nodes; future will need more nodes 
+      Computer: currently needs about 25 nodes (peak), no change in total nodes, but changed ncpus and mpiprocs settings
       Please check the ecf directory, the computer resource requirement
       can be found in each jobs' ecf file
 
@@ -62,17 +62,19 @@ NAEFS v7.0.0 Implementation Instructions:
   (3) File names for GEFS bias weight for each ensemble member 
       GEFS filenames pgrb2ap5_wt/geMMM.tCCz.pgrb2a.0p50_wtfHHH                
 
+      where MMM=21, 22, ..., 30 and HHH=003, 006, 009, ...... 192, 198, 204,...,384.
+
    GEFS precipitation forecasts, contents change with 10 addded members
   
   (1) Files in prcp_bc_gb2
-      prcp_bc_gb2/geprcp.tCCz.pgrb2a.0p50.bc_06hfHHH: 34 records (new)  
-      prcp_bc_gb2/geprcp.tCCz.pgrb2a.0p50.bc_24hfHHH: 33 recordes (new)
+      prcp_bc_gb2/geprcp.tCCz.pgrb2a.0p50.bc_06hfHHH: 34 records (old:24 records)  
+      prcp_bc_gb2/geprcp.tCCz.pgrb2a.0p50.bc_24hfHHH: 33 recordes (old:23 records)
 
   (2) Files in ndgd_prcp_gb2
-      prcp_bc_gb2/geprcp.tCCz.ndgd2p5_conus.06hfHHH: 31 recordes (new)
-      prcp_bc_gb2/geprcp.tCCz.ndgd2p5_conus.24hfHHH: 31 recordes (new)
+      prcp_bc_gb2/geprcp.tCCz.ndgd2p5_conus.06hfHHH: 31 recordes (old:21 records)
+      prcp_bc_gb2/geprcp.tCCz.ndgd2p5_conus.24hfHHH: 31 recordes (old:21 records)
 
-   FNMOC changes in directory names, file names and contents 
+      where HHH=006, 012, 018, ...... 198, 204,...,384.
 
   (1) Replacing the FNMOC sub-directory pgrb2a with pgrb2ap5
 
@@ -98,4 +100,4 @@ NAEFS v7.0.0 Implementation Instructions:
       pgrb2ap5_wt/geavg.tCCz.pgrb2a.0p50_wtfHHH  
       pgrb2ap5_wt/gespr.tCCz.pgrb2a.0p50_wtfHHH
 
-      where MMM=21, 22, ..., 30 and HHH=003, 006, 009, ...... 192, 198, 204,...,384.
+      where HHH=003, 006, 009, ...... 192, 198, 204,...,384.
