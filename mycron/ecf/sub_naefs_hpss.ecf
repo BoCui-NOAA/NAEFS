@@ -1,0 +1,89 @@
+#!/bin/bash
+#PBS -N transfer
+#PBS -j oe
+#PBS -A NAEFS-DEV
+#Select 1 vnode, 1 core=1cpus, 100 MB of memory
+#PBS -l select=1:ncpus=1:mem=1GB
+#PBS -q dev_transfer
+#PBS -l walltime=30:30.00
+
+cd $PBS_O_WORKDIR
+
+#hpsstar=/u/$LOGNAME/xbin/hpsstar
+
+HSI="/apps/prod/hpss/hsi"
+HTAR="/apps/prod/hpss/htar"
+
+#Date=`date +%y%m%d%H`
+#CDATE=20$Date
+
+PDY=YYMMDD
+cyc=CYC
+
+CDATE=$PDY$cyc
+
+CDATE=`$NDATE -48 $CDATE`
+
+PDY=`echo $CDATE | cut -c1-8`
+
+HPSSOUT=/NCEPDEV/emc-ensemble/5year/Bo.Cui/naefs.v7.0/v7.0
+
+output=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/mycron/output
+
+YER=`echo $CDATE | cut -c1-4`
+MON=`echo $CDATE | cut -c1-6`
+PDY=`echo $CDATE | cut -c1-8`
+#cyc=`echo $CDATE | cut -c9-10`
+cyc=00
+
+#$HSI mkdir -p $HPSSOUT
+$HSI mkdir -p $HPSSOUT/rh${YER}
+$HSI mkdir -p $HPSSOUT/rh${YER}/${MON}
+$HSI mkdir -p $HPSSOUT/rh${YER}/${MON}/${PDY}
+
+###
+
+COM=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0
+
+if [ $cyc -eq 00 -o $cyc -eq 12 ]; then
+  COMIN=$COM/naefs.$PDY/$cyc
+  cd $COMIN
+
+  file=$HPSSOUT/rh${YER}/${MON}/${PDY}/com_naefs_dev_naefs.${PDY}_${cyc}.pgrb2ap5_bc.tar
+  $HTAR -cvf $file pgrb2ap5_bc > $output/output_hpss_naefs_pgrb2ap5_bc 2>&1
+
+  file=$HPSSOUT/rh${YER}/${MON}/${PDY}/com_naefs_dev_naefs.${PDY}_${cyc}.ndgd_gb2.tar
+  $HTAR -cvf $file ndgd_gb2     > $output/output_hpss_naefs_ndgd_gb2  2>&1         
+
+  file=$HPSSOUT/rh${YER}/${MON}/${PDY}/avgspr_naefs.${PDY}_${cyc}.pgrb2ap5_bc.tar
+#  $HTAR -cvf $file pgrb2ap5_bc/*avg* pgrb2ap5_bc/*spr* > $output/output_hpss_naefs_pgrb2ap5_bc_avgspr 2>&1
+
+  file=$HPSSOUT/rh${YER}/${MON}/${PDY}/avgspr_naefs.${PDY}_${cyc}.ndgd_gb2.tar
+#  $HTAR -cvf $file ndgd_gb2/*avg* ndgd_gb2/*spr*     > $output/output_hpss_naefs_ndgd_gb2_avgspr  2>&1         
+fi
+
+###
+
+cyc=00
+COMIN=$COM/gefs.$PDY/$cyc
+cd $COMIN
+
+file=$HPSSOUT/rh${YER}/${MON}/${PDY}/com_naefs_dev_gefs.${PDY}_${cyc}.pgrb2ap5_bc.tar
+$HTAR -cvf $file pgrb2ap5_bc > $output/output_hpss_pgrb2ap5_bc 2>&1 
+
+#file=$HPSSOUT/rh${YER}/${MON}/${PDY}/com_naefs_dev_gefs.${PDY}_${cyc}.pgrb2ap5_an.tar
+#$HTAR -cvf $file pgrb2ap5_an > $output/output_hpss_pgrb2ap5_an 2>&1 
+
+file=$HPSSOUT/rh${YER}/${MON}/${PDY}/com_naefs_dev_gefs.${PDY}_${cyc}.ndgd_gb2.tar
+$HTAR -cvf $file ndgd_gb2     > $output/output_hpss_ndgd_gb2 2>&1          
+
+file=$HPSSOUT/rh${YER}/${MON}/${PDY}/com_naefs_dev_gefs.${PDY}_${cyc}.prcp.tar
+$HTAR -cvf $file prcp_bc_gb2 prcp_gb2 ndgd_prcp_gb2  > $output/output_hpss_prcp 2>&1          
+
+file=$HPSSOUT/rh${YER}/${MON}/${PDY}/avgspr_gefs.${PDY}_${cyc}.pgrb2ap5_bc.tar
+#$HTAR -cvf $file pgrb2ap5_bc/*avg* pgrb2ap5_bc/*spr* > $output/output_hpss_gefs_pgrb2ap5_bc_avgspr 2>&1 
+
+file=$HPSSOUT/rh${YER}/${MON}/${PDY}/avgspr_gefs.${PDY}_${cyc}.ndgd_gb2.tar
+#$HTAR -cvf $file ndgd_gb2/*avg* ndgd_gb2/*spr* > $output/output_hpss_gefs_ndgd_gb2_avgspr 2>&1     
+
+
