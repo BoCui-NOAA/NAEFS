@@ -1,0 +1,131 @@
+set -x
+
+dir=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/mycron
+
+CDATE=2023032800
+ndays=1
+iday=1
+
+while [ $iday -le $ndays ]; do
+
+export YYMMDD=`echo $CDATE | cut -c1-8`
+export CYC=00               
+echo " day " $YYMMDD$cyc
+
+#
+# 1
+#
+job=sub_JNAEFS_GEFS_PGRB_ENSPQPF.ecf                     
+
+rm $dir/backup/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/backup/$job.temp
+
+cd $dir/backup
+
+qsub $dir/backup/$job.temp
+
+#
+# 2
+#
+job=sub_JNAEFS_GEFS_6HR_CQPF.ecf
+
+rm $dir/backup/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/backup/$job.temp
+
+cd $dir/backup
+
+qsub $dir/backup/$job.temp
+
+sleep 900
+
+#
+# 3
+#
+job=sub_JNAEFS_GEFS_24HR_CQPF.ecf 
+
+rm $dir/backup/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/backup/$job.temp
+
+cd $dir/backup
+
+qsub $dir/backup/$job.temp
+
+sleep 900
+
+#
+# 4
+#
+job=sub_JNAEFS_GEFS_CLIM_ANFEFI.ecf
+
+rm $dir/backup/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/backup/$job.temp
+
+cd $dir/backup
+
+qsub $dir/backup/$job.temp
+
+sleep 900
+
+#
+# 5
+#
+job=sub_JNAEFS_NDGD_CQPF.ecf       
+
+rm $dir/backup/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/backup/$job.temp
+
+cd $dir/backup
+
+qsub $dir/backup/$job.temp
+
+sleep 3600
+
+#
+# 6
+#
+job=sub_JNAEFS_GEFS_CQPF_GEMPAK.ecf
+
+rm $dir/backup/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/backup/$job.temp
+
+cd $dir/backup
+
+#qsub $dir/backup/$job.temp
+
+#
+# 7
+#
+job=sub_JNAEFS_NDGD_CQPF_GEMPAK.ecf
+
+rm $dir/backup/$job.temp
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/backup/$job.temp
+
+cd $dir/backup
+
+#qsub $dir/backup/$job.temp
+
+iday=`expr $iday + 1`
+export CDATE=`$NDATE +24 $CDATE`
+    
+done

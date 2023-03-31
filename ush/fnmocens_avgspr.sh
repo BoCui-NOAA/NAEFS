@@ -53,6 +53,12 @@ do
   echo " cfopg2='fnmoc_gespr.t${cyc}z.pgrb2a.0p50.f${nfhrs}'," >>namin_avgspr_${nfhrs}
   echo " /" >>namin_avgspr_${nfhrs}
 
+  if [ $ifile -le 2 ]; then
+    echo "FATAL ERROR in fnmocens_avgspr.sh!!!"
+    echo "Fewer than 2 FNMOC raw files available for fcst hr " $nfhrs
+    export err=1; err_chk
+  fi
+
 done
 
 if [ -s poescript_avgspr ]; then

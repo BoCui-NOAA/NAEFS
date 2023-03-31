@@ -1,5 +1,4 @@
- grep -i "there is no" *.o*  
-exit
+# grep -i "there is no" *.o*  
  grep -i "resources_used.walltime" *.o*  
  grep -i  " error" *.o* > tmp
  grep -i  " error" tmp |  grep -v "Error_Path\|ROUTINE"

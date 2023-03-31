@@ -14,11 +14,11 @@ echo "         ####  RUN PRECIPTATION VERIFICATION  #### "
 echo "         ####  RUN PRECIPTATION VERIFICATION  #### "
 echo "         ######################################### "
 
-#set -x
+set -x
 
 nfhrs=$1
 
-export memberlist="gfs c00 p01 p02 p03 p04 p05 p06 p07 p08 p09 p10 p11 p12 p13 p14 p15 p16 p17 p18 p19 p21 \
+export memberlist="gfs c00 p01 p02 p03 p04 p05 p06 p07 p08 p09 p10 p11 p12 p13 p14 p15 p16 p17 p18 p19 p20 \
                            p21 p22 p23 p24 p25 p26 p27 p28 p29 p30"
 
 if [ $cyc -eq 18 ]; then

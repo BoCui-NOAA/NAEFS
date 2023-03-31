@@ -1,18 +1,19 @@
-#!/bin/bash
+##!/bin/bash 
 
-set -x
+#set -x
 
-Date=`date +%y%m%d%H`
-CDATE=20$Date
+#Date=`date +%y%m%d%H`
+#CDATE=20$Date
 
 #PDY=`echo $CDATE | cut -c1-8`
 #cyc=`echo $CDATE | cut -c9-10`
 PDY=$1
+echo $PDY
 
-CDATE=${PDY}00
-CDATE=`$NDATE -72 $CDATE`
+#CDATE=${PDY}00
+#CDATE=`$NDATE -72 $CDATE`
 
-PDYm3=`echo $CDATE | cut -c1-8`
+#PDYm3=`echo $CDATE | cut -c1-8`
 cyc=`echo $CDATE | cut -c9-10`
 
 COMROOT=/lfs/h1/ops/prod/com/naefs/v6.1
@@ -22,7 +23,7 @@ outdir=/lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/mycron
 
 ### save rtma data 
 
-COMROOT=/lfs/h1/ops/prod/com/rtma/v2.9 
+COMROOT=/lfs/h1/ops/prod/com/rtma/v2.10
 COM_OUT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/com/rtma/v2.9                  
 
 cyclist="00 03 06 09 12 15 18 21"

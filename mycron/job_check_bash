@@ -1,0 +1,12 @@
+
+grep "sh -l" .*
+grep "sh --login" .*
+
+grep "sh -l" *
+grep "sh --login" *
+
+grep "sh -l" */*
+grep "sh --login" */*
+
+grep "sh -l" */*/*
+grep "sh --login" */*/*

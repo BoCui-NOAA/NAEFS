@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash
 
 set -x
 
@@ -55,6 +55,7 @@ for dir in $dirlist; do
   mkdir -p $COMOUT
   cp $COMROOT/$mod.$PDY/$cyc/$dir/*geavg* $COMOUT
   cp $COMROOT/$mod.$PDY/$cyc/$dir/*gespr* $COMOUT
+  rm $COMOUT/*idx
 
 output="$( bash <<EOF
 ls $COMOUT/* | wc -l

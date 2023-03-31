@@ -1,4 +1,4 @@
-#!/bin/bash --login
+#!/bin/bash
 #
 # run argstring if on production machloc
 # by link run argstring if not on production machine

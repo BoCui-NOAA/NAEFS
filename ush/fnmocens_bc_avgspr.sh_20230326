@@ -52,12 +52,6 @@ do
   echo " cfopg2='fnmoc_gespr.t${cyc}z.pgrb2a.0p50_bcf${nfhrs}'," >>namin_avgspr_${nfhrs}
   echo " /" >>namin_avgspr_${nfhrs}
 
-  if [ $ifile -le 2 ]; then
-    echo "FATAL ERROR in fnmocens_bc_avgspr.sh!!!"
-    echo "Fewer than 2 FNMOC calibrated files available for fcst hr " $nfhrs
-    export err=1; err_chk
-  fi
-
 done
 
 for nfhrs in $hourlist; do
