@@ -64,7 +64,7 @@ fi
 if [ -s $COMINRTMA/$afile ]; then
   cp $COMINRTMA/$afile .
 else
-  echo " There is no RTMA analysis, use previous 1 hour analysis"
+  echo " Warning!!! There is no RTMA analysis, use previous 1 hour analysis"
   CDATE=`$NDATE -01 $PDY$cyc`
   PDY_m1=`echo $CDATE | cut -c1-8`
   cyc_m1=`echo $CDATE | cut -c9-10`
@@ -81,8 +81,8 @@ else
   if [ -s $COMINRTMA_m1/$afile_m1 ]; then
     cp $COMINRTMA_m1/$afile_m1 $afile
   else
-    echo " FATAL ERROR: No RTMA Analysis" $COMINRTMA/$afile
-    echo " FATAL ERROR: No RTMA Analysis" $COMINRTMA_m1/$afile_m1
+    echo " FATAL ERROR: No Current RTMA Analysis" $COMINRTMA/$afile
+    echo " FATAL ERROR: No Previous 1hr RTMA Analysis" $COMINRTMA_m1/$afile_m1
     export err=1; err_chk
   fi
 fi
