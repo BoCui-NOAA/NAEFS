@@ -57,10 +57,11 @@ EOF
     echo $PDY$cyc
     echo "Warning !!! GEFS an has gempak files 14576 or 3644"
     echo $output
+    echo " "
    fi
 
   COMIN=$COM/naefs.$PDY/gempak
-  echo " dir naefs para ge* 3456 (864/cycle) "
+  echo " dir NAEFS para 3456 (864/cycle) "
   ls $COMIN/ge*         | grep -v "pnaefs" | wc
   echo " "
 

@@ -41,7 +41,7 @@ export direxp=naefs.v7.0.0
 #export envir=prod
 export RUN_ENVIR=nco 
 
-export PDY=20230706
+export PDY=20230720
 export cyc=00               
 export job=naefs_cmc_ens_bias_$PDY$cyc
 
