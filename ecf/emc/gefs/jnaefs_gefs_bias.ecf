@@ -46,7 +46,7 @@ export direxp=naefs.v7.0.0
 #export envir=prod
 export RUN_ENVIR=nco
 
-export PDY=20230706
+export PDY=20230720
 export cyc=00               
 export job=gefs_bias_$PDY$cyc
 
@@ -55,7 +55,11 @@ export HOMEgefs=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp
 export NWROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME
 export DATAROOT=/lfs/h2/emc/ptmp/$LOGNAME/tmpnwprd
 
+#export COMROOT=/lfs/h1/ops/canned/com                    
+#export DCOMROOT=/lfs/h1/ops/canned/dcom                     
+
 # EXPORT list here
+export export OMP_NUM_THREADS=1
 
 export APRUN="mpiexec -np 96 --cpu-bind core cfp  "         
 export IOBUF_PARAMS='*:sync,%%stdout:sync'
@@ -63,9 +67,10 @@ export IOBUF_PARAMS='*:sync,%%stdout:sync'
 #export cyc=%CYC%
 
 export PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME
-export COMINbias=/lfs/h1/ops/prod/com/naefs/v6.1
-export COMINcmce=/lfs/h1/ops/prod/com/naefs/v6.1
+#export COMPATH=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/canned/com/naefs:/lfs/h2/emc/vpppg/noscrub/$LOGNAME/canned/com/gefs:/lfs/h2/emc/vpppg/noscrub/$LOGNAME/canned/com/cfs
+export COMPATH=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs
 export COMROOT=/lfs/h2/emc/ptmp/$LOGNAME/com
+export COMINbias=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0
 export KEEPDATA=YES
 
 # CALL executable job script here

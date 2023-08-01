@@ -46,7 +46,7 @@ export direxp=naefs.v7.0.0
 #export envir=prod
 export RUN_ENVIR=nco
 
-export PDY=20230430
+export PDY=20230626
 export cyc=00               
 export job=naefs_gefs_prob_avgsp_$PDY$cyc
 

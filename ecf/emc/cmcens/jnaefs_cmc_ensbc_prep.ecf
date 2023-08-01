@@ -44,7 +44,7 @@ export direxp=naefs.v7.0.0
 #export envir=prod
 export RUN_ENVIR=nco 
 
-export PDY=20230706
+export PDY=20230720
 export cyc=00               
 export job=naefs_cmc_ensbc_prep_$PDY$cyc
 
@@ -58,6 +58,7 @@ export DATAROOT=/lfs/h2/emc/ptmp/$LOGNAME/tmpnwprd
 
 # EXPORT list here
 
+export OMP_NUM_THREADS=1
 export APRUN="mpiexec -np 97 --cpu-bind verbose,core cfp "         
 export IOBUF_PARAMS='*:sync,%%stdout:sync'
 

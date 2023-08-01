@@ -5,7 +5,7 @@
 # COM_IN
 #####################################
 
-export CDATE=2023072512
+export CDATE=2023072012
 export envir=dev  
 export COM=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0                                           
 ##################################

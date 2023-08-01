@@ -1,10 +1,10 @@
-#PBS -N naefs_gefs_ndgd_cqpf_gempak
-#PBS -j oe
-#PBS -S /bin/bash
+#!/bin/bash
+#PBS -N naefs_gefs_debias_gempak
+#PBS -j oe                  
 #PBS -q dev
-#PBS -A NAEFS-DEV
-#PBS -l walltime=01:30:00
-#PBS -l select=1:ncpus=4:mpiprocs=4:mem=4GB
+#PBS -l walltime=01:00:00
+#PBS -A NAEFS-DEV                
+#PBS -l place=vscatter,select=2:ncpus=120:mpiprocs=120:mem=20GB
 #PBS -l debug=true
 
 #%include <head.h>
@@ -14,12 +14,17 @@
 model=naefs
 #%include <model_ver.h>
 
+cd $PBS_O_WORKDIR
+cd ../../..
+export HOMEnaefs=`pwd`
 ## HOMEnaefs will de defined by the eclfow apps
-export HOMEnaefs=${HOMEnaefs:-/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0}
+#export HOMEnaefs=${HOMEnaefs:-/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0}
 
 source ${HOMEnaefs}/versions/run.ver
 
 cd $PBS_O_WORKDIR
+
+set -x
 
 module purge
 module load envvar/${envvar_ver}
@@ -37,52 +42,43 @@ module load wgrib2/${wgrib2_ver}
 module load gempak/${gempak_ver}
 module load iobuf/${iobuf_ver}
 module list
+##
 
-#
+#export envir=prod
 
-export direxp=naefs.v7.0.0
-export envir=prod
-export RUN_ENVIR=nco
+export PDY=YYMMDD
+export cyc=CYC
+export job=naefs_gefs_debias_gempak_$PDY$cyc
 
-export PDY=20230424
-export cyc=00
-export job=naefs_gefs_ndgd_cqpf_gempak_$PDY$cyc
-
-export HOMEnaefs=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp
-export HOMEgefs=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp
-#export NWROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME
+#export HOMEnaefs=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp
+export HOMEgefs=$HOMEnaefs
 export DATAROOT=/lfs/h2/emc/ptmp/$LOGNAME/tmpnwprd
-
-export PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME
-export COMROOT=/lfs/h2/emc/ptmp/$LOGNAME/com                    
-export COMPATH=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs
 
 export KEEPDATA=YES
 export SENDDBN=NO
 
 # EXPORT list here
-
-export APRUN="mpiexec -np 4 --cpu-bind core cfp "
-export IOBUF_PARAMS='*:sync,%%stdout:sync'
-
-#export NODES=1
-#export APRUN="aprun -n 4 -N 4 -cc depth cfp "
+export APRUN="mpiexec -n 194 -ppn 97 --cpu-bind core cfp "
 
 #export cyc=%CYC%
-#export cyc_fcst=%CYC%
 
-# versions file for naefs sets $naefs_ver and $code_ver
-model=naefs
-#%include <model_ver.h>
+export COMPATH=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs
+export COMROOT=/lfs/h2/emc/ptmp/$LOGNAME/com
 
 # CALL executable job script here
-${HOMEnaefs}/jobs/JNAEFS_GEFS_NDGD_CQPF_GEMPAK
+${HOMEnaefs}/jobs/JNAEFS_GEFS_DEBIAS_GEMPAK                        
 
 #%include <tail.h>
-
 #%manual
 ######################################################################
-# Purpose: NAEFS gempak product generation
+# Purpose: Runs post-processing for the 00Z ensemble.
 ######################################################################
-#%end
 
+######################################################################
+# Job specific troubleshooting instructions:
+#  see generic troubleshoot manual page
+#
+######################################################################
+
+# include manual page below
+#%end
