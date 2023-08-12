@@ -1,0 +1,2 @@
+#export HOMEnaefs=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp
+export HOMEgefs=$HOMEnaefs

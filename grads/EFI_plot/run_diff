@@ -1,0 +1,24 @@
+#export CDATE=2023072000
+
+export grib2ctl=/u/$LOGNAME/xbin/grib2ctl
+export g2ctl=/u/$LOGNAME/xbin/g2ctl 
+export gribmap=/u/$LOGNAME/xbin/gribmap
+
+export COMROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/com
+
+export PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0
+
+export COMccpa=/lfs/h1/ops/prod/com/ccpa/v4.2
+export HOMEplot=/lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/grads/EFI_plot
+export DATAROOT=/lfs/h2/emc/ptmp/$LOGNAME/plot_efi
+export DATA=$DATAROOT/efi_diff.$CDATE                   
+
+export dir_main=/home/people/emc/www/htdocs/gmb/wx20cb/naefs.v7.0.0/efianf_diff                   
+mkdir -p $DATA
+cd $DATA
+rm *ctl *png *
+
+cp $HOMEplot/rgbset.gs .
+cp $HOMEplot/cbarn.gs  .
+$HOMEplot/plot3vars_diff.sh
+

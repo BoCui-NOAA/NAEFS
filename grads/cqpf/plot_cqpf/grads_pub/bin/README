@@ -1,0 +1,109 @@
+		  GrADS 1.7 Binary Distribution
+
+			  Mike Fiorino
+			   PCMDI/LLNL
+			fiorino@llnl.gov
+
+			   Brian Doty
+			    COLA/IGES
+			doty@cola.iges.org
+
+			Arlindo da Silva
+			  DAO/GSFC/NASA
+		  arlindo@niteroi.gsfc.nasa.gov
+
+			   Don Hooper
+			 CIRES/CDC/NOAA
+			hoop@cdc.noaa.gov
+
+		 and the other GrADS Developers
+		      gradsdev@cdc.noaa.gov
+
+			14 November, 1997
+
+
+
+Introduction
+------------
+
+This is the binary component of the GrADS distribution.  You'll
+need the version 1.6+ data files (geography, fonts and symbols)
+to run this version.  See the GrADS-VVV/README above for more information.
+
+
+Contents of GrADS-VVV/bin/
+--------------------------
+
+This are the standard executables that come with the binary distribution:
+
+GrADS:
+
+gradsnc		-    Full featured GrADS using the UNIDATA netCDF libraries
+gradshdf	-    Full featured GrADS using the NCSA netCDF/HDF libraries 
+gradsc		-    Classic GrADS - no LATS, GUI, SDF or netcdf (readline only)
+grads		-    link to gradshdf
+
+GrADS Utilities:
+
+gxps		-	convert grads meta graphics to postscript level 1 
+gxtran		-	display grads meta graphics
+gribmap		-	GRIB mapping utility
+gribscan	-	GRIB scanning utility
+stnmap		-	station data mapper
+
+Contributed Utilities:
+
+gxeps		-    grads meta graphics to EPS utility
+gxgif		-    grads meta graphics to GIF utility
+wgrib		-    GRIB lister/processor from NCEP (see wesley.wwb.noaa.gov)
+
+
+New Features of GrADS 1.7:
+
+LATS (Mike Fiorino):
+--------------------
+
+Interface to the Library for AMIP data Transmission Standards
+(LATS) allowing GrADS to output GRIB and/or netCDF (unidata (gradsnc) or
+HDF SDF (grasdhdf)
+
+http://www-pcmdi.llnl.gov/software/lats
+
+
+SDF/XDF (Don Hooper):
+---------------------
+
+Open netCDF/HDF-SDF COARDS compliant files
+
+http://www.cdc.noaa.gov/~hoop/grads3.html
+
+
+External scriptable GUI (Arlindo da Silva):
+-------------------------------------------
+
+Add a GUI to GrADS
+
+ftp://niteroi.gsfc.nasa.gov/pub/win32/grads/doc/gagui_intro.html
+
+
+
+Hints
+-----
+
+Running GrADS or the GrADS the utilities with the "-help" command line
+option will list command line options.
+
+Running the Contributed Utilities with NO command line options
+will list the options.
+
+
+What's Next
+-----------
+
+To get started with GrADS see,
+
+http://kuala.llnl.gov/grads/grads.starting_points.htm
+
+or
+
+http://grads.iges.org/grads

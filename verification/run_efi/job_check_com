@@ -1,0 +1,23 @@
+
+YYMMD=$1
+
+COM=/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs
+
+cd $COM/v6.1
+ls -l gefs*.${YYMMD}*/*/pgrb2ap5/glb*  
+
+for dir in v6.1 v7.0; do
+  echo $dir
+  cd $COM/$dir
+  ls -l gefs*.${YYMMD}*/00/pgrb2ap5_an/*180               
+  ls -l naefs*.${YYMMD}*/00/pgrb2ap5_an/*180               
+  ls -l gefs*.${YYMMD}*/00/prcp_bc_gb2/*an*180               
+  ls -l gefs*.${YYMMD}*/00/prcp_bc_gb2/*efi*180               
+  echo
+done
+
+ls ../../grads/cqpf/data/daily_0.5d_ccpav4
+
+cd $COM/v7.0
+ls -l gefs*.${YYMMD}*/*/pgrb2ap5_ana
+

@@ -1,0 +1,29 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (X11; U; Linux 2.2.16-3 i686) [Netscape]">
+</head>
+<body>
+
+<center>
+<h2>
+24hr QPF/PQPF </h2></center>
+<p>
+</center>
+<p>
+This page displays the forecast comparison of operational and experimental QPF from GEFS control, and ensemble based PQPF for every 24 hours up to 15 days on IBM-SP computer. <p>For more information on the EPS, see the EPS home page at <a href="http://wwwt.emc.ncep.noaa.gov/gmb/ens/index.html">this location</a>.
+
+<H4>
+<table align="left">
+<table border=6 cellpadding=2 cellspacing=5>
+<TH COLSPAN=1 ><P> </P></TH>
+<TH COLSPAN=16 ><P> Side by side comparison between operational NCEP/CMC's QPF/PQPF maps </P></TH>
+<TH COLSPAN=4 ><P> </P></TH><TR>
+<TH COLSPAN=1 ><P> Date </P></TH>
+<TH COLSPAN=4 ><P> Control/QPF </P></TH>
+<TH COLSPAN=4 ><P> PQPF>1.00 mm/d </P></TH>
+<TH COLSPAN=4 ><P> PQPF>6.35 mm/d </P></TH>
+<TH COLSPAN=4 ><P> PQPF>12.7 mm/d </P></TH>
+<TH COLSPAN=4 ><P> PQPF>25.4 mm/d </P></TH><TR>
+

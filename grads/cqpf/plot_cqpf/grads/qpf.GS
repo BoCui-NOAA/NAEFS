@@ -1,0 +1,1361 @@
+
+'open opr/opr_06.ctl'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set display color white'
+'clear'
+
+***
+*** t=3 (0-24 hrs)
+*** t=4 (12-36 hrs)
+*** t=5 (24-48 hrs)
+*** t=6 (36-60 hrs)
+*** t=7 (48-72 hrs)
+*** t=8 (60-84 hrs)
+*** t=9 (72-96 hrs)
+*** t=10 (84-108 hrs)
+*** t=11 (96-120 hrs)
+***
+*--------------day 1-------------------------------------
+'enable print gmeta_gfs_YYMMDDHHa'
+'set display color white'
+'clear'
+istart=6
+iend=24
+'close 1'
+while (istart<=iend)
+ if (istart=6)
+'set parea 0.4 3.1  7.2 9.7'
+ 'open opr/opr_06.ctl'
+ endif
+ if (istart=12)
+'set parea 0.4 3.1  4.9 7.4 '
+ 'open  opr/opr_12.ctl'
+ endif
+ if (istart=18)
+ 'open  opr/opr_18.ctl'
+'set parea 0.4 3.1 2.6 5.1'
+ endif
+ if (istart=24)
+ 'open  opr/opr_24.ctl'
+'set parea 0.4 3.1 0.3 2.8'
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+'draw ylab \\ 'istart'-hour forecast'
+
+if (istart=24)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+istart=6
+iend=24
+while (istart<=iend)
+ if (istart=6)
+ 'open cal/cal_06.ctl'
+'set parea 3.1 5.8 7.2 9.7'
+ endif
+ if (istart=12)
+ 'open cal/cal_12.ctl'
+'set parea 3.1 5.8 4.9 7.4'
+ endif
+ if (istart=18)
+ 'open cal/cal_18.ctl'
+'set parea 3.1 5.8 2.6 5.1' 
+ endif
+ if (istart=24)
+ 'open cal/cal_24.ctl'
+'set parea 3.1 5.8 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=24)
+'run cbarn.gs 0.7 0 4.25 0.2'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+
+istart=6
+iend=24
+while (istart<=iend)
+ if (istart=6)
+ 'open obs/obs_06.ctl'
+'set parea 5.8 8.5 7.2 9.7'
+ endif
+ if (istart=12)
+ 'open obs/obs_12.ctl'
+'set parea 5.8 8.5 4.9 7.4'
+ endif
+ if (istart=18)
+ 'open obs/obs_18.ctl'
+'set parea 5.8 8.5 2.6 5.1' 
+ endif
+ if (istart=24)
+ 'open obs/obs_24.ctl'
+'set parea 5.8 8.5 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=24)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+'set vpage 0.0 8.5 0.0 11.0'
+'set strsiz 0.16'
+'set string 1 tc 6'
+'draw string 4.25 10.6 NCEP/GFS Quantitative Precipitation Forecast (QPF)'
+'set strsiz 0.16'
+'draw string 4.25 10.3 Ini: YYMMDDHH'
+'set string 4 tc 6'
+'draw string 1.8 9.8 RAW'
+'draw string 4.4 9.8 CAL'
+'draw string 7.1 9.8 OBS'
+'set strsiz 0.08'
+*'draw string 1.6 0.15 YUEJIAN ZHU, GMB/EMC/NCEP/NOAA'
+'print'
+'printim agfs_YYMMDDHH.gif gif x850 y1100 white'
+*say 'type in c to continue or quit to exit'
+*pull *corquit
+*corquit
+
+'disable print gmeta_gfs_YYMMDDHHa'
+
+*--------------day 2-------------------------------------
+'enable print gmeta_gfs_YYMMDDHHb'
+'set display color white'
+'clear'
+istart=30
+iend=48
+while (istart<=iend)
+ if (istart=30)
+'set parea 0.4 3.1  7.2 9.7'
+ 'open opr/opr_30.ctl'
+ endif
+ if (istart=36)
+'set parea 0.4 3.1  4.9 7.4 '
+ 'open  opr/opr_36.ctl'
+ endif
+ if (istart=42)
+ 'open  opr/opr_42.ctl'
+'set parea 0.4 3.1 2.6 5.1'
+ endif
+ if (istart=48)
+ 'open  opr/opr_48.ctl'
+'set parea 0.4 3.1 0.3 2.8'
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+'draw ylab \\ 'istart'-hour forecast'
+
+if (istart=48)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+istart=30
+iend=48
+while (istart<=iend)
+ if (istart=30)
+ 'open cal/cal_30.ctl'
+'set parea 3.1 5.8 7.2 9.7'
+ endif
+ if (istart=36)
+ 'open cal/cal_36.ctl'
+'set parea 3.1 5.8 4.9 7.4'
+ endif
+ if (istart=42)
+ 'open cal/cal_42.ctl'
+'set parea 3.1 5.8 2.6 5.1' 
+ endif
+ if (istart=48)
+ 'open cal/cal_48.ctl'
+'set parea 3.1 5.8 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=48)
+'run cbarn.gs 0.7 0 4.25 0.2'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+
+istart=30
+iend=48
+while (istart<=iend)
+ if (istart=30)
+ 'open obs/obs_30.ctl'
+'set parea 5.8 8.5 7.2 9.7'
+ endif
+ if (istart=36)
+ 'open obs/obs_36.ctl'
+'set parea 5.8 8.5 4.9 7.4'
+ endif
+ if (istart=42)
+ 'open obs/obs_42.ctl'
+'set parea 5.8 8.5 2.6 5.1' 
+ endif
+ if (istart=48)
+ 'open obs/obs_48.ctl'
+'set parea 5.8 8.5 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=48)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+'set vpage 0.0 8.5 0.0 11.0'
+'set strsiz 0.16'
+'set string 1 tc 6'
+'draw string 4.25 10.6 NCEP/GFS Quantitative Precipitation Forecast (QPF)'
+'set strsiz 0.16'
+'draw string 4.25 10.3 Ini: YYMMDDHH'
+'set string 4 tc 6'
+'draw string 1.8 9.8 RAW'
+'draw string 4.4 9.8 CAL'
+'draw string 7.1 9.8 OBS'
+'set strsiz 0.08'
+*'draw string 1.6 0.15 YUEJIAN ZHU, GMB/EMC/NCEP/NOAA'
+'print'
+'printim bgfs_YYMMDDHH.gif gif x850 y1100 white'
+*say 'type in c to continue or quit to exit'
+*pull *corquit
+*corquit
+
+'disable print gmeta_gfs_YYMMDDHHb'
+
+*--------------day 3-------------------------------------
+'enable print gmeta_gfs_YYMMDDHHc'
+'set display color white'
+'clear'
+istart=54
+iend=72
+while (istart<=iend)
+ if (istart=54)
+'set parea 0.4 3.1  7.2 9.7'
+ 'open opr/opr_54.ctl'
+ endif
+ if (istart=60)
+'set parea 0.4 3.1  4.9 7.4 '
+ 'open  opr/opr_60.ctl'
+ endif
+ if (istart=66)
+ 'open  opr/opr_66.ctl'
+'set parea 0.4 3.1 2.6 5.1'
+ endif
+ if (istart=72)
+ 'open  opr/opr_72.ctl'
+'set parea 0.4 3.1 0.3 2.8'
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+'draw ylab \\ 'istart'-hour forecast'
+
+if (istart=72)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+istart=54
+iend=72
+while (istart<=iend)
+ if (istart=54)
+ 'open cal/cal_54.ctl'
+'set parea 3.1 5.8 7.2 9.7'
+ endif
+ if (istart=60)
+ 'open cal/cal_60.ctl'
+'set parea 3.1 5.8 4.9 7.4'
+ endif
+ if (istart=66)
+ 'open cal/cal_66.ctl'
+'set parea 3.1 5.8 2.6 5.1' 
+ endif
+ if (istart=72)
+ 'open cal/cal_72.ctl'
+'set parea 3.1 5.8 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=72)
+'run cbarn.gs 0.7 0 4.25 0.2'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+
+istart=54
+iend=72
+while (istart<=iend)
+ if (istart=54)
+ 'open obs/obs_54.ctl'
+'set parea 5.8 8.5 7.2 9.7'
+ endif
+ if (istart=60)
+ 'open obs/obs_60.ctl'
+'set parea 5.8 8.5 4.9 7.4'
+ endif
+ if (istart=66)
+ 'open obs/obs_66.ctl'
+'set parea 5.8 8.5 2.6 5.1' 
+ endif
+ if (istart=72)
+ 'open obs/obs_72.ctl'
+'set parea 5.8 8.5 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=72)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+'set vpage 0.0 8.5 0.0 11.0'
+'set strsiz 0.16'
+'set string 1 tc 6'
+'draw string 4.25 10.6 NCEP/GFS Quantitative Precipitation Forecast (QPF)'
+'set strsiz 0.16'
+'draw string 4.25 10.3 Ini: YYMMDDHH'
+'set string 4 tc 6'
+'draw string 1.8 9.8 RAW'
+'draw string 4.4 9.8 CAL'
+'draw string 7.1 9.8 OBS'
+'set strsiz 0.08'
+*'draw string 1.6 0.15 YUEJIAN ZHU, GMB/EMC/NCEP/NOAA'
+'print'
+'printim cgfs_YYMMDDHH.gif gif x850 y1100 white'
+*say 'type in c to continue or quit to exit'
+*pull *corquit
+*corquit
+
+'disable print gmeta_gfs_YYMMDDHHc'
+
+*--------------day 4-------------------------------------
+'enable print gmeta_gfs_YYMMDDHHd'
+'set display color white'
+'clear'
+istart=78
+iend=96
+while (istart<=iend)
+ if (istart=78)
+'set parea 0.4 3.1  7.2 9.7'
+ 'open opr/opr_78.ctl'
+ endif
+ if (istart=84)
+'set parea 0.4 3.1  4.9 7.4 '
+ 'open  opr/opr_84.ctl'
+ endif
+ if (istart=90)
+ 'open  opr/opr_90.ctl'
+'set parea 0.4 3.1 2.6 5.1'
+ endif
+ if (istart=96)
+ 'open  opr/opr_96.ctl'
+'set parea 0.4 3.1 0.3 2.8'
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+'draw ylab \\ 'istart'-hour forecast'
+
+if (istart=96)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+istart=78
+iend=96
+while (istart<=iend)
+ if (istart=78)
+ 'open cal/cal_78.ctl'
+'set parea 3.1 5.8 7.2 9.7'
+ endif
+ if (istart=84)
+ 'open cal/cal_84.ctl'
+'set parea 3.1 5.8 4.9 7.4'
+ endif
+ if (istart=90)
+ 'open cal/cal_90.ctl'
+'set parea 3.1 5.8 2.6 5.1' 
+ endif
+ if (istart=96)
+ 'open cal/cal_96.ctl'
+'set parea 3.1 5.8 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=96)
+'run cbarn.gs 0.7 0 4.25 0.2'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+
+istart=78
+iend=96
+while (istart<=iend)
+ if (istart=78)
+ 'open obs/obs_78.ctl'
+'set parea 5.8 8.5 7.2 9.7'
+ endif
+ if (istart=84)
+ 'open obs/obs_84.ctl'
+'set parea 5.8 8.5 4.9 7.4'
+ endif
+ if (istart=90)
+ 'open obs/obs_90.ctl'
+'set parea 5.8 8.5 2.6 5.1' 
+ endif
+ if (istart=96)
+ 'open obs/obs_96.ctl'
+'set parea 5.8 8.5 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=96)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+'set vpage 0.0 8.5 0.0 11.0'
+'set strsiz 0.16'
+'set string 1 tc 6'
+'draw string 4.25 10.6 NCEP/GFS Quantitative Precipitation Forecast (QPF)'
+'set strsiz 0.16'
+'draw string 4.25 10.3 Ini: YYMMDDHH'
+'set string 4 tc 6'
+'draw string 1.8 9.8 RAW'
+'draw string 4.4 9.8 CAL'
+'draw string 7.1 9.8 OBS'
+'set strsiz 0.08'
+*'draw string 1.6 0.15 YUEJIAN ZHU, GMB/EMC/NCEP/NOAA'
+'print'
+'printim dgfs_YYMMDDHH.gif gif x850 y1100 white'
+*say 'type in c to continue or quit to exit'
+*pull *corquit
+*corquit
+
+'disable print gmeta_gfs_YYMMDDHHd'
+
+*--------------day 5-------------------------------------
+'enable print gmeta_gfs_YYMMDDHHe'
+'set display color white'
+'clear'
+istart=102
+iend=120
+while (istart<=iend)
+ if (istart=102)
+'set parea 0.4 3.1  7.2 9.7'
+ 'open opr/opr_102.ctl'
+ endif
+ if (istart=108)
+'set parea 0.4 3.1  4.9 7.4 '
+ 'open  opr/opr_108.ctl'
+ endif
+ if (istart=114)
+ 'open  opr/opr_114.ctl'
+'set parea 0.4 3.1 2.6 5.1'
+ endif
+ if (istart=120)
+ 'open  opr/opr_120.ctl'
+'set parea 0.4 3.1 0.3 2.8'
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+'draw ylab \\ 'istart'-hour forecast'
+
+if (istart=120)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+istart=102
+iend=120
+while (istart<=iend)
+ if (istart=102)
+ 'open cal/cal_102.ctl'
+'set parea 3.1 5.8 7.2 9.7'
+ endif
+ if (istart=108)
+ 'open cal/cal_108.ctl'
+'set parea 3.1 5.8 4.9 7.4'
+ endif
+ if (istart=114)
+ 'open cal/cal_114.ctl'
+'set parea 3.1 5.8 2.6 5.1' 
+ endif
+ if (istart=120)
+ 'open cal/cal_120.ctl'
+'set parea 3.1 5.8 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=120)
+'run cbarn.gs 0.7 0 4.25 0.2'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+
+istart=102
+iend=120
+while (istart<=iend)
+ if (istart=102)
+ 'open obs/obs_102.ctl'
+'set parea 5.8 8.5 7.2 9.7'
+ endif
+ if (istart=108)
+ 'open obs/obs_108.ctl'
+'set parea 5.8 8.5 4.9 7.4'
+ endif
+ if (istart=114)
+ 'open obs/obs_114.ctl'
+'set parea 5.8 8.5 2.6 5.1' 
+ endif
+ if (istart=120)
+ 'open obs/obs_120.ctl'
+'set parea 5.8 8.5 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=120)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+'set vpage 0.0 8.5 0.0 11.0'
+'set strsiz 0.16'
+'set string 1 tc 6'
+'draw string 4.25 10.6 NCEP/GFS Quantitative Precipitation Forecast (QPF)'
+'set strsiz 0.16'
+'draw string 4.25 10.3 Ini: YYMMDDHH'
+'set string 4 tc 6'
+'draw string 1.8 9.8 RAW'
+'draw string 4.4 9.8 CAL'
+'draw string 7.1 9.8 OBS'
+'set strsiz 0.08'
+*'draw string 1.6 0.15 YUEJIAN ZHU, GMB/EMC/NCEP/NOAA'
+'print'
+'printim egfs_YYMMDDHH.gif gif x850 y1100 white'
+*say 'type in c to continue or quit to exit'
+*pull *corquit
+*corquit
+
+'disable print gmeta_gfs_YYMMDDHHe'
+
+*--------------day 6-------------------------------------
+'enable print gmeta_gfs_YYMMDDHHf'
+'set display color white'
+'clear'
+istart=126
+iend=144
+while (istart<=iend)
+ if (istart=126)
+'set parea 0.4 3.1  7.2 9.7'
+ 'open opr/opr_126.ctl'
+ endif
+ if (istart=132)
+'set parea 0.4 3.1  4.9 7.4 '
+ 'open  opr/opr_132.ctl'
+ endif
+ if (istart=138)
+ 'open  opr/opr_138.ctl'
+'set parea 0.4 3.1 2.6 5.1'
+ endif
+ if (istart=144)
+ 'open  opr/opr_144.ctl'
+'set parea 0.4 3.1 0.3 2.8'
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+'draw ylab \\ 'istart'-hour forecast'
+
+if (istart=144)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+istart=126
+iend=144
+while (istart<=iend)
+ if (istart=126)
+ 'open cal/cal_126.ctl'
+'set parea 3.1 5.8 7.2 9.7'
+ endif
+ if (istart=132)
+ 'open cal/cal_132.ctl'
+'set parea 3.1 5.8 4.9 7.4'
+ endif
+ if (istart=138)
+ 'open cal/cal_138.ctl'
+'set parea 3.1 5.8 2.6 5.1' 
+ endif
+ if (istart=144)
+ 'open cal/cal_144.ctl'
+'set parea 3.1 5.8 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=144)
+'run cbarn.gs 0.7 0 4.25 0.2'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+
+istart=126
+iend=144
+while (istart<=iend)
+ if (istart=126)
+ 'open obs/obs_126.ctl'
+'set parea 5.8 8.5 7.2 9.7'
+ endif
+ if (istart=132)
+ 'open obs/obs_132.ctl'
+'set parea 5.8 8.5 4.9 7.4'
+ endif
+ if (istart=138)
+ 'open obs/obs_138.ctl'
+'set parea 5.8 8.5 2.6 5.1' 
+ endif
+ if (istart=144)
+ 'open obs/obs_144.ctl'
+'set parea 5.8 8.5 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=144)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+'set vpage 0.0 8.5 0.0 11.0'
+'set strsiz 0.16'
+'set string 1 tc 6'
+'draw string 4.25 10.6 NCEP/GFS Quantitative Precipitation Forecast (QPF)'
+'set strsiz 0.16'
+'draw string 4.25 10.3 Ini: YYMMDDHH'
+'set string 4 tc 6'
+'draw string 1.8 9.8 RAW'
+'draw string 4.4 9.8 CAL'
+'draw string 7.1 9.8 OBS'
+'set strsiz 0.08'
+*'draw string 1.6 0.15 YUEJIAN ZHU, GMB/EMC/NCEP/NOAA'
+'print'
+'printim fgfs_YYMMDDHH.gif gif x850 y1100 white'
+*say 'type in c to continue or quit to exit'
+*pull *corquit
+*corquit
+
+'disable print gmeta_gfs_YYMMDDHHf'
+
+*--------------day 7-------------------------------------
+'enable print gmeta_gfs_YYMMDDHHg'
+'set display color white'
+'clear'
+istart=150
+iend=168
+while (istart<=iend)
+ if (istart=150)
+'set parea 0.4 3.1  7.2 9.7'
+ 'open opr/opr_150.ctl'
+ endif
+ if (istart=156)
+'set parea 0.4 3.1  4.9 7.4 '
+ 'open  opr/opr_156.ctl'
+ endif
+ if (istart=162)
+ 'open  opr/opr_162.ctl'
+'set parea 0.4 3.1 2.6 5.1'
+ endif
+ if (istart=168)
+ 'open  opr/opr_168.ctl'
+'set parea 0.4 3.1 0.3 2.8'
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+'draw ylab \\ 'istart'-hour forecast'
+
+if (istart=168)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+istart=150
+iend=168
+while (istart<=iend)
+ if (istart=150)
+ 'open cal/cal_150.ctl'
+'set parea 3.1 5.8 7.2 9.7'
+ endif
+ if (istart=156)
+ 'open cal/cal_156.ctl'
+'set parea 3.1 5.8 4.9 7.4'
+ endif
+ if (istart=162)
+ 'open cal/cal_162.ctl'
+'set parea 3.1 5.8 2.6 5.1' 
+ endif
+ if (istart=168)
+ 'open cal/cal_168.ctl'
+'set parea 3.1 5.8 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=168)
+'run cbarn.gs 0.7 0 4.25 0.2'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+
+istart=150
+iend=168
+while (istart<=iend)
+ if (istart=150)
+ 'open obs/obs_150.ctl'
+'set parea 5.8 8.5 7.2 9.7'
+ endif
+ if (istart=156)
+ 'open obs/obs_156.ctl'
+'set parea 5.8 8.5 4.9 7.4'
+ endif
+ if (istart=162)
+ 'open obs/obs_162.ctl'
+'set parea 5.8 8.5 2.6 5.1' 
+ endif
+ if (istart=168)
+ 'open obs/obs_168.ctl'
+'set parea 5.8 8.5 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=168)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+'set vpage 0.0 8.5 0.0 11.0'
+'set strsiz 0.16'
+'set string 1 tc 6'
+'draw string 4.25 10.6 NCEP/GFS Quantitative Precipitation Forecast (QPF)'
+'set strsiz 0.16'
+'draw string 4.25 10.3 Ini: YYMMDDHH'
+'set string 4 tc 6'
+'draw string 1.8 9.8 RAW'
+'draw string 4.4 9.8 CAL'
+'draw string 7.1 9.8 OBS'
+'set strsiz 0.08'
+*'draw string 1.6 0.15 YUEJIAN ZHU, GMB/EMC/NCEP/NOAA'
+'print'
+'printim ggfs_YYMMDDHH.gif gif x850 y1100 white'
+*say 'type in c to continue or quit to exit'
+*pull *corquit
+*corquit
+
+'disable print gmeta_gfs_YYMMDDHHg'
+
+*--------------day 8-------------------------------------
+'enable print gmeta_gfs_YYMMDDHHh'
+'set display color white'
+'clear'
+istart=174
+iend=180
+while (istart<=iend)
+ if (istart=174)
+'set parea 0.4 3.1  7.2 9.7'
+ 'open opr/opr_174.ctl'
+ endif
+ if (istart=180)
+'set parea 0.4 3.1  4.9 7.4 '
+ 'open  opr/opr_180.ctl'
+ endif
+ if (istart=186)
+ 'open  opr/opr_186.ctl'
+'set parea 0.4 3.1 2.6 5.1'
+ endif
+ if (istart=192)
+ 'open  opr/opr_192.ctl'
+'set parea 0.4 3.1 0.3 2.8'
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+'draw ylab \\ 'istart'-hour forecast'
+
+if (istart=180)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+istart=174
+iend=180
+while (istart<=iend)
+ if (istart=174)
+ 'open cal/cal_174.ctl'
+'set parea 3.1 5.8 7.2 9.7'
+ endif
+ if (istart=180)
+ 'open cal/cal_180.ctl'
+'set parea 3.1 5.8 4.9 7.4'
+ endif
+ if (istart=186)
+ 'open cal/cal_186.ctl'
+'set parea 3.1 5.8 2.6 5.1' 
+ endif
+ if (istart=192)
+ 'open cal/cal_192.ctl'
+'set parea 3.1 5.8 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=180)
+'run cbarn.gs 0.7 0 4.25 4.8'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+
+istart=174
+iend=180
+while (istart<=iend)
+ if (istart=174)
+ 'open obs/obs_174.ctl'
+'set parea 5.8 8.5 7.2 9.7'
+ endif
+ if (istart=180)
+ 'open obs/obs_180.ctl'
+'set parea 5.8 8.5 4.9 7.4'
+ endif
+ if (istart=186)
+ 'open obs/obs_186.ctl'
+'set parea 5.8 8.5 2.6 5.1' 
+ endif
+ if (istart=192)
+ 'open obs/obs_192.ctl'
+'set parea 5.8 8.5 0.3 2.8' 
+ endif
+
+'set t 1'
+'set grads off'
+'run rgbset.gs'
+'set lon 210 310'
+'set lat 10 65 '
+'set mproj nps '
+'set mpvals -120 -75 20 55'
+'set gxout shaded'
+'set mpdset mres'
+'set clevs  0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set ccols  0   21  22  31   33   35   37   39'
+'d apcpsfc'
+'set gxout contour'
+'set cthick 2'
+'set ccolor 1'
+'set cstyle 1'
+'set clevs   0.02 0.254 1.0 2.54 6.35 12.7 25.4'
+'set clopts -1 -1 0.05'
+'d apcpsfc'
+
+if (istart=180)
+*'run cbar.gs'
+endif
+'close 1'
+istart=istart+6
+endwhile
+
+'set vpage 0.0 8.5 0.0 11.0'
+'set strsiz 0.16'
+'set string 1 tc 6'
+'draw string 4.25 10.6 NCEP/GFS Quantitative Precipitation Forecast (QPF)'
+'set strsiz 0.16'
+'draw string 4.25 10.3 Ini: YYMMDDHH'
+'set string 4 tc 6'
+'draw string 1.8 9.8 RAW'
+'draw string 4.4 9.8 CAL'
+'draw string 7.1 9.8 OBS'
+'set strsiz 0.08'
+*'draw string 1.6 0.15 YUEJIAN ZHU, GMB/EMC/NCEP/NOAA'
+'print'
+'printim hgfs_YYMMDDHH.gif gif x850 y1100 white'
+*say 'type in c to continue or quit to exit'
+*pull *corquit
+*corquit
+
+'disable print gmeta_gfs_YYMMDDHHh'
+'quit'
+

@@ -1,0 +1,15 @@
+
+<TR> <TH COLSPAN=1> <H5> YYYYMMDD
+<TH COLSPAN=4> <H5>
+<A HREF="https://www.emc.ncep.noaa.gov/gmb/yluo/cpqpf_24h/YYYYMMDD/ctl.t00z.html"> T00Z 
+<TH COLSPAN=4> <H5>
+<A HREF="https://www.emc.ncep.noaa.gov/gmb/yluo/cpqpf_24h/YYYYMMDD/a1.00.t00z.html"> T00Z 
+<TH COLSPAN=4> <H5>
+<A HREF="https://www.emc.ncep.noaa.gov/gmb/yluo/cpqpf_24h/YYYYMMDD/a6.35.t00z.html"> T00Z 
+<TH COLSPAN=4> <H5>
+<A HREF="https://www.emc.ncep.noaa.gov/gmb/yluo/cpqpf_24h/YYYYMMDD/a12.7.t00z.html"> T00Z 
+<TH COLSPAN=4> <H5>
+<A HREF="https://www.emc.ncep.noaa.gov/gmb/yluo/cpqpf_24h/YYYYMMDD/a25.4.t00z.html"> T00Z
+<TH COLSPAN=4> <H5>
+<A HREF="https://www.emc.ncep.noaa.gov/gmb/yluo/cpqpf_24h/YYYYMMDD/a50.8.t00z.html"> T00Z
+

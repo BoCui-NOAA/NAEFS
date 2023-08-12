@@ -1,0 +1,31 @@
+ day  2023072600
+ naefs pgrb2ap5_bc 576 
+      0       0       0
+ 
+2023072600
+Warning !!! NAEFS bc has file 576 files
+0
+ naefs pgrb2ap5_an data 288 (3*96)
+      0       0       0
+ 
+2023072600
+Warning !!! NAEFS an has file 288 files
+0
+ naefs pgrb2a_bc 576 
+      0       0       0
+ 
+2023072600
+Warning !!! NAEFS bc 1 degree has file 576 files
+0
+ naefs pgrb2a_an data 192 (2*96)
+      0       0       0
+ 
+2023072600
+Warning !!! NAEFS an 1 degree has file 192 files
+0
+ naefs ndgd_gb2 1154 ( 2*576+2)
+      0       0       0
+ 
+2023072600
+Warning !!! NAEFS ndgd has file 1154 files
+0

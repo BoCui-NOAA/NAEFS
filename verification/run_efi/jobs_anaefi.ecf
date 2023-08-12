@@ -1,0 +1,71 @@
+#PBS -N naefs_gefs_anfefi_acpr
+#PBS -j oe
+#PBS -S /bin/bash
+#PBS -q dev
+#PBS -A NAEFS-DEV
+#PBS -l walltime=00:30:00
+#PBS -l select=1:ncpus=1:mem=3000MB
+#PBS -l debug=true
+
+#%include <head.h>
+#%include <envir-xc40.h>
+
+# versions file for naefs sets $naefs_ver and $code_ver
+model=naefs
+#%include <model_ver.h>
+
+## HOMEnaefs will de defined by the eclfow apps
+export HOMEnaefs=${HOMEnaefs:-/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0}
+
+source ${HOMEnaefs}/versions/run.ver
+
+cd $PBS_O_WORKDIR
+
+set -x
+
+export direxp=naefs.v7.0.0
+
+#export PDY=YYMMDD  
+#export cyc=CYC
+#export PDY=20230725
+export PDY=$1           
+export cyc=00 
+
+export PDYm1=`$NDATE -24 $PDY$cyc | cut -c1-8`
+export PDYm2=`$NDATE -48 $PDY$cyc | cut -c1-8`
+export PDYm3=`$NDATE -72 $PDY$cyc | cut -c1-8`
+
+export PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp
+export HOMEstat=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp/verification
+export EXECstat=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp/exec                    
+export FIXnaefs=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp/fix                     
+export DATAROOT=/lfs/h2/emc/ptmp/$LOGNAME/tmpnwprd
+export COMROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/com
+
+export KEEPDATA=YES
+
+# EXPORT list here
+#export IOBUF_PARAMS='*:sync,%%stdout:sync'
+
+gefs_ver=v12.3
+naefs_ver=v6.1
+RUN=gefs
+
+export COMfcst=$COMROOT/gefs/${gefs_ver}/${RUN}.${PDY}/${cyc}/atmos/pgrb2ap5
+export COM_NCEPANL=$COMROOT/naefs/${naefs_ver}
+
+export COMOUT=$COMROOT/naefs/v7.0/${RUN}.${PDY}/${cyc}/pgrb2ap5_ana
+export DATA=$DATAROOT/anaefi/clim_ana_$PDY$cyc                                             
+export EXECstat=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp/exec                    
+#$HOMEstat/run_efi/exobs_ana.sh                
+
+export COMOUT=$COMROOT/naefs/v7.0/${RUN}.${PDY}/${cyc}/pgrb2ap5_ana
+export DATA=$DATAROOT/anaefi/clim_efi_$PDY$cyc                                             
+export EXECstat=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/$direxp/exec                    
+$HOMEstat/run_efi/exobs_efi.sh                
+
+export DATA=$DATAROOT/anaefi/obs_prcp_ana_$PDY$cyc                                             
+export COMprcp=$PACKAGEROOT/grads/cqpf/data/daily_0.5d_ccpav4 
+export EXECstat=$HOMEstat/exec                    
+$HOMEstat/run_efi/exobs_anaefi_prcp.sh        
+

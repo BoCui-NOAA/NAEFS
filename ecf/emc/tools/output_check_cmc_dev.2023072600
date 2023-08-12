@@ -1,0 +1,25 @@
+ day  2023072600
+/lfs/h2/emc/ptmp/dan.iredell/com/naefs/v7.0/cmce.20230726/00
+ CMC ensstat 31@00z 30@12z 
+      0       0       0
+ 
+ CMC pgrb2ap5 data 4462, or 4464 @PDYm2 (*anl* and cmc_gbanl*)
+ CMC pgrb2ap5 data 7408 for every Thursday
+      0       0       0
+ 
+ CMC pgrb2ap5_an data 2037 
+      0       0       0
+ 
+ CMC pgrb2ap5_wt data 2037 
+      0       0       0
+ 
+ new dir CMC pgrb2ap5_bc 194 
+      0       0       0
+ 
+ extend forecats 00z 1472 without  idx 
+ CMC glbanl 1 
+      0       0       0
+ 
+ CMC anl 1 
+      0       0       0
+ 

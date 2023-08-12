@@ -1,0 +1,23 @@
+#!/bin/bash
+#PBS -A NAEFS-DEV
+#PBS -j oe
+##PBS -e /lfs/h2/emc/ptmp/bo.cui/output/run_cqpf_plot.out
+##PBS -o /lfs/h2/emc/ptmp/bo.cui/output/run_cqpf_plot.out
+#PBS -N cqpf_plot_naefs.v7.0
+#PBS -q dev_transfer
+#PBS -l walltime=6:00:00
+#PBS -l select=1:ncpus=2:mem=1024MB
+
+export CDATE=2023071400
+
+export naefs_ver=v7.0
+
+export COMROOT=/lfs/h2/emc/vpppg/noscrub/${LOGNAME}/com
+export datdir2=$COMROOT/naefs/${naefs_ver}
+export datdir3=$COMROOT/naefs/${naefs_ver}
+
+export PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME
+
+$PACKAGEROOT/naefs.v7.0.0/grads/cqpf/plot_cqpf/scripts/run_cqpf_plot.sh
+
+

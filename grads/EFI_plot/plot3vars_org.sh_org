@@ -1,0 +1,248 @@
+#Hong Guan 07/16/2023 
+#export GADDIR=/usrx/local/grads/dat
+export GADDIR=/usrx/local/GrADS/2.0.2/lib
+export nhours=/nwprod/util/exec/ndate
+
+export YMD=`echo $CDATE | cut -c1-8`
+export CYC=`echo $CDATE | cut -c9-10`
+export cyc=$CYC
+
+YMD000=$YMD
+ymd=$YMD
+
+export YMDM1=`$nhours -24 $CDATE`
+export YMDM1=`echo $YMDM1 | cut -c1-8`
+
+export YMDM2=`$nhours -48 $CDATE`
+export YMDM2=`echo $YMDM2 | cut -c1-8`
+
+export YMDM3=`$nhours -72 $CDATE`
+export YMDM3=`echo $YMDM3 | cut -c1-8`
+
+export YMDM4=`$nhours -96 $CDATE`
+export YMDM4=`echo $YMDM4 | cut -c1-8`
+
+export YMDM5=`$nhours -120 $CDATE`
+export YMDM5=`echo $YMDM5 | cut -c1-8`
+
+export YMDM6=`$nhours -144 $CDATE`
+export YMDM6=`echo $YMDM6 | cut -c1-8`
+
+export YMDM7=`$nhours -168 $CDATE`
+export YMDM7=`echo $YMDM7 | cut -c1-8`
+
+export YMDM8=`$nhours -192 $CDATE`
+export YMDM8=`echo $YMDM8 | cut -c1-8`
+
+export YMDM9=`$nhours -216 $CDATE`
+export YMDM9=`echo $YMDM9 | cut -c1-8`
+
+export YMDM10=`$nhours -240 $CDATE`
+export YMDM10=`echo $YMDM10 | cut -c1-8`
+
+export YMDM11=`$nhours -264 $CDATE`
+export YMDM11=`echo $YMDM11 | cut -c1-8`
+
+export YMDM12=`$nhours -288 $CDATE`
+export YMDM12=`echo $YMDM12 | cut -c1-8`
+
+export YMDM13=`$nhours -312 $CDATE`
+export YMDM13=`echo $YMDM13 | cut -c1-8`
+
+export YMDM14=`$nhours -336 $CDATE`
+export YMDM14=`echo $YMDM14 | cut -c1-8`
+
+   sed -e "s/YMD/$YMD/"               \
+       -e "s/CYC/$cyc/"         \
+       -e "s/CDATE/$CDATE/"         \
+   slp.t${cyc}z_org.html > slp.t${cyc}z.html
+
+   sed -e "s/YMD/$YMD/"               \
+       -e "s/CYC/$cyc/"         \
+       -e "s/CDATE/$CDATE/"         \
+   t2m.t${cyc}z_org.html > t2m.t${cyc}z.html
+
+   sed -e "s/YMD/$YMD/"               \
+       -e "s/CYC/$cyc/"         \
+       -e "s/CDATE/$CDATE/"         \
+   w10.t${cyc}z_org.html > w10.t${cyc}z.html
+
+   sed -e "s/YMD/$YMD/"               \
+       -e "s/CYC/$cyc/"         \
+       -e "s/CDATE/$CDATE/"         \
+   acp.t${cyc}z_org.html > acp.t${cyc}z.html
+
+ndays=1
+iday=1
+
+hourlist=" 36 60 84 108 132 156 180 204 228 252 276 300 324 348 372"
+
+
+for nfhrs in $hourlist
+do
+   FHR=$nfhrs
+   if [ $nfhrs -lt 108 ]; then
+      export  FHR3d='0'$nfhrs
+   else
+      export  FHR3d=$nfhrs
+   fi
+   export  JDATE=`$nhours +$nfhrs $CDATE`
+   export  PDY1=`echo $JDATE | cut -c1-8`
+   export  cyc1=`echo $JDATE | cut -c9-10`
+   export  MMDD=`echo $JDATE | cut -c5-8`
+
+   FHR1=`expr $nfhrs - 24`
+
+   rm -f *.ctl *idx
+
+#cp /gpfs/hps/emc/ensemble/noscrub/Hong.Guan/com/naefs/dev/gefs.$YMD/$cyc/prcp_gb2/geprcp.t00z.pgrb2a.0p50.efif$FHR3d geavg.t00z.pgrb2a.0p50_efif$FHR3d
+#cp /gpfs/hps/emc/ensemble/noscrub/Hong.Guan/com/naefs/dev/gefs.$YMD/$cyc/prcp_gb2/geprcp.t00z.pgrb2a.0p50.anvf$FHR3d geavg.t00z.pgrb2a.0p50_anvf$FHR3d
+   cp /gpfs/hps/emc/ensemble/noscrub/emc.enspara1/Yan.Luo/com/naefs/dev/gefs.$YMD/$cyc/prcp_gb2/geprcp.t00z.pgrb2a.0p50.anvf$FHR3d geavg.t00z.pgrb2a.0p50_anvf$FHR3d
+   cp /gpfs/hps/emc/ensemble/noscrub/emc.enspara1/Yan.Luo/com/naefs/dev/gefs.$YMD/$cyc/prcp_gb2/geprcp.t00z.pgrb2a.0p50.efif$FHR3d geavg.t00z.pgrb2a.0p50_efif$FHR3d
+  rm -fr ccpa24.t12z.pgrb2a.0p50_anv  ccpa.t12z.24h.0p5.conus.gb2
+   cp /ensemble/noscrub/Hong.Guan/ccpa/prod/ccpa.${PDY1}/${cyc1}/ccpa24.t12z.pgrb2a.0p50_anv .
+   cp /ensemble/noscrub/Hong.Guan/ccpa/prod/ccpa.${PDY1}/${cyc1}/ccpa.t12z.24h.0p5.conus.gb2 .
+
+   g2ctl -verf geavg.t00z.pgrb2a.0p50_anvf$FHR3d > geavg.t00z.pgrb2a.0p50_anvf${FHR3d}.ctl 
+   gribmap -i   geavg.t00z.pgrb2a.0p50_anvf$FHR3d.ctl
+
+   g2ctl  -verf geavg.t00z.pgrb2a.0p50_efif$FHR3d  > geavg.t00z.pgrb2a.0p50_efif${FHR3d}.ctl
+   gribmap -i  geavg.t00z.pgrb2a.0p50_efif$FHR3d.ctl
+
+   g2ctl  -verf ccpa24.t12z.pgrb2a.0p50_anv > ccpa24.t12z.pgrb2a.0p50_anv$FHR3d.ctl
+   gribmap -i ccpa24.t12z.pgrb2a.0p50_anv$FHR3d.ctl
+
+   g2ctl  -verf ccpa.t12z.24h.0p5.conus.gb2 > ccpa.t12z.24h.0p5.conus.gb2$FHR3d.ctl
+   gribmap -i ccpa.t12z.24h.0p5.conus.gb2$FHR3d.ctl
+
+   
+   sed -e "s/test/$CDATE/" \
+       -e "s/FHR1/$FHR1/" \
+       -e "s/3d/${FHR3d}/" \
+       -e "s/FHR/$FHR/" \
+       -e "s/JDATE/$JDATE/" \
+       -e "s/VAR/APCPsfc/" \
+       -e "s/VA1/acp/" \
+   plot_prcp_org.gs > plot_prcp.gs
+   grads -bcl "run plot_prcp.gs"
+   
+   rm -fr *ctl *idx
+done
+
+#hourlist="06  12 24 36 48 60 72 84 96 108 120 132 144 156 168 180 192 204 216 228 240 252 264 276 288 300 312 324 336 348 360 372 384"
+hourlist="  24 48 72 96 120 144 168 192 216 240 264 288 312 336 360 384"
+
+for nfhrs in $hourlist
+do
+   FHR=$nfhrs
+   if [ $nfhrs -lt 100 ]; then
+      export  FHR3d='0'$nfhrs
+   else
+      export  FHR3d=$nfhrs
+   fi
+   export  JDATE=`$nhours +$nfhrs $CDATE`
+   export  PDY1=`echo $JDATE | cut -c1-8`
+   export  cyc1=`echo $JDATE | cut -c9-10`
+   export  MMDD=`echo $JDATE | cut -c5-8`
+
+   FHR1=`expr $nfhrs - 24`
+   if [ ${FHR1} -lt 6 ]; then
+      export  FHR1='00'
+   fi
+
+   rm -f *.ctl *idx
+#cp /gpfs/hps/emc/ensemble/noscrub/Hong.Guan/naefs.v6_ANF/gefs.$YMD/$cyc/pgrb2ap5_anfefi/geavg.t00z.pgrb2a.0p50_efif$FHR3d geavg.t00z.pgrb2a.0p50_efif$FHR3d
+#cp /gpfs/hps/emc/ensemble/noscrub/Hong.Guan/naefs.v6_ANF/gefs.$YMD/$cyc/pgrb2ap5_anfefi/geavg.t00z.pgrb2a.0p50_anff$FHR3d geavg.t00z.pgrb2a.0p50_anvf$FHR3d
+
+   cp /gpfs/hps3/ptmp/emc.enspara1/bc/o/com/naefs/dev/gefs.$YMD/$cyc/pgrb2ap5_an/geavg.t00z.pgrb2a.0p50_anf$FHR3d geavg.t00z.pgrb2a.0p50_anvf$FHR3d
+   cp /gpfs/hps3/ptmp/emc.enspara1/bc/o/com/naefs/dev/gefs.$YMD/$cyc/pgrb2ap5_an/geefi.t00z.pgrb2a.0p50_bcf$FHR3d geavg.t00z.pgrb2a.0p50_efif$FHR3d
+#   cp /com2/gens/para/gefs.${PDY1}/00/pgrb2ap5/gec00.t00z.pgrb2a.0p50.f000 gec00.t00z.pgrb2a.0p50.f000
+
+#   ls -lt  /gpfs/hps/ptmp/emc.enspara1/bc/o/com/naefs/dev/gefs.$YMD/$cyc/pgrb2ap5_an/geavg.t00z.pgrb2a.0p50_efif*
+   g2ctl -verf geavg.t00z.pgrb2a.0p50_anvf$FHR3d > geavg.t00z.pgrb2a.0p50_anvf${FHR3d}.ctl 
+   gribmap -i   geavg.t00z.pgrb2a.0p50_anvf$FHR3d.ctl
+
+   g2ctl -verf geavg.t00z.pgrb2a.0p50_efif$FHR3d > geavg.t00z.pgrb2a.0p50_efif${FHR3d}.ctl 
+   gribmap -i   geavg.t00z.pgrb2a.0p50_efif$FHR3d.ctl
+
+    sed -e "s/test/$CDATE/" \
+        -e "s/FHR1/$FHR1/" \
+        -e "s/3d/${FHR3d}/" \
+        -e "s/FHR/$FHR/" \
+        -e "s/JDATE/$JDATE/" \
+        -e "s/VAR/TMP2M/" \
+        -e "s/VA1/t2m/" \
+    plot_2vars_org.gs > plot_3vars.gs
+    grads -bcl "run plot_3vars.gs"
+
+    sed -e "s/test/$CDATE/" \
+        -e "s/FHR1/$FHR1/" \
+        -e "s/3d/${FHR3d}/" \
+        -e "s/FHR/$FHR/" \
+        -e "s/JDATE/$JDATE/" \
+        -e "s/VAR/WIND10M/" \
+        -e "s/VA1/w10/" \
+    plot_1var_org.gs > plot_3vars.gs
+    grads -bcl "run plot_3vars.gs"
+
+    sed -e "s/test/$CDATE/" \
+        -e "s/FHR1/$FHR1/" \
+        -e "s/3d/${FHR3d}/" \
+        -e "s/FHR/$FHR/" \
+        -e "s/JDATE/$JDATE/" \
+        -e "s/VAR/PRMSLmsl/" \
+        -e "s/VA1/slp/" \
+    plot_2vars_org.gs > plot_3vars.gs
+
+    /usrx/local/GrADS/2.0.2/bin/grads -bcl "run plot_3vars.gs"
+
+   rm -fr *.ctl *idx  geavg.t00z.pgrb2a.*
+done
+
+sed -e "s/YMD000/$YMD000/"         \
+    -e "s/YMDM1/$YMDM1/"         \
+    -e "s/YMDM2/$YMDM2/"         \
+    -e "s/YMDM3/$YMDM3/"         \
+    -e "s/YMDM4/$YMDM4/"         \
+    -e "s/YMDM5/$YMDM5/"         \
+    -e "s/YMDM6/$YMDM6/"         \
+    -e "s/YMDM7/$YMDM7/"         \
+    -e "s/YMDM8/$YMDM8/"         \
+    -e "s/YMDM9/$YMDM9/"         \
+    -e "s/YMDM0010/$YMDM10/"         \
+    -e "s/YMDM01/$YMDM11/"         \
+    -e "s/YMDM02/$YMDM12/"         \
+    -e "s/YMDM03/$YMDM13/"         \
+    -e "s/YMDM04/$YMDM14/"         \
+EFIANF_org.html > EFIANF.html
+
+RZDMDIR_html=/home/www/emc/htdocs/gmb/wd20hg/4vars_efianf
+RZDMDIR_html1=/home/www/emc/htdocs/gmb/wd20hg/html
+
+ftp -n << eof
+verbos
+open emcrzdm.ncep.noaa.gov
+user wd20hg passwrd
+mkdir ${RZDMDIR_html}/${YMD}
+mkdir ${RZDMDIR_html}/${YMD}/${CYC}
+bi
+prompt off
+cd ${RZDMDIR_html}/${YMD}/${CYC}
+mput *.gif
+cd ${RZDMDIR_html}/${YMD}
+mput *${cyc}z.html
+cd ${RZDMDIR_html1}
+put EFIANF.html
+EOF
+rm -fr *.gif
+exit
+
+ftp -n << eof
+verbos
+open emcrzdm.ncep.noaa.gov
+user wd20hg  passwrd
+bi
+prompt
+EOF
+
+exit

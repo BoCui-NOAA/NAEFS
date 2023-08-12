@@ -1,0 +1,15 @@
+
+
+cp -rp /lfs/h2/emc/vpppg/save/bo.cui/Save_Phase/save_tide/naefs_improve/sorc_4verf/rtma_me_ame_6vars.fd
+cp -rp /lfs/h2/emc/vpppg/save/bo.cui/Save_Phase/save_tide/ECMWF/sorc/rtma_crps_from_avgspr.fd .
+cp -rp /lfs/h2/emc/vpppg/save/bo.cui/Save_Phase/u_stratus/naefs_improve/sorc_4verf/average_alaska.fd .
+
+naefs_crps_avg.fd
+rtma_crps_avg.fd
+
+can't use build.sh to generate executable. Use "ifort to generate a.out directly. Otherwise the output data file are not acceptable to grads
+
+naefs_crps_from_avgspr.fd
+
+change makefile
+./22.sh

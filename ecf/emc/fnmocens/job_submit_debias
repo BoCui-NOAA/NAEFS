@@ -1,4 +1,4 @@
-CDATE=2022072300
+CDATE=2023071900
 
 ntimes=2
 iday=1
@@ -13,8 +13,8 @@ while [ $iday -le $ntimes ]; do
   echo " day " $PDY$cyc
   sed -e "s/YYMMDD/$YYMMDD/" \
       -e "s/CYC/$CYC/" \
-      $job > $job.temp
-  qsub $job.temp
+      $job > $job.temp.$CDATE
+  qsub $job.temp.$CDATE
   iday=`expr $iday + 1`
   CDATE=`$NDATE +12 $CDATE`
 done

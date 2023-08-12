@@ -1,0 +1,25 @@
+ day  2023072600
+ dir GEFS prcp_gb2 61 
+      0       0       0
+ 
+2023072600
+Warning !!! GEFS prcp_gb2 has file 61
+
+ GEFS prcp_bc_gb2 data 378 
+      0       0       0
+ 
+2023072600
+Warning !!! GEFS prcp_bc_gb2 has file 378 files
+0
+ GEFS ndgd_prcp_gb2 data 250 
+      0       0       0
+ 
+2023072600
+Warning !!! GEFS ndgd_prcp_gb2 has file 250 files
+0
+ GEFS cqpf gempak data 2732 or 683 per cycle 
+      0       0       0
+ 
+2023072600
+Warning !!! GEFS cqpf gempak has file 2732 or 683 files
+0

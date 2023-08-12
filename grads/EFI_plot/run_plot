@@ -1,0 +1,22 @@
+set -x
+
+export CDATE=2023072700
+
+ndays=2 
+iday=1
+
+while [ $iday -le $ndays ]; do
+
+  export YYMMDD=`echo $CDATE | cut -c1-8`
+  export CYC=00                               
+
+  echo " day " $YYMMDD$cyc
+
+# run_diff >output.diff.$CDATE 2>&1& 
+  run_full >output.full.$CDATE 2>&1 
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+
+done
+

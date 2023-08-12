@@ -15,13 +15,17 @@ module list
 
 export INC="${G2_INC4} "
 export FC=ftn
-export FFLAGS="-O3 -g -convert big_endian -I ${G2_INC4}"
+#export FFLAGS="-O3 -g -convert big_endian -I ${G2_INC4}"
+export FFLAGS="-O3 -g -convert big_endian -I ${G2_INC4} -check all"
 
 export LIBS="${G2_LIB4} ${W3NCO_LIB4} ${BACIO_LIB4} ${JASPER_LIB} ${PNG_LIB} ${Z_LIB}"
 
-for dir in naefs_crps_avg.fd;  do
+for dir in obs_climate_anfefi_acpr.fd; do
+
  cd $dir
  make clean
  make -f makefile
- mv naefs_crps_avg_3hr ../../exec/
+#mv naefs_crps_avg_3hr ../../exec/
+mv obs_climate_anfefi_acpr  ../../exec/
+
 done

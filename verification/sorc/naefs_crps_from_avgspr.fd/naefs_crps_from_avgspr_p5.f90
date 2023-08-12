@@ -513,9 +513,14 @@ if(ens_spr.le.0) ens_spr=0.001
 opare(1)=ens_avg
 opare(2)=ens_spr
 
+!###
+! im=20, ii=1, prob=0.025
+!        ii=2, prob=0.025+0.05, 0.075
+!        ii=3, prob=0.05+0.05,  0.1
+!        ii=20, prob=0.975                      
+
 prob_top=1.025
 prob_down=0.025
-
 do ii=1,im
   prob=prob_down+(ii-1)*(prob_top-prob_down)/im
   fvalue=quanor(prob,opare)

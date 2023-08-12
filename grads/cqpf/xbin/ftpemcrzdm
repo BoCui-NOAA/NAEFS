@@ -1,0 +1,45 @@
+#!/bin/sh
+if [ $# -lt 5 ]; then
+ echo " Usage: $0 need arguments input "
+ echo "        1). machine (sgi79, and etc ......."
+ echo "        2). get, put, mget or mput         "
+ echo "        3). remote directory               "
+ echo "        4). local directory                "
+ echo "        5). from file name or wild card    "
+ echo "        6). to file name ( option )        "
+ exit 8
+fi
+
+###
+### problem: looks mput mget for wild card ( e.g. pgbf*.1999051000 )
+###          does not work
+###
+
+set -x
+
+if [ "$1" = "emcrzdm" ]; then
+ ID=emcrzdm
+else
+ echo "Sorry, I don't know this machine ($1)"
+fi
+
+if [ "$6" = " " ]; then
+   Oname=$5
+else
+   Oname=$6
+fi
+
+set -x
+KC=`echo $2 | cut -c1-1`
+
+if [ "$KC" = "m" ]; then
+ SET=prompt
+ Ofile=
+else
+ SET=
+ Ofile=$Oname
+fi
+
+ cd $4 
+
+scp $5  bocui@$1:/$3/$6

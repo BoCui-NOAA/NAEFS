@@ -1,0 +1,9 @@
+
+filelist="
+JNAEFS_GEFS_24HR_CQPF.ecf    JNAEFS_GEFS_CQPF_GEMPAK.ecf   JNAEFS_NDGD_CQPF_GEMPAK.ecf
+JNAEFS_GEFS_6HR_CQPF.ecf     JNAEFS_GEFS_PGRB_ENSPQPF.ecf
+JNAEFS_GEFS_CLIM_ANFEFI.ecf  JNAEFS_NDGD_CQPF.ecf"
+
+for file in $filelist; do
+  diff $file sub_$file
+done

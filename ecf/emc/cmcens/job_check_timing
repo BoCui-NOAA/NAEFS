@@ -1,4 +1,17 @@
- grep "EDT 2021" *  
- grep "EST 2021" *  
- grep "error ac" *.o*  
- grep -i "not found" *.o*  
+ grep -i "Fatal"                   *.o*  
+ grep -i "warning"                   *.o* | grep -v "pgm"
+ grep -i "resources_used.walltime" *.o*  
+ grep -i  " error" *.o*    | grep -v "Error_Path"
+ grep -i "missing" *.o*  
+ grep -i "stop" *.o*  
+ grep -i "exit status"  *.o*  
+exit
+#grep -i "No such file" *.o* | grep -v "bias" | grep -v "input"
+ rm tmp
+ grep -i "No such file" *.o* > tmp     
+ grep -i "No such file" tmp | grep -v "bin"
+exit
+ grep -i "No such file" *.o* | grep -i "OUTPUT"
+ rm tmp
+ grep -i "not found" *.o* > tmp
+ grep -i "not found" tmp | grep -v "bin\|XIDs\|param" 

@@ -6,8 +6,8 @@ set -x
 ###########################################################
 
 module purge
-moduledir=`dirname $(readlink -f ../../modulefiles/NAEFS)`
-source ../../versions/build.ver
+moduledir=`dirname $(readlink -f ../modulefiles/NAEFS)`
+source ../versions/build.ver
 module use ${moduledir}
 #source  ${moduledir}/NAEFS/${naefs_ver}
 module load NAEFS/${naefs_ver}

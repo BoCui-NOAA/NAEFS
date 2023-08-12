@@ -1,0 +1,91 @@
+<html>
+<head>
+<script language="Javascript1.1">
+
+
+//--- Preload graphic images.
+//<img src="img.png" name="myImage" width=100 height=100>
+//  you can address it through document.myImage or document.images["myImage"].
+
+// imgFile is an array object containing the URL names of the images
+// imgScr  is an array of Image objects
+//    the src property of imgSrc, imgSrc[i].src, is assigned the URL's from imgFile[i]
+imgFile = new Array()
+map_id="https://www.emc.ncep.noaa.gov/gmb/yluo/cpqpf_24h/YYYYMMDD/AMAP_YYYYMMDDHH_F";first_hour=12;fhr_incr=24;last_hour=372;millisec=250;
+i=-1
+for(fhr=first_hour;fhr<=last_hour;fhr+=fhr_incr) {
+        i++
+        var cfhr=fhr
+        var nfhr=fhr+fhr_incr
+//      if (fhr < 10) {
+//              cfhr="0"+fhr
+//      }
+        imgFile[i]=map_id+cfhr+"-"+nfhr+".png"
+}
+imgSrc=new Array()
+for(i=0;i<imgFile.length;i++) {
+        imgSrc[i]=new Image()
+        // forces the image loading
+        imgSrc[i].src=imgFile[i]
+}
+
+function checkTimer(){
+        if (document.Timer.timerBox.checked){
+                var newIndex = 0
+                var pngName  = document.image1.src
+                // identify the the 3 chars xxx.png
+                var index0=pngName.charAt(pngName.length-7)
+                var index1=pngName.charAt(pngName.length-6)
+                var index2=pngName.charAt(pngName.length-5)
+                // var map_id_last=map_id.charAt(map_id.length-1)
+                var map_id_last="-"                            
+                if (index0 != map_id_last) {
+                        var fhr = Number(index0 + index1 + index2)
+                } else {
+                        var fhr = Number(index1 + index2)
+                }
+                // var pngIndex=(fhr-first_hour)/fhr_incr
+                var pngIndex=(fhr-first_hour-24)/fhr_incr
+                if (pngIndex < imgSrc.length -1) {
+                        newIndex = pngIndex +1
+                }
+                document.image1.src=imgSrc[newIndex].src
+                var timeoutID = setTimeout("checkTimer()",millisec)
+        }
+        else {return}
+}
+
+
+
+</SCRIPT>
+</head>
+
+<body>
+<center>
+<form name="Timer">
+<input type="checkbox" name="timerBox" onClick="checkTimer()"> Click to animate
+</form>
+<img name="image1" src="https://www.emc.ncep.noaa.gov/gmb/yluo/cpqpf_24h/YYYYMMDD/AMAP_YYYYMMDDHH_F12-36.png" height=750 width=1000 >
+
+<h4>
+<a href="#picture" onmouseover=document.image1.src=imgSrc[00].src>f36</a>
+<a href="#picture" onmouseover=document.image1.src=imgSrc[01].src>f60</a>
+<a href="#picture" onmouseover=document.image1.src=imgSrc[02].src>f84</a>
+<a href="#picture" onmouseover=document.image1.src=imgSrc[03].src>f108</a>
+<a href="#picture" onmouseover=document.image1.src=imgSrc[04].src>f132</a>
+
+<a href="#picture" onmouseover=document.image1.src=imgSrc[05].src>f156</a>
+<a href="#picture" onmouseover=document.image1.src=imgSrc[06].src>f180</a>
+<a href="#picture" onmouseover=document.image1.src=imgSrc[07].src>f204</a>
+<a href="#picture" onmouseover=document.image1.src=imgSrc[08].src>f228</a>
+<a href="#picture" onmouseover=document.image1.src=imgSrc[09].src>f252</a>
+
+<a href="#picture" onmouseover=document.image1.src=imgSrc[10].src>f276</a>
+<a href="#picture" onmouseover=document.image1.src=imgSrc[11].src>f300</a>
+<a href="#picture" onmouseover=document.image1.src=imgSrc[12].src>f324</a>
+<a href="#picture" onmouseover=document.image1.src=imgSrc[13].src>f348</a>
+<a href="#picture" onmouseover=document.image1.src=imgSrc[14].src>f372</a>
+
+</center>
+</body>
+</html>

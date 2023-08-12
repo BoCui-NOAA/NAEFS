@@ -1,0 +1,215 @@
++ export CDATE=2023072000
++ CDATE=2023072000
++ ndays=14
++ iday=1
++ '[' 1 -le 14 ']'
+++ echo 2023072000
+++ cut -c1-8
++ export YYMMDD=20230720
++ YYMMDD=20230720
++ export CYC=00
++ CYC=00
++ echo ' day ' 20230720
+ day  20230720
++ run_full
+++ expr 1 + 1
++ iday=2
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate +24 2023072000
++ export CDATE=2023072100
++ CDATE=2023072100
++ '[' 2 -le 14 ']'
+++ echo 2023072100
+++ cut -c1-8
++ export YYMMDD=20230721
++ YYMMDD=20230721
++ export CYC=00
++ CYC=00
++ echo ' day ' 20230721
+ day  20230721
++ run_full
+++ expr 2 + 1
++ iday=3
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate +24 2023072100
++ export CDATE=2023072200
++ CDATE=2023072200
++ '[' 3 -le 14 ']'
+++ echo 2023072200
+++ cut -c1-8
++ export YYMMDD=20230722
++ YYMMDD=20230722
++ export CYC=00
++ CYC=00
++ echo ' day ' 20230722
+ day  20230722
++ run_full
+++ expr 3 + 1
++ iday=4
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate +24 2023072200
++ export CDATE=2023072300
++ CDATE=2023072300
++ '[' 4 -le 14 ']'
+++ echo 2023072300
+++ cut -c1-8
++ export YYMMDD=20230723
++ YYMMDD=20230723
++ export CYC=00
++ CYC=00
++ echo ' day ' 20230723
+ day  20230723
++ run_full
+++ expr 4 + 1
++ iday=5
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate +24 2023072300
++ export CDATE=2023072400
++ CDATE=2023072400
++ '[' 5 -le 14 ']'
+++ echo 2023072400
+++ cut -c1-8
++ export YYMMDD=20230724
++ YYMMDD=20230724
++ export CYC=00
++ CYC=00
++ echo ' day ' 20230724
+ day  20230724
++ run_full
+++ expr 5 + 1
++ iday=6
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate +24 2023072400
++ export CDATE=2023072500
++ CDATE=2023072500
++ '[' 6 -le 14 ']'
+++ echo 2023072500
+++ cut -c1-8
++ export YYMMDD=20230725
++ YYMMDD=20230725
++ export CYC=00
++ CYC=00
++ echo ' day ' 20230725
+ day  20230725
++ run_full
+++ expr 6 + 1
++ iday=7
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate +24 2023072500
++ export CDATE=2023072600
++ CDATE=2023072600
++ '[' 7 -le 14 ']'
+++ echo 2023072600
+++ cut -c1-8
++ export YYMMDD=20230726
++ YYMMDD=20230726
++ export CYC=00
++ CYC=00
++ echo ' day ' 20230726
+ day  20230726
++ run_full
+++ expr 7 + 1
++ iday=8
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate +24 2023072600
++ export CDATE=2023072700
++ CDATE=2023072700
++ '[' 8 -le 14 ']'
+++ echo 2023072700
+++ cut -c1-8
++ export YYMMDD=20230727
++ YYMMDD=20230727
++ export CYC=00
++ CYC=00
++ echo ' day ' 20230727
+ day  20230727
++ run_full
+++ expr 8 + 1
++ iday=9
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate +24 2023072700
++ export CDATE=2023072800
++ CDATE=2023072800
++ '[' 9 -le 14 ']'
+++ echo 2023072800
+++ cut -c1-8
++ export YYMMDD=20230728
++ YYMMDD=20230728
++ export CYC=00
++ CYC=00
++ echo ' day ' 20230728
+ day  20230728
++ run_full
+++ expr 9 + 1
++ iday=10
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate +24 2023072800
++ export CDATE=2023072900
++ CDATE=2023072900
++ '[' 10 -le 14 ']'
+++ echo 2023072900
+++ cut -c1-8
++ export YYMMDD=20230729
++ YYMMDD=20230729
++ export CYC=00
++ CYC=00
++ echo ' day ' 20230729
+ day  20230729
++ run_full
+++ expr 10 + 1
++ iday=11
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate +24 2023072900
++ export CDATE=2023073000
++ CDATE=2023073000
++ '[' 11 -le 14 ']'
+++ echo 2023073000
+++ cut -c1-8
++ export YYMMDD=20230730
++ YYMMDD=20230730
++ export CYC=00
++ CYC=00
++ echo ' day ' 20230730
+ day  20230730
++ run_full
+++ expr 11 + 1
++ iday=12
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate +24 2023073000
++ export CDATE=2023073100
++ CDATE=2023073100
++ '[' 12 -le 14 ']'
+++ echo 2023073100
+++ cut -c1-8
++ export YYMMDD=20230731
++ YYMMDD=20230731
++ export CYC=00
++ CYC=00
++ echo ' day ' 20230731
+ day  20230731
++ run_full
+++ expr 12 + 1
++ iday=13
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate +24 2023073100
++ export CDATE=2023080100
++ CDATE=2023080100
++ '[' 13 -le 14 ']'
+++ echo 2023080100
+++ cut -c1-8
++ export YYMMDD=20230801
++ YYMMDD=20230801
++ export CYC=00
++ CYC=00
++ echo ' day ' 20230801
+ day  20230801
++ run_full
+++ expr 13 + 1
++ iday=14
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate +24 2023080100
++ export CDATE=2023080200
++ CDATE=2023080200
++ '[' 14 -le 14 ']'
+++ echo 2023080200
+++ cut -c1-8
++ export YYMMDD=20230802
++ YYMMDD=20230802
++ export CYC=00
++ CYC=00
++ echo ' day ' 20230802
+ day  20230802
++ run_full
+++ expr 14 + 1
++ iday=15
+++ /apps/ops/prod/nco/core/prod_util.v2.0.13/exec/ndate +24 2023080200
++ export CDATE=2023080300
++ CDATE=2023080300
++ '[' 15 -le 14 ']'

@@ -1,0 +1,26 @@
+#Hong Guan
+export CDATE='2017090500'
+#cd /ensemble/save/Hong.Guan/prod_ccpa24/scripts
+#/ensemble/save/Hong.Guan/prod_ccpa24/scripts/exgefs_anfefi_acpr.sh.ecf
+
+plot3vars_org.sh
+
+export CDATE1=$CDATE
+
+export CDATE=`$nhours -48 $CDATE1`
+plot3vars_org_ccpa.sh
+
+export CDATE=`$nhours -72 $CDATE1`
+plot3vars_org_ccpa.sh
+
+export CDATE=`$nhours -96 $CDATE1`
+plot3vars_org_ccpa.sh
+
+export CDATE=`$nhours -120 $CDATE1`
+cd /ensemble/save/Hong.Guan/HI_impact/grads/3var_plot/
+plot3vars_org_ccpa.sh
+
+#crontab -l > $(date +%Y%m%d).crontab
+#cat $(date +%Y%m%d).crontab
+#39 19 * * * /u/Hong.Guan/reforecat_list.sh 2>&1 | mailx -s"reforecast jobs done" Hong.Guan@noaa.gov
+#37 40 * * * /u/Hong.Guan/reforecat_list.sh 2>&1 | mailx -s"reforecast jobs done" Hong.Guan@noaa.gov

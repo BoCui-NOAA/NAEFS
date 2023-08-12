@@ -1,0 +1,20 @@
+2023072600
+ day  2023072600
+ dir FNMOC pgrb2ap5_bc prod 2560, para 2816 para 194 ( 97*2) 
+    194     194    6984
+ 
+ new dir FNMOC pgrb2ap5_an data prod 0, para 1344 new 2037 
+   2037    2037   73332
+ 
+ new dir FNMOC pgrb2ap5_wt data prod 0, para 1344 new 2037 
+   2037    2037   73332
+ 
+ New dir FNMOC pgrb2ap5 prod 0, para 191 para 195/194 
+    194     194    6596
+ 
+ FNMOC glbanl 1 fnmoc_glbanl* 
+      1       1     107
+ 
+ NCEP FNMOC glbanl 1 ncepfnmoc_glbanl* 
+      1       1     111
+ 

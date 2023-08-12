@@ -1,0 +1,13 @@
+#!/bin/bash
+#PBS -A GEFS-DEV
+#PBS -e /lfs/h2/emc/ptmp/bo.cui/output/save_gefs_data.out
+#PBS -o /lfs/h2/emc/ptmp/bo.cui/output/save_gefs_data.out
+#PBS -N SAVE_GEFS_APCP
+#PBS -q dev_transfer
+#PBS -l walltime=6:00:00
+#PBS -l select=1:ncpus=2:mem=512MB
+#PBS -V
+#PBS -a 202307111430
+#/u/bo.cui/save/naefs.v6.0.1/mycron/save_gefs_data.sh
+package=/lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/grads/cqpf/
+$package/ecf/save_gefs_data.sh

@@ -1,0 +1,146 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (X11; U; Linux 2.2.16-3 i686) [Netscape]">
+</head>
+<body>
+
+<center>
+<h2>
+GEFS EFI and Ensemble-Mean ANF products (update once per day) </h2></center>
+<p>
+
+</center>
+<p>
+
+This web-site displays ensemble based EFI and ANF products, at 0.5*0.5 degree 
+resolution, once per day (00UTC), every 24-hour, out to 16 days. 
+For precipitation:each map includes three different products which are
+1). Ensemble-Medium Anomaly Forecast (ANF) 2). Extreme Forecast Index (EFI)
+3). Analysis (ccpa) Anomaly (ANA).
+For T2m, w10m, and SLP, there are only ANF and EFI. ANA is not included.
+
+
+<H4>
+<table align="left">
+<table border=5 cellpadding=7 cellspacing=5>
+<TH COLSPAN=1 ><P> Date </P></TH>
+<TH COLSPAN=1 ><P> QPF </P></TH>
+<TH COLSPAN=1 ><P> T2M </P></TH>
+<TH COLSPAN=1><P> W10M </P></TH>
+<TH COLSPAN=1 ><P> SLP </P></TH>
+
+<TR> <TH COLSPAN=1> YMD000
+
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMD000/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMD000/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMD000/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMD000/slp.t00z.html">  T00Z  </a></td>
+
+
+<TR> <TH COLSPAN=1> YMDM1
+
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM1/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM1/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM1/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM1/slp.t00z.html">  T00Z  </a></td>
+
+
+<TR> <TH COLSPAN=1> YMDM2
+
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM2/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM2/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM2/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM2/slp.t00z.html">  T00Z  </a></td>
+
+<TR> <TH COLSPAN=1> YMDM3
+
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM3/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM3/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM3/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM3/slp.t00z.html">  T00Z  </a></td>
+
+<TR> <TH COLSPAN=1> YMDM4
+
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM4/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM4/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM4/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM4/slp.t00z.html">  T00Z  </a></td>
+
+<TR> <TH COLSPAN=1> YMDM5
+
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM5/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM5/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM5/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM5/slp.t00z.html">  T00Z  </a></td>
+
+<TR> <TH COLSPAN=1> YMDM6
+
+
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM6/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM6/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM6/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM6/slp.t00z.html">  T00Z  </a></td>
+
+<TR> <TH COLSPAN=1> YMDM7
+
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM7/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM7/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM7/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM7/slp.t00z.html">  T00Z  </a></td>
+
+
+<TR> <TH COLSPAN=1> YMDM8
+
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM8/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM8/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM8/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM8/slp.t00z.html">  T00Z  </a></td>
+
+<TR> <TH COLSPAN=1> YMDM9
+
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM9/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM9/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM9/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM9/slp.t00z.html">  T00Z  </a></td>
+
+<TR> <TH COLSPAN=1> YMDM0010
+
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM0010/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM0010/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM0010/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM0010/slp.t00z.html">  T00Z  </a></td>
+
+<TR> <TH COLSPAN=1> YMDM01
+
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM01/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM01/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM01/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM01/slp.t00z.html">  T00Z  </a></td>
+
+<TR> <TH COLSPAN=1> YMDM02
+ 
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM02/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM02/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM02/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM02/slp.t00z.html">  T00Z  </a></td>
+
+<TR> <TH COLSPAN=1> YMDM03
+ 
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM03/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM03/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM03/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM03/slp.t00z.html">  T00Z  </a></td>
+
+<TR> <TH COLSPAN=1> YMDM04
+
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM04/acp.t00z.html"> T00Z</a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM04/t2m.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM04/w10.t00z.html">  T00Z  </a></td>
+<TD><A HREF="http:/gmb/wd20hg/4vars_efianf/YMDM04/slp.t00z.html">  T00Z  </a></td>
+
+</tr></table>
+</body>
+</html>
+

@@ -1,0 +1,40 @@
+#Hong Guan
+#export CDATE=2023072000
+
+export grib2ctl=/u/$LOGNAME/xbin/grib2ctl
+export g2ctl=/u/$LOGNAME/xbin/g2ctl 
+export gribmap=/u/$LOGNAME/xbin/gribmap
+
+for id in gefs naefs; do
+for naefs_ver in v7.0 v6.1; do
+
+export id
+
+export naefs_ver
+
+if [ "$naefs_ver" = "v7.0" ]; then
+  export COMROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/com
+elif [ "$naefs_ver" = "v6.1" ]; then
+# export COMROOT=/lfs/h1/ops/prod/com           
+  export COMROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/com
+fi
+
+export PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0
+
+export COMccpa=/lfs/h1/ops/prod/com/ccpa/v4.2
+export HOMEplot=/lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/grads/EFI_plot
+export DATAROOT=/lfs/h2/emc/ptmp/$LOGNAME/plot_efi
+export DATA=$DATAROOT/efi_${naefs_ver}_$id.$CDATE                   
+
+export dir_main=/home/people/emc/www/htdocs/gmb/wx20cb/naefs.v7.0.0/efianf_${naefs_ver}_$id
+
+mkdir -p $DATA
+cd $DATA
+rm *png *ctl *idx
+
+cp $HOMEplot/rgbset.gs .
+cp $HOMEplot/cbarn.gs  .
+$HOMEplot/plot3vars_org.sh
+
+done
+done

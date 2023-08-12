@@ -1,0 +1,3 @@
+
+ifort crps_avg.f90
+mv a.out ../../exec/rtma_crps_avg

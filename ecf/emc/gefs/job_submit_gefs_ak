@@ -1,6 +1,6 @@
-CDATE=2022080800
+CDATE=2023072000
 
-ntimes=4
+ntimes=1
 iday=1
 
 job=sub_jnaefs_gefs_dvrtma_prob_avgspr_ak.ecf    

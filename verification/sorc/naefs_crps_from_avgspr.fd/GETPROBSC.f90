@@ -59,9 +59,9 @@ do n=1,lengrd
   rpsff(n)=crpsff
 enddo
 
-print *, 'fst=',(fgrid(1,n),n=1,20)
+print *, 'fst=',(fgrid(1,n),n=1,inum)
 print *, 'obs=',agrid(1)
-print *, 'fst=',(fgrid(lengrd,n),n=1,20)
+print *, 'fst=',(fgrid(lengrd,n),n=1,inum)
 print *, 'obs=',agrid(lengrd)
 print *, 'crpsff=',crpsff             
 

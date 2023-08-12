@@ -1,0 +1,46 @@
+#Hong Guan
+export CDATE='2023071300'
+#cd /ensemble/save/Hong.Guan/prod_ccpa24/scripts
+#/ensemble/save/Hong.Guan/prod_ccpa24/scripts/exgefs_anfefi_acpr.sh.ecf
+
+export grib2ctl=/u/$LOGNAME/xbin/grib2ctl
+export g2ctl=/u/$LOGNAME/xbin/g2ctl 
+export GXGIF=/u/$LOGNAME/xbin/gxgif
+export gribmap=/u/$LOGNAME/xbin/gribmap
+
+
+#export COMROOT=/lfs/h2/emc/ptmp/$LOGNAME/com
+export COMROOT=/lfs/h1/ops/prod/com           
+export naefs_ver=v6.1
+export COMccpa=/lfs/h1/ops/prod/com/ccpa/v4.2
+export PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0
+export HOMEplot=/lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/grads/EFI_plot
+export DATAROOT=/lfs/h2/emc/ptmp/$LOGNAME/plot_efi
+export DATA=$DATAROOT/efi_$CDATE                   
+mkdir -p $DATA
+cd $DATA
+
+cp $HOMEplot/rgbset.gs .
+cp $HOMEplot/cbarn.gs  .
+$HOMEplot/plot3vars_org.sh
+
+exit
+export CDATE1=$CDATE
+
+export CDATE=`$nhours -48 $CDATE1`
+$HOMEplot/plot3vars_org_ccpa.sh
+
+export CDATE=`$nhours -72 $CDATE1`
+$HOMEplot/plot3vars_org_ccpa.sh
+
+export CDATE=`$nhours -96 $CDATE1`
+$HOMEplot/plot3vars_org_ccpa.sh
+
+export CDATE=`$nhours -120 $CDATE1`
+cd /ensemble/save/Hong.Guan/HI_impact/grads/3var_plot/
+plot3vars_org_ccpa.sh
+
+#crontab -l > $(date +%Y%m%d).crontab
+#cat $(date +%Y%m%d).crontab
+#39 19 * * * /u/Hong.Guan/reforecat_list.sh 2>&1 | mailx -s"reforecast jobs done" Hong.Guan@noaa.gov
+#37 40 * * * /u/Hong.Guan/reforecat_list.sh 2>&1 | mailx -s"reforecast jobs done" Hong.Guan@noaa.gov

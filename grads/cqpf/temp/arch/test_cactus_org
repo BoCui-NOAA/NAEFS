@@ -1,0 +1,113 @@
+#!/bin/sh
+
+set -x
+
+echo " +++++++++++++++++++++++++++++++++++++++++++++++++"
+echo " ++++++++ GDIT DOGWOOD !!!!!!!!!!! +++++++++++++++"
+echo " ++++++++ GDIT DOGWOOD !!!!!!!!!!! +++++++++++++++"
+echo " ++++++++ GDIT DOGWOOD !!!!!!!!!!! +++++++++++++++"
+echo " ++++++++ GDIT DOGWOOD !!!!!!!!!!! +++++++++++++++"
+echo " +++++++++++++++++++++++++++++++++++++++++++++++++"
+
+###
+### define the directory and utility
+###
+
+export nhours=/apps/ops/prod/nco/core/prod_util.v2.0.5/exec/ndate
+export windex=/apps/ops/prod/libs/intel/19.1.3.304/grib_util/1.2.2/bin/grbindex
+export WGRIB=/apps/ops/prod/libs/intel/19.1.3.304/grib_util/1.2.2/bin/wgrib
+export COPYGB=/apps/ops/prod/libs/intel/19.1.3.304/grib_util/1.2.2/bin/copygb
+export SHOME=/u/yan.luo/save
+export GLOBAL=/lfs/h2/emc/ens/noscrub/emc.ens/common/data
+export GTMP=$ptmp
+export PTMP=$ptmp
+export NGLOBAL=/lfs/h2/emc/vpppg/noscrub
+
+cd $SHOME/arch;pwd
+
+###
+### get real time from IBM-SP computer system
+###
+
+Date=`date +%y%m%d`
+CDATE=20$Date\00
+echo "CDATE=$CDATE"
+###
+### Define the time for each cycle and different days
+###
+
+export CDATEp06=`$nhours +06 $CDATE`
+export CDATEm06=`$nhours -06 $CDATE`
+export CDATEm12=`$nhours -12 $CDATE`
+export CDATEm18=`$nhours -18 $CDATE`
+export CDATEm24=`$nhours -24 $CDATE`
+export CDATEm30=`$nhours -30 $CDATE`
+export CDATEm36=`$nhours -36 $CDATE`
+export CDATEm42=`$nhours -42 $CDATE`
+export CDATEm48=`$nhours -48 $CDATE`
+export CDATEm54=`$nhours -54 $CDATE`
+export CDATEm60=`$nhours -60 $CDATE`
+export CDATEm72=`$nhours -72 $CDATE`
+export CDATEm84=`$nhours -84 $CDATE`
+export CDATEm96=`$nhours -96 $CDATE`
+export CDATEm108=`$nhours -108 $CDATE`
+export CDATEm120=`$nhours -120 $CDATE`
+export CDATEp00=$CDATE
+export CDATEp12=`$nhours +12 $CDATE`
+export CDATEp24=`$nhours +24 $CDATE`
+export YMDM1=`$nhours -24 $CDATE | cut -c1-8`
+export YMDM2=`$nhours -48 $CDATE | cut -c1-8`
+export YMDM3=`$nhours -72 $CDATE | cut -c1-8`
+export YMDM4=`$nhours -96 $CDATE | cut -c1-8`
+export YMDM5=`$nhours -120 $CDATE | cut -c1-8`
+export YMDM6=`$nhours -144 $CDATE | cut -c1-8`
+export YMDM7=`$nhours -168 $CDATE | cut -c1-8`
+export YMDM8=`$nhours -192 $CDATE | cut -c1-8`
+export YMDM9=`$nhours -216 $CDATE | cut -c1-8`
+export YMDM10=`$nhours -240 $CDATE | cut -c1-8`
+export YMDM16=`$nhours -384 $CDATE | cut -c1-8`
+export YMDM17=`$nhours -408 $CDATE | cut -c1-8`
+export CYMD=`echo $CDATE | cut -c1-8`
+export CYMDM1=`echo $CDATEm24 | cut -c1-8`
+export YYYYMM=`$nhours -120 $CDATE | cut -c1-6`
+export YYYY=`echo $CDATE | cut -c1-4`
+export MMDD=`echo $CDATE | cut -c5-8`
+export DD=`echo $CDATE | cut -c7-8`
+export HH=`echo $CDATE | cut -c9-10`
+
+# NEXT JOB TIME is 7:00am EST for summer time   
+# NEXT JOB TIME is 6:00am EST for winter time
+
+ISUMTIM=41
+IWINTIM=40
+ADDHR=$IWINTIM
+NEXT_JOB_TIME=`$nhours +$ADDHR $CDATE`
+CUE=dev_transfer
+
+### Submit the schedual job itself   
+###
+
+out=/u/yan.luo/save/arch//test_cactus.out; tail -1000 $out > $GTMP/yan.luo/tmpfile; mv $GTMP/yan.luo/tmpfile $out 
+job=$SHOME/arch/test_cactus
+sub_wcoss2 -a GEFS-DEV -q $CUE -p 1/1/S -r 1024/1 -w ${NEXT_JOB_TIME} -t 6:00:00 -j test_cactus -o $out $job
+
+eval primary=`cat  /lfs/h1/ops/prod/config/prodmachinefile | grep primary`
+eval backup=`cat  /lfs/h1/ops/prod/config/prodmachinefile | grep backup`
+
+echo $primary "and " $backup
+
+isdogwood=primary:dogwood
+
+if [  $primary != $isdogwood ]; then
+   echo  " Check plotting jobs on dogwood!"
+else
+echo " cactus is the production machine! "
+echo " Send web plots through cactus "
+
+echo "++++++ Submit the CQPF plotting job ++++++"
+out=$GTMP/yan.luo/output/run_cqpf_plot.out; rm $out
+job=/u/yan.luo/save/plot_cqpf/scripts/run_cqpf_plot.sh
+sub_wcoss2 -a GEFS-DEV -q $CUE -p 1/1/S -r 1024/1 -w +0000 -t 6:00:00 -j RUN_CQPF_PLOT -o $out $job
+
+fi #if [  $prod == dogwood ]; then
+

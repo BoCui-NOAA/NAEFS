@@ -1,0 +1,3430 @@
+rm: cannot remove '*ctl': No such file or directory
+rm: cannot remove '*idx': No such file or directory
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf036 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif036 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf060 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif060 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf084 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif084 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf108 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif108 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf132 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif132 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf156 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif156 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf180 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif180 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf204 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif204 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf228 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif228 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf252 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif252 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf276 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif276 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf300 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif300 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf324 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif324 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf348 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif348 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf372 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif372 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf024 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif024 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf048 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif048 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf072 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif072 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf096 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif096 
+gribmap: Writing out the GRIB2 index file (version 3)
+Big problem:
+  either geavg.t00z.pgrb2a.0p50_ana is missing or not a grib file
+  or wgrib2 is not on your path or wgrib2 is too old
+  or can not write to /tmp/g.158634.0.tmp (full disk or permissions).
+Open Error:  missing XDEF record 
+Open Error:  missing YDEF record 
+Open Error:  missing ZDEF record 
+Open Error:  missing TDEF record 
+Open Error:  missing UNDEF record 
+Open Error:  missing DSET record 
+Open Error:  missing VARS record 
+  The data file was not opened. 
+gribmap: ERROR! unable to parse the data descriptor file
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf120 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif120 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf144 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif144 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf168 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif168 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf192 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif192 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf216 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif216 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf240 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif240 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf264 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif264 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf288 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif288 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf312 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif312 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf336 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif336 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf360 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif360 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+cp: cannot stat '/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v7.0/gefs.20230806/00/pgrb2ap5_ana/geavg.t00z.pgrb2a.0p50_anaf000': No such file or directory
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf384 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif384 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+*** FATAL ERROR: missing input file geavg.t00z.pgrb2a.0p50_ana ***
+
+Big problem:
+  either geavg.t00z.pgrb2a.0p50_ana is missing or not a grib file
+  or wgrib2 is not on your path or wgrib2 is too old
+  or can not write to /tmp/g.159345.0.tmp (full disk or permissions).
+Open Error:  missing XDEF record 
+Open Error:  missing YDEF record 
+Open Error:  missing ZDEF record 
+Open Error:  missing TDEF record 
+Open Error:  missing UNDEF record 
+Open Error:  missing DSET record 
+Open Error:  missing VARS record 
+  The data file was not opened. 
+gribmap: ERROR! unable to parse the data descriptor file
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+rm: cannot remove '*ctl': No such file or directory
+rm: cannot remove '*idx': No such file or directory
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf036 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif036 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf060 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif060 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf084 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif084 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf108 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif108 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf132 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif132 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf156 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif156 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf180 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif180 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf204 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif204 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf228 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif228 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf252 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif252 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf276 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif276 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf300 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif300 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf324 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif324 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf348 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif348 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf372 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif372 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: ccpa24.t12z.pgrb2a.0p50_anv 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf024 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif024 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf048 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif048 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf072 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif072 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf096 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif096 
+gribmap: Writing out the GRIB2 index file (version 3)
+Big problem:
+  either geavg.t00z.pgrb2a.0p50_ana is missing or not a grib file
+  or wgrib2 is not on your path or wgrib2 is too old
+  or can not write to /tmp/g.183152.0.tmp (full disk or permissions).
+Open Error:  missing XDEF record 
+Open Error:  missing YDEF record 
+Open Error:  missing ZDEF record 
+Open Error:  missing TDEF record 
+Open Error:  missing UNDEF record 
+Open Error:  missing DSET record 
+Open Error:  missing VARS record 
+  The data file was not opened. 
+gribmap: ERROR! unable to parse the data descriptor file
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf120 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif120 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf144 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif144 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf168 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif168 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf192 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif192 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf216 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif216 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf240 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif240 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf264 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif264 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf288 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif288 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf312 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif312 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf336 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif336 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf360 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif360 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+cp: cannot stat '/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v7.0/gefs.20230806/00/pgrb2ap5_ana/geavg.t00z.pgrb2a.0p50_anaf000': No such file or directory
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf384 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif384 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+*** FATAL ERROR: missing input file geavg.t00z.pgrb2a.0p50_ana ***
+
+Big problem:
+  either geavg.t00z.pgrb2a.0p50_ana is missing or not a grib file
+  or wgrib2 is not on your path or wgrib2 is too old
+  or can not write to /tmp/g.184178.0.tmp (full disk or permissions).
+Open Error:  missing XDEF record 
+Open Error:  missing YDEF record 
+Open Error:  missing ZDEF record 
+Open Error:  missing TDEF record 
+Open Error:  missing UNDEF record 
+Open Error:  missing DSET record 
+Open Error:  missing VARS record 
+  The data file was not opened. 
+gribmap: ERROR! unable to parse the data descriptor file
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+rm: cannot remove '*ctl': No such file or directory
+rm: cannot remove '*idx': No such file or directory
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf024 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif024 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf048 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif048 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf072 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif072 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf096 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif096 
+gribmap: Writing out the GRIB2 index file (version 3)
+Big problem:
+  either geavg.t00z.pgrb2a.0p50_ana is missing or not a grib file
+  or wgrib2 is not on your path or wgrib2 is too old
+  or can not write to /tmp/g.184454.0.tmp (full disk or permissions).
+Open Error:  missing XDEF record 
+Open Error:  missing YDEF record 
+Open Error:  missing ZDEF record 
+Open Error:  missing TDEF record 
+Open Error:  missing UNDEF record 
+Open Error:  missing DSET record 
+Open Error:  missing VARS record 
+  The data file was not opened. 
+gribmap: ERROR! unable to parse the data descriptor file
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf120 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif120 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf144 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif144 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf168 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif168 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf192 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif192 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf216 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif216 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf240 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif240 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf264 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif264 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf288 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif288 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf312 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif312 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf336 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif336 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf360 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif360 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+cp: cannot stat '/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v7.0/gefs.20230806/00/pgrb2ap5_ana/geavg.t00z.pgrb2a.0p50_anaf000': No such file or directory
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf384 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif384 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+*** FATAL ERROR: missing input file geavg.t00z.pgrb2a.0p50_ana ***
+
+Big problem:
+  either geavg.t00z.pgrb2a.0p50_ana is missing or not a grib file
+  or wgrib2 is not on your path or wgrib2 is too old
+  or can not write to /tmp/g.184927.0.tmp (full disk or permissions).
+Open Error:  missing XDEF record 
+Open Error:  missing YDEF record 
+Open Error:  missing ZDEF record 
+Open Error:  missing TDEF record 
+Open Error:  missing UNDEF record 
+Open Error:  missing DSET record 
+Open Error:  missing VARS record 
+  The data file was not opened. 
+gribmap: ERROR! unable to parse the data descriptor file
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+rm: cannot remove '*ctl': No such file or directory
+rm: cannot remove '*idx': No such file or directory
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf024 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif024 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf048 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif048 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf072 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif072 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf096 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif096 
+gribmap: Writing out the GRIB2 index file (version 3)
+Big problem:
+  either geavg.t00z.pgrb2a.0p50_ana is missing or not a grib file
+  or wgrib2 is not on your path or wgrib2 is too old
+  or can not write to /tmp/g.185662.0.tmp (full disk or permissions).
+Open Error:  missing XDEF record 
+Open Error:  missing YDEF record 
+Open Error:  missing ZDEF record 
+Open Error:  missing TDEF record 
+Open Error:  missing UNDEF record 
+Open Error:  missing DSET record 
+Open Error:  missing VARS record 
+  The data file was not opened. 
+gribmap: ERROR! unable to parse the data descriptor file
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf120 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif120 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf144 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif144 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf168 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif168 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf192 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif192 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf216 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif216 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf240 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif240 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf264 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif264 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf288 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif288 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf312 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif312 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf336 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif336 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf360 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif360 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_ana 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+
+Grid Analysis and Display System (GrADS) Version 2.2.2
+Copyright (C) 1988-2020 by George Mason University
+GrADS comes with ABSOLUTELY NO WARRANTY
+See file COPYRIGHT for more information
+
+Config: v2.2.2 little-endian readline grib2 netcdf hdf5 geotiff shapefile
+Issue 'q config' and 'q gxconfig' commands for more detailed configuration information
+GX Package Initialization: Size = 11 8.5 
+Running in Batch mode
+GX Package Terminated 
+cp: cannot stat '/lfs/h2/emc/vpppg/noscrub/bo.cui/com/naefs/v7.0/gefs.20230806/00/pgrb2ap5_ana/geavg.t00z.pgrb2a.0p50_anaf000': No such file or directory
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_anvf384 
+gribmap: Writing out the GRIB2 index file (version 3)
+gribmap: scanning GRIB2 file: geavg.t00z.pgrb2a.0p50_efif384 
+gribmap: Writing out the GRIB2 index file (version 3)
+
+*** FATAL ERROR: missing input file geavg.t00z.pgrb2a.0p50_ana ***
+
+Big problem:
+  either geavg.t00z.pgrb2a.0p50_ana is missing or not a grib file
+  or wgrib2 is not on your path or wgrib2 is too old
+  or can not write to /tmp/g.186824.0.tmp (full disk or permissions).
+Open Error:  missing XDEF record 
+Open Error:  missing YDEF record 
+Open Error:  missing ZDEF record 
+Open Error:  missing TDEF record 
+Open Error:  missing UNDEF record 
+Open Error:  missing DSET record 
+Open Error:  missing VARS record 
+  The data file was not opened. 
+gribmap: ERROR! unable to parse the data descriptor file
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************
+******************WARNING**WARNING**WARNING******************
+
+This is a National Weather Service (NWS) computer system. NWS
+computer systems are provided for the processing of Official
+U.S. Government information only. All data contained on NWS
+computer systems is owned by the NWS and may be monitored,
+intercepted, recorded, read, copied, or captured in any manner
+and disclosed in any manner, by authorized personnel.
+
+	THERE IS NO RIGHT OF PRIVACY IN THIS SYSTEM
+
+System personnel may give to law enforcement officials any
+potential evidence of crime found on NWS computer systems.
+USE OF THIS SYSTEM BY ANY USER, AUTHORIZED OR UNAUTHORIZED,
+CONSTITUTES CONSENT TO THIS MONITORING, INTERCEPTION, RECORDING,
+READING, COPYING, OR CAPTURING and DISCLOSURE.
+
+******************WARNING**WARNING**WARNING******************

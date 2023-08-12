@@ -1,0 +1,98 @@
+#set -x
+
+SHOME=/lfs/h2/emc/vpppg/save/$LOGNAME/cqpf
+#COMIN=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/daily_hrap_ccpav4
+COMIN=$SHOME/data/daily_hrap_ccpav4
+export tmpdir=/lfs/h2/emc/ptmp/$LOGNAME/qpf_tmp
+
+export nhours=/apps/ops/prod/nco/core/prod_util.v2.0.5/exec/ndate
+
+if [ -s $tmpdir ]; then
+  rm $tmpdir/*
+  rm -rf  $tmpdir/opr 
+  rm -rf  $tmpdir/cal
+  rm -rf  $tmpdir/dsc
+  rm -rf  $tmpdir/obs
+  cd $tmpdir
+else
+  mkdir -p $tmpdir
+cd $tmpdir 
+fi
+
+mkdir -p $tmpdir/opr    
+mkdir -p $tmpdir/cal 
+mkdir -p $tmpdir/dsc
+mkdir -p $tmpdir/obs            
+cp $SHOME/grads/rgbset.gs .
+cp $SHOME/grads/cbar.gs   .
+cp $SHOME/grads/cbarn.gs   .
+
+#CDATE=2011092900    
+CDATE=$1
+#export CDATE=$CDATE
+#CDATE=`$nhours -192 $CDATE `
+
+#scripts=/u/$LOGNAME/save/plot_cqpf/grads_daily
+scripts=$SHOME/plot_cqpf/grads_daily
+
+
+YY=`echo $CDATE | cut -c1-4`
+MM=`echo $CDATE | cut -c5-6`
+DD=`echo $CDATE | cut -c7-8`
+HH=`echo $CDATE | cut -c9-10`
+CMM=`grep "$MM" $SHOME/bin/mon2mon | cut -c8-10`
+
+for RUNID in ctl;do
+
+$scripts/get_qpf_0.5d_gb2.sh $CDATE $RUNID
+
+done
+
+for RUNID in ctl;do
+
+$scripts/get_qpf_ndgd_gb2.sh $CDATE $RUNID
+
+done
+
+hourlist="    36 60 84 108 132 156 180 204 228 252 276 300 324 348 372 "
+
+cd  $tmpdir/obs
+for nfhrs in $hourlist; do 
+   fymdh=`$nhours +$nfhrs $CDATE`
+   fymd=`echo $fymdh | cut -c1-8`
+   fcyc=`echo $fymdh | cut -c9-10`
+    nshrs=`expr $nfhrs - 24`
+    grptime=$nshrs"_"$nfhrs
+    file=ccpa_conus_hrap_${fymd}
+    infile=$COMIN/$file
+    outfile=$tmpdir/obs/obs_${CDATE}_${grptime}
+    cp $infile $outfile
+    grib2ctl -verf obs_${CDATE}_${grptime}   > obs_$nfhrs.ctl
+    gribmap -i  obs_$nfhrs.ctl
+done
+
+cd  $tmpdir
+
+for nfhrs in  $hourlist; do
+   fymdh=`$nhours +$nfhrs $CDATE`
+   fymd=`echo $fymdh | cut -c1-8`
+   fcyc=`echo $fymdh | cut -c9-10`
+    nshrs=`expr $nfhrs - 24`
+    symdh=`$nhours +$nshrs $CDATE`
+
+sed -e "s/IDATE/$CDATE/"  \
+    -e "s/TIME1/$nshrs/" \
+    -e "s/TIME2/$nfhrs/" \
+    -e "s/VDATE1/$symdh/" \
+    -e "s/VDATE2/$fymdh/" \
+    $scripts/qpf_${RUNID}_gb2.GS  >pgrads_qpf.gs
+
+#grads -d Cairo -h GD -cbl "run pgrads_qpf.gs"
+grads -cbl "run pgrads_qpf.gs"
+
+done
+
+export RZDMDIR=/home/people/emc/www/htdocs/gmb/yluo/cpqpf_24h
+ftpemcrzdmmkdir emcrzdm $RZDMDIR $YY$MM$DD
+
+scp *.png   wd20yl@emcrzdm:$RZDMDIR/$YY$MM$DD

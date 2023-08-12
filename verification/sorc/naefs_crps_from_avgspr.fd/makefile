@@ -2,12 +2,13 @@ SHELL= 	/bin/bash
 #INC=     /nwprod/lib/incmod/g2_4
 #LIBS=    -L/nwprod/lib -lg2_4 -lw3nco_4 -lbacio_4 \
 #	 -ljasper -lpng -lz
-SRCSf90= naefs_crps_from_avgspr_p5.f90 CRPS.f90 SORTMM.f90 GETPROBSC.f90 \
+SRCSf90= naefs_crps_from_avgspr_p5_im50.f90 CRPS.f90 SORTMM.f90 GETPROBSC.f90 \
          WRITEP_p5.f90 GETRMSSPD.f90
 SRCSf=   QUANOR.f QUASTN.f  WGT2D.f
 SRCS=    $(SRCSf90) $(SRCSf)
 OBJS=    $(SRCSf:.f=.o) $(SRCSf90:.f90=.o)
-CMD=   	naefs_crps_from_avgspr_p5     
+#CMD=   	naefs_crps_from_avgspr_p5     
+CMD=   	naefs_crps_from_avgspr_p5_im50     
 #FC= 	ifort
 #FFLAGS = -O3 -g -convert big_endian -I $(INC)
 LDFLAGS=

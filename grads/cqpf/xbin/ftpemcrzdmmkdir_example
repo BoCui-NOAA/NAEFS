@@ -1,0 +1,37 @@
+
+if [ $# -lt 3 ]; then
+ echo " Usage: $0 need arguments input "
+ echo "        1). machine (sgi79, and etc ......."
+ echo "        2). cd to remote directory         "
+ echo "        3). mkdir                          "
+ exit 8
+fi
+
+###
+### problem: looks mput mget for wild card ( e.g. pgbf*.1999051000 )
+###          does not work
+###
+
+#set -x
+
+if [ "$1" = "emcrzdm" ]; then
+ ID=emcrzdm             
+else
+ echo "Sorry, I don't know this machine ($1)"
+fi
+
+#set -x
+
+ftp -i -n <<EOF1
+
+ open $ID            
+
+ user username passsword
+
+ cd $2              
+
+ mkdir $3
+
+ quit
+
+EOF1

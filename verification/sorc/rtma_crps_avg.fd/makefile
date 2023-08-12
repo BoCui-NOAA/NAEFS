@@ -4,7 +4,7 @@ SHELL=	/bin/bash
 	#-ljasper -lpng -lz
 SRCS=	crps_avg.f90
 OBJS=   $(SRCS:.f90=.o)
-CMD=	crps_avg 
+CMD=	rtma_crps_avg 
 #FC=	ifort
 #FFLAGS =        -O3 -g -convert big_endian -I $(INC)
 LDFLAGS=

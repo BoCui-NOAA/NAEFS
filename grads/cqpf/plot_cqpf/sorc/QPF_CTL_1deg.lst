@@ -1,0 +1,476 @@
+Page 1           Source Listing                  QPF_1DEG
+2022-06-06 19:39                                 .../yan.luo/save/plot_cqpf/sorc/QPF_CTL_1deg.f
+
+      1 C--------+---------+---------+---------+---------+----------+---------+--
+      2       program QPF_1deg
+      3       parameter (ix=360,iy=181,im=1,ik=10,isize=100000)
+      4       PARAMETER(ISTD=14)
+      5       dimension fcst(ix*iy,im),fanl(ix*iy),data(ix*iy),f(ix*iy)
+      6       DIMENSION RK(ISTD)
+      7       dimension wght(ix*iy),dmask(ix*iy),mask(ix*iy)
+      8       dimension ipds(25),igds(22),iens(5)
+      9       dimension jpds(25),jgds(22),jens(5)
+     10       dimension kpds(25),kgds(22),kens(5)
+     11 c     dimension kens2(im), kens3(im)
+     12       DIMENSION XPROB(2),IMEMBR(80),IPROB(2),ICLUST(16)
+     13       character*100 cf01,cf02,cf03,cf04,cf05
+     14       character*3  cmon(12)
+     15       character*3  cmdl
+     16 
+     17 c      logical*1    lb(ix*iy)
+     18       logical*1    cindex(ix,iy),lb(ix*iy)
+     19 
+     20       namelist/files/cf01,cf02,cf03,cf04,cf05                   
+     21 c      namelist/namin/ictl,nfhrs,ifd,isp,ilv,ilv2
+     22 c      namelist/namin/ictl,nfhrs,ifd,isp,ilv,ilv2,la1,la2,lo1,lo2
+     23       namelist/namin/ictl,idate,nfhrs,ifd,isp,ilv,ilv2,la1,la2,lo1,lo2
+     24 
+     25       data cmon/'JAN','FEB','MAR','APR','MAY','JUN',
+     26      .          'JUL','AUG','SEP','OCT','NOV','DEC'/
+     27 
+     28 c      data kens2/1,3,3,3,3,3,3,3,3,3, 3, 3, 3, 3, 3,
+     29 c     .           3,3,3,3,3,3/
+     30 c      data kens3/2,1,2,3,4,5,6,7,8,9,10,11,12,13,14,
+     31 c     .           15,16,17,18,19,20/
+     32       DATA RK/0.254,1,1.27,2.54,5,6.35,10,12.7,20,25.4,38.1,
+     33      &        50.8,101.6,152.4/
+     34 
+     35 c ----
+     36 c     job will be controled by read card
+     37 c ----
+     38 
+     39       read  (5,files,end=1000)
+     40       write (6,files)
+     41  1000 continue
+     42       read  (5,namin,end=1020)
+     43       write (6,namin)
+     44  1020 continue
+     45 
+     46 c ----
+     47 c     to set up verifying index
+     48 c ----
+     49       cindex=.FALSE.
+     50       do ny = la1, la2
+     51        do nx = lo1, lo2
+     52         cindex(nx,ny)=.TRUE.
+     53        enddo
+     54       enddo
+     55     
+     56 c ----
+     57 c     to calculate the weight based on the latitudes
+
+Page 2           Source Listing                  QPF_1DEG
+2022-06-06 19:39                                 .../yan.luo/save/plot_cqpf/sorc/QPF_CTL_1deg.f
+
+     58 c ----
+     59       do lat = 1, iy  
+     60        do lon = 1, ix  
+     61         ij = (lat - 1)*ix + lon
+     62         wght(ij) = sin( (lat-1.0) * 1.0 * 3.1415926 / 180.0)
+     63        enddo
+     64       enddo
+     65 
+     66 c ----
+     67 c     convert initial time + forecast time to verified time
+     68 c ----
+     69       call iaddate(idate,nfhrs,jdate)
+     70 
+     71 c ----
+     72 c     get ensemble forecasts of precipitation
+     73 c ----
+     74 
+     75       write(*,886)
+     76 
+     77        lpgb1=len_trim(cf01)
+     78        lpgb2=len_trim(cf02)
+     79        lpgb3=len_trim(cf03)
+     80        lpgb4=len_trim(cf04)
+     81        write(6,*) 'FORECAST DATA NAME: ',cf01(1:lpgb1)
+     82        write(6,*) 'FORECAST DATA NAME: ',cf02(1:lpgb2)
+     83        write(6,*) 'FORECAST DATA NAME: ',cf03(1:lpgb3)
+     84        write(6,*) 'FORECAST DATA NAME: ',cf04(1:lpgb4)
+     85        call baopenr(21,cf01(1:lpgb1),iret21)
+     86        call baopenr(22,cf02(1:lpgb2),iret22)
+     87        call baopenr(23,cf03(1:lpgb3),iret23)
+     88        call baopenr(24,cf04(1:lpgb4),iret24)
+     89        ierrs = iret21 + iret22 + iret23 + iret24 
+     90        if (ierrs.ne.0) then
+     91 c       print *, 'ifd,isp,ilv=',ifd,isp,ilv
+     92        write(6,*) 'GRIB:BAOPEN ERR FOR DATA ',cf01  
+     93        write(6,*) 'GRIB:BAOPEN ERR FOR DATA ',cf02
+     94        write(6,*) 'GRIB:BAOPEN ERR FOR DATA ',cf03  
+     95        write(6,*) 'GRIB:BAOPEN ERR FOR DATA ',cf04
+     96        write(6,*) 'PLEASE CHECK DATA AVAILABLE OR NOT'
+     97         stop
+     98        endif
+     99       write(*,886)
+    100       do n = 1,1
+    101        j    = 0
+    102        jpds = -1
+    103        jgds = -1
+    104 c       jpds(23) = 2
+    105        jpds(5) = ifd
+    106        jpds(6) = isp
+    107        jpds(7) = ilv
+    108        call getgb(21,0,ix*iy,j,jpds,jgds,kf,k,kpds,kgds,lb,data,iret)
+    109        if (iret.eq.0) then
+    110         call grange(kf,lb,data,dmin,dmax)
+    111         write(*,888) k,(kpds(i),i=5,11),kpds(14),
+    112      *               kf,dmax,dmin
+    113         do ij = 1, ix*iy
+    114          fcst(ij,n) = data(ij)
+
+Page 3           Source Listing                  QPF_1DEG
+2022-06-06 19:39                                 .../yan.luo/save/plot_cqpf/sorc/QPF_CTL_1deg.f
+
+    115         enddo
+    116        else
+    117         print *, 'iret=',iret
+    118         stop
+    119        endif
+    120        call getgb(22,0,ix*iy,j,jpds,jgds,kf,k,kpds,kgds,lb,data,iret)
+    121        if (iret.eq.0) then
+    122         call grange(kf,lb,data,dmin,dmax)
+    123         write(*,888) k,(kpds(i),i=5,11),kpds(14),
+    124      *               kf,dmax,dmin
+    125         do ij = 1, ix*iy
+    126          fcst(ij,n) = fcst(ij,n) + data(ij)
+    127         enddo
+    128        else
+    129         print *, 'iret=',iret
+    130         stop
+    131        endif
+    132        call getgb(23,0,ix*iy,j,jpds,jgds,kf,k,kpds,kgds,lb,data,iret)
+    133        if (iret.eq.0) then
+    134         call grange(kf,lb,data,dmin,dmax)
+    135         write(*,888) k,(kpds(i),i=5,11),kpds(14),
+    136      *               kf,dmax,dmin
+    137         do ij = 1, ix*iy
+    138          fcst(ij,n) = fcst(ij,n) + data(ij)
+    139         enddo
+    140        else
+    141         print *, 'iret=',iret
+    142         stop
+    143        endif
+    144        call getgb(24,0,ix*iy,j,jpds,jgds,kf,k,kpds,kgds,lb,data,iret)
+    145        if (iret.eq.0) then
+    146         call grange(kf,lb,data,dmin,dmax)
+    147         write(*,888) k,(kpds(i),i=5,11),kpds(14),
+    148      *               kf,dmax,dmin
+    149         do ij = 1, ix*iy
+    150          fcst(ij,n) = fcst(ij,n) + data(ij)
+    151         enddo
+    152        else
+    153         print *, 'iret=',iret
+    154         stop
+    155        endif
+    156 
+    157       enddo
+    158 
+    159 !ccc
+    160 !ccc    write out the results
+    161 !ccc
+    162 
+    163        lpgb5=len_trim(cf05)
+    164        write(6,*) 'FORECAST DATA NAME: ',cf05(1:lpgb5) 
+    165        call baopen(50,cf05(1:lpgb5),iret50)
+    166        do jj = 1, 1
+    167          DO II = 1, 25
+    168           IPDS(II)=KPDS(II)
+    169          ENDDO
+    170          DO II = 1, 22
+    171           IGDS(II)=KGDS(II)
+
+Page 4           Source Listing                  QPF_1DEG
+2022-06-06 19:39                                 .../yan.luo/save/plot_cqpf/sorc/QPF_CTL_1deg.f
+
+    172          ENDDO
+    173          if (nfhrs.le.252) then
+    174          ipds(14)=nfhrs-24
+    175          ipds(15)=nfhrs
+    176          else
+    177          ipds(14)=nfhrs/6-4
+    178          ipds(15)=nfhrs/6
+    179          endif         
+    180         do ii = 1,  ix*iy
+    181            data(ii) = fcst(ii,jj)
+    182 c           if (data(ii).lt.0.0) print *, ii, data(ii)
+    183            if (data(ii).lt.0.0) data(ii)=0.0
+    184         enddo
+    185 
+    186         call putgb(50,ix*iy,ipds,igds,lb,data,iret)
+    187       
+    188        enddo      
+    189 
+    190 
+    191        call baclose(21,iret21)
+    192        call baclose(22,iret22)
+    193        call baclose(23,iret23)
+    194        call baclose(24,iret24)
+    195        call baclose(50,iret50)
+    196 
+    197   886 format('Irec pds5 pds6 pds7 pds8 pds9 pd10 pd11 pd14',
+    198      .       ' e2 e3  ndata  Maximun  Minimum')
+    199 c 888   FORMAT (i4,i3,2i5,4i3,i4,i4,5i4,i4,i7,2g12.4)       
+    200   888 format (i4,8i5,6x,i7,2f9.2)
+    201 
+    202 
+    203       stop
+    204       end
+
+Page 5           Source Listing                  QPF_1DEG
+2022-06-06 19:39 Entry Points                    .../yan.luo/save/plot_cqpf/sorc/QPF_CTL_1deg.f
+
+
+
+ENTRY POINTS
+
+  Name              
+                    
+ MAIN__             
+
+
+SYMBOL CROSS REFERENCE
+
+ Name                       Object Declared Type            Bytes Dimen Elements Attributes       References                        
+                                                                                                                                    
+ 1000                       Label  41                                                             39                                
+ 1020                       Label  44                                                             42                                
+ 886                        Label  197                                                            75,99                             
+ 888                        Label  200                                                            111,123,135,147                   
+ BACLOSE                    Subr   191                                                            191,192,193,194,195               
+ BAOPEN                     Subr   165                                                            165                               
+ BAOPENR                    Subr   85                                                             85,86,87,88                       
+ CF01                       Local  13       CHAR            100         scalar                    20,77,81,85,92                    
+ CF02                       Local  13       CHAR            100         scalar                    20,78,82,86,93                    
+ CF03                       Local  13       CHAR            100         scalar                    20,79,83,87,94                    
+ CF04                       Local  13       CHAR            100         scalar                    20,80,84,88,95                    
+ CF05                       Local  13       CHAR            100         scalar                    20,163,164,165                    
+ CINDEX                     Local  18       L(1)            1     2     65160                     49,52                             
+ CMDL                       Local  15       CHAR            3           scalar                                                      
+ CMON                       Local  14       CHAR            3     1     12                        25                                
+ DATA                       Local  5        R(4)            4     1     65160                     108,110,114,120,122,126,132,134,13
+                                                                                                  8,144,146,150,181,183,186         
+ DMASK                      Local  7        R(4)            4     1     65160                                                       
+ DMAX                       Local  110      R(4)            4           scalar                    110,112,122,124,134,136,146,148   
+ DMIN                       Local  110      R(4)            4           scalar                    110,112,122,124,134,136,146,148   
+ F                          Local  5        R(4)            4     1     65160                                                       
+ FANL                       Local  5        R(4)            4     1     65160                                                       
+ FCST                       Local  5        R(4)            4     2     65160                     114,126,138,150,181               
+ FILES                      Local  20                                   scalar                    39,40                             
+ GETGB                      Subr   108                                                            108,120,132,144                   
+ GRANGE                     Subr   110                                                            110,122,134,146                   
+ I                          Local  111      I(4)            4           scalar                    111,123,135,147                   
+ IADDATE                    Subr   69                                                             69                                
+ ICLUST                     Local  12       I(4)            4     1     16                                                          
+ ICTL                       Local  23       I(4)            4           scalar                    23                                
+ IDATE                      Local  23       I(4)            4           scalar                    23,69                             
+ IENS                       Local  8        I(4)            4     1     5                                                           
+ IERRS                      Local  89       I(4)            4           scalar                    89,90                             
+ IFD                        Local  23       I(4)            4           scalar                    23,105                            
+ IGDS                       Local  8        I(4)            4     1     22                        171,186                           
+ II                         Local  167      I(4)            4           scalar                    167,168,170,171,180,181,183       
+ IJ                         Local  61       I(4)            4           scalar                    61,62,113,114,125,126,137,138,149,
+                                                                                                  150                               
+ IK                         Param  3        I(4)            4           scalar                                                      
+ ILV                        Local  23       I(4)            4           scalar                    23,107                            
+ ILV2                       Local  23       I(4)            4           scalar                    23                                
+ IM                         Param  3        I(4)            4           scalar                    5                                 
+ IMEMBR                     Local  12       I(4)            4     1     80                                                          
+ IPDS                       Local  8        I(4)            4     1     25                        168,174,175,177,178,186           
+
+Page 6           Source Listing                  QPF_1DEG
+2022-06-06 19:39 Symbol Table                    .../yan.luo/save/plot_cqpf/sorc/QPF_CTL_1deg.f
+
+ Name                       Object Declared Type            Bytes Dimen Elements Attributes       References                        
+                                                                                                                                    
+ IPROB                      Local  12       I(4)            4     1     2                                                           
+ IRET                       Local  108      I(4)            4           scalar                    108,109,117,120,121,129,132,133,14
+                                                                                                  1,144,145,153,186                 
+ IRET21                     Local  85       I(4)            4           scalar                    85,89,191                         
+ IRET22                     Local  86       I(4)            4           scalar                    86,89,192                         
+ IRET23                     Local  87       I(4)            4           scalar                    87,89,193                         
+ IRET24                     Local  88       I(4)            4           scalar                    88,89,194                         
+ IRET50                     Local  165      I(4)            4           scalar                    165,195                           
+ ISIZE                      Param  3        I(4)            4           scalar                                                      
+ ISP                        Local  23       I(4)            4           scalar                    23,106                            
+ ISTD                       Param  4        I(4)            4           scalar                    6                                 
+ IX                         Param  3        I(4)            4           scalar                    5,7,18,60,61,108,113,120,125,132,1
+                                                                                                  37,144,149,180,186                
+ IY                         Param  3        I(4)            4           scalar                    5,7,18,59,108,113,120,125,132,137,
+                                                                                                  144,149,180,186                   
+ J                          Local  101      I(4)            4           scalar                    101,108,120,132,144               
+ JDATE                      Local  69       I(4)            4           scalar                    69                                
+ JENS                       Local  9        I(4)            4     1     5                                                           
+ JGDS                       Local  9        I(4)            4     1     22                        103,108,120,132,144               
+ JJ                         Local  166      I(4)            4           scalar                    166,181                           
+ JPDS                       Local  9        I(4)            4     1     25                        102,105,106,107,108,120,132,144   
+ K                          Local  108      I(4)            4           scalar                    108,111,120,123,132,135,144,147   
+ KENS                       Local  10       I(4)            4     1     5                                                           
+ KF                         Local  108      I(4)            4           scalar                    108,110,112,120,122,124,132,134,13
+                                                                                                  6,144,146,148                     
+ KGDS                       Local  10       I(4)            4     1     22                        108,120,132,144,171               
+ KPDS                       Local  10       I(4)            4     1     25                        108,111,120,123,132,135,144,147,16
+                                                                                                  8                                 
+ LA1                        Local  23       I(4)            4           scalar                    23,50                             
+ LA2                        Local  23       I(4)            4           scalar                    23,50                             
+ LAT                        Local  59       I(4)            4           scalar                    59,61,62                          
+ LB                         Local  18       L(1)            1     1     65160                     108,110,120,122,132,134,144,146,18
+                                                                                                  6                                 
+ LEN_TRIM                   Func   77                                   scalar                    77,78,79,80,163                   
+ LO1                        Local  23       I(4)            4           scalar                    23,51                             
+ LO2                        Local  23       I(4)            4           scalar                    23,51                             
+ LON                        Local  60       I(4)            4           scalar                    60,61                             
+ LPGB1                      Local  77       I(4)            4           scalar                    77,81,85                          
+ LPGB2                      Local  78       I(4)            4           scalar                    78,82,86                          
+ LPGB3                      Local  79       I(4)            4           scalar                    79,83,87                          
+ LPGB4                      Local  80       I(4)            4           scalar                    80,84,88                          
+ LPGB5                      Local  163      I(4)            4           scalar                    163,164,165                       
+ MASK                       Local  7        I(4)            4     1     65160                                                       
+ N                          Local  100      I(4)            4           scalar                    100,114,126,138,150               
+ NAMIN                      Local  23                                   scalar                    42,43                             
+ NFHRS                      Local  23       I(4)            4           scalar                    23,69,173,174,175,177,178         
+ NX                         Local  51       I(4)            4           scalar                    51,52                             
+ NY                         Local  50       I(4)            4           scalar                    50,52                             
+ PUTGB                      Subr   186                                                            186                               
+ QPF_1DEG                   Prog   2                                                                                                
+ RK                         Local  6        R(4)            4     1     14                        32                                
+ SIN                        Func   62                                   scalar                    62                                
+ WGHT                       Local  7        R(4)            4     1     65160                     62                                
+ XPROB                      Local  12       R(4)            4     1     2                                                           
+
+Page 7           Source Listing                  QPF_1DEG
+2022-06-06 19:39 Subprograms/Common Blocks       .../yan.luo/save/plot_cqpf/sorc/QPF_CTL_1deg.f
+
+
+
+SUBPROGRAMS/COMMON BLOCKS
+
+ Name                       Object Declared Type            Bytes Dimen Elements Attributes       References                        
+                                                                                                                                    
+ QPF_1DEG                   Prog   2                                                                                                
+
+COMPILER OPTIONS BEING USED
+
+       -align noall                          -align nonone
+       -align nocommons                      -align nodcommons
+       -align noqcommons                     -align nozcommons
+       -align records                        -align nosequence
+       -align norec1byte                     -align norec2byte
+       -align norec4byte                     -align norec8byte
+       -align norec16byte                    -align norec32byte
+       -align norec64byte                    -align noarray8byte
+       -align noarray16byte                  -align noarray32byte
+       -align noarray64byte                  -align noarray128byte
+       -align noarray256byte                 -altparam
+       -assume accuracy_sensitive            -assume nobscc
+       -assume nobuffered_io                 -assume nobuffered_stdout
+       -assume byterecl                      -assume nocontiguous_assumed_shape
+       -assume nocontiguous_pointer          -assume nocc_omp
+       -assume nocstring                     -assume nodummy_aliases
+       -assume nofpe_summary                 -assume noieee_fpe_flags
+       -assume nominus0                      -assume noold_boz
+       -assume old_complex_align             -assume old_unit_star
+       -assume old_inquire_recl              -assume old_ldout_format
+       -assume old_ldout_zero                -assume noold_logical_assign
+       -assume noold_logical_ldio            -assume old_maxminloc
+       -assume old_xor                       -assume noprotect_allocates
+       -assume protect_constants             -assume noprotect_parens
+       -assume split_common                  -assume source_include
+       -assume nostd_intent_in               -assume std_minus0_rounding
+       -assume nostd_mod_proc_name           -assume std_value
+       -assume realloc_lhs                   -assume underscore
+       -assume no2underscores                -assume norecursion
+  no   -auto                                 -auto_scalar
+  no   -bintext                              -ccdefault default
+       -check noarg_temp_created             -check noassume
+       -check nobounds                       -check nocontiguous
+       -check noformat                       -check nooutput_conversion
+       -check nooverflow                     -check nopointers
+       -check noshape                        -check nostack
+       -check nouninitialized                -check noudio_iostat
+       -coarray-num-procs 0             no   -coarray-config-file
+       -convert big_endian                   -cross_reference
+       -D __INTEL_COMPILER=1910              -D __INTEL_COMPILER_UPDATE=3
+       -D __unix__                           -D __unix
+       -D __linux__                          -D __linux
+       -D __gnu_linux__                      -D unix
+       -D linux                              -D __ELF__
+       -D __x86_64                           -D __x86_64__
+       -D __amd64                            -D __amd64__
+       -D __INTEL_COMPILER_BUILD_DATE=20200925       -D __INTEL_OFFLOAD
+
+Page 8           Source Listing                  QPF_1DEG
+2022-06-06 19:39                                 .../yan.luo/save/plot_cqpf/sorc/QPF_CTL_1deg.f
+
+       -D __MMX__                            -D __SSE__
+       -D __SSE_MATH__                       -D __SSE2__
+       -D __SSE2_MATH__                      -D __SSE3__
+       -D __SSSE3__                          -D __SSE4_1__
+       -D __SSE4_2__                         -D __POPCNT__
+       -D __PCLMUL__                         -D __AES__
+       -D __AVX__                            -D __F16C__
+       -D __AVX_I__                          -D __RDRND__
+       -D __FMA__                            -D __FP_FAST_FMA
+       -D __FP_FAST_FMAF                     -D __BMI__
+       -D __LZCNT__                          -D __AVX2__
+       -D __haswell                          -D __haswell__
+       -D __tune_haswell__                   -D __core_avx2
+       -D __core_avx2__                      -D __tune_core_avx2__
+       -D __CRAY_X86_ROME                    -D __CRAYXT_COMPUTE_LINUX_TARGET
+       -double_size 64                  no   -d_lines
+  no   -Qdyncom                              -error_limit 30
+  no   -f66                             no   -f77rtl
+  no   -fast                                 -fpscomp nofilesfromcmd
+       -fpscomp nogeneral                    -fpscomp noioformat
+       -fpscomp noldio_spacing               -fpscomp nologicals
+       -fixed                           no   -fpconstant
+       -fpe3                                 -fprm nearest
+  no   -ftz                                  -fp_model noprecise
+       -fp_model fast                        -fp_model nostrict
+       -fp_model nosource                    -fp_model nodouble
+       -fp_model noextended                  -fp_model novery_fast
+       -fp_model noexcept                    -fp_model nono_except
+       -heap_arrays 0                   no   -threadprivate_compat
+       -g2                                   -iface nomixed_str_len_arg
+       -iface nono_mixed_str_len_arg         -init noarrays
+       -init nohuge                          -init noinfinity
+       -init nominus_huge                    -init nominus_infinity
+       -init nominus_tiny                    -init nonan
+       -init nosnan                          -init notiny
+       -init nozero                     no   -intconstant
+       -integer_size 32                 no   -mixed_str_len_arg
+  no   -module                               -names lowercase
+  no   -noinclude                       no   -o
+       -offload-build=host                   -openmp-simd
+       -O2                              no   -pad_source
+       -real_size 32                    no   -recursive
+       -reentrancy threaded                  -vec=simd
+       -show nofullpath                      -show noinclude
+       -show map                             -show options
+  no   -syntax_only                     no   -threadcom
+  no   -U                               no   -vms
+       -w noall                              -w nonone
+       -w alignments                         -w nodeclarations
+       -w noexternals                        -w general
+       -w noignore_bounds                    -w noignore_loc
+       -w nointerfaces                       -w noshape
+       -w notruncated_source                 -w uncalled
+       -w uninitialized                      -w nounused
+       -w usage                         no   -wrap-margins
+
+       -includepath : /pe/intel/compilers_and_libraries_2020.4.304/linux/pstl/include/,/pe/intel/compilers_and_libraries_2020.4.304/linux/compiler/include/,
+
+Page 9           Source Listing                  QPF_1DEG
+2022-06-06 19:39                                 .../yan.luo/save/plot_cqpf/sorc/QPF_CTL_1deg.f
+
+           .f90,/u/yan.luo/save/plot_cqpf/sorc/.f90,./.f90,/pe/intel/compilers_and_libraries_2020.4.304/linux/ipp/include/.f90,
+           /pe/intel/compilers_and_libraries_2020.4.304/linux/mkl/include/.f90,/pe/intel/compilers_and_libraries_2020.4.304/linux/pstl/include/.f90,
+           /pe/intel/compilers_and_libraries_2020.4.304/linux/pstl/stdlib/.f90,/pe/intel/compilers_and_libraries_2020.4.304/linux/tbb/include/.f90,
+           /pe/intel/compilers_and_libraries_2020.4.304/linux/compiler/include/intel64/.f90,/pe/intel/compilers_and_libraries_2020.4.304/linux/compiler/include/icc/.f90,
+           /pe/intel/compilers_and_libraries_2020.4.304/linux/compiler/include/.f90,/usr/lib64/gcc/x86_64-suse-linux/7/include/.f90,
+           /usr/lib64/gcc/x86_64-suse-linux/7/include-fixed/.f90,/usr/include/.f90,/usr/include/.f90,/usr/include/.f90
+       -list filename : QPF_CTL_1deg.lst
+  no   -o
+
+COMPILER: Intel(R) Fortran 19.1-1655
