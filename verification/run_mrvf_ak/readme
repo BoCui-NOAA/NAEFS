@@ -1,0 +1,9 @@
+
+cp -rp /lfs/h2/emc/vpppg/save/bo.cui/Save_Phase/save_gyre/naefs.v5.0.0/run_mrvf_ak .
+
+exit
+cp /sss/emc/ensemble/shared/Bo.Cui/rtma_alaska/run/job_mevf_naefs 
+cp /sss/emc/ensemble/shared/Bo.Cui/rtma_alaska/run/exrtma_alaska_mevf_gefs.sh.sms
+cp /sss/emc/ensemble/shared/Bo.Cui/rtma_alaska/run/rtma_alaska_mevf_gefs_tmaxmin.sh
+cp /sss/emc/ensemble/shared/Bo.Cui/rtma_alaska/run/job_rtma_rh2m
+cp /sss/emc/ensemble/shared/Bo.Cui/rtma_alaska/run/rtma_rh2m.sh 

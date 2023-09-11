@@ -3,11 +3,11 @@ set -x
 #Date=`date +%y%m%d%H`
 #CDATE=20$Date
 
-CDATE=2022120600
+CDATE=2023050100
 
 dir=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/verification
 
-ndays=30 
+ndays=1 
 iday=1
 
 while [ $iday -le $ndays ]; do

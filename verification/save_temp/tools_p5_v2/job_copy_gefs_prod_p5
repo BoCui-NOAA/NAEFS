@@ -1,0 +1,39 @@
+CDATE=2016082400
+ndays=10
+
+COM=/gpfs/gp2/nco/ops/com/gens/prod
+DATA=$NGLOBAL/Bo.Cui/com/gens/prod
+
+cd $DATA
+
+NDATE=/gpfs/hps/nco/ops/nwprod/prod_util.v1.0.4/exec/ndate
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  mkdir -p gefs.${PDY}/${cyc}/pgrb2ap5
+
+  if [ $cyc -eq 00 ]; then
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*avg*  gefs.${PDY}/${cyc}/pgrb2ap5
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*gfs*  gefs.${PDY}/${cyc}/pgrb2ap5
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*c00*  gefs.${PDY}/${cyc}/pgrb2ap5
+    rm gefs.${PDY}/${cyc}/pgrb2ap5/*idx
+  else
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*avg*f00*  gefs.${PDY}/${cyc}/pgrb2ap5
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*gfs*f00*  gefs.${PDY}/${cyc}/pgrb2ap5
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*c00*f00*  gefs.${PDY}/${cyc}/pgrb2ap5
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*avg*f012*  gefs.${PDY}/${cyc}/pgrb2ap5
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*gfs*f012*  gefs.${PDY}/${cyc}/pgrb2ap5
+    cp $COM/gefs.${PDY}/${cyc}/pgrb2ap5/*c00*f012*  gefs.${PDY}/${cyc}/pgrb2ap5
+    rm gefs.${PDY}/${cyc}/pgrb2ap5/*idx
+  fi
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +06 $CDATE`
+
+  echo $CDATE
+done
+

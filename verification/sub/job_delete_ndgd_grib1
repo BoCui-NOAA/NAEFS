@@ -1,0 +1,20 @@
+
+COM=/lfs/h2/emc/vpppg/noscrub/bo.cui/com                            
+
+
+list="20230120"
+list="20230120 20230126 20230130 20230131 20230208 20230210 20230302"
+cyc=00
+
+for PDY in $list; do
+
+rm -rf  $COM/naefs/v6.1/gefs.$PDY/$cyc/ndgd  
+rm -rf  $COM/naefs/v6.1/naefs.$PDY/$cyc/ndgd
+
+echo $COM/naefs/v6.1/gefs.$PDY/$cyc/ndgd
+echo $COM/naefs/v6.1/naefs.$PDY/$cyc/ndgd
+
+echo
+done
+
+

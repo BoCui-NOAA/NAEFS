@@ -1,0 +1,37 @@
+set -x 
+
+###########################################################
+# naefs using module compile standard
+# 08/06/2021 Bo.Cui@noaa.gov:    Create module load version
+###########################################################
+
+module purge
+moduledir=`dirname $(readlink -f ../../modulefiles/NAEFS)`
+source ../../versions/build.ver
+module use ${moduledir}
+#source  ${moduledir}/NAEFS/${naefs_ver}
+module load NAEFS/${naefs_ver}
+module list
+
+export FC=ftn
+Export FFLAGS="-O3 -g -convert big_endian -I ${G2_INC4} -check all"
+Export FFLAGS="-O3 -g -convert big_endian -I ${G2_INC4}"
+
+export LIBS="${G2_LIB4} ${W3NCO_LIB4} ${BACIO_LIB4} ${JASPER_LIB} ${PNG_LIB} ${Z_LIB}"
+
+#for dir in  naefs_crps_from_avgspr.fd; do
+#for dir in rtma_crps_from_avgspr.fd;  do
+#for dir in 4vefy_tmaxmin_alaska.fd; do                 
+#for dir in rtma_me_ame_6vars.fd; do
+#for dir in average_alaska.fd; do
+for dir in obs_climate_anfefi_acpr.fd; do
+ cd $dir
+ make clean
+ make -f makefile
+#mv rtma_crps_from_avgspr ../../exec/
+#mv rtma_crps_from_avgspr ../../exec/
+#mv 4vefy_tmaxmin_alaska ../../exec/
+#mv rtma_me_ame_6vars    ../../exec/
+#mv average_alaska_endt  ../../exec/
+mv obs_climate_anfefi_acpr  ../../exec/
+done

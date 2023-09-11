@@ -1,0 +1,10 @@
+export CDATE=2023060100
+ndays=30
+iday=1
+
+while [ $iday -le $ndays ]; do
+  mevf_conus.sh
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+done
+

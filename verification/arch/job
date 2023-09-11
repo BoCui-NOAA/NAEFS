@@ -1,0 +1,54 @@
+
+HSI="/apps/prod/hpss/hsi"
+HTAR="/apps/prod/hpss/htar"
+
+#Date=`date +%y%m%d%H`
+#CDATE=20$Date
+YYMM=2022123
+
+HPSSOUT=/NCEPDEV/emc-ensemble/5year/$LOGNAME/naefs.v7.0/data_save
+output=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/verification/arch  
+
+$HSI mkdir -p $HPSSOUT
+
+###
+
+COM=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/com/naefs/v7.0
+cd $COM
+
+file=$HPSSOUT/v7.0_gefs_pgrb2ap5_bc.tar
+$HTAR -cvf $file gefs.${YYMM}*/00/pgrb2ap5_bc > $output/output_hpss_naefs_pgrb2ap5_bc 2>&1
+#hpsstar put $file gefs.${YYMM}*/00/pgrb2ap5_bc
+exit
+file=$HPSSOUT/v7.0_naefs_pgrb2ap5_bc.tar
+$HTAR -cvf $file naefs.${YYMM}*/00/pgrb2ap5_bc > $output/output_hpss_naefs_pgrb2ap5_bc 2>&1
+
+file=$HPSSOUT/v7.0_gefs_ndgd_gb2.tar
+$HTAR -cvf $file gefs.${YYMM}*/*/ndgd_gb2 > $output/output_hpss_naefs_ndgd_gb2 2>&1
+file=$HPSSOUT/v7.0_naefs_ndgd_gb2.tar
+$HTAR -cvf $file naefs.${YYMM}*/*/ndgd_gb2 > $output/output_hpss_naefs_ndgd_gb2 2>&1
+
+###
+
+COM=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/com/naefs/v6.1
+cd $COM
+
+file=$HPSSOUT/v6.1_gefs_pgrb2ap5_bc.tar
+$HTAR -cvf $file gefs.${YYMM}*/*/pgrb2ap5_bc > $output/output_hpss_naefs_pgrb2ap5_bc 2>&1
+file=$HPSSOUT/v6.1_naefs_pgrb2ap5_bc.tar
+$HTAR -cvf $file naefs.${YYMM}*/*/pgrb2ap5_bc > $output/output_hpss_naefs_pgrb2ap5_bc 2>&1
+
+file=$HPSSOUT/v6.1_gefs_ndgd_gb2.tar
+$HTAR -cvf $file gefs.${YYMM}*/*/ndgd_gb2 > $output/output_hpss_naefs_ndgd_gb2 2>&1
+file=$HPSSOUT/v6.1_naefs_ndgd_gb2.tar
+$HTAR -cvf $file naefs.${YYMM}*/*/ndgd_gb2 > $output/output_hpss_naefs_ndgd_gb2 2>&1
+
+###
+
+COM=/lfs/h2/emc/ptmp/$LOGNAME/com/gefs/v12.3
+cd $COM
+
+file=$HPSSOUT/v12.3_gefs.tar
+$HTAR -cvf $file gefs.${YYMM}* > $output/output_hpss_naefs_pgrb2ap5_bc 2>&1
+
+

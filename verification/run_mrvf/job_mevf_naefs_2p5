@@ -1,0 +1,11 @@
+export CDATE=2023010700
+
+#COMJOB=/sss/emc/ensemble/shared/Bo.Cui/CONUS_Q1_2012/run_mrvf
+#export COM=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/com/gens/prod
+
+while [ $iday -le $ndays ]; do
+  exrtma_conus_mevf_gefs.sh.sms_2p5 
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+done
+

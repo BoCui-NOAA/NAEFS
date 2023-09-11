@@ -1,0 +1,29 @@
+
+COM=/lfs/h2/emc/vpppg/noscrub/bo.cui/com                            
+
+
+list="20230120 20230126 20230130 20230131 20230208 20230210 20230302"
+list="20230301 20230131"
+list="20230404 20230426"
+cyc=00
+
+for PDY in $list; do
+
+ls $COM/naefs/v6.1/gefs.$PDY/$cyc/ndgd/*    | wc
+ls $COM/naefs/v6.1/naefs.$PDY/$cyc/ndgd/*   | wc
+ls $COM/naefs/v7.0/gefs.$PDY/$cyc/ndgd/*    | wc
+ls $COM/naefs/v7.0/naefs.$PDY/$cyc/ndgd/*   | wc
+
+mv $COM/naefs/v6.1/gefs.$PDY/$cyc/ndgd      $COM/naefs/v6.1/gefs.$PDY/$cyc/ndgd_save
+mv $COM/naefs/v6.1/naefs.$PDY/$cyc/ndgd     $COM/naefs/v6.1/naefs.$PDY/$cyc/ndgd_save
+mv $COM/naefs/v7.0/gefs.$PDY/$cyc/ndgd      $COM/naefs/v7.0/gefs.$PDY/$cyc/ndgd_save
+mv $COM/naefs/v7.0/naefs.$PDY/$cyc/ndgd     $COM/naefs/v7.0/naefs.$PDY/$cyc/ndgd_save
+
+ls $COM/naefs/v6.1/gefs.$PDY/$cyc
+ls $COM/naefs/v6.1/naefs.$PDY/$cyc
+ls $COM/naefs/v7.0/gefs.$PDY/$cyc
+ls $COM/naefs/v7.0/naefs.$PDY/$cyc
+
+done
+
+

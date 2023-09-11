@@ -1,0 +1,49 @@
+CDATE=2016080100
+ndays=1
+iday=1
+
+COMIN=/gpfs/hps/ptmp/Bo.Cui/naefs
+COM=$NGLOBAL/Bo.Cui/naefs.v6.0.1/com/gens/prod
+
+hourlist="    003 006 009 012 015 018 021 024 027 030 033 036 039 042 045 048 \
+          051 054 057 060 063 066 069 072 075 078 081 084 087 090 093 096 099 \
+          102 105 108 111 114 117 120 123 126 129 132 135 138 141 144 147 150 \
+          153 156 159 162 165 168 171 174 177 180 183 186 189 192 198 204 \
+          210 216 222 228 234 240 246 252 258 264 270 276 282 288 294 300 \
+          306 312 318 324 330 336 342 348 354 360 366 372 378 384"
+hourlist="    003 006"
+
+
+while [ $iday -le $ndays ]; do
+
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo " day " $PDY$cyc
+
+  DATA=$COMIN/gefs_dvrtma2p5_prob_avgspr_conus_$PDY$cyc
+  COMOUT=$COM/gefs.$PDY/$cyc/ndgd_bc2p5
+  mkdir -p $COMOUT
+
+  cd $DATA
+
+  for nfhrs in $hourlist; do
+    ofile1=tmpdir_02/tmpdir_02_geavg/geavg.t${cyc}z.pgrb2a.0p50_bcf${nfhrs}_2p5
+    ofile2=tmpdir_03/gefs.t${cyc}z.pgrb2a.0p50_bcf${nfhrs}_2p5 
+    ofile3=tmpdir_01/gefs.t${cyc}z.pgrb2a.0p50_bcf${nfhrs}_2p5
+    ofile=$COMOUT/geavg.t${cyc}z.ndgd2p5_conusf${nfhrs}.grib2_ext
+
+    if [ -s $ofile ]; then
+      rm $ofile
+    fi
+    cat $ofile1 $ofile2 >$ofile
+
+    if [ -s $ofile3 ]; then
+      cat $ofile3 >>$ofile
+    fi
+  done
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+done

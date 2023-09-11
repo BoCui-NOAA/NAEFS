@@ -1,5 +1,5 @@
 
-# 1. cnvgrb fix files from greib2 to grib1
+# 1. cnvgrb fix files from grib2 to grib1
 
   ecf/jcnvgrib_fix.ecf
 
@@ -15,11 +15,14 @@
               v6.1 gefs bcp5, naefs_bcp5
               gefs v12.3 gefs_raw
 
+  for develop machine, run
+  ecf/run_cnvgrib_bc:multi days/cycles
+
 # (b) check the converted data from grib2 to grib1
 
   sub/job_check_data_cnvgrib_gefs_naefs_p5
 
-# (c) calcuratecrps for v6.1 v7.0 and gefs v12.3
+# (c) calcurate crps for v6.1 v7.0 and gefs v12.3
 
   sub/sub_crps_p5
   ecf/sub_jcrps_naefs.v6.1.ecf
@@ -51,3 +54,56 @@
   ecf/jcopygb_fix_alaska_3p0.ecf
   ecf/jcopygb_fix_conus_ext_2p5.ecf
  
+
+# 6 calcurate crps for v6.1 v7.0 ndgd                   
+
+  sub/sub_crps_ndgd
+  ecf/jcrps_naefs_ndgd.ecf               
+  ecripts/exrtma_crps.sh.sms
+
+# 7 check crps output                                  
+
+  tools_naefs_v7.0/check_vrfy_gefs_p5.sh
+  tools_naefs_v7.0/check_vrfy_ndgd_crps.sh_full: all fields
+
+# 8 plots                                              
+
+  grads/grads_crps_naefs/PLOT_NAEFS_SCORE.sh
+  grads/grads_crps_ndgd/PLOT_NDGD_SCORE.sh: for both conus and alaska
+
+# 9. generate tmax and tmin for conus and Alaska
+
+  run_mrvf/job_mevf_naefs_ext
+  run_mrvf_ak/job_mevf_naefs_3p0 
+
+# 10. archive naefs v7.0 and 6.0 data by btach jobs 
+ 
+  verification/arch/sub_naefs_hpss.ecf_v6
+  verification/arch/sub_naefs_hpss.ecf_v7
+
+# 11. get rtma data
+  
+   verification/arch/sub_get_rtma2p5_full.sh
+   verification/arch/sub_get_akrtma3p0_full.sh
+
+# 12. generate me and ame for conus and alaska             
+
+  run_mrvf/job_mevf_conus
+  run_mrvf/job_mevf_avg  
+
+#13. cqpf pqpf jobs
+
+   /lfs/h2/emc/vpppg/save/bo.cui/run_web
+   CCPA_archive_cactus generate ccpa data in COM_TAR
+   GARCH_cactus generat ncep_gefs_0.5d
+   test_cactus generate data in cqpf/data
+
+   /lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/grads/cqpf/plot_cqpf/scripts/run_cqpf_plot.sh_v7.0
+   generate 24hr prcp
+
+   generate obs anomaly use gefs/v12.3
+   /lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/verification/run_efi/jobs_climate_anomaly.ecf
+   
+   generate efi anv plots:
+   /lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/grads/EFI_plot/run_v7.0
+

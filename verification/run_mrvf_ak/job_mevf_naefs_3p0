@@ -1,0 +1,10 @@
+export CDATE=2023060100
+ndays=3
+iday=1
+
+while [ $iday -le $ndays ]; do
+  exrtma_alaska_mevf_gefs.sh.sms_3p0
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+done
+

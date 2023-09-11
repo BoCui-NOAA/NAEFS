@@ -1,0 +1,17 @@
+export CDATE=2014020400
+ndays=34 
+iday=1
+
+nhours=/nwprod/util/exec/ndate
+
+export COM=$NGLOBAL/Bo.Cui/com/gens/para  
+
+while [ $iday -le $ndays ]; do
+# exrtma_conus_mevf_naefs.sh.sms     >/ptmp/Bo.Cui/junk1 2>&1&  
+  exrtma_conus_mevf_gefs.sh.sms      > $PTMP/Bo.Cui/junk 2>&1& 
+# exrtma_conus_mevf_gefs_raw.sh.sms  >/ptmp/Bo.Cui/junk1 2>&1&   
+# exrtma_conus_mevf_cmce.sh.sms  >/ptmp/Bo.Cui/junk1 2>&1&   
+  iday=`expr $iday + 1`
+  export CDATE=`$nhours +24 $CDATE`
+done
+

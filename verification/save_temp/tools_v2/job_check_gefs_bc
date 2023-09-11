@@ -1,0 +1,44 @@
+CDATE=2015031100
+ndays=50
+iday=1
+
+COM=$NGLOBAL/Bo.Cui/com/gens/prod          
+nhours=/nwprod/util/exec/ndate
+
+while [ $iday -le $ndays ]; do
+
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo " day " $PDY$cyc
+
+  COMINNCEP=$COM/gefs.$PDY/$cyc
+# ls $COMINNCEP/pgrba_bc/geavg.t${cyc}z* | wc
+# ls $COMINNCEP/pgrba_bc/gespr.t${cyc}z* | wc
+
+# ls $COMINNCEP/pgrba_bc_tcdc/geavg.t${cyc}z* | wc
+# ls $COMINNCEP/pgrba_bc_tcdc/gespr.t${cyc}z* | wc
+# ls $COMINNCEP/pgrb2a_bc_tcdc/geavg.t${cyc}z* | wc
+# ls $COMINNCEP/pgrb2a_bc_tcdc/gespr.t${cyc}z* | wc
+
+# ls $COMINNCEP/pgrb2a_bc_tcdc/gep*.t${cyc}z* | wc
+# ls $COMINNCEP/pgrb2a_bc_tcdc/gec*.t${cyc}z* | wc
+
+  rm $COMINNCEP/pgrb2a_bc/*idx
+  ls $COMINNCEP/pgrb2a_bc/geavg.t${cyc}z* | wc
+  ls $COMINNCEP/pgrb2a_bc/gespr.t${cyc}z* | wc
+  ls $COMINNCEP/pgrb2a_bc/ge10pt.t${cyc}z* | wc
+  ls $COMINNCEP/pgrb2a_bc/ge50pt.t${cyc}z* | wc
+  ls $COMINNCEP/pgrb2a_bc/ge90pt.t${cyc}z* | wc
+  ls $COMINNCEP/pgrb2a_bc/gemode.t${cyc}z* | wc
+  ls $COMINNCEP/pgrb2a_bc/gep*.t${cyc}z* | wc
+
+# ls $COMINNCEP/pgrba/gec00.t${cyc}z* | wc
+# ls $COMINNCEP/pgrba/gegfs.t${cyc}z* | wc
+
+  iday=`expr $iday + 1`
+  CDATE=`$nhours +24 $CDATE`
+
+done
+
+

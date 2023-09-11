@@ -1,0 +1,28 @@
+
+
+cp -p /lfs/h2/emc/vpppg/save/bo.cui/Save_Phase/save_gyre/naefs.v5.0.0/run_mrvf/exrtma_conus_mevf_gefs.sh.sms_ext   .
+cp -p /lfs/h2/emc/vpppg/save/bo.cui/Save_Phase/save_gyre/naefs.v5.0.0/run_mrvf/rtma_conus_mevf_gefs_tmaxmin.sh_ext .
+
+cp /lfs/h2/emc/vpppg/save/bo.cui/Save_Phase/save_luna/naefs.v6.0.1/run_mrvf
+cp /lfs/h2/emc/vpppg/save/bo.cui/Save_Phase/save_tide/EKDMOS/sorc/4vefy_tmaxmin_alaska.fd
+
+note:
+
+[@clogin03 Save_Phase]$ lt */*/sorc*/4vefy_tmaxmin_alaska.fd/makefile*
+-rwxr-xr-x 1 bo.cui emc   344 Oct 29  2008 u_stratus/rtma_alaska_rest1/sorc/4vefy_tmaxmin_alaska.fd/makefile
+-rwxr-xr-x 1 bo.cui emc   447 Sep  4  2009 u_cirrus/rtma_alaska/sorc/4vefy_tmaxmin_alaska.fd/makefile
+-rwxr-xr-x 1 bo.cui vpppg 447 Sep  4  2009 save_tide/rtma_alaska/sorc/4vefy_tmaxmin_alaska.fd/makefile
+-rwxr-xr-x 1 bo.cui emc   447 Jan  6  2010 u_stratus/rtma_alaska/sorc/4vefy_tmaxmin_alaska.fd/makefile
+-rwxr-xr-x 1 bo.cui vpppg 655 Aug 22  2014 save_gyre/EKDMOS/sorc/4vefy_tmaxmin_alaska.fd/makefile
+-rwxr-xr-x 1 bo.cui vpppg 655 Jun  2  2015 save_tide/EKDMOS/sorc/4vefy_tmaxmin_alaska.fd/makefile
+[@clogin03 Save_Phase]$ lt */*/sorc*/4vefy_tmaxmin_alaska.fd/makefile*
+-rwxr-xr-x 1 bo.cui emc   344 Oct 29  2008 u_stratus/rtma_alaska_rest1/sorc/4vefy_tmaxmin_alaska.fd/makefile
+-rwxr-xr-x 1 bo.cui emc   447 Sep  4  2009 u_cirrus/rtma_alaska/sorc/4vefy_tmaxmin_alaska.fd/makefile
+-rwxr-xr-x 1 bo.cui vpppg 447 Sep  4  2009 save_tide/rtma_alaska/sorc/4vefy_tmaxmin_alaska.fd/makefile
+-rwxr-xr-x 1 bo.cui emc   447 Jan  6  2010 u_stratus/rtma_alaska/sorc/4vefy_tmaxmin_alaska.fd/makefile
+-rwxr-xr-x 1 bo.cui vpppg 655 Aug 22  2014 save_gyre/EKDMOS/sorc/4vefy_tmaxmin_alaska.fd/makefile
+-rwxr-xr-x 1 bo.cui vpppg 655 Jun  2  2015 save_tide/EKDMOS/sorc/4vefy_tmaxmin_alaska.fd/makefile
+
+exit
+cp /sss/emc/ensemble/shared/Bo.Cui/CONUS_Q1_2012/run_mrvf/job_mevf_naefs .
+cp /sss/emc/ensemble/shared/Bo.Cui/CONUS_Q1_2012/run_mrvf/exrtma_conus_mevf_gefs.sh.sms .

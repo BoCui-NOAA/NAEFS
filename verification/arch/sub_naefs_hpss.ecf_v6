@@ -1,0 +1,42 @@
+#!/bin/bash
+#PBS -N transfer
+#PBS -j oe
+#PBS -A NAEFS-DEV
+#Select 1 vnode, 1 core=1cpus, 100 MB of memory
+#PBS -l select=1:ncpus=1:mem=1GB
+#PBS -q dev_transfer
+#PBS -l walltime=45:30.00
+
+cd $PBS_O_WORKDIR
+
+#hpsstar=/u/$LOGNAME/xbin/hpsstar
+
+HSI="/apps/prod/hpss/hsi"
+HTAR="/apps/prod/hpss/htar"
+
+#Date=`date +%y%m%d%H`
+#CDATE=20$Date
+YYMM=202306
+
+HPSSOUT=/NCEPDEV/emc-ensemble/5year/Bo.Cui/naefs.v7.0/data_save
+output=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/verification/arch  
+
+$HSI mkdir -p $HPSSOUT
+
+###
+
+COM=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/com/naefs/v6.1
+cd $COM
+
+file=$HPSSOUT/v6.1_${YYMM}_gefs_pgrb2ap5_bc.tar
+$HTAR -cvf $file gefs.${YYMM}*/*/pgrb2ap5_bc > $output/${YYMM}_output_v6_hpss_gefs_pgrb2ap5_bc 2>&1
+file=$HPSSOUT/v6.1_${YYMM}_naefs_pgrb2ap5_bc.tar
+$HTAR -cvf $file naefs.${YYMM}*/*/pgrb2ap5_bc > $output/${YYMM}_output_v6_hpss_naefs_pgrb2ap5_bc 2>&1
+
+file=$HPSSOUT/v6.1_${YYMM}_gefs_ndgd_gb2.tar
+$HTAR -cvf $file gefs.${YYMM}*/*/ndgd_gb2 > $output/${YYMM}_output_v6_hpss_gefs_ndgd_gb2 2>&1
+file=$HPSSOUT/v6.1_${YYMM}_naefs_ndgd_gb2.tar
+$HTAR -cvf $file naefs.${YYMM}*/*/ndgd_gb2 > $output/${YYMM}_output_v6_hpss_naefs_ndgd_gb2 2>&1
+
+
+

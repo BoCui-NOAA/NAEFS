@@ -1,0 +1,508 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>OPR .vs EXP</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
+<BODY bgcolor="#ffffff">
+<H4>Global Ensemble Evaluation NAEFS V6 and V7</h4>
+
+<br>&nbsp;
+
+<table border="5" cellpadding="2" cellspacing="5">
+<TR><TH COLSPAN="11">500 hPa Height Scores</TH></tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NH</td>
+<TD><A HREF="nh_z500_roc_t00z.png">ROC</a></td>
+<TD><A HREF="nh_z500_eval_t00z.png">EV</a></td>
+<TD><A HREF="nh_z500_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="nh_z500_bss_t00z.png">BSS</a></td>
+<TD><A HREF="nh_z500_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="nh_z500_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="nh_z500_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="nh_z500_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="nh_z500_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="nh_z500_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>SH</td>
+<TD><A HREF="sh_z500_roc_t00z.png">ROC</a></td>
+<TD><A HREF="sh_z500_eval_t00z.png">EV</a></td>
+<TD><A HREF="sh_z500_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="sh_z500_bss_t00z.png">BSS</a></td>
+<TD><A HREF="sh_z500_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="sh_z500_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="sh_z500_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="sh_z500_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="sh_z500_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="sh_z500_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>TROP</td>
+<TD><A HREF="tr_z500_roc_t00z.png">ROC</a></td>
+<TD><A HREF="tr_z500_eval_t00z.png">EV</a></td>
+<TD><A HREF="tr_z500_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="tr_z500_bss_t00z.png">BSS</a></td>
+<TD><A HREF="tr_z500_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="tr_z500_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="tr_z500_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="tr_z500_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="tr_z500_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="tr_z500_ctp_t00z.png">CTP</a></td>
+</tr>
+
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NA</td>
+<TD><A HREF="na_z500_roc_t00z.png">ROC</a></td>
+<TD><A HREF="na_z500_eval_t00z.png">EV</a></td>
+<TD><A HREF="na_z500_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="na_z500_bss_t00z.png">BSS</a></td>
+<TD><A HREF="na_z500_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="na_z500_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="na_z500_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="na_z500_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="na_z500_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="na_z500_ctp_t00z.png">CTP</a></td>
+
+</TABLE>
+</TABLE>
+
+<br>&nbsp;
+
+<table border="5" cellpadding="2" cellspacing="5">
+<TR><TH COLSPAN="11">1000 hPa Height Scores </TH></tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NH</td>
+<TD><A HREF="nh_z1000_roc_t00z.png">ROC</a></td>
+<TD><A HREF="nh_z1000_eval_t00z.png">EV</a></td>
+<TD><A HREF="nh_z1000_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="nh_z1000_bss_t00z.png">BSS</a></td>
+<TD><A HREF="nh_z1000_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="nh_z1000_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="nh_z1000_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="nh_z1000_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="nh_z1000_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="nh_z1000_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>SH</td>
+<TD><A HREF="sh_z1000_roc_t00z.png">ROC</a></td>
+<TD><A HREF="sh_z1000_eval_t00z.png">EV</a></td>
+<TD><A HREF="sh_z1000_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="sh_z1000_bss_t00z.png">BSS</a></td>
+<TD><A HREF="sh_z1000_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="sh_z1000_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="sh_z1000_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="sh_z1000_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="sh_z1000_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="sh_z1000_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>TROP</td>
+<TD><A HREF="tr_z1000_roc_t00z.png">ROC</a></td>
+<TD><A HREF="tr_z1000_eval_t00z.png">EV</a></td>
+<TD><A HREF="tr_z1000_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="tr_z1000_bss_t00z.png">BSS</a></td>
+<TD><A HREF="tr_z1000_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="tr_z1000_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="tr_z1000_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="tr_z1000_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="tr_z1000_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="tr_z1000_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NA</td>
+<TD><A HREF="na_z1000_roc_t00z.png">ROC</a></td>
+<TD><A HREF="na_z1000_eval_t00z.png">EV</a></td>
+<TD><A HREF="na_z1000_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="na_z1000_bss_t00z.png">BSS</a></td>
+<TD><A HREF="na_z1000_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="na_z1000_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="na_z1000_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="na_z1000_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="na_z1000_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="na_z1000_ctp_t00z.png">CTP</a></td>
+
+</TABLE>
+
+<br>&nbsp;
+
+<table border="5" cellpadding="2" cellspacing="5">
+<TR><TH COLSPAN="11">850 hPa Temperature Scores</TH></tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NH</td>
+<TD><A HREF="nh_t850_roc_t00z.png">ROC</a></td>
+<TD><A HREF="nh_t850_eval_t00z.png">EV</a></td>
+<TD><A HREF="nh_t850_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="nh_t850_bss_t00z.png">BSS</a></td>
+<TD><A HREF="nh_t850_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="nh_t850_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="nh_t850_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="nh_t850_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="nh_t850_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="nh_t850_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>SH</td>
+<TD><A HREF="sh_t850_roc_t00z.png">ROC</a></td>
+<TD><A HREF="sh_t850_eval_t00z.png">EV</a></td>
+<TD><A HREF="sh_t850_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="sh_t850_bss_t00z.png">BSS</a></td>
+<TD><A HREF="sh_t850_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="sh_t850_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="sh_t850_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="sh_t850_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="sh_t850_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="sh_t850_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>TROP</td>
+<TD><A HREF="tr_t850_roc_t00z.png">ROC</a></td>
+<TD><A HREF="tr_t850_eval_t00z.png">EV</a></td>
+<TD><A HREF="tr_t850_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="tr_t850_bss_t00z.png">BSS</a></td>
+<TD><A HREF="tr_t850_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="tr_t850_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="tr_t850_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="tr_t850_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="tr_t850_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="tr_t850_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NA</td>
+<TD><A HREF="na_t850_roc_t00z.png">ROC</a></td>
+<TD><A HREF="na_t850_eval_t00z.png">EV</a></td>
+<TD><A HREF="na_t850_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="na_t850_bss_t00z.png">BSS</a></td>
+<TD><A HREF="na_t850_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="na_t850_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="na_t850_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="na_t850_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="na_t850_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="na_t850_ctp_t00z.png">CTP</a></td>
+
+</TABLE>
+
+<br>&nbsp;
+
+<table border="5" cellpadding="2" cellspacing="5">
+<TR><TH COLSPAN="11">2 Meters Temperature Scores</TH></tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NH</td>
+<TD><A HREF="nh_t2m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="nh_t2m_eval_t00z.png">EV</a></td>
+<TD><A HREF="nh_t2m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="nh_t2m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="nh_t2m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="nh_t2m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="nh_t2m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="nh_t2m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="nh_t2m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="nh_t2m_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>SH</td>
+<TD><A HREF="sh_t2m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="sh_t2m_eval_t00z.png">EV</a></td>
+<TD><A HREF="sh_t2m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="sh_t2m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="sh_t2m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="sh_t2m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="sh_t2m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="sh_t2m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="sh_t2m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="sh_t2m_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>TROP</td>
+<TD><A HREF="tr_t2m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="tr_t2m_eval_t00z.png">EV</a></td>
+<TD><A HREF="tr_t2m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="tr_t2m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="tr_t2m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="tr_t2m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="tr_t2m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="tr_t2m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="tr_t2m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="tr_t2m_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NA</td>
+<TD><A HREF="na_t2m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="na_t2m_eval_t00z.png">EV</a></td>
+<TD><A HREF="na_t2m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="na_t2m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="na_t2m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="na_t2m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="na_t2m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="na_t2m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="na_t2m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="na_t2m_ctp_t00z.png">CTP</a></td>
+
+</TABLE>
+
+<br>&nbsp;
+
+<table border="5" cellpadding="2" cellspacing="5">
+<TR><TH COLSPAN="11">10 Meters Wind (U) Scores</TH></tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NH</td>
+<TD><A HREF="nh_u10m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="nh_u10m_eval_t00z.png">EV</a></td>
+<TD><A HREF="nh_u10m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="nh_u10m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="nh_u10m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="nh_u10m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="nh_u10m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="nh_u10m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="nh_u10m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="nh_u10m_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>SH</td>
+<TD><A HREF="sh_u10m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="sh_u10m_eval_t00z.png">EV</a></td>
+<TD><A HREF="sh_u10m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="sh_u10m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="sh_u10m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="sh_u10m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="sh_u10m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="sh_u10m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="sh_u10m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="sh_u10m_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>TROP</td>
+<TD><A HREF="tr_u10m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="tr_u10m_eval_t00z.png">EV</a></td>
+<TD><A HREF="tr_u10m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="tr_u10m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="tr_u10m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="tr_u10m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="tr_u10m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="tr_u10m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="tr_u10m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="tr_u10m_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NA</td>
+<TD><A HREF="na_u10m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="na_u10m_eval_t00z.png">EV</a></td>
+<TD><A HREF="na_u10m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="na_u10m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="na_u10m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="na_u10m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="na_u10m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="na_u10m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="na_u10m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="na_u10m_ctp_t00z.png">CTP</a></td>
+
+</TABLE>
+
+<br>&nbsp;
+
+<table border="5" cellpadding="2" cellspacing="5">
+<TR><TH COLSPAN="11">10 Meters Wind (V) Scores</TH></tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NH</td>
+<TD><A HREF="nh_v10m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="nh_v10m_eval_t00z.png">EV</a></td>
+<TD><A HREF="nh_v10m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="nh_v10m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="nh_v10m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="nh_v10m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="nh_v10m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="nh_v10m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="nh_v10m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="nh_v10m_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>SH</td>
+<TD><A HREF="sh_v10m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="sh_v10m_eval_t00z.png">EV</a></td>
+<TD><A HREF="sh_v10m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="sh_v10m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="sh_v10m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="sh_v10m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="sh_v10m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="sh_v10m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="sh_v10m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="sh_v10m_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>TROP</td>
+<TD><A HREF="tr_v10m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="tr_v10m_eval_t00z.png">EV</a></td>
+<TD><A HREF="tr_v10m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="tr_v10m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="tr_v10m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="tr_v10m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="tr_v10m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="tr_v10m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="tr_v10m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="tr_v10m_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NA</td>
+<TD><A HREF="na_v10m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="na_v10m_eval_t00z.png">EV</a></td>
+<TD><A HREF="na_v10m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="na_v10m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="na_v10m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="na_v10m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="na_v10m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="na_v10m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="na_v10m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="na_v10m_ctp_t00z.png">CTP</a></td>
+
+</TABLE>
+
+<br>&nbsp;
+
+<table border="5" cellpadding="2" cellspacing="5">
+<TR><TH COLSPAN="11">Dew Point Temperature Scores </TH></tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NH</td>
+<TD><A HREF="nh_td2m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="nh_td2m_eval_t00z.png">EV</a></td>
+<TD><A HREF="nh_td2m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="nh_td2m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="nh_td2m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="nh_td2m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="nh_td2m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="nh_td2m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="nh_td2m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="nh_td2m_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>SH</td>
+<TD><A HREF="sh_td2m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="sh_td2m_eval_t00z.png">EV</a></td>
+<TD><A HREF="sh_td2m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="sh_td2m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="sh_td2m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="sh_td2m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="sh_td2m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="sh_td2m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="sh_td2m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="sh_td2m_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>TROP</td>
+<TD><A HREF="tr_td2m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="tr_td2m_eval_t00z.png">EV</a></td>
+<TD><A HREF="tr_td2m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="tr_td2m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="tr_td2m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="tr_td2m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="tr_td2m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="tr_td2m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="tr_td2m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="tr_td2m_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NA</td>
+<TD><A HREF="na_td2m_roc_t00z.png">ROC</a></td>
+<TD><A HREF="na_td2m_eval_t00z.png">EV</a></td>
+<TD><A HREF="na_td2m_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="na_td2m_bss_t00z.png">BSS</a></td>
+<TD><A HREF="na_td2m_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="na_td2m_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="na_td2m_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="na_td2m_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="na_td2m_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="na_td2m_ctp_t00z.png">CTP</a></td>
+
+</TABLE>
+
+<br>&nbsp;
+
+<table border="5" cellpadding="2" cellspacing="5">
+<TR><TH COLSPAN="11">Total Cloud Cover Scores </TH></tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NH</td>
+<TD><A HREF="nh_tcdc_roc_t00z.png">ROC</a></td>
+<TD><A HREF="nh_tcdc_eval_t00z.png">EV</a></td>
+<TD><A HREF="nh_tcdc_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="nh_tcdc_bss_t00z.png">BSS</a></td>
+<TD><A HREF="nh_tcdc_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="nh_tcdc_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="nh_tcdc_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="nh_tcdc_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="nh_tcdc_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="nh_tcdc_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>SH</td>
+<TD><A HREF="sh_tcdc_roc_t00z.png">ROC</a></td>
+<TD><A HREF="sh_tcdc_eval_t00z.png">EV</a></td>
+<TD><A HREF="sh_tcdc_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="sh_tcdc_bss_t00z.png">BSS</a></td>
+<TD><A HREF="sh_tcdc_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="sh_tcdc_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="sh_tcdc_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="sh_tcdc_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="sh_tcdc_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="sh_tcdc_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>TROP</td>
+<TD><A HREF="tr_tcdc_roc_t00z.png">ROC</a></td>
+<TD><A HREF="tr_tcdc_eval_t00z.png">EV</a></td>
+<TD><A HREF="tr_tcdc_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="tr_tcdc_bss_t00z.png">BSS</a></td>
+<TD><A HREF="tr_tcdc_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="tr_tcdc_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="tr_tcdc_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="tr_tcdc_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="tr_tcdc_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="tr_tcdc_ctp_t00z.png">CTP</a></td>
+</tr>
+
+<TR style="font-size:12px;font-weight:600;">
+<TD>NA</td>
+<TD><A HREF="na_tcdc_roc_t00z.png">ROC</a></td>
+<TD><A HREF="na_tcdc_eval_t00z.png">EV</a></td>
+<TD><A HREF="na_tcdc_rpss_t00z.png">RPSS</a></td>
+<TD><A HREF="na_tcdc_bss_t00z.png">BSS</a></td>
+<TD><A HREF="na_tcdc_crpsc_t00z.png">CRPSC</a></td>
+<TD><A HREF="na_tcdc_crpsf_t00z.png">CRPSF</a></td>
+<TD><A HREF="na_tcdc_rmsa_t00z.png">RMSA/SPRD</a></td>
+<TD><A HREF="na_tcdc_merr_t00z.png">ERR/ABSE</a></td>
+<TD><A HREF="na_tcdc_rmsm_t00z.png">RMSM</a></td>
+<TD><A HREF="na_tcdc_ctp_t00z.png">CTP</a></td>
+
+</TABLE>
+
+<br>&nbsp;

@@ -1,0 +1,38 @@
+set -x
+
+#Date=`date +%y%m%d%H`
+#CDATE=20$Date
+
+CDATE=2023050100
+
+dir=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/verification
+
+ndays=1   
+iday=1
+
+while [ $iday -le $ndays ]; do
+
+export YYMMDD=`echo $CDATE | cut -c1-8`
+export CYC=00
+echo " day " $YYMMDD$cyc
+
+joblist="sub_jcrps_naefs.v6.1.ecf sub_jcrps_naefs.v7.0.ecf sub_jcrps_gefs.v12.3.ecf"
+
+for job in $joblist; do
+
+rm $dir/output/$job.temp.$CDATE
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/output/$job.temp.$CDATE
+
+cd $dir/output
+chmod +x $dir/output/$job.temp.$CDATE
+$dir/output/$job.temp.$CDATE >output.cqpf_$job.$CDATE 2>&1&
+
+done
+
+iday=`expr $iday + 1`
+export CDATE=`$NDATE +24 $CDATE`
+
+done

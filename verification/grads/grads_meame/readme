@@ -1,0 +1,17 @@
+
+cp /lfs/h2/emc/vpppg/save/bo.cui/Save_Phase/save_tide/WCOSS/naefs.v5.0.0/grads/*me* .
+
+save_gyre/EKDMOS/grads/plot_me_ame.sh_ekd:#XDEF=2145
+save_luna/naefs.v6.0.1/grads/plot_me_ame.sh:XDEF=2145
+save_tide/EKDMOS/grads/plot_me_ame.sh_ekd:#XDEF=2145
+
+[@clogin03 Save_Phase]$ lt save_gyre/EKDMOS/grads/plot_me_ame.sh_ekd
+-rwxr-xr-x 1 bo.cui vpppg 2507 Aug 14  2014 save_gyre/EKDMOS/grads/plot_me_ame.sh_ekd
+
+[@clogin03 Save_Phase]$ lt save_luna/naefs.v6.0.1/grads/plot_me_ame.sh
+-rwxr-xr-x 1 bo.cui vpppg 2592 Nov  8  2016 save_luna/naefs.v6.0.1/grads/plot_me_ame.sh
+https://www.emc.ncep.noaa.gov/gmb/wx20cb/naefs.v6.0.0/gec00_me_ame/t2m_gec00.t00z_amef000.gif
+
+[@clogin03 Save_Phase]$ lt save_tide/EKDMOS/grads/plot_me_ame.sh_ekd
+-rwxr-xr-x 1 bo.cui vpppg 2507 Jun  2  2015 save_tide/EKDMOS/grads/plot_me_ame.sh_ekd
+

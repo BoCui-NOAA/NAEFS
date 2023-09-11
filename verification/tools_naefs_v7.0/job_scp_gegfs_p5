@@ -1,0 +1,29 @@
+CDATE=2017042600
+ndays=10
+
+prod=luna
+#COM_IN=/gpfs/hps/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev
+COM_IN=/gpfs/tp2/nco/ops/com/gens/para
+COM_OUT=/gpfs/hps/emc/ensemble/noscrub/emc.enspara1/bc/o/com/naefs/dev
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  COMIN=$COM_IN/gefs.$PDY/$cyc/pgrb2ap5
+  COMOUT=$COM_OUT/gefs.$PDY/$cyc/pgrb2ap5
+  mkdir -p $COMOUT
+# scp -p $prod:$COMIN/gegfs*f000 $COMOUT/
+# scp -p $prod:$COMIN/gec00*f000 $COMOUT/
+# scp -p $prod:$COMIN/gegfs*f003 $COMOUT/
+# scp -p $prod:$COMIN/gec00*f003 $COMOUT/
+  scp -p $prod:$COMIN/gespr*f*   $COMOUT/
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+  echo $CDATE
+done
+

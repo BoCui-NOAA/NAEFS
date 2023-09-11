@@ -1,0 +1,32 @@
+CDATE=2016072800
+ndays=1
+
+COM=/gpfs/tp2/nco/ops/com/gens/prod
+DATA=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/com/gens/prod
+
+cd $DATA
+
+NDATE=/gpfs/hps/nco/ops/nwprod/prod_util.v1.0.4/exec/ndate
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  mkdir -p naefs.${PDY}/${cyc}
+  cp -r $COM/naefs.${PDY}/${cyc}/pgrb2a_bc naefs.${PDY}/${cyc}
+  cp -r $COM/naefs.${PDY}/${cyc}/pgrb2a_an naefs.${PDY}/${cyc}
+  cp -r $COM/naefs.${PDY}/${cyc}/ndgd_gb2  naefs.${PDY}/${cyc}
+
+# cp $COM/naefs.${PDY}/${cyc}/pgrb2a/*avg*pgrb2af*  naefs.${PDY}/${cyc}/pgrb2a
+# cp $COM/naefs.${PDY}/${cyc}/pgrb2a/*gfs*pgrb2a**  naefs.${PDY}/${cyc}/pgrb2a
+# cp $COM/naefs.${PDY}/${cyc}/pgrb2a/*c00*pgrb2a**  naefs.${PDY}/${cyc}/pgrb2a
+# rm naefs.${PDY}/${cyc}/pgrb2a/*idx
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +06 $CDATE`
+
+  echo $CDATE
+done
+

@@ -1,0 +1,45 @@
+CDATE=2016080100
+ndays=31
+iday=1
+
+nhours=/nwprod/util/exec/ndate
+
+COM_PARA=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.1/com/gens/crps_ndgd2p5_conus_ensmean
+COM_PARA=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.1/com/gens/crps_ndgd2p5_conus_nohybrid
+COM=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.1/com/gens/crps_ndgd2p5_conus
+
+rm print_crps
+>print_crps
+
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  echo $CDATE >> print_crps
+
+# for exp in gefs_p5bc_mean gefs_p5bc_ctl; do
+  for exp in gefs_p5bc_ctl; do
+    file=P2MTMP${exp}f.$CDATE.conus 
+#   file=P10MUGRD${exp}f.$CDATE.conus 
+    cat $COM/$file       | sed -n "7,7p" >> print_crps
+    cat $COM_PARA/$file  | sed -n "7,7p" >> print_crps
+    echo "    " >> print_crps
+    cat $COM/$file       | sed -n "11,11p" >> print_crps
+    cat $COM_PARA/$file  | sed -n "11,11p" >> print_crps
+    echo "    " >> print_crps
+    cat $COM/$file       | sed -n "15,15p" >> print_crps
+    cat $COM_PARA/$file  | sed -n "15,15p" >> print_crps
+    echo "    " >> print_crps
+    cat $COM/$file       | sed -n "19,19p" >> print_crps
+    cat $COM_PARA/$file  | sed -n "19,19p" >> print_crps
+    echo "    " >> print_crps
+  done
+
+  echo "    " >> print_crps
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+
+done
+

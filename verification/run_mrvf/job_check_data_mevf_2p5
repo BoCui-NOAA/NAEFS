@@ -1,0 +1,26 @@
+CDATE=2016080100
+ndays=31
+iday=1
+nhours=/nwprod/util/exec/ndate
+
+COM=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/com/gens/prod
+
+while [ $iday -le $ndays ]; do
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo $CDATE
+
+  echo " gefs raw ndgd mevf "
+
+  ls $COM/gefs.$PDY/$cyc/mevf_gefs/geavg*_mef*    | wc
+  ls $COM/gefs.$PDY/$cyc/mevf_gefs/geavg*_amef*    | wc
+  ls $COM/gefs.$PDY/$cyc/mevf_gefs/gec00*_mef*    | wc
+  ls $COM/gefs.$PDY/$cyc/mevf_gefs/gec00*_amef*    | wc
+  ls $COM/gefs.$PDY/$cyc/mevf_gefs/gegfs*_mef*    | wc
+  ls $COM/gefs.$PDY/$cyc/mevf_gefs/gegfs*_amef*    | wc
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+done
+

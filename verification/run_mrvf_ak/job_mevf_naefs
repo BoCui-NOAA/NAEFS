@@ -1,0 +1,16 @@
+export CDATE=2016020400
+ndays=50
+iday=1
+
+COMJOB=/sss/emc/ensemble/shared/Bo.Cui/rtma_alaska/run
+export COM=$NGLOBAL2/Bo.Cui/com2/gens/prod
+
+nhours=/nwprod/util/exec/ndate
+
+while [ $iday -le $ndays ]; do
+  exrtma_alaska_mevf_gefs.sh.sms $CDATE  >$PTMP/Bo.Cui/junk 2>&1&
+# exrtma_alaska_mevf_gefs.sh.sms $CDATE  
+  iday=`expr $iday + 1`
+  export CDATE=`$nhours +24 $CDATE`
+done
+

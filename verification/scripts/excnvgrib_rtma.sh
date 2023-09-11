@@ -16,6 +16,7 @@ cyc=00
 COM_OUT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/com/rtma/v2.9                  
 
 cyclist="00 03 06 09 12 15 18 21"
+cyclist="00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23"
 
 COMOUT=$COM_OUT/akrtma.$PDY
 for cyc in $cyclist; do

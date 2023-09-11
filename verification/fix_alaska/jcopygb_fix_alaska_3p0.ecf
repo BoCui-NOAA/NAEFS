@@ -1,0 +1,28 @@
+export CDATE=2004121600
+ndays=92 
+iday=1
+
+PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME
+naefs_ver=v7.0.0
+
+COMIN=$PACKAGEROOT/naefs.${naefs_ver}/verification/fix             
+COMOUT=$PACKAGEROOT/naefs.${naefs_ver}/verification/fix_alaska_3p0
+
+mkdir -p $COMOUT
+
+grid='255 5 1649 1105 40530101 181429000 8 210000 2976563 2976563 0 64'
+
+while [ $iday -le $ndays ]; do
+
+  MD=`echo $CDATE | cut -c5-8`
+
+  file1=cmean_p5d.1979$MD.g1
+  file2=cmean_p5d.1979${MD}_alaska_3p0
+
+  $COPYGB -g"$grid" -i1,1 -x $COMIN/$file1 $COMOUT/$file2
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+
+done
+

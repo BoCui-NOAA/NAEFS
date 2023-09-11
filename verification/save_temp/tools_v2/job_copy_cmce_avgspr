@@ -1,0 +1,26 @@
+CDATE=2014020300
+ndays=13
+
+COM=/com/gens/prod
+DATA=$NGLOBAL/Bo.Cui/com/gens/prod
+
+nhours=/nwprod/util/exec/ndate
+
+cd $DATA
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  mkdir -p cmce.${PDY}/${cyc}/pgrba
+
+  cp $COM/cmce.${PDY}/${cyc}/pgrba/*avg*  cmce.${PDY}/${cyc}/pgrba
+  cp $COM/cmce.${PDY}/${cyc}/pgrba/*spr*  cmce.${PDY}/${cyc}/pgrba
+
+  iday=`expr $iday + 1`
+  CDATE=`$nhours +24 $CDATE`
+
+done
+

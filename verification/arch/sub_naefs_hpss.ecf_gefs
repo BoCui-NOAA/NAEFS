@@ -1,0 +1,36 @@
+#!/bin/bash
+#PBS -N transfer
+#PBS -j oe
+#PBS -A NAEFS-DEV
+#Select 1 vnode, 1 core=1cpus, 100 MB of memory
+#PBS -l select=1:ncpus=1:mem=1GB
+#PBS -q dev_transfer
+#PBS -l walltime=45:30.00
+
+cd $PBS_O_WORKDIR
+
+#hpsstar=/u/$LOGNAME/xbin/hpsstar
+
+HSI="/apps/prod/hpss/hsi"
+HTAR="/apps/prod/hpss/htar"
+
+#Date=`date +%y%m%d%H`
+#CDATE=20$Date
+
+HPSSOUT=/NCEPDEV/emc-ensemble/5year/Bo.Cui/naefs.v7.0/data_save
+output=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/verification/arch  
+
+$HSI mkdir -p $HPSSOUT
+
+
+COM=/lfs/h2/emc/ptmp/$LOGNAME/com/gefs/v12.3
+cd $COM
+
+YYMM=202212
+file=$HPSSOUT/v12.3_${YYMM}_gefs.tar
+$HTAR -cvf $file gefs.${YYMM}* > $output/output_hpss_gefs_v12.3 2>&1
+
+YYMM=202301
+file=$HPSSOUT/v12.3_${YYMM}_gefs.tar
+$HTAR -cvf $file gefs.${YYMM}* > $output/output_hpss_gefs_v12.3 2>&1
+

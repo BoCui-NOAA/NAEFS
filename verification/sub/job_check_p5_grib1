@@ -1,23 +1,28 @@
 set -x
 
 #Date=`date +%y%m%d%H`
-#CDATE=20$Date
 
-CDATE=2023010100   
+CDATE=2023050100
+#CDATE=20$Date
 
 COM=/lfs/h2/emc/vpppg/noscrub/bo.cui/com                            
 
-ndays=9
+ndays=62
 iday=1
 
-> out
+rm out
+>out
+
+echo "v7.0 gefs"  >>out
+echo "v7.0 naefs"  >>out
+echo "v6.1 gefs"  >>out
+echo "v6.1 naefs"  >>out
 
 while [ $iday -le $ndays ]; do
 
 export PDY=`echo $CDATE | cut -c1-8`
 export cyc=`echo $CDATE | cut -c9-10`
 echo " day " $YYMMDD$cyc
-
 
 echo $CDATE >>out
 ls $COM/naefs/v7.0/gefs.$PDY/$cyc/pgrbap5_bc    | wc  >>out
@@ -35,3 +40,4 @@ export CDATE=`$NDATE +24 $CDATE`
 
 done
 
+more out

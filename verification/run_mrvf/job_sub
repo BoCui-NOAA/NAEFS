@@ -1,0 +1,82 @@
+#!/bin/sh
+#@ wall_clock_limit=03:00:00
+#@ requirements = Feature == "beta"
+#@ job_type = parallel
+#@ output = /nbns/global/$LOGNAME/batch/garch.o$(jobid)
+#@ error = /nbns/global/$LOGNAME/batch/garch.e$(jobid)
+#@ total_tasks = 1
+#@ node_usage = notshared
+#@ network.MPI=switch,not_shared,us
+#@ class = dev
+#@ queue
+#
+
+#set -x
+
+###
+### define the directory and utility
+###
+
+nhoursx=/nwprod/util/exec/ndate
+
+COMIN=/global/save/wx20cb/CONUS_Q1_2012/run_mrvf
+COMOUTJOB=/ptmp/$LOGNAME/batch
+
+###
+### get real time from IBM-SP computer system
+###
+
+Date=`date +%y%m%d`
+#CDATE=20$Date\00
+#echo "CDATE=$CDATE"
+
+CDATE=$1
+
+###
+### Define the time for each cycle and different days
+###
+
+PDY=`echo $CDATE | cut -c1-8`
+
+#######################################################
+### 01: Submit job to generate GEFS raw gloabl avarage
+#######################################################
+
+echo "++++ submite job to generate gefs gloabl avarage ++++"
+
+#job=$COMIN/cmce_raw_dpt_temp.sh.sms                   
+#job=$COMIN/cmce_raw_dpt.sh.sms                   
+
+job=$COMIN/exrtma_conus_mevf_naefs.sh.sms        
+
+cyc=00
+export CDATE=$PDY$cyc
+out=$COMOUTJOB/out_naefs_mevf_$CDATE                   
+#sub -a GEN-MTN -e CDATE -w "+0000" -t 10800 -o $out $job
+
+#######################################################
+
+job=$COMIN/exrtma_conus_mevf_gefs.sh.sms         
+
+cyc=00
+export CDATE=$PDY$cyc
+out=$COMOUTJOB/out_gefs_mevf_$CDATE                   
+#sub -a GEN-MTN -e CDATE -w "+0000" -t 10800 -o $out $job
+
+#######################################################
+
+job=$COMIN/exrtma_conus_mevf_naefs.sh.sms         
+
+cyc=00
+export CDATE=$PDY$cyc
+out=$COMOUTJOB/out_naefs_mevf_$CDATE                   
+sub -a GEN-MTN -e CDATE -w "+0000" -t 10800 -o $out $job
+
+#######################################################
+
+job=$COMIN/exrtma_conus_mevf_gefs_raw.sh.sms     
+
+cyc=00
+export CDATE=$PDY$cyc
+out=$COMOUTJOB/out_gefs_raw_mevf_$CDATE                   
+#sub -a GEN-MTN -e CDATE -w "+0000" -t 10800 -o $out $job

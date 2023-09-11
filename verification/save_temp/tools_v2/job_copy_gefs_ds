@@ -1,0 +1,28 @@
+CDATE=2013092600
+ndays=5
+
+COM=/com/gens/prod
+DATA=$NGLOBAL/Bo.Cui/com/gens/prod
+
+nhours=/nwprod/util/exec/ndate
+
+cd $DATA
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  mkdir -p gefs.${PDY}/${cyc}/ndgd
+
+  cp $COM/gefs.${PDY}/${cyc}/ndgd/*avg*conus*  gefs.${PDY}/${cyc}/ndgd
+  cp $COM/gefs.${PDY}/${cyc}/ndgd/*spr*conus*  gefs.${PDY}/${cyc}/ndgd
+  cp $COM/gefs.${PDY}/${cyc}/ndgd/*avg*alaska*  gefs.${PDY}/${cyc}/ndgd
+  cp $COM/gefs.${PDY}/${cyc}/ndgd/*spr*alaska*  gefs.${PDY}/${cyc}/ndgd
+
+  iday=`expr $iday + 1`
+  CDATE=`$nhours +24 $CDATE`
+
+done
+

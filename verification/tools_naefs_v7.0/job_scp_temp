@@ -1,0 +1,41 @@
+CDATE=2016080200
+ndays=30
+
+#COM=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/com/gens/prod            
+#DATA=$NGLOBAL/Bo.Cui/com/gens/prod
+
+COM=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.1/com/gens/prod            
+DATA=$NGLOBAL/Bo.Cui/naefs.v6.0.3/com/gens/prod
+
+mkdir -p $DATA
+cd $DATA
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+# mkdir -p $DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+# if [ $cyc -eq 00 ]; then
+#   scp Bo.Cui@SURGE:$COM/gefs.${PDY}/${cyc}/pgrb2ap5/*avg*  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+#   scp Bo.Cui@SURGE:$COM/gefs.${PDY}/${cyc}/pgrb2ap5/*spr*  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+#   scp Bo.Cui@SURGE:$COM/gefs.${PDY}/${cyc}/pgrb2ap5/*gfs*  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+#   scp Bo.Cui@SURGE:$COM/gefs.${PDY}/${cyc}/pgrb2ap5/*c00*  $DATA/gefs.${PDY}/${cyc}/pgrb2ap5
+# else
+#   echo " no data"
+# fi
+
+  mkdir -p $DATA/gefs.${PDY}/${cyc}/ndgd_bc2p5
+  scp Bo.Cui@SURGE:$COM/gefs.${PDY}/${cyc}/ndgd_bc2p5/*spr*  $DATA/gefs.${PDY}/${cyc}/ndgd_bc2p5
+
+  mkdir -p $NGLOBAL/Bo.Cui/naefs.v6.0.4/com/gens/prod/gefs.${PDY}/${cyc}/ndgd_bc2p5
+
+  cp $DATA/gefs.${PDY}/${cyc}/ndgd_bc2p5/*spr* $NGLOBAL/Bo.Cui/naefs.v6.0.4/com/gens/prod/gefs.${PDY}/${cyc}/ndgd_bc2p5
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+  echo $CDATE
+done
+

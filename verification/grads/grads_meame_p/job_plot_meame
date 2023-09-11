@@ -1,0 +1,47 @@
+export SDY=2023060100
+export EDY=2023060300
+
+export PLOTMEAME=plot_me_ame.sh
+export hourlist="024"                        
+
+export ireg=conus
+export direxp=naefs.v7.0.0
+
+export PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME
+export HOMEgrads=$PACKAGEROOT/$direxp/verification/grads/grads_meame
+export EXECgrads=$HOMEgrads      
+
+export DATAROOT=/lfs/h2/emc/ptmp/$LOGNAME/tmpnwprd
+
+##################
+# 1. naefs upgrade
+##################
+
+
+for naefs_ver in v6.1; do
+for id in gefs; do
+
+for ireg in conus; do
+  case $ireg in
+    conus) grid=ext_2p5;;
+    alaska) grid=3p0;;
+  esac
+
+export COMIN=$COMROOT/stat/naefs.$naefs_ver/me_ame_${ireg}_$id             
+export DATA=$DATAROOT/crps_vrfy/plot_${naefs_ver}_${id}_${ireg}_${var}
+
+rm -rf $DATA 
+mkdir -m 775 -p $DATA
+
+cd $DATA 
+
+export ENSM="CONUS Difference Between RTMA and GEFS c00f00"
+export ensm=gec00
+#export fname=gec00.t00z.ndgd_conus
+export dir_main=/home/people/emc/www/htdocs/gmb/wx20cb/naefs.v7.0.0 
+export dir_new=gec00_me_ame_${SDY}_${EDY}_conus
+$HOMEgrads/$PLOTMEAME  
+
+done 
+done 
+done 

@@ -1,0 +1,31 @@
+CDATE=2023060100
+ndays=30
+iday=1
+
+COMROOT=/lfs/h2/emc/ptmp/$LOGNAME/com
+ireg=conus
+
+echo $naefs_ver $id $ireg
+echo
+
+while [ $iday -le $ndays ]; do
+
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo " day " $PDY$cyc
+
+  for naefs_ver in v6.1 v7.0; do
+    for id in gefs naefs; do
+      COM_OUT=$COMROOT/naefs/$naefs_ver
+      COMOUT=$COM_OUT/${id}.${PDY}/${cyc}/mevf_${ireg}
+      ls $COMOUT/**me* | wc
+    done
+  done
+  echo
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+done
+
+

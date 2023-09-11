@@ -14,33 +14,8 @@ echo "AUTHOR: Bo Cui  (wx20cb)"
 ################################################################
 ###    
 
-export EXECVERF=/gpfs/gd1/emc/ensemble/save/Bo.Cui/ECMWF/exec
-export EXECUTIL=/nwprod/util/exec
-export COPYGB=$EXECUTIL/copygb
-
-if [ "$id" = "naefs" ]; then
-   px=naefs_
-elif [ "$id" = "ecmwf" ]; then
-   px=ecmwf_
-elif [ "$id" = "gefs" ]; then
-   px=
-elif [ "$id" = "NCE" ]; then
-   px=${ENSIM}_
-else
-   px=
-fi
-
-if [ "$ENSIM" = "ecmwf" ]; then
-   ex=
-elif [ "$ENSIM" = "ecmwf_bc" ]; then
-   ex=_bc
-else
-   ex=
-fi
-
 mkdir -m 775 -p ${COMOUT}
 mkdir -m 775 -p $DATA
-
 rm $DATA/*
 cd $DATA
 
@@ -56,11 +31,6 @@ if [ "$IFOUT_AVGSPR" = "YES" ]; then ifout_avgspr=1; fi
 if [ "$IFOUT_AVGSPR" = "BOTH" ]; then ifout_avgspr=2; fi
 if [ "$IFOUT_AVGSPR" = "NO" ]; then ifout_avgspr=0; fi
 
-case $ireg in
-  conus)  grid='255 3 1073 689 20192 238446 8 265000 5079 5079 0 64 25000 25000 0 0 0';;
-  alaska) grid='255 5 825 553 40530 181429 8 210000 5953 5953 0 64';;
-esac
-
 ###################
 ### set up hourlist & variable list
 ###################
@@ -74,30 +44,17 @@ hourlist="    003 006 009 012 015 018 021 024 027 030 033 036 039 042 045 048 \
           309 312 315 318 321 324 327 330 333 336 339 342 345 348 351 354 357 \
           360 363 366 369 372 375 378 381 384"
 
-if [ "$DSIM" = "gefs_raw2p5" -o "$DSIM" = "gefs_bc2p5"  -o "$DSIM" = "gefs_raw" ]; then
-  hourlist="     03  06  09  12  15  18  21  24  27  30  33  36  39  42  45  48 \
-             51  54  57  60  63  66  69  72  75  78  81  84  87  90  93  96  99 \
-            102 105 108 111 114 117 120 123 126 129 132 135 138 141 144 147 150 \
-            153 156 159 162 165 168 171 174 177 180 183 186 189 192 195 198 201 \
-            204 207 210 213 216 219 222 225 228 231 234 237 240 243 246 249 252 \
-            258 261 264 267 270 273 276 279 282 285 288 291 294 297 300 303 306 \
-            309 312 315 318 321 324 327 330 333 336 339 342 345 348 351 354 357 \
-          360 363 366 369 372 375 378 381 384"
-fi
 
 #########################
 ### set up  variable list
 #########################
 
-fieldlist=" 1000HGT 925HGT 850HGT 700HGT 500HGT 250HGT 200HGT 100HGT 50HGT 10HGT \
-            1000TMP 925TMP 850TMP 700TMP 500TMP 250TMP 200TMP 100TMP 50TMP 10TMP \
-            1000UGRD 925UGRD 850UGRD 700UGRD 500UGRD 250UGRD 200UGRD 100UGRD 50UGRD 10UGRD \
-            1000VGRD 925VGRD 850VGRD 700VGRD 500VGRD 250VGRD 200VGRD 100VGRD 50VGRD 10VGRD \
-            PRES PRMSL 2MTMP 10MUGRD 10MVGRD TMAX TMIN 850VVEL "
+# rtma has no RH, delete 2MRH
+# both ndgd and etma have dpt variable
 
 fieldlist=" 2MTMP 10MUGRD 10MVGRD 2MDPT 10MWIND 10MWDIR 2MRH TMAX TMIN "
-fieldlist=" 2MTMP 10MUGRD 10MVGRD 2MDPT 10MWIND 10MWDIR 2MRH"
-fieldlist=" 2MTMP 10MUGRD 10MVGRD"
+fieldlist=" TMAX TMIN"
+fieldlist=" 2MTMP 10MUGRD 10MVGRD 2MDPT 10MWIND 10MWDIR TMAX TMIN"
 
 ###
 # input basic information, member and forecast lead time
@@ -230,47 +187,40 @@ for nfhrs in $hourlist; do
 
   fi
 
-# if [ "$DSIM" = "test_gefs_2p5ext" ]; then
-#   afile1=rtma2p5.t${acyc}z.2dvaranl_ndfd.grb1_ext                  
-# elif [ "$DSIM" = "gefs_bc2p5" ]; then
-#   afile1=rtma2p5.t${acyc}z.2dvaranl_ndfd.grb1
-# else
-#   afile1=rtma2p5.t${acyc}z.2dvaranl_ndfd.grb1_ext                  
-# fi
+# case $cfield in
+#   TMAX) aymd=`$NDATE -24 $aymdh | cut -c1-8`;;
+#   TMIN) aymd=`$NDATE -24 $aymdh | cut -c1-8`;;
+# esac
 
-# afile1=rtma2p5.t${acyc}z.2dvaranl_ndfd.grb1_ext                  
+# case $ireg in
+#   conus)  COMRTMA=${COM_RTMA}/rtma2p5.$aymd;;
+#   alaska) COMRTMA=${COM_RTMA}/akrtma.$aymd;;
+# esac
 
-  if [ -s $afile1 ]; then rm $afile1; fi
+# case $ireg in
+#   conus)  afile1=rtma2p5.t${acyc}z.2dvaranl_ndfd.grb1_ext;; 
+#   alaska) afile1=akrtma.t${acyc}z.2dvaranl_ndfd_3p0.grb1;;
+# esac
 
-  case $cfield in
-    TMAX) aymd=`$NDATE -24 $aymdh | cut -c1-8`;;
-    TMIN) aymd=`$NDATE -24 $aymdh | cut -c1-8`;;
-  esac
-
-  case $ireg in
-    conus)  COMRTMA=${COM_RTMA}/rtma2p5.$aymd;;
-    alaska) COMRTMA=${COM_RTMA}/akrtma.$aymd;;
-  esac
-
-? case $ireg in
-?   conus)  afile1=rtma2p5.t${acyc}z.2dvaranl_ndfd.grb1_ext;; 
-?   alaska) afile1=akrtma.t${acyc}z.2dvaranl_ndfd_3p0.grb1;;
-? esac
-
-  if [ "$cfield" = "TMAX" -o "$cfield" = "TMIN" ]; then
-#   if [ "$DSIM" = "para_gefs_2p5" ]; then
-#     rx=2p5
-#   elif [ "$DSIM" = "prod_naefs_2p5" ]; then
-#     rx=2p5
-#   else
-#     rx=2p5
-#   fi
-    rx=2p5
+  if [ "$ireg" = "conus" ]; then
+    COMRTMA=${COM_RTMA}/rtma2p5.$aymd
+    afile1=rtma2p5.t${acyc}z.2dvaranl_ndfd.grb1_ext
     case $cfield in
-      TMAX) afile1=rtma${rx}_${ireg}_${aymd}_tmax_ext;;
-      TMIN) afile1=rtma${rx}_${ireg}_${aymd}_tmin_ext;;
+      TMAX) afile1=rtma2p5_${ireg}_${aymd}_tmax_ext;;
+      TMIN) afile1=rtma2p5_${ireg}_${aymd}_tmin_ext;;
     esac
   fi
+
+  if [ "$ireg" = "alaska" ]; then
+    COMRTMA=${COM_RTMA}/akrtma.$aymd 
+    afile1=akrtma.t${acyc}z.2dvaranl_ndfd_3p0.grb1
+    case $cfield in
+      TMAX) afile1=rtma3p0_${ireg}_${aymd}_tmax;;
+      TMIN) afile1=rtma3p0_${ireg}_${aymd}_tmin;;            
+    esac
+  fi
+
+  if [ -s $afile1 ]; then rm $afile1; fi
 
   cp $COMRTMA/$afile1 .
 
@@ -283,35 +233,17 @@ for nfhrs in $hourlist; do
 ###
 # climate mean file entry
 ###
+  case $ireg in
+    conus)  afile2_clim=cmean_p5d.1979${amd}_${ireg}_ext_2p5.grib1;;
+    alaska) afile2_clim=cmean_p5d.1979${amd}_${ireg}_3p0.grib1;;
+  esac
 
-  if [ "$DSIM" = "test_gefs_2p5ext" ]; then
-    afile2_clim=cmean_1d.1979${amd}_${ireg}_2p5_ext.grib1
-    afile2=${afile2_clim}_${cfield}_$nfhrs
-  elif [ "$DSIM" = "test_naefs_2p5ext" ]; then
-    afile2_clim=cmean_1d.1979${amd}_${ireg}_2p5_ext.grib1
-    afile2=${afile2_clim}_${cfield}_$nfhrs
-  elif [ "$DSIM" = "para_gefs_2p5" ]; then
-    afile2_clim=cmean_1d.1979${amd}_${ireg}_2p5
-    afile2=${afile2_clim}_${cfield}_$nfhrs
-  elif [ "$DSIM" = "gefs2_raw2p5" ]; then
-    afile2_clim=cmean_1d.1979${amd}_${ireg}_2p5.grib1
-    afile2=${afile2_clim}_${cfield}_$nfhrs
-# elif [ "$DSIM" = "gefs_bc2p5" ]; then
-#   afile2_clim=cmean_1d.1979${amd}_${ireg}_2p5.grib1
-#   afile2=${afile2_clim}_${cfield}_$nfhrs
-  elif [ "$DSIM" = "gefs2_bc" ]; then
-    afile2_clim=cmean_1d.1979${amd}_${ireg}_2p5.grib1
-    afile2=${afile2_clim}_${cfield}_$nfhrs
-  else
-#   afile2_clim=cmean_1d.1979${amd}_${ireg}
-#   afile2=${afile2_clim}_${cfield}_$nfhrs                         
-    afile2_clim=cmean_1d.1979${amd}_${ireg}_2p5_ext.grib1
-    afile2=${afile2_clim}_${cfield}_$nfhrs
-  fi
+  afile2=${afile2_clim}_${cfield}_$nfhrs
 
   if [ -s $afile2 ]; then rm $afile2; fi
 
-  cp $COMCLIM/${afile2_clim} $afile2
+# cp $COMCLIM/${afile2_clim} $afile2
+  cp $FIXcrps/${afile2_clim} $afile2
 
 ###
 # forecast files entry, ensembel average & spread
@@ -319,33 +251,14 @@ for nfhrs in $hourlist; do
 
   if [ "$IF_NDGD" = "YES" ]; then
 
-    COMNDGD=$COM_NDGD/${id}.${fymd}/${fcyc}/ndgd$exid
+    COMNDGD=$COM_NDGD/${id}.${fymd}/${fcyc}/ndgd
 
-    if [ "$DSIM" = "test_gefs_2p5ext" ]; then
-      cfile1=$COMNDGD/${px}geavg.t${fcyc}z.ndgd2p5_${ireg}f${nfhrs}_ext
-      cfile2=$COMNDGD/${px}gespr.t${fcyc}z.ndgd2p5_${ireg}f${nfhrs}_ext
-    elif [ "$DSIM" = "gefs_raw2p5" ]; then
-      cfile1=$COMNDGD/${px}geavg.t${fcyc}z.pgrbaf${nfhrs}_2p5
-      cfile2=$COMNDGD/${px}gespr.t${fcyc}z.pgrbaf${nfhrs}_2p5
-    elif [ "$DSIM" = "gefs_bc2p5" ]; then
-      cfile1=$COMNDGD/${px}geavg.t${fcyc}z.pgrba_bcf${nfhrs}_2p5
-      cfile2=$COMNDGD/${px}gespr.t${fcyc}z.pgrba_bcf${nfhrs}_2p5
-    elif [ "$DSIM" = "gefs_p5bc_ctl" ]; then
-      cfile1=$COMNDGD/${px}geavg.t${fcyc}z.pgrba.0p50_bcf${nfhrs}_2p5
-#     cfile2=$COMNDGD/${px}gespr.t${fcyc}z.pgrba.0p50_bcf${nfhrs}_2p5
-      cfile2=$COMNDGD/${px}gespr.t${fcyc}z.pgrba.0p50.f${nfhrs}_2p5
-    elif [ "$DSIM" = "gefs_p5bc_mean" ]; then
-      cfile1=$COMNDGD/${px}geavg.t${fcyc}z.pgrba.0p50_bcf${nfhrs}_2p5
-#     cfile2=$COMNDGD/${px}gespr.t${fcyc}z.pgrba.0p50_bcf${nfhrs}_2p5
-      cfile2=$COMNDGD/${px}gespr.t${fcyc}z.pgrba.0p50.f${nfhrs}_2p5
-    elif [ "$DSIM" = "gefs_p5bc_mecom" ]; then
-      cfile1=$COMNDGD/${px}geavg.t${fcyc}z.pgrba.0p50_bcf${nfhrs}_2p5
-      cfile2=$COMNDGD/${px}gespr.t${fcyc}z.pgrba.0p50_bcf${nfhrs}_2p5
-    else
-      cfile1=$COMNDGD/${px}geavg.t${fcyc}z.ndgd2p5_${ireg}f${nfhrs}_ext
-      cfile2=$COMNDGD/${px}gespr.t${fcyc}z.ndgd2p5_${ireg}f${nfhrs}_ext
-#     cfile1=$COMNDGD/${px}geavg.t${fcyc}z.pgrba.0p50.f${nfhrs}_2p5
-#     cfile2=$COMNDGD/${px}gespr.t${fcyc}z.pgrba.0p50.f${nfhrs}_2p5
+    if [ "$ireg" = "conus" ]; then
+      cfile1=$COMNDGD/${id}.t${fcyc}z.geavg.f${nfhrs}.conus_ext_2p5.grib1
+      cfile2=$COMNDGD/${id}.t${fcyc}z.gespr.f${nfhrs}.conus_ext_2p5.grib1
+    elif [ "$ireg" = "alaska" ]; then
+      cfile1=$COMNDGD/${id}.t${fcyc}z.geavg.f${nfhrs}.alaska_3p0.grib1
+      cfile2=$COMNDGD/${id}.t${fcyc}z.gespr.f${nfhrs}.alaska_3p0.grib1
     fi
 
     if [ "$id" = "naefs" ]; then
@@ -356,15 +269,15 @@ for nfhrs in $hourlist; do
 
   else
 
-    COMFCST=$COM_FCST/${id}.${fymd}/${fcyc}/pgrba${ex}
+    COMFCST=$COM_FCST/${id}.${fymd}/${fcyc}/pgrba
 
-    dfile1=$COMFCST/${px}geavg.t${fcyc}z.pgrba${ex}f${nfhrs}
-    dfile2=$COMFCST/${px}gespr.t${fcyc}z.pgrba${ex}f${nfhrs}
+    dfile1=$COMFCST/${id}geavg.t${fcyc}z.pgrba${ex}f${nfhrs}
+    dfile2=$COMFCST/${id}gespr.t${fcyc}z.pgrba${ex}f${nfhrs}
 
     echo $dfile1 $dfile2
 
-    cfile1=${px}geavg.t${fcyc}z.ndgd_conusf${nfhrs}.$cfield
-    cfile2=${px}gespr.t${fcyc}z.ndgd_conusf${nfhrs}.$cfield
+    cfile1=${id}geavg.t${fcyc}z.ndgd_conusf${nfhrs}.$cfield
+    cfile2=${id}gespr.t${fcyc}z.ndgd_conusf${nfhrs}.$cfield
 
     $COPYGB -g"$grid" -i1,1 -x $dfile1 $cfile1
     $COPYGB -g"$grid" -i1,1 -x $dfile2 $cfile2
@@ -383,7 +296,6 @@ for nfhrs in $hourlist; do
     if [ -s $bfile ]; then rm $bfile; fi
 
     if [ -s $COM_DV/gefs.$PDY/${cyc_verf}/ndgd/$bfile ]; then
-#     cp $COM_DV/gefs.$PDY/${cyc_verf}/ndgd/$bfile  .
       cp $COM_DV/gefs.$PDYm1/${cyc_verf}/ndgd/$bfile  .
     elif [ -s $COM_DV/gefs.$PDYm1/${cyc_verf}/ndgd/$bfile ]; then
       cp $COM_DV/gefs.$PDYm1/${cyc_verf}/ndgd/$bfile  .
@@ -440,13 +352,12 @@ for nfhrs in $hourlist; do
   ln -sf $ofile  fort.51
 
   if [ "$IFOUT_AVGSPR" = "BOTH" -o "$IFOUT_AVGSPR" = "YES" ]; then
-    ofile2=${DSIM}_geavg.t${fcyc}z.ndgd_${ireg}f${nfhrs}
+    ofile2=geavg.t${fcyc}z.ndgd_${ireg}f${nfhrs}
     ln -sf $ofile2.$cfield   fort.52
   fi
 
-
 # startmsg
-  $EXECVERF/$pgm  <input.$nfhrs.$cfield > $pgmout.${nfhrs}_$cfield
+  $EXECcrps/$pgm  <input.$nfhrs.$cfield > $pgmout.${nfhrs}_$cfield
 # export err=$?;err_chk
 
   if [ -s $ofile ]; then cat $ofile >> SCORES.OUT.${cfield}; fi
@@ -462,19 +373,17 @@ for nfhrs in $hourlist; do
 done # for fhrs
 
 if [ "$runini" = "YES" ]; then
-# cp SCORES.OUT.${cfield} $COMOUT/P${cfield}${ENSIM}f.$CDATE.$ireg 
-  cp SCORES.OUT.${cfield} $COMOUT/P${cfield}${DSIM}f.$CDATE.$ireg 
+ cp SCORES.OUT.${cfield} $COMOUT/P${cfield}.${id}f.$CDATE.$ireg 
 fi
 
 if [ "$runini" = "NO" ]; then
-# cp SCORES.OUT.${cfield} $COMOUT/P${cfield}${ENSIM}a.$CDATE.$ireg 
-  cp SCORES.OUT.${cfield} $COMOUT/P${cfield}${DSIM}a.$CDATE.$ireg 
+ cp SCORES.OUT.${cfield} $COMOUT/P${cfield}.${id}a.$CDATE.$ireg 
 fi
 
 done  # for cfield
 
 msg="HAS COMPLETED NORMALLY!"
-#postmsg "$jlogfile" "$msg"
+postmsg "$jlogfile" "$msg"
 
 ###
 #

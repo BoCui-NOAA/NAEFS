@@ -66,7 +66,11 @@ for nens in $outlist; do
 
   chmod +x poescript_cnv_$nens         
   startmsg
-  $APRUN poescript_cnv_$nens         
+  if [ $INTERACTIVE = YES ]; then
+    poescript_cnv_$nens
+  else
+    $APRUN poescript_cnv_$nens         
+  fi
   export err=$?;err_chk
   wait
 

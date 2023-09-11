@@ -42,7 +42,20 @@ mkdir -m 775 -p $DATA
 rm $DATA/*
 cd $DATA
 
-export pgm=naefs_crps_from_avgspr_p5 
+if [ "$id" = "naefs" ]; then
+  if [ "$naefs_ver" = "v6.1" ]; then
+    pgm=naefs_crps_from_avgspr_p5_im40
+  elif [ "$naefs_ver" = "v7.0" ]; then
+    pgm=naefs_crps_from_avgspr_p5_im50
+  fi
+elif [ "$id" = "gefs" ]; then
+  if [ "$naefs_ver" = "v6.1" ]; then
+    pgm=naefs_crps_from_avgspr_p5_im20
+  elif [ "$naefs_ver" = "v7.0" ]; then
+    pgm=naefs_crps_from_avgspr_p5_im30
+  fi
+fi
+
 export pgmout=output          
 . prep_step
 
@@ -69,7 +82,11 @@ fieldlist=" 1000HGT 925HGT 850HGT 700HGT 500HGT 250HGT 200HGT 100HGT 50HGT 10HGT
             1000VGRD 925VGRD 850VGRD 700VGRD 500VGRD 250VGRD 200VGRD 100VGRD 50VGRD 10VGRD \
             PRES PRMSL 2MTMP 10MUGRD 10MVGRD TMAX TMIN 850VVEL DPT2M TCDC "
 
-fieldlist=" 2MTMP  10MUGRD 10MVGRD 1000HGT 500HGT 850TMP PRES PRMSL DPT2M "
+# gfs f00 has no DPT
+
+#fieldlist=" 2MTMP  10MUGRD 10MVGRD 1000HGT 500HGT 850TMP PRES PRMSL DPT2M "
+fieldlist=" 850UGRD 850VGRD 250UGRD 250VGRD "
+fieldlist=" 2MTMP  10MUGRD 10MVGRD 1000HGT 500HGT 850TMP PRES PRMSL 850UGRD 850VGRD 250UGRD 250VGRD "
 
 ################################
 ### Set up the region parameters

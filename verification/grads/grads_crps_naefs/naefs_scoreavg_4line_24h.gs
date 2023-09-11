@@ -4,7 +4,6 @@
 'open grads_EXPID4.ctl'
 
 lev=getlev(field)
-minbot=0
 
 regs=1
 rege=6
@@ -29,10 +28,8 @@ say grfile
 'set y 'reg
 'set z 1'
 'set t 1'
-maxtop=getcrp(field)
-minbot=getcrpmin(field)
-'set vrange 0.0 'maxtop
-*'set vrange 'minbot' 'maxtop''
+maxcrp=getcrp(field)
+'set vrange 0.0 'maxcrp''
 'set ccolor 1'
 'set cmark 1'
 'set missconn on'
@@ -93,10 +90,8 @@ say grfile
 'set y 'reg
 'set z 1'
 'set t 1'
-*minbot=getcrpmin(field)
-maxtop=getrms(field)
-'set vrange 0.0 'maxtop
-*'set vrange 'minbot' 'maxtop''
+maxcrp=getcrp(field)
+'set vrange 0.0 'maxcrp''
 'set ccolor 1'
 'set cmark 1'
 'set missconn on'
@@ -158,8 +153,8 @@ say grfile
 'set y 'reg
 'set z 1'
 'set t 1'
-maxtop=getrms(field)
-'set vrange 0 'maxtop
+maxrms=getrms(field)
+'set vrange 0 'maxrms''
 *'set cthick 8'
 
 'set ccolor 1'
@@ -243,8 +238,8 @@ say grfile
 'set y 'reg
 'set z 1'
 'set t 1'
-maxtop=getrms(field)
-'set vrange 0 'maxtop
+maxrms=getrms(field)
+'set vrange 0 'maxrms''
 *'set cthick 8'
 
 'set ccolor 1'
@@ -327,9 +322,9 @@ say grfile
 'set y 'reg
 'set z 1'
 'set t 1'
-maxtop=getmaxerr(field)
-minbot=getminbot(field)
-'set vrange 'minbot' 'maxtop''
+maxerr=getmaxerr(field)
+minerr=getminerr(field)
+'set vrange 'minerr' 'maxerr''
 'set missconn on'
 *'set cthick 8'
 
@@ -500,9 +495,9 @@ return late
 
 function getcrp(field)
 if(field=pres);maxcrp=1500;endif;
-if(field=u10m);maxcrp=3.0;endif;
-if(field=v10m);maxcrp=3.0;endif;
-if(field=t2m);maxcrp=2.5;endif;
+if(field=u10m);maxcrp=2.5;endif;
+if(field=v10m);maxcrp=2.5;endif;
+if(field=t2m);maxcrp=2.0;endif;
 if(field=td2m);maxcrp=2.5;endif;
 if(field=wdir);maxcrp=65;endif;
 if(field=wspd);maxcrp=2.5;endif;
@@ -510,11 +505,15 @@ if(field=tmax);maxcrp=3.0;endif;
 if(field=tmin);maxcrp=3.0;endif;
 if(field=td2m);maxcrp=4.0;endif;
 if(field=rh2m);maxcrp=20.0;endif;
-if(field=z500);maxcrp=60.0;endif
-if(field=z1000);maxcrp=40.0;endif
-if(field=t850);maxcrp=3.0;endif
-if(field=tcdc);maxcrp=30.0;endif
+if(field=z500);maxcrp=50.0;endif;
+if(field=z1000);maxcrp=40.0;endif;
+if(field=t850);maxcrp=2.5;endif;
+if(field=tcdc);maxcrp=30.0;endif;
 if(field=wspd10m);maxcrp=2.5;endif;
+if(field=u850);maxcrp=4.0;endif;
+if(field=v850);maxcrp=4.0;endif;
+if(field=u250);maxcrp=10.0;endif;
+if(field=v250);maxcrp=10.0;endif;
 return maxcrp
 
 function getcrpmin(field)
@@ -529,11 +528,15 @@ if(field=tmax);mincrp=0.5;endif;
 if(field=tmin);mincrp=0.5;endif;
 if(field=td2m);mincrp=0.5;endif;
 if(field=rh2m);mincrp=5.0;endif;
-if(field=z500);mincrp=0.0;endif
-if(field=z1000);mincrp=0.0;endif
-if(field=t850);mincrp=0.0;endif
-if(field=tcdc);mincrp=10.0;endif
+if(field=z500);mincrp=0.0;endif;
+if(field=z1000);mincrp=0.0;endif;
+if(field=t850);mincrp=0.0;endif;
+if(field=tcdc);mincrp=10.0;endif;
 if(field=wspd10m);mincrp=1.0;endif;
+if(field=u850);mincrp=1.0;endif;
+if(field=v850);mincrp=1.0;endif;
+if(field=u250);mincrp=1.0;endif;
+if(field=v250);mincrp=1.0;endif;
 return mincrp
 
 function getrms(field)
@@ -548,11 +551,15 @@ if(field=tmax);maxrms=5;endif;
 if(field=tmin);maxrms=5;endif;
 if(field=td2m);maxrms=7;endif;
 if(field=rh2m);maxrms=35;endif;
-if(field=z500);maxrms=120.0;endif
-if(field=z1000);maxrms=80.0;endif
-if(field=t850);maxrms=5.0;endif
-if(field=tcdc);maxrms=45.0;endif
+if(field=z500);maxrms=120.0;endif;
+if(field=z1000);maxrms=80.0;endif;
+if(field=t850);maxrms=5.0;endif;
+if(field=tcdc);maxrms=45.0;endif;
 if(field=wsp10m);maxrms=5.0;endif;
+if(field=u850);maxrms=8.0;endif;
+if(field=v850);maxrms=8.0;endif;
+if(field=u250);maxrms=18.0;endif;
+if(field=v250);maxrms=18.0;endif;
 return maxrms
 
 function getmaxerr(field)
@@ -569,28 +576,35 @@ if(field=td2m);maxerr=7;endif;
 if(field=rh2m);maxerr=35;endif;
 if(field=z500);maxerr=120.0;endif
 if(field=z1000);maxerr=80.0;endif
-if(field=t850);maxerr=5.0;endif
-if(field=tcdc);maxerr=40.0;endif
+if(field=t850);maxerr=5.0;endif;
+if(field=tcdc);maxerr=40.0;endif;
 if(field=wspd10m);maxerr=4.0;endif;
+if(field=u850);maxerr=6.0;endif;
+if(field=v850);maxerr=6.0;endif;
+if(field=u250);maxerr=15.0;endif;
+if(field=v250);maxerr=15.0;endif;
 return maxerr
 
-function getminbot(field)
-if(field=pres);minbot=-250;endif;
-if(field=u10m);minbot=-1;endif;
-if(field=v10m);minbot=-1;endif;
-if(field=t2m);minbot=-1.0;endif;
-if(field=td2m);minbot=-1.0;endif;
-if(field=wdir);minbot=-0.5;endif;
-if(field=wspd);minbot=-0.5;endif;
-if(field=tmax);minbot=-0.5;endif;
-if(field=tmin);minbot=-0.5;endif;
-if(field=z500);minbot=-10.0;endif
-if(field=z1000);minbot=-10.0;endif
-if(field=t850);minbot=-1.0;endif
-if(field=tcdc);minbot=-20.0;endif
-if(field=wspd10m);minbot=-4;endif;
-return minbot
-
+function getminerr(field)
+if(field=pres);minerr=-250;endif;
+if(field=u10m);minerr=-1;endif;
+if(field=v10m);minerr=-1;endif;
+if(field=t2m);minerr=-1.0;endif;
+if(field=td2m);minerr=-1.0;endif;
+if(field=wdir);minerr=-0.5;endif;
+if(field=wspd);minerr=-0.5;endif;
+if(field=tmax);minerr=-0.5;endif;
+if(field=tmin);minerr=-0.5;endif;
+if(field=z500);minerr=-10.0;endif
+if(field=z1000);minerr=-10.0;endif
+if(field=t850);minerr=-1.0;endif;
+if(field=tcdc);minerr=-20.0;endif;
+if(field=wspd10m);minerr=-4;endif;
+if(field=u850);minerr=-1;endif;
+if(field=v850);minerr=-1;endif;
+if(field=u250);minerr=-1;endif;
+if(field=v250);minerr=-1;endif;
+return minerr
 
 function getlev(field)
 if(field=pres);lev=0;endif;
@@ -604,6 +618,10 @@ if(field=tmax);lev=0;endif;
 if(field=tmin);lev=0;endif;
 if(field=tcdc);lev=0;endif;
 if(field=wspd10m);lev=0;endif;
+if(field=u850);lev=0;endif;
+if(field=v850);lev=0;endif;
+if(field=u250);lev=0;endif;
+if(field=v250);lev=0;endif;
 return lev
 
 function gettxt(field)
@@ -618,6 +636,10 @@ if(field=wspd);txt='Wind Speed';endif;
 if(field=wdir);txt='Wind Direction';endif;
 if(field=tcdc);txt='Total Cloud Cover';endif;
 if(field=wspd10m);txt='10m Wind Speed';endif;
+if(field=u850);txt='850mb U Component';endif;
+if(field=v850);txt='850mb V Component';endif;
+if(field=u250);txt='250mb U Component';endif;
+if(field=v250);txt='250mb V Component';endif;
 return txt   
 
 function drawds(days)
@@ -685,5 +707,9 @@ if(field=wspd);ytxt='Continuous Ranked Probability Score (m/s)';endif;
 if(field=wdir);ytxt='Continuous Ranked Probability Score (Degree)';endif;
 if(field=tcdc);ytxt='Total Cloud Cover (Percent)';endif;
 if(field=wspd10m);ytxt='Continuous Ranked Probability Score (m/s)';endif;
+if(field=u850);ytxt='Continuous Ranked Probability Score (m/s)';endif;
+if(field=v850);ytxt='Continuous Ranked Probability Score (m/s)';endif;
+if(field=u250);ytxt='Continuous Ranked Probability Score (m/s)';endif;
+if(field=v250);ytxt='Continuous Ranked Probability Score (m/s)';endif;
 return ytxt
 

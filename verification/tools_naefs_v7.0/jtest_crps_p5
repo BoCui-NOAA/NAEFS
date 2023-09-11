@@ -1,0 +1,10 @@
+
+EXECcrps=/lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/verification/exec
+pgm=naefs_crps_from_avgspr_p5_im50 
+$EXECcrps/$pgm  <input.384.850VGRD  > out_im50 
+
+pgm=naefs_crps_from_avgspr_p5_im40 
+$EXECcrps/$pgm  <input.384.850VGRD  > out_im40 
+
+pgm=naefs_crps_from_avgspr_p5_im30 
+$EXECcrps/$pgm  <input.384.850VGRD  > out_im30 

@@ -1,0 +1,60 @@
+export SDY=2013082000
+export EDY=2013100800
+
+export PLOTMEAME=plot_me_ame.sh
+export hourlist=" 00 06  12 18 24 30 36 42  48  72  96  120 144 168 192 216 240 264 288 312 336 360 384"
+export hourlist="    06  12 18 24 30 36 42  48  72  96  120 144 168 192 216 240 264 288 312 336 360 384"
+
+export hourlist=" 18 24 30 42 48 54 "
+export hourlist=" 24 30 42 48 270 282 "
+export hourlist=" 42 48 270 282  "
+
+export COMIN=$NGLOBAL/Bo.Cui/com/gens/average
+
+##################
+# 1. naefs upgrade
+##################
+
+export DATA=/ptmp/Bo.Cui/plot_bias/plot_mae_naefs
+export ENSM="CONUS NAEFS Downscaled"
+export ensm=naefs
+export fname=naefs_geavg.t00z.ndgd_conus
+export dir_main=/home/people/emc/www/htdocs/gmb/wx20cb/conus_upgrade 
+export dir_new=average_me_ame_${SDY}_${EDY}_conus_naefs                         
+#$PLOTMEAME  
+
+##########################
+# 2. gefs drbcds ensemble
+##########################
+
+export DATA=/ptmp/Bo.Cui/plot_bias/plot_mae_gefs_drbcds
+export ENSM="CONUS GEFS Bias Corrected Downscaled"
+export ensm=gefs_drbcds
+export fname=gefs_drbcds_geavg.t00z.ndgd_conus
+export dir_main=/home/people/emc/www/htdocs/gmb/wx20cb/conus_upgrade 
+export dir_new=average_me_ame_${SDY}_${EDY}_conus_gefs        
+#$PLOTMEAME  
+
+##########################
+# 3. gefs raw ensemble
+##########################
+
+export DATA=/ptmp/Bo.Cui/plot_bias/plot_mae_gefs_raw  
+export ENSM="CONUS GEFS Raw"
+export ensm=gefs_raw
+export fname=gefs_raw_geavg.t00z.ndgd_conus
+export dir_main=/home/people/emc/www/htdocs/gmb/wx20cb/conus_upgrade 
+export dir_new=average_me_ame_${SDY}_${EDY}_conus_gefs_raw       
+#$PLOTMEAME 
+
+##################
+# 4. cmce bcds      
+##################
+
+export DATA=/ptmp/Bo.Cui/plot_bias/plot_mae_cmce
+export ENSM="CONUS CMCE Downscaled"
+export ensm=cmc
+export fname=cmc_geavg.t00z.ndgd_conus
+export dir_main=/home/people/emc/www/htdocs/gmb/wx20cb/conus_upgrade 
+export dir_new=average_me_ame_${SDY}_${EDY}_conus_cmce                         
+$PLOTMEAME  

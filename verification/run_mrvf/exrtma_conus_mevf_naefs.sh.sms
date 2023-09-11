@@ -1,0 +1,199 @@
+########################### BIASUPDATE ################################
+echo "---------------------------------------------------------------"
+echo "Calculate ME and AME of Downscaled NAEFS Against RTMA Analysis"
+echo "---------------------------------------------------------------"
+echo "History: May 2006 - First implementation of this new script."
+echo "AUTHOR: Bo Cui  (Bo.Cui)"
+
+### To submit this job for T00Z and T12Z  two cycles per day
+
+### need pass the values of PDY, CYC, DATA, COMIN, and COMOUT
+
+#export CDATE=$1                 
+
+if [ "$CDATE" -eq " " ]; then
+  echo "No data for CDATE, please check"
+  exit 8
+fi
+
+PDY=`echo $CDATE | cut -c1-8`
+cyc=`echo $CDATE | cut -c9-10`
+
+###    
+################################################################
+# define exec variable, and entry grib utility 
+################################################################
+###    
+
+SENDCOM=YES
+
+HOME=/sss/emc/ensemble/shared/Bo.Cui
+
+VEFYTMAXMIN=$HOME/CONUS_Q1_2012/run_mrvf/rtma_conus_mevf_naefs_tmaxmin.sh 
+
+export HOMEUTIL=/nwprod/util
+export EXECUTIL=$HOMEUTIL/exec
+export EXECNAEFS=$HOME/naefs_improve/exec_4verf
+
+export NDATE=$EXECUTIL/ndate
+export COPYGB=$EXECUTIL/copygb
+
+export COM=$NGLOBAL/Bo.Cui/com/gens/wcoss
+export COMRTMA=$NGLOBAL/Bo.Cui/com/rtma/prod
+
+export COMOUT=$COM/naefs.${PDY}/${cyc}/mevf_naefs
+
+rm -rf $COMOUT
+mkdir -m 775 -p ${COMOUT}
+
+export DATA=/ptmp/Bo.Cui/infro_conus/out_naefs_mevf_$PDY$cyc
+#rm -rf $DATA
+mkdir -m 775 -p $DATA
+cd $DATA
+
+export pgm=rtma_me_ame_6vars   
+export pgmout=output          
+#. prep_step
+
+################################################################
+### define the days for searching bias estimation backup
+################################################################
+
+ymdh=$PDY$cyc
+export PDYm1=`$NDATE -24 $ymdh | cut -c1-8`
+export PDYm2=`$NDATE -48 $ymdh | cut -c1-8`
+export PDYm3=`$NDATE -72 $ymdh | cut -c1-8`
+export PDYm4=`$NDATE -96 $ymdh | cut -c1-8`
+export PDYm5=`$NDATE -120 $ymdh | cut -c1-8`
+export PDYm6=`$NDATE -144 $ymdh | cut -c1-8`
+export PDYm7=`$NDATE -168 $ymdh | cut -c1-8`
+export PDYm8=`$NDATE -192 $ymdh | cut -c1-8`
+
+###
+
+$VEFYTMAXMIN
+
+#cp rtma_conus_${PDYm2}_tmax $COMRTMA/rtma.${PDYm2}/rtma_conus_${PDYm2}_tmax
+#cp rtma_conus_${PDYm2}_tmin $COMRTMA/rtma.${PDYm2}/rtma_conus_${PDYm2}_tmin
+
+################################################################
+### calculate bias estimation for different forecast lead time
+################################################################
+
+hourlist=" 00  06  12  18  24  30  36  42  48  54  60  66  72  78  84  90  96 \
+          102 108 114 120 126 132 138 144 150 156 162 168 174 180 186 192 198 \
+          204 210 216 222 228 234 240 246 252 258 264 270 276 282 288 294 300 \
+          306 312 318 324 330 336 342 348 354 360 366 372 378 384"
+
+export memberlist="geavg"
+
+###
+# input basic information, member and forecast lead time
+###
+
+for nfhrs in $hourlist; do
+
+###
+# rtma analysis files entry
+###
+
+  fymdh=${PDYm1}18
+  fymdh=`$NDATE -$nfhrs $fymdh `
+  fymd=`echo $fymdh | cut -c1-8`
+
+  aymdh=`$NDATE +$nfhrs $fymd$cyc `
+  aymh=`echo $aymdh | cut -c1-8`
+  acyc=`echo $aymdh | cut -c9-10`
+
+  afile_01=$COMRTMA/rtma.$aymh/rtma.t${acyc}z.2dvaranl_ndfd.grb1      
+  afile_02=$COMRTMA/rtma.$aymh/rtma.t${acyc}z.2dvaranl_ndfd.grb1_rh2m      
+
+  afile=rtma.t${acyc}z.2dvaranl_ndfd.grb1      
+
+  cat $afile_01 $afile_02 >>$afile
+
+  if [ -s $afile ]; then
+    echo " "
+  else
+    echo " There is no RTMA data, Stop! for " $acyc 
+    echo $afile
+#   exit
+  fi
+
+###
+# forecast files entry, interpolate it on grids on conus    
+###
+
+  nens=avg
+
+  cfile=$COM/naefs.${fymd}/${cyc}/ndgd/naefs_ge$nens.t${cyc}z.ndgd_conusf${nfhrs}
+
+###
+#  output ensemble forecasting bias estimation 
+###
+
+  ofile1=ge${nens}.t${cyc}z.ndgd_conus_mef${nfhrs}_part
+  ofile2=ge${nens}.t${cyc}z.ndgd_conus_amef${nfhrs}_part
+
+  rm fort.* input.*
+ 
+  odate=`$NDATE -24 $PDY$cyc `
+
+  echo "&message"  >input.$nfhrs.$nens
+  echo " icstart=${cstart}," >> input.$nfhrs.$nens
+  echo " odate=$odate," >>input.$nfhrs.$nens
+  echo "/" >>input.$nfhrs.$nens
+  
+  ln -sf $afile  fort.12
+  ln -sf $cfile  fort.13
+  ln -sf $ofile1 fort.51
+  ln -sf $ofile2 fort.52
+
+# startmsg
+  $EXECNAEFS/$pgm  <input.$nfhrs.$nens > $pgmout.$nfhrs.${nens}
+# export err=$?;err_chk
+
+done
+
+if [ "$SENDCOM" = "YES" ]; then
+  for nfhrs in $hourlist; do
+    for nens in $memberlist; do
+
+      ofile=${nens}.t${cyc}z.ndgd_conus_mef${nfhrs}
+      ofile1=${nens}.t${cyc}z.ndgd_conus_mef${nfhrs}_part
+      ofile2=${nens}.t${cyc}z.ndgd_conus_mef${nfhrs}_tmax
+      ofile3=${nens}.t${cyc}z.ndgd_conus_mef${nfhrs}_tmin
+      cp $ofile1 $ofile
+      if [ -s $ofile2 ]; then
+        cat $ofile2 >>$ofile
+      fi
+      if [ -s $ofile3 ]; then
+        cat $ofile3 >>$ofile
+      fi
+      if [ -s $ofile ]; then
+        mv $ofile $COMOUT/
+      fi
+
+      ofile=${nens}.t${cyc}z.ndgd_conus_amef${nfhrs}
+      ofile1=${nens}.t${cyc}z.ndgd_conus_amef${nfhrs}_part
+      ofile2=${nens}.t${cyc}z.ndgd_conus_amef${nfhrs}_tmax
+      ofile3=${nens}.t${cyc}z.ndgd_conus_amef${nfhrs}_tmin
+      cp $ofile1 $ofile
+      if [ -s $ofile2 ]; then
+        cat $ofile2 >>$ofile
+      fi
+      if [ -s $ofile3 ]; then
+        cat $ofile3 >>$ofile
+      fi
+      if [ -s $ofile ]; then
+        mv $ofile $COMOUT/
+      fi
+
+    done
+  done
+fi
+
+msg="HAS COMPLETED NORMALLY!"
+#postmsg "$jlogfile" "$msg"
+
+###

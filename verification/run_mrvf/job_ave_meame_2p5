@@ -1,0 +1,17 @@
+export MEINPUT=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/com/gens/prod
+export COMOUT=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/com/gens/average
+
+export nhours=/nwprod/util/exec/ndate
+export EXECVRFY=$SHOME/naefs_improve/exec_4verf
+
+mkdir -p $COMOUT
+
+SYYMMDD=2016080112
+EYYMMDD=2016083112
+
+export DATA=$PTMP/Bo.Cui/infro_conus/gefs_raw_ameavg_${SYYMMDD}_$EYYMMDD
+#gefs_raw_ame_avg.sh_2p5 $SYYMMDD $EYYMMDD >$PTMP/Bo.Cui/junk 2>&1& 
+
+export DATA=$PTMP/Bo.Cui/infro_conus/gefs_raw_meavg_${SYYMMDD}_$EYYMMDD
+gefs_raw_me_avg.sh_2p5  $SYYMMDD $EYYMMDD >$PTMP/Bo.Cui/junk 2>&1&
+

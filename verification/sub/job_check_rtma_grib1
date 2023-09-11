@@ -1,0 +1,67 @@
+#set -x
+
+#Date=`date +%y%m%d%H`
+#CDATE=20$Date
+
+CDATE=2023040100   
+
+COM=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/com                            
+
+ndays=80
+iday=1
+
+>out
+
+while [ $iday -le $ndays ]; do
+
+export PDY=`echo $CDATE | cut -c1-8`
+export cyc=`echo $CDATE | cut -c9-10`
+echo " day " $YYMMDD$cyc
+
+echo $CDATE >>out
+#ls $COM/naefs/v7.0/gefs.$PDY/$cyc/ndgd    | wc  >>out
+#ls $COM/naefs/v7.0/naefs.$PDY/$cyc/ndgd   | wc  >>out
+#
+#ls $COM/naefs/v6.1/gefs.$PDY/$cyc/ndgd    | wc  >>out
+#ls $COM/naefs/v6.1/naefs.$PDY/$cyc/ndgd   | wc  >>out
+#
+#rm $COM/rtma/v2.9/akrtma.$PDY/*_allflds
+#rm $COM/rtma/v2.9/rtma.$PDY/*_allflds
+
+ls $COM/rtma/v2.9/akrtma.$PDY/*3p0.grb1*   | wc  >>out
+
+echo " "
+output="$( bash <<EOF
+ls  $COM/rtma/v2.9/akrtma.$PDY/*3p0.grb1*  | wc -l
+EOF
+)"
+if [ $output -ne 24 ]; then
+  echo $PDY$cyc
+  echo "Warning !!! alaska has file 24"
+  echo $output
+fi
+
+ls $COM/rtma/v2.9/rtma2p5.$PDY/*grb1_ext     | wc  >>out
+
+echo " "
+output="$( bash <<EOF
+ls $COM/rtma/v2.9/rtma2p5.$PDY/*grb1_ext  | wc -l
+EOF
+)"
+if [ $output -ne 24 ]; then
+  echo $PDY$cyc
+  echo "Warning !!! conus has file 24"
+  echo $output
+fi
+
+#ls $COM/rtma/v2.9/akrtma.$PDY/*3p0.grb2*         | wc  >>out
+#ls $COM/rtma/v2.9/rtma2p5.$PDY/*grb2_ext            | wc  >>out
+
+echo " "    >>out
+
+iday=`expr $iday + 1`
+export CDATE=`$NDATE +24 $CDATE`
+
+done
+
+

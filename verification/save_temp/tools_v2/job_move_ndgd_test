@@ -1,0 +1,46 @@
+CDATE=2015041200
+ndays=46
+iday=1
+
+COM=$NGLOBAL2/Bo.Cui/naefs.v5.0.0/com/gens/prod          
+nhours=/nwprod/util/exec/ndate
+COMO=/ptmpp2/Bo.Cui/naefs.v5.0.0/com/gens/prod          
+
+
+while [ $iday -le $ndays ]; do
+
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo " day " $PDY$cyc
+
+  COMIN=$COM/gefs.$PDY/$cyc/ndgd
+  COMOUT=$COMO/gefs.$PDY/$cyc/ndgd
+  mkdir -p $COMOUT
+  mv $COMIN/*ndgd_alaska* $COMOUT
+  mv $COMIN/*ndgd_conus* $COMOUT
+
+  COMIN=$COM/gefs.$PDY/$cyc/ndgd_gb2
+  COMOUT=$COMO/gefs.$PDY/$cyc/ndgd_gb2
+  mkdir -p $COMOUT
+  mv $COMIN/*ndgd_alaska* $COMOUT
+  mv $COMIN/*ndgd_conus* $COMOUT
+
+  COMIN=$COM/naefs.$PDY/$cyc/ndgd
+  COMOUT=$COMO/naefs.$PDY/$cyc/ndgd
+  mkdir -p $COMOUT
+  mv $COMIN/*ndgd_alaska* $COMOUT
+  mv $COMIN/*ndgd_conus* $COMOUT
+
+  COMIN=$COM/naefs.$PDY/$cyc/ndgd_gb2
+  COMOUT=$COMO/naefs.$PDY/$cyc/ndgd_gb2
+  mkdir -p $COMOUT
+  mv $COMIN/*ndgd_alaska* $COMOUT
+  mv $COMIN/*ndgd_conus* $COMOUT
+
+  iday=`expr $iday + 1`
+  CDATE=`$nhours +24 $CDATE`
+
+done
+
+

@@ -1,12 +1,12 @@
-export CDATE=2004010100
-ndays=1
+export CDATE=2004020100
+ndays=60
 iday=1
 
 PACKAGEROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME
 naefs_ver=v7.0.0
 
 COMIN=$PACKAGEROOT/naefs.${naefs_ver}/verification/fix
-COMOUT=$PACKAGEROOT/naefs.${naefs_ver}/verification/fix_conus_ext_2p5 
+COMOUT=$PACKAGEROOT/naefs.${naefs_ver}/verification/fix_conus
 
 mkdir -p $COMOUT
 

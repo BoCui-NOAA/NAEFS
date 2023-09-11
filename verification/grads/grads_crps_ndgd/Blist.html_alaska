@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<HTML>
+
+<H4>Alaska Downscaled Product Comparision NAEFS V7.0 vs V6.1</H4>
+
+<table border="2" cellpadding="2" cellspacing="2">
+<TR align="center" valign="top" style="font-size:18px;font-weight:600">
+<TH colspan="1">t00z</TH>
+<TH COLSPAN="8"> CRPS Score</TH>
+
+<tr align="center" valign="top" style="font-size:18px;font-weight:400">
+     <TH>var</TH>
+     <TH>t2m </TH>
+     <TH>u10m</TH>
+     <TH>v10m</TH>
+     <TH>wspd10m</TH>
+     <TH>wdir10m</TH>
+     <TH>tmax</TH>
+     <TH>tmin</TH>
+
+<TR ALIGN="CENTER" VALIGN="TOP" STYLE="font-size:18px;font-weight:600;">
+<TH>NH</TH>
+ <TD><A HREF="rtma_t2m_crpsf_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_u10m_crpsf_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_v10m_crpsf_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_wspd_crpsf_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_wdir_crpsf_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_tmax_crpsf_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_tmin_crpsf_t00z.png">Yes</a></TD>
+ </TR>
+</TABLE>
+&nbsp;</li>
+
+<table border="2" cellpadding="2" cellspacing="2">
+<TR align="center" valign="top" style="font-size:18px;font-weight:600">
+<TH colspan="1">t00z</TH>
+<TH COLSPAN="8">Root Mean Square Error</TH>
+<tr align="center" valign="top" style="font-size:18px;font-weight:400">
+     <TH>var</TH>
+     <TH>t2m </TH>
+     <TH>u10m</TH>
+     <TH>v10m</TH>
+     <TH>wspd10m</TH>
+     <TH>wdir10m</TH>
+     <TH>tmax</TH>
+     <TH>tmin</TH>
+
+<TR ALIGN="CENTER" VALIGN="TOP" STYLE="font-size:18px;font-weight:600;">
+<TH>NH</TH>
+ <TD><A HREF="rtma_t2m_rmsa_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_u10m_rmsa_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_v10m_rmsa_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_wspd_rmsa_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_wdir_rmsa_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_tmax_rmsa_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_tmin_rmsa_t00z.png">Yes</a></TD>
+ </TR>
+</TABLE>
+&nbsp;</li>
+
+<table border="2" cellpadding="2" cellspacing="2">
+<TR align="center" valign="top" style="font-size:18px;font-weight:600">
+<TH colspan="1">t00z</TH>
+<TH COLSPAN="8"> MERR and ABS ERR</TH>
+
+<tr align="center" valign="top" style="font-size:18px;font-weight:400">
+     <TH>var</TH>
+     <TH>t2m </TH>
+     <TH>u10m</TH>
+     <TH>v10m</TH>
+     <TH>wspd10m</TH>
+     <TH>wdir10m</TH>
+     <TH>tmax</TH>
+     <TH>tmin</TH>
+
+<TR ALIGN="CENTER" VALIGN="TOP" STYLE="font-size:18px;font-weight:600;">
+<TH>NH</TH>
+ <TD><A HREF="rtma_t2m_merr_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_u10m_merr_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_v10m_merr_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_wspd_merr_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_wdir_merr_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_tmax_merr_t00z.png">Yes</a></TD>
+ <TD><A HREF="rtma_tmin_merr_t00z.png">Yes</a></TD>
+ </TR>
+</TABLE>
+&nbsp;</li>
+

@@ -1,0 +1,61 @@
+CDATE=2016080100
+ndays=31 
+iday=1
+
+#COM=$NGLOBAL/Bo.Cui/com/gens/prod          
+#COM=/gpfs/td3/emc/ensemble/noscrub/Hong.Guan/o/com/gens/prod
+#COM=$NGLOBAL/Bo.Cui/naefs.v6.0.1/com/gens/prod          
+#COM=$NGLOBAL2/Bo.Cui/com2/gens/prod          
+COM=$NGLOBAL/Bo.Cui/naefs.v6.0.2/com/naefs/prod          
+COM=$NGLOBAL/Bo.Cui/naefs.v6.0.2/com/gens/prod          
+#COM=/gpfs/gd3/emc/ensemble/noscrub/Richard.Wobus/o/com/gens/prod
+#NDATE=/nwprod2/util/exec/ndate
+
+while [ $iday -le $ndays ]; do
+
+  PDY=`echo $CDATE | cut -c1-8`
+  cyc=`echo $CDATE | cut -c9-10`
+
+  echo " day " $PDY$cyc
+
+  COMINNCEP=$COM/gefs.$PDY/$cyc
+# ls $COMINNCEP/ndgd_bc2p5/*geavg*me* | wc
+# ls $COMINNCEP/pgrb2a_bc/*geavg* | wc
+# ls $COMINNCEP/pgrb2a_bc/*gespr* | wc
+# ls $COMINNCEP/pgrb2ap5_bc/*geavg* | wc
+# ls $COMINNCEP/pgrb2ap5_bc/*gespr* | wc
+# ls $COMINNCEP/pgrb2ap5/*geavg*f000 | wc
+# ls $COMINNCEP/pgrb2ap5/*gegfs*f000 | wc
+# ls $COMINNCEP/pgrb2ap5/*geavg*f000 | wc
+
+# ls $COMINNCEP/pgrb2ap5/*gec00*f000 | wc
+# ls $COMINNCEP/pgrb2ap5/*gegfs*f000 | wc
+# ls $COMINNCEP/pgrb2ap5/*gegfs*f003 | wc
+# ls $COMINNCEP/pgrb2ap5/*gec00*f003 | wc
+# ls $COMINNCEP/pgrb2ap5/*gegfs*f006 | wc
+# ls $COMINNCEP/pgrb2ap5/*gec00*f006 | wc
+
+# ls $COMINNCEP/pgrbap5/*gec00*f000 | wc
+# ls $COMINNCEP/pgrbap5/*gegfs*f000 | wc
+# ls $COMINNCEP/pgrbap5/*gegfs*f003 | wc
+# ls $COMINNCEP/pgrbap5/*gec00*f003 | wc
+# ls $COMINNCEP/pgrbap5/*gegfs*f006 | wc
+# ls $COMINNCEP/pgrbap5/*gec00*f006 | wc
+
+# ls $COMINNCEP/pgrbap5/*geavg*     | wc
+# ls $COMINNCEP/pgrbap5/*gespr*     | wc
+
+  ls $COMINNCEP/pgrbap5_bc/*geavg*     | wc
+# ls $COMINNCEP/pgrbap5_bc/*gespr*     | wc
+
+# mkdir -p $COMINNCEP/pgrb2ap5
+
+# ls $COMINNCEP/pgrb2ap5/*gespr*f003| wc
+# ls $COMINNCEP/pgrb2ap5/*gec00* | wc
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+done
+
+

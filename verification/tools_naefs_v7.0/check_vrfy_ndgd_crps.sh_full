@@ -1,0 +1,96 @@
+###
+# 24hr: 31
+# 48hr: 63
+# 384hr:507
+###
+
+line=63  
+fcst=384hr
+
+SDATE=2023010700
+ndays=175
+iday=1
+
+export COMROOT=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/com
+
+fieldlist="TMAX TMIN"
+fieldlist="2MTMP 10MUGRD 10MVGRD 2MDPT 10MWIND 10MWDIR 2MRH  "
+fieldlist="2MTMP 10MUGRD 10MVGRD 2MDPT 10MWIND 10MWDIR TMAX TMIN "
+fieldlist="2MTMP"
+
+
+for field in $fieldlist; do
+
+for ireg in conus alaska; do
+
+CDATE=$SDATE
+iday=1
+
+>print_crps_$ireg     
+
+echo "v6.1 gefs"  >> print_crps_$ireg
+echo "v6.1 naefs" >> print_crps_$ireg
+echo "v7.0 gefs"  >> print_crps_$ireg
+echo "v7.0 naefs" >> print_crps_$ireg
+echo "    "       >> print_crps_$ireg
+
+while [ $iday -le $ndays ]; do
+
+  export  PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+  echo $CDATE >> print_crps_$ireg
+
+  for naefs_ver in v6.1 v7.0; do
+    for exp in gefs naefs; do
+      COM_IN=$COMROOT/stat/naefs.$naefs_ver
+      COMIN=$COM_IN/crps_${exp}_ndgd   
+      file=P${field}.${exp}a.$CDATE.$ireg 
+      case $field in
+        TMAX) file=P${field}.${exp}f.$CDATE.$ireg;;
+        TMIN) file=P${field}.${exp}f.$CDATE.$ireg;;
+      esac
+
+### conus tmax 30hr ...; tmin 18hr ....
+
+      if [ $ireg = "conus" ]; then
+        if [ $field = "TMAX" ]; then
+          cat $COMIN/$file       | sed -n "39,39p" >> print_crps_$ireg  
+        elif [ $field = "TMIN" ]; then
+          cat $COMIN/$file       | sed -n "23,23p" >> print_crps_$ireg
+        else
+#         cat $COMIN/$file       | sed -n "31,31p" >> print_crps_$ireg
+          cat $COMIN/$file       | sed -n "${line},${line}p" >> print_crps_$ireg
+        fi
+      fi
+        
+### alaskai tmax 36hr ...; tmin 24hr ....
+
+      if [ $ireg = "alaska" ]; then
+        if [ $field = "TMAX" ]; then
+          cat $COMIN/$file       | sed -n "47,47p" >> print_crps_$ireg  
+        elif [ $field = "TMIN" ]; then
+          cat $COMIN/$file       | sed -n "31,31p" >> print_crps_$ireg
+        else
+#         cat $COMIN/$file       | sed -n "31,31p" >> print_crps_$ireg
+          cat $COMIN/$file       | sed -n "${line},${line}p" >> print_crps_$ireg
+        fi
+      fi
+
+    done
+  done
+
+  echo "    " >> print_crps_$ireg
+
+  iday=`expr $iday + 1`
+  export CDATE=`$NDATE +24 $CDATE`
+
+done
+
+mv print_crps_$ireg print_crps_${ireg}_${field}_$fcst
+
+echo print_crps_${ireg}_${field}_$fcst
+
+done
+done
+

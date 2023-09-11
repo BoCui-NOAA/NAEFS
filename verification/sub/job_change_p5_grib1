@@ -1,0 +1,44 @@
+set -x
+
+#Date=`date +%y%m%d%H`
+
+CDATE=2023040400
+
+COM=/lfs/h2/emc/vpppg/noscrub/bo.cui/com                            
+
+ndays=1
+iday=1
+
+while [ $iday -le $ndays ]; do
+
+export PDY=`echo $CDATE | cut -c1-8`
+export cyc=`echo $CDATE | cut -c9-10`
+echo " day " $YYMMDD$cyc
+
+echo "naefs v7"
+ls $COM/naefs/v7.0/gefs.$PDY/$cyc/pgrbap5_bc    | wc  
+ls $COM/naefs/v7.0/naefs.$PDY/$cyc/pgrbap5_bc   | wc 
+mv $COM/naefs/v7.0/gefs.$PDY/$cyc/pgrbap5_bc    $COM/naefs/v7.0/gefs.$PDY/$cyc/pgrbap5_bc_save
+#mv $COM/naefs/v7.0/naefs.$PDY/$cyc/pgrbap5_bc   $COM/naefs/v7.0/naefs.$PDY/$cyc/pgrbap5_bc_save
+ls $COM/naefs/v7.0/naefs.$PDY/$cyc/
+echo " "
+
+echo "naefs v6"
+ls $COM/naefs/v6.1/gefs.$PDY/$cyc/pgrbap5_bc    | wc
+ls $COM/naefs/v6.1/naefs.$PDY/$cyc/pgrbap5_bc   | wc 
+mv $COM/naefs/v6.1/gefs.$PDY/$cyc/pgrbap5_bc    $COM/naefs/v6.1/gefs.$PDY/$cyc/pgrbap5_bc_save
+#mv $COM/naefs/v6.1/naefs.$PDY/$cyc/pgrbap5_bc   $COM/naefs/v6.1/naefs.$PDY/$cyc/pgrbap5_bc_save
+ls $COM/naefs/v6.1/naefs.$PDY/$cyc
+
+echo " "
+
+echo "gefs v12.3"
+ls $COM/gefs/v12.3/gefs.$PDY/$cyc/atmos/pgrbap5 | wc
+mv $COM/gefs/v12.3/gefs.$PDY/$cyc/atmos/pgrbap5 $COM/gefs/v12.3/gefs.$PDY/$cyc/atmos/pgrbap5_save
+ls $COM/gefs/v12.3/gefs.$PDY/$cyc
+echo " "
+
+iday=`expr $iday + 1`
+export CDATE=`$NDATE +24 $CDATE`
+
+done

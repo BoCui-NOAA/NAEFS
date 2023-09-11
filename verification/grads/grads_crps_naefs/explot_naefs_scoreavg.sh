@@ -19,7 +19,7 @@ cyc=`echo $STYMD | cut -c9-10`
 CYC=t${cyc}z                          
 
 cd $DATA;pwd
-rm *png
+rm *.gs
 
 cp $PLOTcrps/grads_pub/linesmpos.gs .
 
@@ -41,6 +41,10 @@ case $VFIELD in
  PPRES) field=pres;FIELD="Surface Pressure";;
  PTCDC) field=tcdc;FIELD="Total Cloud Cover";;
  P10MWIND) field=wspd10m;FIELD="10 Meter Wind";;
+ P850UGRD) field=u850;FIELD="850mb Meter U(wind)";;
+ P850VGRD) field=v850;FIELD="850mb Meter V(wind)";;
+ P250UGRD) field=u250;FIELD="250mb Meter U(wind)";;
+ P250VGRD) field=v250;FIELD="250mb Meter V(wind)";;
 esac
 
 for expid in $id1 $id2 $id3 $id4
@@ -53,11 +57,12 @@ do
 
 done
 
-sed -e "s/EXPID1/$id1/" \
-    -e "s/EXPID2/$id2/" \
-    -e "s/EXPID3/$id3/" \
-    -e "s/EXPID4/$id4/" \
-    $PLOTcrps/grads_pub/leg_${icnt}lines >leg_lines
+#sed -e "s/EXPID1/$id1/" \
+#    -e "s/EXPID2/$id2/" \
+#    -e "s/EXPID3/$id3/" \
+#    -e "s/EXPID4/$id4/" \
+#    $PLOTcrps/grads_pub/leg_${icnt}lines >leg_lines
+cp  $PLOTcrps/grads_crps_naefs/leg_${icnt}lines leg_lines                        
 
 sed -e "s/EXPID1/$id1/" \
     -e "s/EXPID2/$id2/" \

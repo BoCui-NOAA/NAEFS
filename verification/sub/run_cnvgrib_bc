@@ -1,0 +1,36 @@
+set -x
+
+#Date=`date +%y%m%d%H`
+#CDATE=20$Date
+
+export INTERACTIVE=YES
+
+CDATE=2023043000
+
+dir=/lfs/h2/emc/vpppg/noscrub/$LOGNAME/naefs.v7.0.0/verification
+
+ndays=63
+iday=1
+
+while [ $iday -le $ndays ]; do
+
+export YYMMDD=`echo $CDATE | cut -c1-8`
+export CYC=00
+echo " day " $YYMMDD$cyc
+
+job=run_jcnvgrib_gefs_naefs_p5.sh 
+
+rm $dir/output/$job.temp.$CDATE
+
+sed -e "s/YYMMDD/$YYMMDD/" \
+    -e "s/CYC/$CYC/" \
+    $dir/ecf/$job > $dir/output/$job.temp.$CDATE
+
+cd $dir/output
+chmod +x $dir/output/$job.temp.$CDATE
+$dir/output/$job.temp.$CDATE > $dir/output/output_$job.$CDATE 2>&1&
+
+iday=`expr $iday + 1`
+export CDATE=`$NDATE +24 $CDATE`
+
+done

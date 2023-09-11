@@ -1,0 +1,13 @@
+
+nhours=/nwprod/util/exec/ndate
+
+export CDATE=2017060500
+ndays=19 
+iday=1
+
+while [ $iday -le $ndays ]; do
+  rtma_rh2m.sh   >$PTMP/Bo.Cui/junk1 2>&1&  
+  iday=`expr $iday + 1`
+  export CDATE=`$nhours +24 $CDATE`
+done
+

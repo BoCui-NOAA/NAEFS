@@ -1,0 +1,24 @@
+CDATE=2016080100
+ndays=31
+
+COM=/gpfs/hps/emc/ensemble/noscrub/Bo.Cui/naefs.v6.0.4/com/gens/prod            
+DATA=$NGLOBAL/Bo.Cui/naefs.v6.0.4/com/gens/prod
+
+mkdir -p $DATA
+cd $DATA
+
+iday=1
+while [ $iday -le $ndays ]; do
+
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+
+# mkdir -p $DATA/gefs.${PDY}/${cyc}/ndgd_bc2p5
+  scp -r $DATA/gefs.${PDY}/${cyc}/ndgd_bc2p5 Bo.Cui@SURGE:$COM/gefs.${PDY}/${cyc}
+
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +24 $CDATE`
+
+  echo $CDATE
+done
+

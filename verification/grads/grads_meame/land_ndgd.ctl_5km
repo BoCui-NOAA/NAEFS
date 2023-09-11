@@ -1,0 +1,13 @@
+dset bytemap.USA_swap
+*options sequential template
+options template
+undef 9.999E+20
+title land_ndgd
+pdef 1073 689 lcc 20.192000 238.446000 1 1 25.000000 25.000000 265.000000 5079 5079
+xdef 1400 linear -130.000 0.049196269676734
+ydef 725 linear 20.000000 0.0461727272727273
+tdef 1 linear STYMD 1mo                 
+zdef 1 linear 1 1
+vars 1
+LANDsfc  1 0  ** surface Land cover (land=1;sea=0) [fraction]
+ENDVARS

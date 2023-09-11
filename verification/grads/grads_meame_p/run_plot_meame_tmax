@@ -1,0 +1,51 @@
+
+export SDY=2012022000
+export EDY=2012033000
+
+export PLOTMEAME=plot_me_ame.sh
+
+##########
+# For Tmax
+##########
+
+export hourlist="30"
+
+export COMIN=$NGLOBAL/wx20cb/para_conus/average
+
+##################
+# 1. naefs upgrade
+##################
+
+export DATA=/ptmp/wx20cb/plot_bias/plot_mae_naefs
+export ENSM="CONUS NAEFS Downscaled"
+export ensm=naefs
+export fname=naefs_geavg.t00z.ndgd_conus
+export dir_main=/home/people/emc/www/htdocs/gmb/wx20cb/conus_upgrade 
+export dir_new=average_me_ame_${SDY}_${EDY}                         
+$PLOTMEAME  
+
+exit
+##########################
+# 2. gefs drbcds ensemble
+##########################
+
+export DATA=/ptmp/wx20cb/plot_bias/plot_mae_gefs_drbcds
+export ENSM="CONUS GEFS Bias Corrected Downscaled"
+export ensm=gefs_drbcds
+export fname=gefs_drbcds_geavg.t00z.ndgd_conus
+export dir_main=/home/people/emc/www/htdocs/gmb/wx20cb/conus_upgrade 
+export dir_new=average_me_ame_${SDY}_${EDY}       
+$PLOTMEAME  
+
+##########################
+# 3. gefs raw ensemble
+##########################
+
+export DATA=/ptmp/wx20cb/plot_bias/plot_mae_gefs_raw  
+export ENSM="CONUS GEFS Raw"
+export ensm=gefs_raw
+export fname=gefs_raw_geavg.t00z.ndgd_conus
+export dir_main=/home/people/emc/www/htdocs/gmb/wx20cb/conus_upgrade 
+export dir_new=average_me_ame_${SDY}_${EDY}       
+$PLOTMEAME 
+

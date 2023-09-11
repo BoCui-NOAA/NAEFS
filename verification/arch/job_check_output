@@ -1,0 +1,17 @@
+
+filelist="
+202302_output_v6_hpss_gefs_ndgd_gb2      202302_output_v7_hpss_naefs_ndgd_gb2     202303_output_v7_hpss_gefs_ndgd_gb2
+202302_output_v6_hpss_gefs_pgrb2ap5_bc   202302_output_v7_hpss_naefs_pgrb2ap5_bc  202303_output_v7_hpss_gefs_pgrb2ap5_bc
+202302_output_v6_hpss_naefs_ndgd_gb2     202303_output_v6_hpss_gefs_ndgd_gb2      202303_output_v7_hpss_naefs_ndgd_gb2
+202302_output_v6_hpss_naefs_pgrb2ap5_bc  202303_output_v6_hpss_gefs_pgrb2ap5_bc   202303_output_v7_hpss_naefs_pgrb2ap5_bc
+202302_output_v7_hpss_gefs_ndgd_gb2      202303_output_v6_hpss_naefs_ndgd_gb2
+202302_output_v7_hpss_gefs_pgrb2ap5_bc   202303_output_v6_hpss_naefs_pgrb2ap5_bc"
+
+#filelist="
+#202302_output_v6_hpss_gefs_ndgd_gb2      202302_output_v6_hpss_naefs_ndgd_gb2"
+
+for file in $filelist; do
+  echo $file
+  grep "384" $file | wc
+  echo   
+done
