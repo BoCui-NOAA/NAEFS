@@ -57,15 +57,16 @@ EOF
     echo $PDY$cyc
     echo "Warning !!! GEFS an has gempak files 14576 or 3644"
     echo $output
+    echo " "
    fi
 
   COMIN=$COM/naefs.$PDY/gempak
-  echo " dir naefs para ge* 3456 (864/cycle) "
+  echo " dir NAEFS para 3456 (864/cycle) "
   ls $COMIN/ge*         | grep -v "pnaefs" | wc
   echo " "
 
 output="$( bash <<EOF
-  ls $COMIN/ge | wc -l
+  ls $COMIN/ge* | wc -l
 EOF
 )"
   if [ $output -ne 3456 -a $output -ne 864 ]; then
@@ -90,6 +91,22 @@ EOF
   if [ $output -ne 3880 -a $output -ne 1940 ]; then
     echo $PDY$cyc
     echo "Warning !!! FNMOC has gempak files 3880 or 1940"
+    echo $output
+  fi
+
+  echo " "
+  COMIN=$COM/gefs.$PDY/gempak/prcp
+  echo " dir prcp 2732, 683 for one cycle only "
+  ls $COMIN | wc -l    
+  echo " "
+
+output="$( bash <<EOF
+  ls $COMIN | wc -l
+EOF
+)"
+  if [ $output -ne 2732 -a $output -ne 683 ]; then
+    echo $PDY$cyc
+    echo "Warning !!! prcp has gempak files 2732 or 683"
     echo $output
   fi
 

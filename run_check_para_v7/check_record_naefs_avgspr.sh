@@ -11,8 +11,8 @@ CDATE=2014012700
 run=naefs
 
 #COM=/ptmp/Bo.Cui/com/gens/wcoss
-COM=/com/gens/prod 
-COM=$NGLOBAL/Bo.Cui/com/gens/para 
+#COM=/com/gens/prod 
+#COM=$NGLOBAL/Bo.Cui/com/gens/para 
 
 YMD=`echo $CDATE | cut -c1-8`
 CYC=`echo $CDATE | cut -c9-10`

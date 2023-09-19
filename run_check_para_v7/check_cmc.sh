@@ -39,8 +39,8 @@ while [ $iday -le $ndays ]; do
     echo " "
 
 #   echo " CMC pgrb2ap5 data 2230, or 2232 @PDYm2 (*anl* and cmc_gbanl*)"
-    echo " CMC pgrb2ap5 data 4462, or 4464 @PDYm2 (*anl* and cmc_gbanl*)"
-    echo " CMC pgrb2ap5 data 7408 for every Thursday"                          
+    echo " CMC pgrb2ap5 data 4462, or 4463 with anl, or 4465 @PDYm2 (*anl* and cmc_gbanl*)"
+    echo " CMC pgrb2ap5 data 7408(7409) for every Thursday"                          
     ls $COMINCMC/pgrb2ap5 | wc
     echo " "
 
@@ -57,6 +57,7 @@ while [ $iday -le $ndays ]; do
     echo " "
 
     echo " extend forecats 00z 1472 without  idx "
+    echo " "
   fi
 
   if [ $cyc -eq 06 -o $cyc -eq 18 ]; then
@@ -76,6 +77,7 @@ while [ $iday -le $ndays ]; do
   fi 
 
   echo " CMC glbanl 1 "
+  echo $COMINCMCm2/pgrb2ap5
   ls $COMINCMCm2/pgrb2ap5/cmc_glbanl.t${cyc}z.pgrb2a.0p50_mdf000 | wc
   echo " "
 

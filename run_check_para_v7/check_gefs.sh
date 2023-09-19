@@ -181,7 +181,7 @@ EOF
   echo " "
 
   echo " NCEP FNMOC glbanl 1 "
-  ls $COMINm1/pgrb2a/ncepfnmoc_glbanl.t${cyc}z.pgrb2a_mdf00 | wc
+  ls $COMINm1/pgrb2ap5/ncepfnmoc_glbanl.t${cyc}z.pgrb2a.0p50_mdf000 | wc
   echo " "
 
   echo " NCEP dv at 03 09 15 21 "

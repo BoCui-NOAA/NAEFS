@@ -1,9 +1,7 @@
-COM=/lfs/h1/ops/prod/com/naefs/v6.1
-COM=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0
+#COM=/lfs/h1/ops/prod/com/naefs/v6.1
+#COM=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0
 
-nhoursx=/nwprod/util/exec/ndate
-
-CDATE=2023020400
+#CDATE=2023020400
 #CDATE=$1
 ndays=1
 iday=1
@@ -88,6 +86,7 @@ EOF
   if [ $output -ne 2732  -a $output -ne 683 ]; then
     echo $PDY$cyc
     echo "Warning !!! GEFS cqpf gempak has file 2732 or 683 files"
+    echo $COMIN/gempak/prcp
     echo $output
   fi
 
