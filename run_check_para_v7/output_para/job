@@ -1,0 +1,11 @@
+
+PDY=20230918
+mkdir $PDY
+COM=/lfs/h1/ops/para/output/$PDY    
+
+cd $PDY
+cp -p $COM/naefs* .
+mkdir gefs; mv *gefs*.o* gefs
+mkdir cmcens; mv *cmc*.o* cmcens
+mkdir fnmoc; mv *fnmoc*.o* fnmoc
+mkdir naefs; mv *.o* naefs
