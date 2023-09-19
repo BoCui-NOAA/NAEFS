@@ -110,7 +110,7 @@ do
 
  done
 
- rm fcst_*.dat mean_*.dat stdv_*.dat bias*.dat
+#rm fcst_*.dat mean_*.dat stdv_*.dat bias*.dat
 
 done
 

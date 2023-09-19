@@ -327,16 +327,16 @@ do ii = 1, iv
   ! ipdtlen also change, need do modification for output
   ! code table 4.0, 2=derived forecast
 
-  if(gfldo%ipdtnum.eq.1) ipdtnum_out=2
-  if(gfldo%ipdtnum.eq.11) ipdtnum_out=12
+! if(gfldo%ipdtnum.eq.1) ipdtnum_out=2
+! if(gfldo%ipdtnum.eq.11) ipdtnum_out=12
 
-  inum=gfldo%ipdtmpl(17)
-  call change_template4(gfldo%ipdtnum,ipdtnum_out,gfldo)
+! inum=gfldo%ipdtmpl(17)
+! call change_template4(gfldo%ipdtnum,ipdtnum_out,gfldo)
 
-  gfldo%ipdtnum=ipdtnum_out          ! derived forecast
+! gfldo%ipdtnum=ipdtnum_out          ! derived forecast
 
   gfldo%ipdtmpl(16)=197              ! code table 4.7, Climate Percentile
-  gfldo%ipdtmpl(17)=inum  
+! gfldo%ipdtmpl(17)=inum  
 
   call putgb2(51,gfldo,iret)
   call printinfr(gfldo,ii)

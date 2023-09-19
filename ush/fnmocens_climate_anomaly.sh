@@ -107,7 +107,7 @@ do
 
  rm fcst_*.dat mean_*.dat stdv_*.dat 
  if [ -s bias_$ens.dat ]; then
-   rm bias_$ens.dat
+  rm bias_$ens.dat
  fi
 
 done
