@@ -5,16 +5,15 @@
 # COM_IN
 #####################################
 
-export CDATE=2022080800
+export CDATE=2023091300
 export envir=para
 export COM=/lfs/h1/ops/prod/com/naefs/v6.1                           
 export COM=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0                  
+export COM=/lfs/h1/ops/para/com/naefs/v7.0                           
 
 ##################################
 # no need to modifya the following 
 ##################################
-
-nhours=/nwprod/util/exec/ndate
 
 ndays=1
 iday=1
