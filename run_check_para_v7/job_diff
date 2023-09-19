@@ -1,0 +1,30 @@
+COM_prod=/lfs/h1/ops/prod/com/naefs/v6.1
+COM_para=/lfs/h1/ops/para/com/naefs/v7.0
+
+PDY=20230915
+model=gefs
+nhr=180
+
+filelist="
+pgrb2a.0p50_abarf   pgrb2a.0p50_mecomf   pgrb2a.0p50_sfabarf
+pgrb2a.0p50_coefff  pgrb2a.0p50_mef      pgrb2a.0p50_sffbarf
+pgrb2a.0p50_fbarf   pgrb2a.0p50_saabarf  gegfs.t00z.pgrb2a.0p50_mef"
+
+filelist="pgrb2a.0p50_mecomf"
+cyclist="00 06 12 18"
+cyclist="18"
+
+for cyc in $cyclist; do   
+for file in $filelist; do
+  echo $cyc $file
+  file_prod=$COM_prod/$model.$PDY/$cyc/pgrb2ap5/geavg.t${cyc}z.$file$nhr
+  file_para=$COM_para/$model.$PDY/$cyc/pgrb2ap5/geavg.t${cyc}z.$file$nhr
+  diff $file_prod $file_para
+done
+
+  echo $cyc $file
+  file_prod=$COM_prod/$model.$PDY/$cyc/pgrb2ap5/gegfs.t${cyc}z.pgrb2a.0p50_mef$nhr
+  file_para=$COM_para/$model.$PDY/$cyc/pgrb2ap5/gegfs.t${cyc}z.pgrb2a.0p50_mef$nhr
+
+  diff $file_prod $file_para
+done
