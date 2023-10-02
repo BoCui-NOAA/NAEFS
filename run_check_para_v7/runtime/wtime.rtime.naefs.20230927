@@ -1,0 +1,130 @@
+                        JOB                                                           walltime      walltime(min)     runtime(min)     runtime(sec)  percentage
+/para/primary/00/naefs/v7.0/cmcens/jnaefs_cmc_ensbc_prep                              01:30:00         5400 (min)        4.5 (min)        270 (sec)      5% 
+/para/primary/00/naefs/v7.0/cmcens/jnaefs_cmc_ens_bias                                00:45:00         2700 (min)        1.6 (min)         96 (sec)      3% 
+/para/primary/00/naefs/v7.0/cmcens/jnaefs_cmc_ens_gempak                              01:00:00         3600 (min)        6.0 (min)        360 (sec)     10% 
+/para/primary/00/naefs/v7.0/cmcens/jnaefs_cmc_ens_post                                02:30:00         9000 (min)       10.7 (min)        0.1 (sec)   10.7% 
+/para/primary/00/naefs/v7.0/cmcens/jnaefs_cmc_ens_post_extend                         01:30:00         5400 (min)        0.1 (min)          6 (sec)      0% 
+/para/primary/00/naefs/v7.0/naefs/jnaefs_dvrtma_bias_ak                               00:10:00          600 (min)        0.5 (min)         30 (sec)      5% 
+/para/primary/00/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_bias_ak_gempak                 00:15:00          900 (min)        0.2 (min)         12 (sec)      1% 
+/para/primary/00/naefs/v7.0/naefs/jnaefs_dvrtma_bias_conus                            00:15:00          900 (min)        1.0 (min)         60 (sec)      6% 
+/para/primary/00/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_bias_conus_gempak              00:15:00          900 (min)        0.2 (min)         12 (sec)      1% 
+/para/primary/00/naefs/v7.0/naefs/jnaefs_dvrtma_prob_avgspr_ak                        01:30:00         5400 (min)       14.2 (min)        852 (sec)     15% 
+/para/primary/00/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_prob_avgspr_ak_gempak          00:50:00         3000 (min)        4.2 (min)        252 (sec)      8% 
+/para/primary/00/naefs/v7.0/naefs/jnaefs_dvrtma_prob_avgspr_conus                     01:30:00         5400 (min)       21.6 (min)       1296 (sec)     24% 
+/para/primary/00/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_prob_avgspr_conus_gempak       02:00:00         7200 (min)        4.2 (min)        252 (sec)      3% 
+/para/primary/00/naefs/v7.0/fnmocens/jnaefs_fnmoc_ens_bias                            00:45:00         2700 (min)        1.6 (min)         96 (sec)      3% 
+/para/primary/00/naefs/v7.0/fnmocens/jnaefs_fnmoc_ens_debias                          01:00:00         3600 (min)        5.3 (min)        318 (sec)      8% 
+/para/primary/00/naefs/v7.0/fnmocens/jnaefs_fnmoc_ens_gempak                          01:00:00         3600 (min)       10.5 (min)        630 (sec)     17% 
+/para/primary/00/naefs/v7.0/gefs/jnaefs_gefs_24hr_cqpf                                00:50:00         3000 (min)        4.2 (min)        252 (sec)      8% 
+/para/primary/00/naefs/v7.0/gefs/jnaefs_gefs_6hr_cqpf                                 00:50:00         3000 (min)        1.4 (min)         84 (sec)      2% 
+/para/primary/00/naefs/v7.0/gefs/jnaefs_gefs_anfefi_acpr                              00:30:00         1800 (min)        0.7 (min)         42 (sec)      2% 
+/para/primary/00/naefs/v7.0/gefs/jnaefs_gefs_bias                                     00:45:00         2700 (min)       14.2 (min)        852 (sec)     31% 
+/para/primary/00/naefs/v7.0/gefs/gempak/jnaefs_gefs_bias_gempak                       01:00:00         3600 (min)       18.2 (min)       1092 (sec)     30% 
+/para/primary/00/naefs/v7.0/gefs/gempak/jnaefs_gefs_cqpf_gempak                       00:30:00         1800 (min)       12.7 (min)        762 (sec)     42% 
+/para/primary/00/naefs/v7.0/gefs/jnaefs_gefs_debias                                   03:30:00        12600 (min)      168.6 (min)      10116 (sec)     80% *** 
+/para/primary/00/naefs/v7.0/gefs/gempak/jnaefs_gefs_debias_gempak                     01:00:00         3600 (min)        7.0 (min)        420 (sec)     11% 
+/para/primary/00/naefs/v7.0/gefs/jnaefs_gefs_dvrtma_prob_avgspr_ak                    00:30:00         1800 (min)        6.0 (min)        360 (sec)     20% 
+/para/primary/00/naefs/v7.0/gefs/jnaefs_gefs_dvrtma_prob_avgspr_conus                 00:30:00         1800 (min)       10.4 (min)        624 (sec)     34% 
+/para/primary/00/naefs/v7.0/gefs/jnaefs_gefs_ndgd_cqpf                                00:55:00         3300 (min)       27.8 (min)       1668 (sec)     50% 
+/para/primary/00/naefs/v7.0/gefs/gempak/jnaefs_gefs_ndgd_cqpf_gempak                  01:30:00         5400 (min)       15.1 (min)        906 (sec)     16% 
+/para/primary/00/naefs/v7.0/gefs/jnaefs_gefs_pgrb_enspqpf                             00:30:00         1800 (min)        5.5 (min)        330 (sec)     18% 
+/para/primary/00/naefs/v7.0/gefs/jnaefs_gefs_prob_avgspr                              00:30:00         1800 (min)        1.1 (min)         66 (sec)      3% 
+/para/primary/00/naefs/v7.0/gefs/gempak/jnaefs_gefs_prob_avgspr_gempak                01:00:00         3600 (min)        6.2 (min)        372 (sec)     10% 
+/para/primary/00/naefs/v7.0/naefs/jnaefs_prob_avgspr                                  00:30:00         1800 (min)        2.4 (min)        144 (sec)      8% 
+/para/primary/00/naefs/v7.0/naefs/gempak/jnaefs_prob_avgspr_gempak                    01:00:00         3600 (min)        6.2 (min)        372 (sec)     10% 
+
+
+/para/primary/06/naefs/v7.0/cmcens/jnaefs_cmc_ens_bias                                00:45:00         2700 (min)        1.5 (min)         90 (sec)      3% 
+/para/primary/06/naefs/v7.0/cmcens/jnaefs_cmc_ens_post                                02:30:00         9000 (min)        0.2 (min)         12 (sec)      0% 
+/para/primary/06/naefs/v7.0/naefs/jnaefs_dvrtma_bias_ak                               00:10:00          600 (min)        0.5 (min)         30 (sec)      5% 
+/para/primary/06/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_bias_ak_gempak                 00:15:00          900 (min)        0.2 (min)         12 (sec)      1% 
+/para/primary/06/naefs/v7.0/naefs/jnaefs_dvrtma_bias_conus                            00:15:00          900 (min)        1.0 (min)         60 (sec)      6% 
+/para/primary/06/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_bias_conus_gempak              00:15:00          900 (min)        0.2 (min)         12 (sec)      1% 
+/para/primary/06/naefs/v7.0/naefs/jnaefs_dvrtma_prob_avgspr_ak                        01:30:00         5400 (min)        5.8 (min)        348 (sec)      6% 
+/para/primary/06/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_prob_avgspr_ak_gempak          00:50:00         3000 (min)        4.3 (min)        258 (sec)      8% 
+/para/primary/06/naefs/v7.0/naefs/jnaefs_dvrtma_prob_avgspr_conus                     01:30:00         5400 (min)       10.9 (min)        654 (sec)     12% 
+/para/primary/06/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_prob_avgspr_conus_gempak       02:00:00         7200 (min)        4.2 (min)        252 (sec)      3% 
+/para/primary/06/naefs/v7.0/fnmocens/jnaefs_fnmoc_ens_bias                            00:45:00         2700 (min)        1.6 (min)         96 (sec)      3% 
+/para/primary/06/naefs/v7.0/gefs/jnaefs_gefs_24hr_cqpf                                00:50:00         3000 (min)        4.2 (min)        252 (sec)      8% 
+/para/primary/06/naefs/v7.0/gefs/jnaefs_gefs_6hr_cqpf                                 00:50:00         3000 (min)        1.4 (min)         84 (sec)      2% 
+/para/primary/06/naefs/v7.0/gefs/jnaefs_gefs_anfefi_acpr                              00:30:00         1800 (min)        0.7 (min)         42 (sec)      2% 
+/para/primary/06/naefs/v7.0/gefs/jnaefs_gefs_bias                                     00:45:00         2700 (min)       12.5 (min)        750 (sec)     27% 
+/para/primary/06/naefs/v7.0/gefs/gempak/jnaefs_gefs_bias_gempak                       01:00:00         3600 (min)       18.2 (min)       1092 (sec)     30% 
+/para/primary/06/naefs/v7.0/gefs/gempak/jnaefs_gefs_cqpf_gempak                       00:30:00         1800 (min)       12.7 (min)        762 (sec)     42% 
+/para/primary/06/naefs/v7.0/gefs/jnaefs_gefs_debias                                   03:30:00        12600 (min)      163.2 (min)       9792 (sec)     77% *** 
+/para/primary/06/naefs/v7.0/gefs/gempak/jnaefs_gefs_debias_gempak                     01:00:00         3600 (min)        7.1 (min)        426 (sec)     11% 
+/para/primary/06/naefs/v7.0/gefs/jnaefs_gefs_dvrtma_prob_avgspr_ak                    00:30:00         1800 (min)        5.9 (min)        354 (sec)     19% 
+/para/primary/06/naefs/v7.0/gefs/jnaefs_gefs_dvrtma_prob_avgspr_conus                 00:30:00         1800 (min)       10.3 (min)        618 (sec)     34% 
+/para/primary/06/naefs/v7.0/gefs/jnaefs_gefs_ndgd_cqpf                                00:55:00         3300 (min)       27.9 (min)       1674 (sec)     50% 
+/para/primary/06/naefs/v7.0/gefs/gempak/jnaefs_gefs_ndgd_cqpf_gempak                  01:30:00         5400 (min)       14.9 (min)        894 (sec)     16% 
+/para/primary/06/naefs/v7.0/gefs/jnaefs_gefs_pgrb_enspqpf                             00:30:00         1800 (min)        5.5 (min)        330 (sec)     18% 
+/para/primary/06/naefs/v7.0/gefs/jnaefs_gefs_prob_avgspr                              00:30:00         1800 (min)        1.1 (min)         66 (sec)      3% 
+/para/primary/06/naefs/v7.0/gefs/gempak/jnaefs_gefs_prob_avgspr_gempak                01:00:00         3600 (min)        6.2 (min)        372 (sec)     10% 
+/para/primary/06/naefs/v7.0/naefs/jnaefs_prob_avgspr                                  00:30:00         1800 (min)        1.1 (min)         66 (sec)      3% 
+/para/primary/06/naefs/v7.0/naefs/gempak/jnaefs_prob_avgspr_gempak                    01:00:00         3600 (min)        6.2 (min)        372 (sec)     10% 
+
+
+/para/primary/12/naefs/v7.0/cmcens/jnaefs_cmc_ensbc_prep                              01:30:00         5400 (min)        4.5 (min)        270 (sec)      5% 
+/para/primary/12/naefs/v7.0/cmcens/jnaefs_cmc_ens_bias                                00:45:00         2700 (min)        1.6 (min)         96 (sec)      3% 
+/para/primary/12/naefs/v7.0/cmcens/jnaefs_cmc_ens_gempak                              01:00:00         3600 (min)        6.0 (min)        360 (sec)     10% 
+/para/primary/12/naefs/v7.0/cmcens/jnaefs_cmc_ens_post                                02:30:00         9000 (min)        7.6 (min)        456 (sec)      5% 
+/para/primary/12/naefs/v7.0/naefs/jnaefs_dvrtma_bias_ak                               00:10:00          600 (min)        0.5 (min)         30 (sec)      5% 
+/para/primary/12/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_bias_ak_gempak                 00:15:00          900 (min)        0.2 (min)         12 (sec)      1% 
+/para/primary/12/naefs/v7.0/naefs/jnaefs_dvrtma_bias_conus                            00:15:00          900 (min)        1.0 (min)         60 (sec)      6% 
+/para/primary/12/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_bias_conus_gempak              00:15:00          900 (min)        0.2 (min)         12 (sec)      1% 
+/para/primary/12/naefs/v7.0/naefs/jnaefs_dvrtma_prob_avgspr_ak                        01:30:00         5400 (min)       14.4 (min)        864 (sec)     16% 
+/para/primary/12/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_prob_avgspr_ak_gempak          00:50:00         3000 (min)        4.2 (min)        252 (sec)      8% 
+/para/primary/12/naefs/v7.0/naefs/jnaefs_dvrtma_prob_avgspr_conus                     01:30:00         5400 (min)       22.0 (min)       1320 (sec)     24% 
+/para/primary/12/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_prob_avgspr_conus_gempak       02:00:00         7200 (min)        4.2 (min)        252 (sec)      3% 
+/para/primary/12/naefs/v7.0/fnmocens/jnaefs_fnmoc_ens_bias                            00:45:00         2700 (min)        1.6 (min)         96 (sec)      3% 
+/para/primary/12/naefs/v7.0/fnmocens/jnaefs_fnmoc_ens_debias                          01:00:00         3600 (min)        5.4 (min)        324 (sec)      9% 
+/para/primary/12/naefs/v7.0/fnmocens/jnaefs_fnmoc_ens_gempak                          01:00:00         3600 (min)       10.1 (min)        606 (sec)     16% 
+/para/primary/12/naefs/v7.0/gefs/jnaefs_gefs_24hr_cqpf                                00:50:00         3000 (min)        4.2 (min)        252 (sec)      8% 
+/para/primary/12/naefs/v7.0/gefs/jnaefs_gefs_6hr_cqpf                                 00:50:00         3000 (min)        1.4 (min)         84 (sec)      2% 
+/para/primary/12/naefs/v7.0/gefs/jnaefs_gefs_anfefi_acpr                              00:30:00         1800 (min)        0.7 (min)         42 (sec)      2% 
+/para/primary/12/naefs/v7.0/gefs/jnaefs_gefs_bias                                     00:45:00         2700 (min)       12.2 (min)        732 (sec)     27% 
+/para/primary/12/naefs/v7.0/gefs/gempak/jnaefs_gefs_bias_gempak                       01:00:00         3600 (min)       18.2 (min)       1092 (sec)     30% 
+/para/primary/12/naefs/v7.0/gefs/gempak/jnaefs_gefs_cqpf_gempak                       00:30:00         1800 (min)       12.7 (min)        762 (sec)     42% 
+/para/primary/12/naefs/v7.0/gefs/jnaefs_gefs_debias                                   03:30:00        12600 (min)      162.5 (min)       9750 (sec)     77% *** 
+/para/primary/12/naefs/v7.0/gefs/gempak/jnaefs_gefs_debias_gempak                     01:00:00         3600 (min)        6.9 (min)        414 (sec)     11% 
+/para/primary/12/naefs/v7.0/gefs/jnaefs_gefs_dvrtma_prob_avgspr_ak                    00:30:00         1800 (min)        6.0 (min)        360 (sec)     20% 
+/para/primary/12/naefs/v7.0/gefs/jnaefs_gefs_dvrtma_prob_avgspr_conus                 00:30:00         1800 (min)       10.4 (min)        624 (sec)     34% 
+/para/primary/12/naefs/v7.0/gefs/jnaefs_gefs_ndgd_cqpf                                00:55:00         3300 (min)       27.8 (min)       1668 (sec)     50% 
+/para/primary/12/naefs/v7.0/gefs/gempak/jnaefs_gefs_ndgd_cqpf_gempak                  01:30:00         5400 (min)       14.9 (min)        894 (sec)     16% 
+/para/primary/12/naefs/v7.0/gefs/jnaefs_gefs_pgrb_enspqpf                             00:30:00         1800 (min)        5.5 (min)        330 (sec)     18% 
+/para/primary/12/naefs/v7.0/gefs/jnaefs_gefs_prob_avgspr                              00:30:00         1800 (min)        1.1 (min)         66 (sec)      3% 
+/para/primary/12/naefs/v7.0/gefs/gempak/jnaefs_gefs_prob_avgspr_gempak                01:00:00         3600 (min)        6.2 (min)        372 (sec)     10% 
+/para/primary/12/naefs/v7.0/naefs/jnaefs_prob_avgspr                                  00:30:00         1800 (min)        2.4 (min)        144 (sec)      8% 
+/para/primary/12/naefs/v7.0/naefs/gempak/jnaefs_prob_avgspr_gempak                    01:00:00         3600 (min)        6.2 (min)        372 (sec)     10% 
+
+
+/para/primary/18/naefs/v7.0/cmcens/jnaefs_cmc_ens_bias                                00:45:00         2700 (min)        1.6 (min)         96 (sec)      3% 
+/para/primary/18/naefs/v7.0/cmcens/jnaefs_cmc_ens_post                                02:30:00         9000 (min)        0.1 (min)          6 (sec)      0% 
+/para/primary/18/naefs/v7.0/naefs/jnaefs_dvrtma_bias_ak                               00:10:00          600 (min)        0.5 (min)         30 (sec)      5% 
+/para/primary/18/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_bias_ak_gempak                 00:15:00          900 (min)        0.2 (min)         12 (sec)      1% 
+/para/primary/18/naefs/v7.0/naefs/jnaefs_dvrtma_bias_conus                            00:15:00          900 (min)        1.0 (min)         60 (sec)      6% 
+/para/primary/18/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_bias_conus_gempak              00:15:00          900 (min)        0.3 (min)         18 (sec)      2% 
+/para/primary/18/naefs/v7.0/naefs/jnaefs_dvrtma_prob_avgspr_ak                        01:30:00         5400 (min)        5.9 (min)        354 (sec)      6% 
+/para/primary/18/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_prob_avgspr_ak_gempak          00:50:00         3000 (min)        4.2 (min)        252 (sec)      8% 
+/para/primary/18/naefs/v7.0/naefs/jnaefs_dvrtma_prob_avgspr_conus                     01:30:00         5400 (min)       10.3 (min)        618 (sec)     11% 
+/para/primary/18/naefs/v7.0/naefs/gempak/jnaefs_dvrtma_prob_avgspr_conus_gempak       02:00:00         7200 (min)        4.2 (min)        252 (sec)      3% 
+/para/primary/18/naefs/v7.0/fnmocens/jnaefs_fnmoc_ens_bias                            00:45:00         2700 (min)        1.6 (min)         96 (sec)      3% 
+/para/primary/18/naefs/v7.0/gefs/jnaefs_gefs_24hr_cqpf                                00:50:00         3000 (min)        4.2 (min)        252 (sec)      8% 
+/para/primary/18/naefs/v7.0/gefs/jnaefs_gefs_6hr_cqpf                                 00:50:00         3000 (min)        1.4 (min)         84 (sec)      2% 
+/para/primary/18/naefs/v7.0/gefs/jnaefs_gefs_anfefi_acpr                              00:30:00         1800 (min)        0.8 (min)         48 (sec)      2% 
+/para/primary/18/naefs/v7.0/gefs/jnaefs_gefs_bias                                     00:45:00         2700 (min)       12.6 (min)        756 (sec)     28% 
+/para/primary/18/naefs/v7.0/gefs/gempak/jnaefs_gefs_bias_gempak                       01:00:00         3600 (min)       18.2 (min)       1092 (sec)     30% 
+/para/primary/18/naefs/v7.0/gefs/gempak/jnaefs_gefs_cqpf_gempak                       00:30:00         1800 (min)       12.7 (min)        762 (sec)     42% 
+/para/primary/18/naefs/v7.0/gefs/jnaefs_gefs_debias                                   03:30:00        12600 (min)      163.7 (min)       9822 (sec)     77% *** 
+/para/primary/18/naefs/v7.0/gefs/gempak/jnaefs_gefs_debias_gempak                     01:00:00         3600 (min)        6.9 (min)        414 (sec)     11% 
+/para/primary/18/naefs/v7.0/gefs/jnaefs_gefs_dvrtma_prob_avgspr_ak                    00:30:00         1800 (min)        5.9 (min)        354 (sec)     19% 
+/para/primary/18/naefs/v7.0/gefs/jnaefs_gefs_dvrtma_prob_avgspr_conus                 00:30:00         1800 (min)       10.4 (min)        624 (sec)     34% 
+/para/primary/18/naefs/v7.0/gefs/jnaefs_gefs_ndgd_cqpf                                00:55:00         3300 (min)       27.9 (min)       1674 (sec)     50% 
+/para/primary/18/naefs/v7.0/gefs/gempak/jnaefs_gefs_ndgd_cqpf_gempak                  01:30:00         5400 (min)       14.9 (min)        894 (sec)     16% 
+/para/primary/18/naefs/v7.0/gefs/jnaefs_gefs_pgrb_enspqpf                             00:30:00         1800 (min)        5.9 (min)        354 (sec)     19% 
+/para/primary/18/naefs/v7.0/gefs/jnaefs_gefs_prob_avgspr                              00:30:00         1800 (min)        1.1 (min)         66 (sec)      3% 
+/para/primary/18/naefs/v7.0/gefs/gempak/jnaefs_gefs_prob_avgspr_gempak                01:00:00         3600 (min)        6.2 (min)        372 (sec)     10% 
+/para/primary/18/naefs/v7.0/naefs/jnaefs_prob_avgspr                                  00:30:00         1800 (min)        1.1 (min)         66 (sec)      3% 
+/para/primary/18/naefs/v7.0/naefs/gempak/jnaefs_prob_avgspr_gempak                    01:00:00         3600 (min)        6.2 (min)        372 (sec)     10% 
+
+
