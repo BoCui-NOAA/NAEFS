@@ -2,8 +2,8 @@ grib2ctl=/u/$LOGNAME/xbin/grib2ctl
 g2ctl=/u/$LOGNAME/xbin/g2ctl
 GXGIF=/u/$LOGNAME/xbin/gxgif
 
-COM1=/lfs/h1/ops/prod/com/naefs/v6.1                        
-COM2=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0                        
+#COM1=/lfs/h1/ops/prod/com/naefs/v6.1                        
+#COM2=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0                        
 homedir=/lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/grads
 
 CDATE=$1             

@@ -9,7 +9,7 @@ title gepqpf.tcycz.pgrb2a.0p50.INTERfnfhrs_version
 dtype grib2
 ydef 361 linear -90.000000 0.5
 xdef 720 linear 0.000000 0.500000
-tdef 1 linear 00Z07feb2023 1mo
+tdef 1 linear 12Z24oct2023 1mo
 zdef 1 linear 1 1
 vars 13
 APCP101600GTsfc  0,1,0 a1,101.6   0,1,8,1 ** surface prob >101.6

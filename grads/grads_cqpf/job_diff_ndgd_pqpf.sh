@@ -2,13 +2,11 @@ grib2ctl=/u/$LOGNAME/xbin/grib2ctl
 g2ctl=/u/$LOGNAME/xbin/g2ctl
 GXGIF=/u/$LOGNAME/xbin/gxgif
 
-COM1=/lfs/h1/ops/prod/com/naefs/v6.1                        
-COM2=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0                        
+#COM1=/lfs/h1/ops/prod/com/naefs/v6.1                        
+#COM2=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0                        
 homedir=/lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/grads
 
-#CDATE=$1              
-CDATE=2023020500
-   
+CDATE=$1              
 
 export hourlist=" 000 003 006 009 012 015 018 021 024 027 030 033 036 039 042 045 048 \
                   051 054 057 060 063 066 069 072 075 078 081 084 087 090 093 096 099 \
@@ -22,6 +20,7 @@ export memberlist="1 2 3 4 5 6 7 8 9 10 \
 
 export hourlist="048 120 126 132 138 240 360 "
 export hourlist="048 120 240 "
+export hourlist="204"
 export hourlist="048"
 export memberlist="pqpf"
 

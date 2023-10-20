@@ -1,10 +1,15 @@
+CDATE=2023101900
+
+export COM1=/lfs/h1/ops/prod/com/naefs/v6.1
+#export COM2=/lfs/h2/emc/ptmp/$LOGNAME/com/naefs/v7.0
+export COM2=/lfs/h1/ops/para/com/naefs/v7.0             
 
 filelist="
 job_diff_enspqpf.sh    job_diff_geprcp_anv.sh     job_diff_geprcp_bc.sh   job_diff_ndgd_pqpf.sh  job_enspqpf.sh
 job_diff_gepqpf_bc.sh  job_diff_geprcp_bc_mem.sh  job_diff_geprcp_efi.sh  job_diff_ndgd_prcp.sh"
 
-#filelist="job_diff_enspqpf.sh"
+filelist="job_diff_ndgd_pqpf.sh"
 
 for file in $filelist; do
-  $file 2023020500
+  $file $CDATE     
 done
