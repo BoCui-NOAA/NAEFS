@@ -1,0 +1,41 @@
+
+#COM_prod=/lfs/h2/emc/ptmp/bo.cui/com/naefs/v7.0
+COM_prod=/lfs/h1/ops/para/com/naefs/v7.0              
+#COM_prod=/lfs/h1/ops/prod/com/naefs/v6.1
+COM_para=/lfs/h1/ops/para/com/naefs/v7.0
+
+PDY=20231014
+model=naefs
+cyclist="00 06 12 18"
+cyclist="00"
+
+memberlist="c00 p01 p02 p03 p04 p05 p06 p07 p08 p09 p10 p11 p12 p13 p14 p15 p16 p17 p18 p19 p20 "
+#            p21 p22 p23 p24 p25 p26 p27 p28 p29 p30 gfs avg spr mode 10pt 90pt 50pt"
+
+hourlist="    003 006 009 012 015 018 021 024 027 030 033 036 039 042 045 048 \
+          051 054 057 060 063 066 069 072 075 078 081 084 087 090 093 096 099 \
+         102 105 108 111 114 117 120 123 126 129 132 135 138 141 144 147 150 \
+         153 156 159 162 165 168 171 174 177 180 183 186 189 192 198 204 \
+                 210 216 222 228 234 240 246 252 258 264 270 276 282 288 294 300 \
+                 306 312 318 324 330 336 342 348 354 360 366 372 378 384"
+
+#hourlist="360"
+memberlist="ge10pt ge50pt ge90pt gemode geavg gespr"
+#memberlist="ge10pt"
+
+for region in conus_ext_2p5 alaska_3p0; do
+for cyc in $cyclist; do
+for nfhrs in $hourlist; do
+for nens in $memberlist; do
+  echo $region $cyc $nens $nfhrs
+  file_prod=$COM_prod/$model.$PDY/$cyc.hold2/ndgd_gb2/$model.t${cyc}z.${nens}.f${nfhrs}.${region}.grib2
+  file_para=$COM_para/$model.$PDY/$cyc.hold1/ndgd_gb2/$model.t${cyc}z.${nens}.f${nfhrs}.${region}.grib2
+  diff $file_prod $file_para
+# ls   $file_prod
+# ls   $file_para
+  echo
+done
+done
+done
+done
+

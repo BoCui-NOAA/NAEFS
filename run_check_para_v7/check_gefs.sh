@@ -157,12 +157,22 @@ EOF
   ls $COMIN/pgrb2ap5/*coeff* | wc
 
   echo " "
-  echo " GEFS pgrb2ap5 total 671  "
+  echo " GEFS pgrb2ap5 total 671 or 669  "
 # echo " GEFS pgrb2ap5 avg 97, c00 97, gfs 85, anl 2, mdf 2 "
 
   ls $COMIN/pgrb2ap5/* | wc
 
   echo " "
+
+output="$( bash <<EOF
+  ls $COMIN/pgrb2ap5  | wc -l
+EOF
+)"
+  if [ $output -ne 671 -a $output -ne 669 ]; then
+    echo $PDY$cyc
+    echo "Warning !!! GEFS pgrb2ap5 has file 671 or 669 files"
+    echo $output
+  fi
 
 # echo " GEFS prcp_gb2 prod 61, para 61 "
 # ls $COMIN/prcp_gb2 | wc

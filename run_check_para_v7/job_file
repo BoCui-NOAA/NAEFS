@@ -1,0 +1,31 @@
+COM=/lfs/h1/ops/para/com/naefs/v7.0
+PDY=20231011
+
+cd $COM
+rm /lfs/h2/emc/ptmp/bo.cui/num_f
+ls cmce.$PDY/*/pgrb2ap5 cmce.$PDY/*/pgrb2ap5_bc | wc >/lfs/h2/emc/ptmp/bo.cui/num_f
+#ls fens.$PDY/00/pgrb2ap5 fens.$PDY/00/pgrb2ap5_bc fens.$PDY/12/pgrb2ap5 fens.$PDY/18/pgrb2ap5_bc | wc >>/lfs/h2/emc/ptmp/bo.cui/num_f
+ls gefs.$PDY/*/ndgd_gb2 gefs.$PDY/*/ndgd_prcp_gb2 gefs.$PDY/*/pgrb2ap5_bc gefs.$PDY/*/pgrb2ap5_an gefs.$PDY/*/prcp_bc_gb2 gefs.$PDY/*/prcp_gb2 | wc >>/lfs/h2/emc/ptmp/bo.cui/num_f
+
+ls naefs.$PDY/*/ndgd_gb2 naefs.$PDY/*/pgrb2ap5_bc naefs.$PDY/*/pgrb2ap5_an | wc >>/lfs/h2/emc/ptmp/bo.cui/num_f
+
+cp /lfs/h2/emc/ptmp/bo.cui/num_f /lfs/h2/emc/vpppg/noscrub/bo.cui/naefs.v7.0.0/run_check_para_v7/
+exit
+cd $COM
+ls gefs.20231011/06/* gefs.20231011/00/* gefs.20231011/12/* gefs.20231011/18/* | wc > /lfs/h2/emc/ptmp/bo.cui/num_f
+ls cmce.20231011/06/* cmce.20231011/00/* cmce.20231011/12/* cmce.20231011/18/* | wc >>/lfs/h2/emc/ptmp/bo.cui/num_f
+ls fens.20231011/06/* fens.20231011/00/* fens.20231011/12/* fens.20231011/18/* | wc >>/lfs/h2/emc/ptmp/bo.cui/num_f
+ls naefs.20231011/06/* naefs.20231011/00/* naefs.20231011/12/* naefs.20231011/18/* | wc >>/lfs/h2/emc/ptmp/bo.cui/num_f
+exit
+ls cmce.20231011/g*/*  cmce.20231011/*/*/* | wc 
+ls $COM/cmce.$PDY/*/*/*  | wc > out.cmce  &
+Ls $COM/gefs.$PDY/*/*/* | wc > out.gefs  &
+ls $COM/fens.$PDY/*/*/* | wc > out.fens  &
+ls $COM/naefs.$PDY/*/*/* | wc > out.naefs   &
+
+du -h $COM/cmce.$PDY/12 $COM/gefs.$PDY/12 $COM/fens.$PDY/12 $COM/naefs.$PDY/12 > d_all &
+
+du -h $COM/cmce.$PDY/12 > d_cmce &
+du -h $COM/gefs.$PDY/12   > d_gefs &
+du -h $COM/fens.$PDY/12  > d_fens &
+du -h $COM/naefs.$PDY/12> d_naefs &

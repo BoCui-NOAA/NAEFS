@@ -39,9 +39,9 @@ output="$( bash <<EOF
   ls $COMIN/an | wc -l
 EOF
 )"
-  if [ $output -ne 13040 -a $output -ne 3260 ]; then
+  if [ $output -ne 13040 -a $output -ne 3260 -a $output -ne 6520 -a $output -ne 9780 ]; then
     echo $PDY$cyc
-    echo "Warning !!! GEFS an has gempak files 13040 or 3260"
+    echo "Warning !!! GEFS an has gempak files 260/6520/9780/13040"
     echo $output
   fi
 
@@ -53,9 +53,9 @@ output="$( bash <<EOF
   ls $COMIN/bc | wc -l
 EOF
 )"
-  if [ $output -ne 14576 -a $output -ne 3644 ]; then
+  if [ $output -ne 14576 -a $output -ne 3644 -a $output -ne 7288 -a $output -ne 10932 ]; then
     echo $PDY$cyc
-    echo "Warning !!! GEFS an has gempak files 14576 or 3644"
+    echo "Warning !!! GEFS bc has gempak files 3644/7288/10932/14576"
     echo $output
     echo " "
    fi
@@ -69,15 +69,25 @@ output="$( bash <<EOF
   ls $COMIN/ge* | wc -l
 EOF
 )"
-  if [ $output -ne 3456 -a $output -ne 864 ]; then
+  if [ $output -ne 3456 -a $output -ne 864 -a $output -ne 1728 -a $output -ne 2592 ]; then
     echo $PDY$cyc
-    echo "Warning !!! NAEFS has gempak files 3456 or 864"
+    echo "Warning !!! NAEFS has gempak files 864/1728/2592/3456"
     echo $output
-   fi
+  fi
 
   echo " dir naefs para ndgd* 4608 (1152/cycle) "
   ls $COMIN/ndgd*       | grep -v "pnaefs" | wc
   echo " "
+
+output="$( bash <<EOF
+  ls $COMIN/ndgd*       | grep -v "pnaefs" | wc
+EOF
+)"
+  if [ $output -ne 1152 -a $output -ne 2304 -a $output -ne 3456 -a $output -ne 4608 ]; then
+    echo $PDY$cyc
+    echo "Warning !!! NAEFS ndgd has gempak files 1152/2304/3456/4608"
+    echo $output
+  fi
 
   COMIN=$COM/fens.$PDY/gempak
   echo " dir FNMOC para 3880, 1940 for 00z only "
@@ -104,9 +114,9 @@ output="$( bash <<EOF
   ls $COMIN | wc -l
 EOF
 )"
-  if [ $output -ne 2732 -a $output -ne 683 ]; then
+  if [ $output -ne 2732 -a $output -ne 683 -a $output -ne 1366 -a $output -ne 2049 ]; then
     echo $PDY$cyc
-    echo "Warning !!! prcp has gempak files 2732 or 683"
+    echo "Warning !!! prcp has gempak files 2732 or 683 or 1366 or 2049"
     echo $output
   fi
 

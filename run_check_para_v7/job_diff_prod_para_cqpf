@@ -1,0 +1,39 @@
+COM_prod=/lfs/h1/ops/para/com/naefs/v7.0
+COM_para=/lfs/h1/ops/para/com/naefs/v7.0
+COM_prod=/lfs/h2/emc/ptmp/bo.cui/com/naefs/v7.0
+COM_para=/lfs/h2/emc/ptmp/bo.cui/com/naefs/v7.0
+
+PDY=20230928
+model=gefs
+cyclist="00 06 12 18"
+
+for iacc in 06 24; do
+
+if [ $iacc -eq 06 ]; then
+hourlist="    006 012 018 024 030 036 042 048 054 060 066 072 078 084 090 096 \
+          102 108 114 120 126 132 138 144 150 156 162 168 174 180 186 192 198 \
+          204 210 216 222 228 234 240 246 252 258 264 270 276 282 288 294 300 \
+          306 312 318 324 330 336 342 348 354 360 366 372 378 384"
+fi
+
+if [ $iacc -eq 24 ]; then
+hourlist="                024 030 036 042 048 054 060 066 072 078 084 090 096 \
+          102 108 114 120 126 132 138 144 150 156 162 168 174 180 186 192 198 \
+          204 210 216 222 228 234 240 246 252 258 264 270 276 282 288 294 300 \
+          306 312 318 324 330 336 342 348 354 360 366 372 378 384"
+fi
+
+#hourlist="360"
+
+for cyc in $cyclist; do
+for nhr in $hourlist; do
+  echo $cyc $nhr $iacc
+  file=geprcp.t${cyc}z.ndgd2p5_conus.${iacc}hf$nhr.gb2
+  file_prod=$COM_prod/$model.$PDY/$cyc/ndgd_prcp_gb2/$file
+  file_para=$COM_prod/$model.$PDY/$cyc/ndgd_prcp_gb2.org/$file
+  diff $file_prod $file_para 
+  echo
+done
+done
+
+done

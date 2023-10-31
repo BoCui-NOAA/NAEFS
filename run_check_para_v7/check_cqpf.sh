@@ -83,9 +83,10 @@ output="$( bash <<EOF
   ls $COMIN/gempak/prcp | wc -l
 EOF
 )"
-  if [ $output -ne 2732  -a $output -ne 683 ]; then
+  if [ $output -ne 2732  -a $output -ne 683 -a $output -ne 2049 -a $output -ne 1366 ]; then
+    echo
     echo $PDY$cyc
-    echo "Warning !!! GEFS cqpf gempak has file 2732 or 683 files"
+    echo "Warning !!! GEFS cqpf gempak has 683/1366/2049/2732 files"
     echo $COMIN/gempak/prcp
     echo $output
   fi

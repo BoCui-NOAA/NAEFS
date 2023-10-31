@@ -1,0 +1,69 @@
+COM_prod=/lfs/h1/ops/prod/com/naefs/v6.1
+COM_para=/lfs/h1/ops/prod/com/naefs/v7.0
+
+PDY=20231029
+model=gefs
+nhr=180
+
+hourlist="    003 006 009 012 015 018 021 024 027 030 033 036 039 042 045 048 \
+          051 054 057 060 063 066 069 072 075 078 081 084 087 090 093 096 099 \
+         102 105 108 111 114 117 120 123 126 129 132 135 138 141 144 147 150 \
+         153 156 159 162 165 168 171 174 177 180 183 186 189 192 198 204 \
+                 210 216 222 228 234 240 246 252 258 264 270 276 282 288 294 300 \
+                 306 312 318 324 330 336 342 348 354 360 366 372 378 384"
+
+hourlist="024 180"
+filelist="
+pgrb2a.0p50_abarf   pgrb2a.0p50_mecomf   pgrb2a.0p50_sfabarf
+pgrb2a.0p50_coefff  pgrb2a.0p50_mef      pgrb2a.0p50_sffbarf
+pgrb2a.0p50_fbarf   pgrb2a.0p50_saabarf  gegfs.t00z.pgrb2a.0p50_mef"
+
+filelist="pgrb2a.0p50_mecomf"
+cyclist="00 06 12 18"
+cyclist="00 "
+
+for cyc in $cyclist; do   
+for nhr in $hourlist; do   
+for file in $filelist; do
+  echo $cyc $file
+  file_prod=$COM_prod/$model.$PDY/$cyc/pgrb2ap5/geavg.t${cyc}z.$file$nhr
+  file_para=$COM_para/$model.$PDY/$cyc/pgrb2ap5/geavg.t${cyc}z.$file$nhr
+  echo $file_prod
+  echo $file_para
+  diff $file_prod $file_para
+done
+
+  echo $cyc $file
+  file_prod=$COM_prod/$model.$PDY/$cyc/pgrb2ap5/gegfs.t${cyc}z.pgrb2a.0p50_mef$nhr
+  file_para=$COM_para/$model.$PDY/$cyc/pgrb2ap5/gegfs.t${cyc}z.pgrb2a.0p50_mef$nhr
+
+  diff $file_prod $file_para
+done
+done
+
+filelist="rain_vrfy_ctl.dat  rain_vrfy_gfs.dat  STAT_RM_BIAS_ctl.dat  
+STAT_RM_BIAS_ctl.txt  STAT_RM_BIAS_gfs.dat  STAT_RM_BIAS_gfs.txt"
+
+for cyc in 00 06 12 18; do
+for file in $filelist; do
+    echo $cyc $file
+    diff $COM_prod/gefs.$PDY/$cyc/prcp_bc_gb2/$file $COM_para/gefs.$PDY/$cyc/prcp_bc_gb2
+echo
+done
+done
+exit
+
+
+reglist=" alaska_3p0 conus_ext_2p5"
+
+for cyc in 00 03 06 09 12 15 18 21; do
+
+  COMIN=$COM_IN/gefs.$PDY/$cyc/ndgd_gb2
+  COMOUT=$COM_OUT/gefs.$PDY/$cyc/ndgd_gb2
+
+  for reg in $reglist; do
+    file=dvrtma.t${cyc}z.$reg.grib2
+    diff $COMIN/$file $COMOUT/
+  done
+done
+
