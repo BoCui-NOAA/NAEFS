@@ -121,13 +121,13 @@ for nens in $memberlist; do
 
 ###
 
-  if [ -s $afile ]; then
+  if [ -s $afile.idx ]; then
     echo " "
   else
     echo " There is no Analysis data, Stop! for " $acyc 
   fi
 
-  if [ -s $afile_m12 ]; then
+  if [ -s $afile_m12.idx ]; then
     echo " "
   else
     echo " There is no Analysis data for ULWRF, Stop! for " $acyc_m12
@@ -266,7 +266,7 @@ for nfhrs in 00; do
                                                            
   afile=$COM_CMC/cmce.${aymd}/${acyc}/pgrb2ap5/cmc_gec00.t${acyc}z.pgrb2a.0p50.anl
 
-  if [ -s $afile ]; then
+  if [ -s $afile.idx ]; then
     echo " "
   else
     echo " There is no Analysis data, Stop! for " $acyc
