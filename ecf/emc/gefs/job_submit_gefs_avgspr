@@ -1,0 +1,20 @@
+CDATE=2023072000
+
+ntimes=1
+iday=1
+
+job=sub_jnaefs_gefs_prob_avgspr.ecf
+
+while [ $iday -le $ntimes ]; do
+  export PDY=`echo $CDATE | cut -c1-8`
+  export cyc=`echo $CDATE | cut -c9-10`
+  export YYMMDD=`echo $CDATE | cut -c1-8`
+  export CYC=`echo $CDATE | cut -c9-10`
+  echo " day " $PDY$cyc
+  sed -e "s/YYMMDD/$YYMMDD/" \
+      -e "s/CYC/$CYC/" \
+      $job > $job.temp
+  qsub $job.temp
+  iday=`expr $iday + 1`
+  CDATE=`$NDATE +06 $CDATE`
+done
